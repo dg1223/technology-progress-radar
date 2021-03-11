@@ -1,7 +1,7 @@
 body {
   font-size: 16px;
   color: #fff;
-  background-color: #61122f;
+  /*background-color: #61122f;*/
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -116,9 +116,23 @@ body {
 
 
 /* HOME PAGE */
+.container {
+  padding-left: 150px;
+  padding-right: 150px;
+  margin: 0;
+  width: 100%;
+}
+
 .container .jumbotron {
   box-shadow: 0 0 50px #3F0C1F;
   border: 2px solid #3F0C1F;
+}
+
+#arc {
+  width: 1000px;
+  height: 500px;
+  background: none;
+  /*border-radius: 50%*/
 }
 
 #menu-tile, #specials-tile, #map-tile {
@@ -234,8 +248,8 @@ h3.menu-item-title {
 /********** Large devices only **********/
 @media (min-width: 1200px) {
   .container .jumbotron {
-    background: url('../images/jumbotron_1200.jpg') no-repeat;
-    height: 675px;
+    /*background: url('../images/jumbotron_1200.jpg') no-repeat;*/
+    height: 80vh;
   }
 }
 

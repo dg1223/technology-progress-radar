@@ -19,6 +19,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
   });
 });
 
+
 (function (global) {
 
 // Show current month and date below the ET radar banner
@@ -30,6 +31,7 @@ document.getElementById("date").innerHTML =
   monthNames[dt.getMonth()].toLocaleString() 
   + " " 
   + year.toLocaleString().replace(/,/g, '');
+
 
 var dc = {};
 
@@ -93,6 +95,7 @@ $ajaxUtils.sendGetRequest(
   },
   false);
 });
+
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
@@ -297,3 +300,23 @@ function insertItemPortionName(html,
 global.$dc = dc;
 
 })(window);
+
+
+// Draw canvas
+
+window.onload = function draw() {
+  var canvas = document.getElementById('arc');
+  if (canvas.getContext) {
+    var context = canvas.getContext('2d'); 
+    var X = canvas.width/3.8;
+    var Y = canvas.width/2;
+    var R = 45;
+    var pi = Math.PI
+    context.beginPath();
+    context.translate(0.5,0.5);
+    context.arc(X, Y, R, 1*pi , 1.5*pi, false);
+    // context.lineWidth = 1;
+    context.strokeStyle = '#FF0000';
+    context.stroke();
+    }
+}
