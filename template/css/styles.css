@@ -117,8 +117,8 @@ body {
 
 /* HOME PAGE */
 .container {
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0;
   width: 100%;
 }
@@ -126,14 +126,152 @@ body {
 .container .jumbotron {
   box-shadow: 0 0 50px #3F0C1F;
   border: 2px solid #3F0C1F;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #arc {
-  width: 1000px;
-  height: 500px;
-  background: none;
-  /*border-radius: 50%*/
+      float: left;
+      width: 1800px;
+      height: 1800px;
+      /*margin: 20px;*/
+      border-radius: 50%;
+      border: 3px solid;
+      border-color: transparent transparent transparent red;
+      /*background: lightblue;*/
+      transform: rotate(45deg);
+      position:relative;
+      top:-125px;
+      
+    }
+
+
+/******************************************************/
+
+/** {
+  margin: 0;
+  height: 0;
 }
+html {
+  --spinner: #1EAAF0;
+  --center: translate(-50%, -50%);
+}
+.center {
+   position: absolute;
+   width: 30px;
+   height: 30px;
+   background: var(--spinner);
+   border-radius: 50%;
+   top: 50%;
+   left: 50%;
+   transform: var(--center); 
+}
+.outer-spin, .inner-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.outer-spin {
+  animation: spin 4s linear infinite;
+}
+.outer-arc, .inner-arc {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid;
+}
+.outer-arc {
+  width: 100px;
+  height: 100px;
+}
+.outer-arc_start-a {
+  border-color: transparent transparent transparent var(--spinner);
+  /*NOTE: the order here very much matters!  */
+/*  transform: var(--center) rotate(65deg); 
+}
+.outer-arc_end-a {
+  border-color: var(--spinner) transparent transparent transparent;
+  transform: var(--center) rotate(45deg);
+}
+.outer-arc_start-b {
+  border-color: transparent transparent transparent var(--spinner); 
+  transform: var(--center) rotate(65deg) scale(-1, -1);
+}
+.outer-arc_end-b {
+  border-color: var(--spinner) transparent transparent transparent;
+  transform: var(--center) rotate(45deg) scale(-1, -1);
+}
+
+.outer-moon-a {
+   position: absolute;
+   top:50%;
+   left:50%;
+   width: 15px;
+   height: 15px;
+   background: var(--spinner);
+   border-radius: 50%;
+   transform: var(--center) translate(52px, 0); 
+}
+.outer-moon-b {
+   position: absolute;
+   top:50%;
+   left:50%;
+   width: 15px;
+   height: 15px;
+   background: var(--spinner);
+   border-radius: 50%;
+   transform: var(--center) translate(-52px, 0); 
+}
+.inner-spin {
+  animation: spin 3s linear infinite;
+}
+.inner-arc {
+  width: 62px;
+  height: 62px;
+}
+.inner-arc_start-a {
+  border-color: transparent transparent transparent var(--spinner);
+/*NOTE: the order here very much matters!  */
+/*  transform: var(--center) rotate(65deg); 
+}
+.inner-arc_end-a {
+  border-color: var(--spinner) transparent transparent transparent;
+  transform: var(--center) rotate(45deg);
+}
+.inner-arc_start-b {
+  border-color: transparent transparent transparent var(--spinner); 
+  transform: var(--center) rotate(65deg) scale(-1, -1);
+}
+.inner-arc_end-b {
+  border-color: var(--spinner) transparent transparent transparent;
+  transform: var(--center) rotate(45deg) scale(-1, -1);
+}
+.inner-moon-a {
+   position: absolute;
+   top:50%;
+   left:50%;
+   width: 12px;
+   height: 12px;
+   background: var(--spinner);
+   border-radius: 50%;
+   transform: var(--center) translate(33px, 0); 
+}
+.inner-moon-b {
+   position: absolute;
+   top:50%;
+   left:50%;
+   width: 12px;
+   height: 12px;
+   background: var(--spinner);
+   border-radius: 50%;
+   transform: var(--center) translate(-33px, 0); 
+}
+@keyframes spin { 100% {transform: rotate(360deg); } }*/*/*/
+
+/******************************************************/
 
 #menu-tile, #specials-tile, #map-tile {
   height: 250px;
@@ -166,7 +304,7 @@ body {
   color: #fff;
   opacity: .8;
 }
-/* END HOME PAGE */
+/* END HOME PAGE 
 
 /* MENU CATEGORIES PAGE */
 .category-tile { 
@@ -249,36 +387,36 @@ h3.menu-item-title {
 @media (min-width: 1200px) {
   .container .jumbotron {
     /*background: url('../images/jumbotron_1200.jpg') no-repeat;*/
-    height: 80vh;
+    height: 1000px;
   }
 }
 
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Header */
-  #logo-img {
+/*  #logo-img {
     background: url('../images/restaurant-logo_medium.png') no-repeat;
     width: 100px;
     height: 100px;
     margin: 5px 5px 5px 0;
-  }
+  }*/
   /* End Header */
 
   /* Home Page */
-  .container .jumbotron {
+/*  .container .jumbotron {
     background: url('../images/jumbotron_992.jpg') no-repeat;
     height: 558px;
-  }
+  }*/
   /* End Home Page */
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
   /* Home Page */
-  .container .jumbotron {
+/*  .container .jumbotron {
     background: url('../images/jumbotron_768.jpg') no-repeat;
     height: 432px;
-  }
+  }*/
   /* End Home Page */
 }
 
