@@ -145,9 +145,6 @@ body {
       position:absolute;
       top:133px;
       left: 32px;
-      /*z-index: 2;*/
-      /*background: lightblue;*/
-      /*margin: 20px;*/
     }
 
 #arc2 {
@@ -197,6 +194,31 @@ body {
       top: 601px;
       left: 500px;
     }
+
+#arc6 {
+      width: 855px;
+      height: 855px;      
+      border-radius: 50%;
+      border: 225px solid;
+      border-color: transparent transparent transparent #FDF7CC;      
+      transform: rotate(45deg);
+      position:absolute;
+      top: 604px;
+      left: 503px;
+    }
+
+#arc7 {
+      width: 405px;
+      height: 405px;      
+      border-radius: 50%;
+      border: 202px solid;
+      border-color: transparent transparent transparent #FFEFAE;      
+      transform: rotate(45deg);
+      position:absolute;
+      top: 829px;
+      left: 728px;
+    }
+
 
 
 /******************************************************/
