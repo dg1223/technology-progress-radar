@@ -134,19 +134,44 @@ body {
   margin-right: auto;
 }
 
-#arc {
+#arc1 {
       float: left;
       width: 1800px;
-      height: 1800px;
-      /*margin: 20px;*/
+      height: 1800px;      
       border-radius: 50%;
-      border: 3px solid;
-      border-color: transparent transparent transparent red;
+      border: 85px solid;
+      border-color: transparent transparent transparent #E4DCC5;      
+      transform: rotate(45deg);
+      position:absolute;
+      top:133px;
+      left: 32px;
+      /*z-index: 2;*/
       /*background: lightblue;*/
+      /*margin: 20px;*/
+    }
+
+#arc2 {
+      width: 1630px;
+      height: 1630px;      
+      border-radius: 50%;
+      border: 150px solid;
+      border-color: transparent transparent transparent #DBCFB0;      
       transform: rotate(45deg);
       position:relative;
-      top:-125px;
-      
+      top: 95px;
+      left: 85px;
+    }
+
+#arc3 {
+      width: 1331px;
+      height: 1331px;      
+      border-radius: 50%;
+      border: 150px solid;
+      border-color: transparent transparent transparent #CEBE93;      
+      transform: rotate(45deg);
+      position:absolute;
+      top: 368px;
+      left: 267px;
     }
 
 
