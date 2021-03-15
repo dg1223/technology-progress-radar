@@ -116,14 +116,19 @@ body {
 
 
 /* HOME PAGE */
+#banner {
+  padding-left: 85px;
+  padding-right: 105px;
+}
+
 .container {
   padding-left: 100px;
   padding-right: 100px;
   margin: 0;
-  width: 100%;
 }
 
 .container .jumbotron {
+  height: 1000px;
   box-shadow: 0 0 50px #3F0C1F;
   border: 2px solid #3F0C1F;
   padding-left: 10px;
@@ -345,67 +350,79 @@ h3.menu-item-title {
 /* END SINGLE CATEGORY PAGE */
 
 
-/********** Large devices only **********/
-@media (min-width: 1200px) {
+/********** Extra large devices only **********/
+@media (min-width: 1920px) {
   .container .jumbotron {
-    /*background: url('../images/jumbotron_1200.jpg') no-repeat;*/
-    height: 1000px;
+    width: 1900px;
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1919px)  {
+  .container .jumbotron {
+    width: 1516px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1535px)  {
+  .container .jumbotron {
+    width: 1420px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1439px)  {
+  .container .jumbotron {
+    width: 1346px;
+  }
+}
+
+/********** Large devices only **********/
+@media (min-width: 1200px) and (max-width: 1365px) {
+  .container .jumbotron {
+    width: 1346px;
   }
 }
 
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* Header */
-/*  #logo-img {
-    background: url('../images/restaurant-logo_medium.png') no-repeat;
-    width: 100px;
-    height: 100px;
-    margin: 5px 5px 5px 0;
-  }*/
-  /* End Header */
-
-  /* Home Page */
-/*  .container .jumbotron {
-    background: url('../images/jumbotron_992.jpg') no-repeat;
-    height: 558px;
-  }*/
-  /* End Home Page */
+  .container .jumbotron {
+    width: 1346px;
+  }
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
-  /* Home Page */
-/*  .container .jumbotron {
-    background: url('../images/jumbotron_768.jpg') no-repeat;
-    height: 432px;
-  }*/
-  /* End Home Page */
+  .container .jumbotron {
+    width: 1346px;
+  }
 }
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
+  .container .jumbotron {
+    width: 1346px;
+  }
   /* Header */
-  .navbar-brand {
+/*  .navbar-brand {
     padding-top: 10px;
     height: 80px;
   }
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 10px;
-    font-size: 5vw; /* 1vw = 1% of viewport width */
-  }
-  .navbar-brand p { /* Kosher cert */
-    font-size: .6em;
+  .navbar-brand h1 {*/ /* Restaurant name */
+/*    padding-top: 10px;
+    font-size: 5vw;*/ /* 1vw = 1% of viewport width */
+/*  }
+  .navbar-brand p {*/ /* Kosher cert */
+/*    font-size: .6em;
     margin-top: 12px;
   }
-  .navbar-brand p img { /* Star-K */
-    height: 20px;
+  .navbar-brand p img {*/ /* Star-K */
+/*    height: 20px;
   }
 
-  #collapsable-nav a { /* Collapsed nav menu text */
-    font-size: 1.2em;
+  #collapsable-nav a {*/ /* Collapsed nav menu text */
+/*    font-size: 1.2em;
   }
-  #collapsable-nav a span { /* Collapsed nav menu glyph */
-    font-size: 1em;
+  #collapsable-nav a span { *//* Collapsed nav menu glyph */
+/*    font-size: 1em;
     margin-right: 5px;
   }
 
@@ -423,24 +440,24 @@ h3.menu-item-title {
     font-size: .7em;
     letter-spacing: .1em;
     text-transform: uppercase;
-  }
+  }*/
   /* End Header */
 
   /* Footer */
-  .panel-footer section {
+/*  .panel-footer section {
     margin-bottom: 30px;
     text-align: center;
   }
   .panel-footer section:nth-child(3) {
     margin-bottom: 0; /* margin already exists on the whole row */
-  }
-  .panel-footer section hr {
+  /*}*/
+/*  .panel-footer section hr {
     width: 50%;
-  }
+  }*/*/
   /* End Footer */
 
   /* Home Page */
-  .container .jumbotron {
+/*  .container .jumbotron {
     margin-top: 30px;
     padding: 0;
   }
@@ -457,33 +474,7 @@ h3.menu-item-title {
   }
   .menu-item-description {
     text-align: center;;
-  }
-}
-
-
-/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
-@media (max-width: 479px) {
-  /* Header */
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 5px;
-    font-size: 6vw;
-  }
-  /* End Header */
-  
-  /* Home page */
-  #menu-tile, #specials-tile {
-    width: 280px;
-    margin: 0 auto 15px;
-  }
-
-  .col-xxs-12 {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    float: left;
-    width: 100%;
-  }
+  }*/
 }
 
 
