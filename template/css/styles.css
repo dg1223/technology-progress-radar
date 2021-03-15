@@ -117,8 +117,8 @@ body {
 
 /* HOME PAGE */
 .container {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
   margin: 0;
   width: 100%;
 }
@@ -134,6 +134,13 @@ body {
   margin-right: auto;
 }
 
+/******************************************************/
+
+.jumbotron div {
+  transform: rotate(45deg);
+  position:absolute;
+}
+
 #arc1 {
       float: left;
       width: 1800px;
@@ -141,10 +148,8 @@ body {
       border-radius: 50%;
       border: 85px solid;
       border-color: transparent transparent transparent #E4DCC5;      
-      transform: rotate(45deg);
-      position:absolute;
       top:133px;
-      left: 32px;
+      left: 112px;
     }
 
 #arc2 {
@@ -152,11 +157,9 @@ body {
       height: 1630px;      
       border-radius: 50%;
       border: 150px solid;
-      border-color: transparent transparent transparent #DBCFB0;      
-      transform: rotate(45deg);
-      position:absolute;
+      border-color: transparent transparent transparent #DBCFB0;
       top: 218px;
-      left: 117px;
+      left: 197px;
     }
 
 #arc3 {
@@ -164,11 +167,9 @@ body {
       height: 1332px;      
       border-radius: 50%;
       border: 150px solid;
-      border-color: transparent transparent transparent #CEBE93;      
-      transform: rotate(45deg);
-      position:absolute;
+      border-color: transparent transparent transparent #CEBE93;
       top: 367px;
-      left: 266px;
+      left: 346px;
     }
 
 #arc4 {
@@ -176,11 +177,9 @@ body {
       height: 1032px;      
       border-radius: 50%;
       border: 85px solid;
-      border-color: transparent transparent transparent #C5B17E;      
-      transform: rotate(45deg);
-      position:absolute;
+      border-color: transparent transparent transparent #C5B17E;
       top: 517px;
-      left: 415px;
+      left: 495px;
     }
 
 #arc5 {
@@ -188,11 +187,9 @@ body {
       height: 862px;      
       border-radius: 50%;
       border: 4px solid;
-      border-color: transparent transparent transparent black;      
-      transform: rotate(45deg);
-      position:absolute;
+      border-color: transparent transparent transparent black;
       top: 601px;
-      left: 500px;
+      left: 580px;
     }
 
 #arc6 {
@@ -200,11 +197,9 @@ body {
       height: 855px;      
       border-radius: 50%;
       border: 225px solid;
-      border-color: transparent transparent transparent #FDF7CC;      
-      transform: rotate(45deg);
-      position:absolute;
+      border-color: transparent transparent transparent #FDF7CC;
       top: 604px;
-      left: 503px;
+      left: 583px;
     }
 
 #arc7 {
@@ -212,135 +207,31 @@ body {
       height: 405px;      
       border-radius: 50%;
       border: 202px solid;
-      border-color: transparent transparent transparent #FFEFAE;      
-      transform: rotate(45deg);
-      position:absolute;
+      border-color: transparent transparent transparent #FFEFAE;
       top: 829px;
-      left: 728px;
+      left: 808px;
     }
 
-
-
-/******************************************************/
-
-/** {
-  margin: 0;
-  height: 0;
-}
-html {
-  --spinner: #1EAAF0;
-  --center: translate(-50%, -50%);
-}
-.center {
-   position: absolute;
-   width: 30px;
-   height: 30px;
-   background: var(--spinner);
-   border-radius: 50%;
-   top: 50%;
-   left: 50%;
-   transform: var(--center); 
-}
-.outer-spin, .inner-spin {
+.line {
+  border-bottom: 1px solid black;
   position: absolute;
-  top: 50%;
-  left: 50%;
-}
-.outer-spin {
-  animation: spin 4s linear infinite;
-}
-.outer-arc, .inner-arc {
-  position: absolute;
-  border-radius: 50%;
-  border: 4px solid;
-}
-.outer-arc {
-  width: 100px;
-  height: 100px;
-}
-.outer-arc_start-a {
-  border-color: transparent transparent transparent var(--spinner);
-  /*NOTE: the order here very much matters!  */
-/*  transform: var(--center) rotate(65deg); 
-}
-.outer-arc_end-a {
-  border-color: var(--spinner) transparent transparent transparent;
-  transform: var(--center) rotate(45deg);
-}
-.outer-arc_start-b {
-  border-color: transparent transparent transparent var(--spinner); 
-  transform: var(--center) rotate(65deg) scale(-1, -1);
-}
-.outer-arc_end-b {
-  border-color: var(--spinner) transparent transparent transparent;
-  transform: var(--center) rotate(45deg) scale(-1, -1);
 }
 
-.outer-moon-a {
-   position: absolute;
-   top:50%;
-   left:50%;
-   width: 15px;
-   height: 15px;
-   background: var(--spinner);
-   border-radius: 50%;
-   transform: var(--center) translate(52px, 0); 
+#line1 {
+  width: 472px;
+  height: 48px;
+  top: 493px;
+  left: 352px;
+  transform: rotate(42deg);
 }
-.outer-moon-b {
-   position: absolute;
-   top:50%;
-   left:50%;
-   width: 15px;
-   height: 15px;
-   background: var(--spinner);
-   border-radius: 50%;
-   transform: var(--center) translate(-52px, 0); 
+
+#line2 {
+  width: 471px;
+  height: 47px;
+  top: 444px;
+  left: 420px;
+  transform: rotate(50deg);
 }
-.inner-spin {
-  animation: spin 3s linear infinite;
-}
-.inner-arc {
-  width: 62px;
-  height: 62px;
-}
-.inner-arc_start-a {
-  border-color: transparent transparent transparent var(--spinner);
-/*NOTE: the order here very much matters!  */
-/*  transform: var(--center) rotate(65deg); 
-}
-.inner-arc_end-a {
-  border-color: var(--spinner) transparent transparent transparent;
-  transform: var(--center) rotate(45deg);
-}
-.inner-arc_start-b {
-  border-color: transparent transparent transparent var(--spinner); 
-  transform: var(--center) rotate(65deg) scale(-1, -1);
-}
-.inner-arc_end-b {
-  border-color: var(--spinner) transparent transparent transparent;
-  transform: var(--center) rotate(45deg) scale(-1, -1);
-}
-.inner-moon-a {
-   position: absolute;
-   top:50%;
-   left:50%;
-   width: 12px;
-   height: 12px;
-   background: var(--spinner);
-   border-radius: 50%;
-   transform: var(--center) translate(33px, 0); 
-}
-.inner-moon-b {
-   position: absolute;
-   top:50%;
-   left:50%;
-   width: 12px;
-   height: 12px;
-   background: var(--spinner);
-   border-radius: 50%;
-   transform: var(--center) translate(-33px, 0); 
-}
-@keyframes spin { 100% {transform: rotate(360deg); } }*/*/*/
 
 /******************************************************/
 
