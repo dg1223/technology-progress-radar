@@ -157,21 +157,45 @@ body {
       border: 150px solid;
       border-color: transparent transparent transparent #DBCFB0;      
       transform: rotate(45deg);
-      position:relative;
-      top: 95px;
-      left: 85px;
+      position:absolute;
+      top: 218px;
+      left: 117px;
     }
 
 #arc3 {
-      width: 1331px;
-      height: 1331px;      
+      width: 1332px;
+      height: 1332px;      
       border-radius: 50%;
       border: 150px solid;
       border-color: transparent transparent transparent #CEBE93;      
       transform: rotate(45deg);
       position:absolute;
-      top: 368px;
-      left: 267px;
+      top: 367px;
+      left: 266px;
+    }
+
+#arc4 {
+      width: 1032px;
+      height: 1032px;      
+      border-radius: 50%;
+      border: 85px solid;
+      border-color: transparent transparent transparent #C5B17E;      
+      transform: rotate(45deg);
+      position:absolute;
+      top: 517px;
+      left: 415px;
+    }
+
+#arc5 {
+      width: 862px;
+      height: 862px;      
+      border-radius: 50%;
+      border: 4px solid;
+      border-color: transparent transparent transparent black;      
+      transform: rotate(45deg);
+      position:absolute;
+      top: 601px;
+      left: 500px;
     }
 
 
