@@ -157,43 +157,6 @@ body {
       left: 112px;
     }
 
-.phases p {
-  color: #70AAE4;
-  position: absolute;
-  font-size: 20px;
-  transform: rotate(-45deg);
-}    
-
-#identify {
-  top: 1020px;
-  left: 145px;
-}
-
-#study {
-  top: 1040px;
-  left: 260px;
-}
-
-#relate {
-  top: 1035px;
-  left: 410px;
-}
-
-#plan {
-  top: 1041px;
-  left: 530px;
-}
-
-#adopt {
-  top: 1035px;
-  left: 695px;
-}
-
-#readiness {
-  top: 1020px;
-  left: 900px;
-}
-
 #arc2 {
       width: 1630px;
       height: 1630px;      
@@ -274,6 +237,77 @@ body {
   left: 420px;
   transform: rotate(50deg);
 }
+
+
+/*Research phases*/
+
+.phases p {
+  color: #70AAE4;
+  position: absolute;
+  font-size: 20px;
+  transform: rotate(-45deg);
+}    
+
+#identify {
+  top: 1020px;
+  left: 145px;
+}
+
+#study {
+  top: 1040px;
+  left: 260px;
+}
+
+#relate {
+  top: 1035px;
+  left: 410px;
+}
+
+#plan {
+  top: 1041px;
+  left: 530px;
+}
+
+#adopt {
+  top: 1035px;
+  left: 695px;
+}
+
+#readiness {
+  top: 1020px;
+  left: 900px;
+}
+
+
+/*Actions*/
+.actions p {
+  color: #70AAE4;
+  position: absolute;
+  font-size: 20px;  
+}    
+
+#engage {
+  top: 590px;
+  left: 180px;
+  transform: rotate(-60deg);
+}
+
+#watch {
+  top: 355px;
+  left: 370px;
+  transform: rotate(-42deg);
+}
+
+#watch p {
+  width: 126px;
+}
+
+#park {
+  top: 190px;
+  left: 620px;
+  transform: rotate(-27deg);
+}
+
 
 /******************************************************/
 
