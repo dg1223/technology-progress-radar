@@ -300,27 +300,3 @@ function insertItemPortionName(html,
 global.$dc = dc;
 
 })(window);
-
-
-// Draw canvas
-
-// window.onload = function draw() {
-//   var canvas = document.getElementById('arc');
-//   if (canvas.getContext) {
-//     var context = canvas.getContext('2d'); 
-//     var X = 100; // canvas.width/2;
-//     var Y = 75; // canvas.width/2;
-//     var R = 70;
-//     var pi = Math.PI;
-//     var sAngle = 0 // 1*pi;
-//     var eAngle = 2*pi // 1.5*pi;
-    
-//     context.beginPath();
-//     // context.translate(10,10);
-//     // context.arc(x,y,r,sAngle,eAngle,counterclockwise);
-//     context.arc(X, Y, R, sAngle , eAngle, false);
-//     // context.lineWidth = 1;
-//     context.strokeStyle = '#FF0000';
-//     context.stroke();
-//     }
-// }
