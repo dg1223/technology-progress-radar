@@ -22,7 +22,7 @@ class preprocess:
     def __init__(self):
         return None
 
-    def cleanupCSV(self, filepath, filename):
+    def cleanupCSV(self, filepath, filename, outputPath, outputFile):
         
         '''
         Keeps only the necessary info from the original ETR spreadsheet
@@ -30,14 +30,17 @@ class preprocess:
         Parameters
         ----------
         filepath : string
-            The full directory path where the spreadsheet is stored.
+            Full directory path where the spreadsheet is stored.
         filename : string
-            The name of the spreadsheet, e.g. 'ETR.csv'.
+            Name of the spreadsheet, e.g. 'ETR.csv'.
+        outputPath: string
+            Directory where the new csv file will be stored.
+        outputFile:  string
+            Output file name
 
         Returns
         -------
-        etr_to_use : pandas dataframe object
-            A dataframe object containing a cleaned up ETR.
+        None
 
         '''
 
@@ -46,16 +49,30 @@ class preprocess:
 
         etr_df = pd.DataFrame(etr_csv)
         etr = etr_df[['Emerging Technology', 'KPI Research Phase (Topic)',
-                      'KPI Research Activity Arc (Topic)', 'Activity Type']]
+                      'KPI Research Activity Arc (Topic)', 'Activity Type', 'Status']]
+        
+        # Keep only those rows where research phase is not null
+        etr = etr[etr['KPI Research Phase (Topic)'].notna()]
+        
+        # fill empty values in activity arc column with the phrase 'Engage'
+        
+        ind = etr.columns.get_loc('KPI Research Activity Arc (Topic)')
+        for x in range(len(etr)):
+            if pd.isna(etr.iloc[x, ind]):
+                etr.iloc[x, ind] = 'Engage'
 
-        etr_trimmed = []
-        for i in range(len(etr)):
-            if pd.notna(etr['KPI Research Phase (Topic)'].values[i]):
-                etr_trimmed.append(etr.values[i])
 
-        etr_to_use = np.array(etr_trimmed)
+        output = outputPath + outputFile
+        etr.to_csv(output, index=False)
 
-        return etr_to_use
+        # etr_trimmed = []
+        # for i in range(len(etr)):
+        #     if pd.notna(etr['KPI Research Phase (Topic)'].values[i]):
+        #         etr_trimmed.append(etr.values[i])
+
+        # etr_to_use = np.array(etr_trimmed)
+
+        return None
 
 
 class canvas():
