@@ -13,10 +13,6 @@ Affective Computing,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffa
 AI Ethics,Study,On Track,Engage,,Tech R&D,Backgrounder,AI Ethics Backgrounder,SAID,Tiffany B,Shamir Alavi,Complete,,X,"AI Ethics Subcommittee formed
 GC Directive on Automated Decision making published
 ",10-07-2020,Yihong Wang,,,02-10-2018,Proceed with an Outlook and address the use of AI at the Agency.,2,2,Study
-Amazon Connect Services,TBD,,N/A,Not plotted,Business of IT,Early Adopter,Assessing the viability of using the Amazon Connect services to operated tier 2 and 3 contact centres in CRA,DMRAAD,Merlin L,CCT,In Progress,,,Working towards commitment gate,27-06-2020,Shamir Alavi,,,,,11.25,11.25,Study
-Amazon Corretto Java,Relate,,N/A,Not plotted,Bus/Tech,PoC (technology),,CESD,Daniel G,Martin Courtemanche,In Progress,,,"- work ongoing
-
-Jun 19: (SC&D) Discuss with ambassador",27-06-2020,Shamir Alavi,,,,,3,3,Identify
 Angular framework,Adopt,On Track,N/A,,Business of IT,Pilot,Angular BETA,SAID,Tiffany B,Alain Dionne,In Progress,,,Continue to research and validate the use of Angular within CRA for application presentation layer development.,24-07-2020,Alain Dionne,04-12-2019,N/A - Educational piece,,,8,8,Adopt
 Angular framework,,,N/A,Not plotted,Business of IT,Pilot,"In conjuction with the DevCentre team we are converting some online calculators (NRTC, ABOC and PDOC) using struts 2 to use Angular web framework.  Starting with a like for like convresion.  Then enhancing based upon UX input and discussions with the business teams.",DMRAAD,Merlin L,CJEM,In Progress,,,"First calculator NRTC planned to be delivered by end of July/early August 2019, ABOC and PDOC will be planned for future releases.",,Paul Markey,,,,,8,,Adopt
 Angular Framework,,,N/A,Not plotted,Business of IT,Pilot,Set up an Angular library reusable by other developers in angular,CESD,Daniel G,Gary Luk,In Progress,,,"- FPS (Forecasting Planning System) is being developed with Angular on eBCI. 
@@ -303,9 +299,7 @@ ICAM,,On Track,N/A,,,PoC (technology),Two-factor authentication proof of concept
 ICAM,,On Track,N/A,,Tech R&D,Pilot,Verified.Me pilot evaluation complete,BESD,Jeff B,Sheldon D,Complete,,,see DLT Offensive for project details,,Sheldon DeCoste,,,,,8,,Adopt
 Infrastructure as a code using Terraform,Relate,,Engage,,Tech R&D,PoC (technology),"Proof of concept for Terraform, an infrastructure-as-code software that alows you to define your entire infrastructure in configuration files and deploy it using a few commands",SAID,Tiffany B,Alain Dionne,Complete,,,"Research is undergoing
 July 24: This will not move forward.",24-07-2020,Alain Dionne,,,,,3,3,Relate
-"Innovation CoE
-
-Machine Learning",Relate,On Track,N/A,,Bus/Tech,PoC (technology),"Our Innovation Enablement and Proof of Concept (PoC) initiatives offer support to any CRA employees interested in obtaining the right knowledge and tools to experiment with innovation and determine the feasibility of new technologies for use within the CRA from multiple perspectives.
+Machine Learning,Relate,On Track,N/A,,Bus/Tech,PoC (technology),"Our Innovation Enablement and Proof of Concept (PoC) initiatives offer support to any CRA employees interested in obtaining the right knowledge and tools to experiment with innovation and determine the feasibility of new technologies for use within the CRA from multiple perspectives.
     All You Can Tweet - Sentiment analysis of CRA using twitter data. Collecting data and analyzing CRA campaigns and how well they were accepted by the taxpayers
 
 ",SAID,Tiffany B,John Mueller,In Progress,,,"All You Can Tweet (In Progress) (DG review May 1)    https://confluence.isvcs.net/display/ITBIET/Artificial+Intelligence
