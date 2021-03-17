@@ -40,7 +40,7 @@ class preprocess:
 
         Returns
         -------
-        None
+        None; saves the new dataframe as a csv file
 
         '''
 
@@ -54,14 +54,13 @@ class preprocess:
         # Keep only those rows where research phase is not null
         etr = etr[etr['KPI Research Phase (Topic)'].notna()]
         
-        # fill empty values in activity arc column with the phrase 'Engage'
-        
+        # fill empty values in activity arc column with the phrase 'Engage'        
         ind = etr.columns.get_loc('KPI Research Activity Arc (Topic)')
         for x in range(len(etr)):
             if pd.isna(etr.iloc[x, ind]):
                 etr.iloc[x, ind] = 'Engage'
 
-
+        # Save as csv
         output = outputPath + outputFile
         etr.to_csv(output, index=False)
 
