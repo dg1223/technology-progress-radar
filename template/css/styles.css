@@ -212,7 +212,7 @@ body {
       height: 405px;      
       border-radius: 50%;
       border: 202px solid;
-      border-color: transparent transparent transparent #FFEFAE;
+      border-color: transparent transparent transparent lightblue; // #FFEFAE;
       top: 829px;
       left: 808px;
     }
@@ -239,7 +239,7 @@ body {
 }
 
 
-/*Research phases*/
+/*Research phases (texts)*/
 
 .phases p {
   color: #70AAE4;
@@ -279,7 +279,7 @@ body {
 }
 
 
-/*Actions*/
+/*Actions (texts)*/
 .actions p {
   color: #70AAE4;
   position: absolute;

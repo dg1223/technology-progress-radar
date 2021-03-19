@@ -94,6 +94,20 @@ $ajaxUtils.sendGetRequest(
       .innerHTML = responseText;
   },
   false);
+
+document.querySelector("#main-content")
+      .addEventListener("mousemove", 
+        function(event) {
+          if (event.shiftKey == true) {
+            console.log(document.querySelector("#main-content").innerHTML)
+            console.log("x: " + event.clientX)
+            console.log("y: " + event.clientY)  
+          }
+          
+        }
+
+      )
+
 });
 
 
