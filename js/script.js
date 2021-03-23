@@ -100,7 +100,7 @@ document.querySelector("#arc7")
       .addEventListener("mousemove", 
         function(event) {
           if (event.shiftKey == true) {
-            console.log(document.querySelector(".jumbotron").innerHTML)
+            // console.log(document.querySelector(".jumbotron").innerHTML)
             console.log("x: " + event.clientX)
             console.log("y: " + event.clientY)  
           }
@@ -108,6 +108,38 @@ document.querySelector("#arc7")
         }
 
       )
+
+// get document coordinates of the element
+function getCoords(elem) {
+  var box = elem.getBoundingClientRect();
+
+  return {
+    top: box.top + window.pageYOffset,
+    right: box.right + window.pageXOffset,
+    bottom: box.bottom + window.pageYOffset,
+    left: box.left + window.pageXOffset,
+    height: box.height,
+    width: box.width,
+    radius: box.height/2,
+    centre_x: (box.left + ((box.right-box.left)/2)) + window.pageXOffset,
+    centre_y: (box.top + ((box.bottom-box.top)/2)) + window.pageYOffset
+  };
+}
+
+var elem = document.querySelector("#arc7");
+var rect = getCoords(elem);
+console.log(rect);
+
+
+// var rect = document.querySelector("#arc7").getBoundingClientRect();
+// for (var key in rect) {
+//   if(typeof rect[key] !== 'function') {
+//     var para = document.createElement('p');
+//     para.textContent  = `${ key } : ${ rect[key] }`;
+//     document.body.appendChild(para);
+//   }
+// }
+// console.log(rect);
 
 });
 
