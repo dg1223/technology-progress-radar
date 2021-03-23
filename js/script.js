@@ -96,11 +96,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //   },
 //   false);
 
-document.querySelector("#main-content")
+document.querySelector("#arc7")
       .addEventListener("mousemove", 
         function(event) {
           if (event.shiftKey == true) {
-            console.log(document.querySelector("#main-content").innerHTML)
+            console.log(document.querySelector(".jumbotron").innerHTML)
             console.log("x: " + event.clientX)
             console.log("y: " + event.clientY)  
           }
