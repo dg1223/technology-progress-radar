@@ -209,23 +209,25 @@ body {
 
 #arc7 {
       width: 405px;
-      height: 405px;      
+      height: 405px;
       border-radius: 50%;
+      background-color: lightgray;
       border: 202px solid;
-      border-color: transparent transparent transparent #FFEFAE; // #FFEFAE;
+      border-color: transparent #FFEFAE transparent #FFEFAE; // #FFEFAE;
       top: 829px;
       left: 808px;
-      /*transform: rotate(0deg);*/
     }
 
 #arc8 {
       width: 40px;
       height: 40px;      
-      border-radius: 0%;
+      left: 946.5806906472446px;
+      top: 839.34124875445px;
+      border-radius: 50%;
+      /*background-color: lightgray;*/
+      /*display: inline-block;*/
       border: 20px solid;
-      border-color: transparent transparent transparent lilac; // #FFEFAE;
-      top: 1031.4931182861328px;
-      left: 1010.4862060546875px;
+      border-color: transparent black transparent black; // #FFEFAE;
       /*transform: rotate(0deg);*/
     }
 

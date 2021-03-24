@@ -131,6 +131,58 @@ var rect = getCoords(elem);
 console.log(rect);
 
 
+// Find coordinates within the boundary of an arc
+function findCoordinates(lat, long, radius)
+{
+    // How many points do we want? (should probably be function param..)
+    var numberOfPoints = 2500;
+    var degreesPerPoint = 90 / numberOfPoints;
+
+    // Keep track of the angle from centre to radius
+    var currentAngle = 0;
+
+    // The points on the radius will be lat+x2, long+y2
+    var x2;
+    var y2;
+
+    // Track the points we generate to return at the end
+    var points = [];
+
+    for(var i=0; i < numberOfPoints; i++) {
+      // Convert degree to radian
+      var radian = currentAngle * Math.PI / 180;
+      // X2 point will be cosine of angle * radius (range)
+      x2 = Math.cos(radian) * radius;
+      // Y2 point will be sin * range
+      y2 = Math.sin(radian) * radius;
+
+      // Assuming here you're using points for each x,y..             
+      // p = new Point(lat+x2, long+y2);
+
+      // save to our results array
+      points.push({
+        theta: currentAngle,
+        // cosTheta: Math.cos(radian),
+        // sinTheta: Math.sin(radian),
+        x: lat-x2,
+        y: long-y2
+      });
+
+      // Shift our angle around for the next point
+      currentAngle += degreesPerPoint;
+  }
+    // Return the points we've generated
+    return points;
+}
+
+var x = rect.centre_x;
+var y = rect.centre_y;
+var r = rect.radius;
+var point = findCoordinates(x, y, 202.5);
+
+console.log(point)
+
+
 // var rect = document.querySelector("#arc7").getBoundingClientRect();
 // for (var key in rect) {
 //   if(typeof rect[key] !== 'function') {
