@@ -146,7 +146,7 @@ body {
   position:absolute;
 }
 
-#arc1 {
+#Identify {
       float: left;
       width: 1800px;
       height: 1800px;      
@@ -157,7 +157,7 @@ body {
       left: 112px;
     }
 
-#arc2 {
+#Study {
       width: 1630px;
       height: 1630px;      
       border-radius: 50%;
@@ -167,7 +167,7 @@ body {
       left: 197px;
     }
 
-#arc3 {
+#Relate {
       width: 1332px;
       height: 1332px;      
       border-radius: 50%;
@@ -177,7 +177,7 @@ body {
       left: 346px;
     }
 
-#arc4 {
+#Plan {
       width: 1032px;
       height: 1032px;      
       border-radius: 50%;
@@ -187,7 +187,7 @@ body {
       left: 495px;
     }
 
-#arc5 {
+#Divider {
       width: 862px;
       height: 862px;      
       border-radius: 50%;
@@ -197,7 +197,7 @@ body {
       left: 580px;
     }
 
-#arc6 {
+#Adopt {
       width: 855px;
       height: 855px;      
       border-radius: 50%;
@@ -207,7 +207,7 @@ body {
       left: 583px;
     }
 
-#arc7 {
+#Readiness {
       width: 405px;
       height: 405px;
       border-radius: 50%;

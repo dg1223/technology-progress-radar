@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //   },
 //   false);
 
-document.querySelector("#arc7")
+document.querySelector("#Readiness")
       .addEventListener("mousemove", 
         function(event) {
           if (event.shiftKey == true) {
@@ -126,14 +126,13 @@ function getCoords(elem) {
   };
 }
 
-var elem = document.querySelector("#arc7");
+var elem = document.querySelector("#Readiness");
 var rect = getCoords(elem);
 console.log(rect);
 
 
 // Find coordinates within the boundary of an arc
-function findCoordinates(left, top, radius, numpoints)
-{
+function findCoordinates(left, top, radius, numpoints) {
     // How many points do we want?
     var numberOfPoints = numpoints;
     var degreesPerPoint = 90 / numberOfPoints;
@@ -182,19 +181,16 @@ var x = rect.centre_x;
 var y = rect.centre_y;
 var r = rect.radius;
 var point = findCoordinates(x, y, 202.5, 16);
-
 console.log(point)
 
 
-// var rect = document.querySelector("#arc7").getBoundingClientRect();
-// for (var key in rect) {
-//   if(typeof rect[key] !== 'function') {
-//     var para = document.createElement('p');
-//     para.textContent  = `${ key } : ${ rect[key] }`;
-//     document.body.appendChild(para);
-//   }
-// }
-// console.log(rect);
+// Process input data
+var inputData = "data/ETR_clean.json";
+radarURL = "https://raw.githubusercontent.com/dg1223/storage/master/ETR_clean.json"
+// jQuery.getJSON( radarURL, function(data){
+  
+// })
+
 
 });
 
