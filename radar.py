@@ -60,6 +60,9 @@ class preprocess:
             if pd.isna(etr.iloc[x, ind]):
                 etr.iloc[x, ind] = 'Engage'
 
+        # Reset index after dropping NaN
+        etr.reset_index(drop=True, inplace=True)
+
         # Save as CSV
         outCSV = outputPath + outputCSV
         etr.to_csv(outCSV, index=False)
