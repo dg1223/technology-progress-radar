@@ -15,11 +15,12 @@ Cleanup ETR
 
 CSVpath = '/home/shamir/Documents/GitHub/tech-radar/'
 CSVname = 'ETR.csv'
-outputFile = 'ETR_clean.csv'
+outputCSV = 'ETR_clean.csv'
+outputJSON = 'ETR_clean.json'
 
 ETR = radar.preprocess()                # create a radar object
 
-ETR.cleanupCSV(CSVpath, CSVname, CSVpath, outputFile)  # call method
+ETR.cleanupCSV(CSVpath, CSVname, CSVpath, outputCSV, outputJSON)  # call method
 
 
 
