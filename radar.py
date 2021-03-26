@@ -22,7 +22,7 @@ class preprocess:
     def __init__(self):
         return None
 
-    def cleanupCSV(self, filepath, filename, outputPath, outputFile):
+    def cleanupCSV(self, filepath, filename, outputPath, outputCSV, outputJSON):
         
         '''
         Keeps only the necessary info from the original ETR spreadsheet
@@ -40,7 +40,7 @@ class preprocess:
 
         Returns
         -------
-        None; saves the new dataframe as a csv file
+        None; saves the new dataframe as a csv file and a json file
 
         '''
 
@@ -60,9 +60,13 @@ class preprocess:
             if pd.isna(etr.iloc[x, ind]):
                 etr.iloc[x, ind] = 'Engage'
 
-        # Save as csv
-        output = outputPath + outputFile
-        etr.to_csv(output, index=False)
+        # Save as CSV
+        outCSV = outputPath + outputCSV
+        etr.to_csv(outCSV, index=False)
+
+        # Save as JSON
+        outJSON = outputPath + outputJSON
+        etr.to_json(outJSON, orient="columns")
 
         # etr_trimmed = []
         # for i in range(len(etr)):
