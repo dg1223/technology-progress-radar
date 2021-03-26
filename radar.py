@@ -66,7 +66,7 @@ class preprocess:
 
         # Save as JSON
         outJSON = outputPath + outputJSON
-        etr.to_json(outJSON, orient="columns")
+        etr.to_json(outJSON, orient="columns", indent=4)
 
         # etr_trimmed = []
         # for i in range(len(etr)):
