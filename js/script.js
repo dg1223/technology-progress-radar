@@ -198,7 +198,7 @@ $.getJSON( radarURL, function(data){
           indices.push(i)
         }
       }
-      console.log(indices)
+      // console.log(indices)
 
 
       for(var i=0; i < numberOfPoints; i++) {

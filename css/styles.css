@@ -218,18 +218,22 @@ body {
       left: 808px;
     }
 
-#arc8 {
-      width: 10px;
-      height: 10px;      
-      left: 972px;
-      top: 937px;
-      border-radius: 50%;
-      /*background-color: lightgray;*/
-      /*display: inline-block;*/
-      border: 2px solid;
-      border-color: transparent transparent transparent black; // #FFEFAE;
-      /*transform: rotate(0deg);*/
-    }
+.tech p {
+  color: black;
+  position: absolute;
+  font-size: 10px;
+  transform: rotate(-45deg);
+}
+
+#t1 {
+  left: 867.2970828644115px;
+  top: 888.3040408722242px;
+}
+
+#t2 {
+  left: 1010.4862060546875px;
+  top: 930.2431640625px;  
+}
 
 .line {
   border-bottom: 1px solid black;
@@ -260,7 +264,7 @@ body {
   position: absolute;
   font-size: 20px;
   transform: rotate(-45deg);
-}    
+}
 
 #identify {
   top: 1020px;
