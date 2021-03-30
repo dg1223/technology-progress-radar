@@ -123,23 +123,19 @@ $.getJSON( radarURL, function(data){
   for (var i=0; i<num_technologies; i++) {
     if (data["KPI Research Phase (Topic)"][i] === "Identify") {
       id += 1;
-      var tech = data["KPI Research Phase (Topic)"][i];
-      tech_indices.push({
-       [tech] : i
-      })
     } else if (data["KPI Research Phase (Topic)"][i] === "Study") {
-      st += 1
+      st += 1;
     } else if (data["KPI Research Phase (Topic)"][i] === "Relate") {
-      rel += 1
+      rel += 1;
     } else if (data["KPI Research Phase (Topic)"][i] === "Plan") {
-      pl += 1
+      pl += 1;
     } else if (data["KPI Research Phase (Topic)"][i] === "Adopt") {
-      ad += 1
+      ad += 1;
     } else if (data["KPI Research Phase (Topic)"][i] === "Adopt/Readiness") {
-      adr += 1
-    } else {
-      red += 1
-    }
+      adr += 1;
+    } else if (data["KPI Research Phase (Topic)"][i] === "Readiness"){
+      red += 1;
+    } else {}
   }
   counts.push({
     identify: id,
@@ -151,8 +147,8 @@ $.getJSON( radarURL, function(data){
     readiness: red,
     total: num_technologies
   })
-  // console.log(counts[0].readiness)
-  console.log(tech_indices)
+  // console.log(counts)
+  // console.log(data["KPI Research Phase (Topic)"])
   // return counts;
 
   // get document coordinates of the element
@@ -172,7 +168,9 @@ $.getJSON( radarURL, function(data){
     };
   }
 
-  var elem = document.querySelector("#Readiness");
+  var phaseQuery = "#Readiness";
+  var phase = "Readiness";
+  var elem = document.querySelector(phaseQuery);
   var rect = getCoords(elem);
   // console.log(rect);
 
@@ -180,11 +178,11 @@ $.getJSON( radarURL, function(data){
   // Find coordinates within the boundary of an arc
   function findCoordinates(left, top, radius, numpoints) {
       // How many points do we want?
-      var numberOfPoints = numpoints+1;
+      var numberOfPoints = numpoints;
       var degreesPerPoint = 90 / numberOfPoints;
 
       // Keep track of the angle from centre to radius
-      var currentAngle = 0;
+      var currentAngle = degreesPerPoint;
 
       // The points on the radius will be left+x2, top+y2
       var x2;
@@ -193,9 +191,20 @@ $.getJSON( radarURL, function(data){
       // Track the points we generate to return at the end
       var points = [];
 
+      // Get indices for research phase
+      var indices = [];
+      for (var i = 0; i<num_technologies; i++){
+        if (data["KPI Research Phase (Topic)"][i] === phase){
+          indices.push(i)
+        }
+      }
+      console.log(indices)
+
+
       for(var i=0; i < numberOfPoints; i++) {
+        var tech_index = indices[i];
+        var technology = data["Emerging Technology"][tech_index];
         // Convert degree to radian
-        // var technology = ;
         var radian = currentAngle * Math.PI / 180;
         // X2 point will be cosine of angle * radius (range)
         x2 = Math.cos(radian) * radius;
@@ -203,20 +212,20 @@ $.getJSON( radarURL, function(data){
         y2 = Math.sin(radian) * radius;
 
         // save to our results array
-        if (i != 0) {
-          if (i%2 === 0) {
-            points.push({
-              // theta: currentAngle,
-              x: left-x2,
-              y: top-y2
-            });
-          } else {
-            points.push({
-              // theta: currentAngle,
-              x: left-(x2/2),
-              y: top-(y2/2)          
-            });
-          }
+        if (i%2 === 0) {
+          points.push({
+            // theta: currentAngle,
+            x: left-x2,
+            y: top-y2,
+            tech: technology
+          });
+        } else {
+          points.push({
+            // theta: currentAngle,
+            x: left-(x2/2),
+            y: top-(y2/2),
+            tech: technology       
+          });
         }
         
 
