@@ -109,88 +109,132 @@ document.querySelector("#Readiness")
 
       )
 
-// get document coordinates of the element
-function getCoords(elem) {
-  var box = elem.getBoundingClientRect();
+// Automatically generate required number of coordinates //
 
-  return {
-    top: box.top + window.pageYOffset,
-    right: box.right + window.pageXOffset,
-    bottom: box.bottom + window.pageYOffset,
-    left: box.left + window.pageXOffset,
-    height: box.height,
-    width: box.width,
-    radius: box.height/2,
-    centre_x: (box.left + ((box.right-box.left)/2)) + window.pageXOffset,
-    centre_y: (box.top + ((box.bottom-box.top)/2)) + window.pageYOffset
-  };
-}
-
-var elem = document.querySelector("#Readiness");
-var rect = getCoords(elem);
-console.log(rect);
-
-
-// Find coordinates within the boundary of an arc
-function findCoordinates(left, top, radius, numpoints) {
-    // How many points do we want?
-    var numberOfPoints = numpoints;
-    var degreesPerPoint = 90 / numberOfPoints;
-
-    // Keep track of the angle from centre to radius
-    var currentAngle = 0;
-
-    // The points on the radius will be left+x2, top+y2
-    var x2;
-    var y2;
-
-    // Track the points we generate to return at the end
-    var points = [];
-
-    for(var i=0; i < numberOfPoints; i++) {
-      // Convert degree to radian
-      var radian = currentAngle * Math.PI / 180;
-      // X2 point will be cosine of angle * radius (range)
-      x2 = Math.cos(radian) * radius;
-      // Y2 point will be sin * range
-      y2 = Math.sin(radian) * radius;
-
-      // save to our results array
-      if (i%2 === 0) {
-        points.push({
-          // theta: currentAngle,
-          x: left-x2,
-          y: top-y2
-        });
-      } else {
-        points.push({
-          // theta: currentAngle,
-          x: left-(x2/2),
-          y: top-(y2/2)          
-        });
-      }
-
-      // Shift our angle around for the next point
-      currentAngle += degreesPerPoint;
-  }
-    // Return the points we've generated
-    return points;
-}
-
-var x = rect.centre_x;
-var y = rect.centre_y;
-var r = rect.radius;
-var point = findCoordinates(x, y, 202.5, 16);
-console.log(point)
-
-
-// Process input data
-var inputData = "data/ETR_clean.json";
+// Count number of technologies in each research phase
 radarURL = "https://raw.githubusercontent.com/dg1223/storage/master/ETR_clean.json"
-// jQuery.getJSON( radarURL, function(data){
-  
-// })
 
+$.getJSON( radarURL, function(data){
+  var num_technologies = Object.keys(data["Emerging Technology" ]).length;
+  var counts = [];
+  var tech_indices = [];
+  var id, st, rel, pl, ad, adr, red;
+  id=st=rel=pl=ad=adr=red=0;
+  for (var i=0; i<num_technologies; i++) {
+    if (data["KPI Research Phase (Topic)"][i] === "Identify") {
+      id += 1;
+      var tech = data["KPI Research Phase (Topic)"][i];
+      tech_indices.push({
+       [tech] : i
+      })
+    } else if (data["KPI Research Phase (Topic)"][i] === "Study") {
+      st += 1
+    } else if (data["KPI Research Phase (Topic)"][i] === "Relate") {
+      rel += 1
+    } else if (data["KPI Research Phase (Topic)"][i] === "Plan") {
+      pl += 1
+    } else if (data["KPI Research Phase (Topic)"][i] === "Adopt") {
+      ad += 1
+    } else if (data["KPI Research Phase (Topic)"][i] === "Adopt/Readiness") {
+      adr += 1
+    } else {
+      red += 1
+    }
+  }
+  counts.push({
+    identify: id,
+    study: st,
+    relate: rel,
+    plan: pl,
+    adopt: ad,
+    adopt_readiness: adr,
+    readiness: red,
+    total: num_technologies
+  })
+  // console.log(counts[0].readiness)
+  console.log(tech_indices)
+  // return counts;
+
+  // get document coordinates of the element
+  function getCoords(elem) {
+    var box = elem.getBoundingClientRect();
+
+    return {
+      top: box.top + window.pageYOffset,
+      right: box.right + window.pageXOffset,
+      bottom: box.bottom + window.pageYOffset,
+      left: box.left + window.pageXOffset,
+      height: box.height,
+      width: box.width,
+      radius: box.height/2,
+      centre_x: (box.left + ((box.right-box.left)/2)) + window.pageXOffset,
+      centre_y: (box.top + ((box.bottom-box.top)/2)) + window.pageYOffset
+    };
+  }
+
+  var elem = document.querySelector("#Readiness");
+  var rect = getCoords(elem);
+  // console.log(rect);
+
+
+  // Find coordinates within the boundary of an arc
+  function findCoordinates(left, top, radius, numpoints) {
+      // How many points do we want?
+      var numberOfPoints = numpoints+1;
+      var degreesPerPoint = 90 / numberOfPoints;
+
+      // Keep track of the angle from centre to radius
+      var currentAngle = 0;
+
+      // The points on the radius will be left+x2, top+y2
+      var x2;
+      var y2;
+
+      // Track the points we generate to return at the end
+      var points = [];
+
+      for(var i=0; i < numberOfPoints; i++) {
+        // Convert degree to radian
+        // var technology = ;
+        var radian = currentAngle * Math.PI / 180;
+        // X2 point will be cosine of angle * radius (range)
+        x2 = Math.cos(radian) * radius;
+        // Y2 point will be sin * range
+        y2 = Math.sin(radian) * radius;
+
+        // save to our results array
+        if (i != 0) {
+          if (i%2 === 0) {
+            points.push({
+              // theta: currentAngle,
+              x: left-x2,
+              y: top-y2
+            });
+          } else {
+            points.push({
+              // theta: currentAngle,
+              x: left-(x2/2),
+              y: top-(y2/2)          
+            });
+          }
+        }
+        
+
+        // Shift our angle around for the next point
+        currentAngle += degreesPerPoint;
+    }
+      // Return the points we've generated
+      return points;
+  }
+
+  var x = rect.centre_x;
+  var y = rect.centre_y;
+  // var r = rect.radius;
+  var numPoints = counts[0].readiness;
+  var point = findCoordinates(x, y, 202.5, numPoints); // Hardcoded in styles.css
+  console.log(point)
+
+  })
 
 });
 
