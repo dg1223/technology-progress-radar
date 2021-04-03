@@ -60,6 +60,10 @@ class preprocess:
             if pd.isna(etr.iloc[x, ind]):
                 etr.iloc[x, ind] = 'Engage'
 
+        # Use short form 'AI'
+        etr.replace("Artificial\ Intelligence\ \(AI\)", "AI", regex=True, inplace=True)
+        print(etr.head(10))
+
         # Reset index after dropping NaN
         etr.reset_index(drop=True, inplace=True)
 
