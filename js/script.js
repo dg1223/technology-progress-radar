@@ -193,10 +193,10 @@ $.getJSON( radarURL, function(data){
   var numPoints = counts[0].readiness;
   var point = findCoordinates(x, y, 202.5, numPoints); // Hardcoded in styles.css
   console.log(point)
+  // console.log(point.length)
+  // console.log(point[0].tech)
 
-  })
-
-
+  // Automatically place technologies on the arcs //
   function getRequestObject() {
     if (global.XMLHttpRequest) {
       return (new XMLHttpRequest());
@@ -209,55 +209,40 @@ $.getJSON( radarURL, function(data){
       global.alert("Ajax is not supported!");
       return(null); 
     }
-  }
+  } // END of getRequestObject
 
   var request = getRequestObject();
+  // Modify HTML on the fly; 'onreadystatechange' executes a 
+  // function that updates the desired HTML document
   request.onreadystatechange = function() {
     if ((request.readyState == 4) && (request.status == 200)) {
-      var newHTML = buildHTML(request.responseText);
-      console.log(newHTML);
+      var myHTML = document.querySelector(".jumbotron").innerHTML;
+      for (i = 0; i < point.length; i++){
+        var newHTML = buildHTML(request.responseText, i);
+        myHTML += newHTML;
+        insertHtml(".jumbotron", myHTML)
+      }      
+      // var jumbotron = document.querySelector(".jumbotron").innerHTML;
+      // console.log(jumbotron);
     }
-  }
+  } // END of onreadystatechange
   request.open("GET", techHtml, true);
   request.send(null);
-  // console.log(request);
 
-  function buildHTML (data) {
-    var techID = "t1";
-    var techText = "random-tech-1"
+  // This function makes all the changes to your HTML
+  function buildHTML (data, iterations) {
+    var techID = "t" + iterations.toString();
+    var techText = point[i].tech;
     var htmlToInsert = insertProperty(data, "tech_id", techID);
     htmlToInsert = insertProperty(htmlToInsert, "tech_text", techText);
 
     return htmlToInsert;
-  }
+  } // END of buildHTML
 
-  // console.log(document.querySelector(".jumbotron"));
+}) // END of getJSON
+
 });
 
-// Builds HTML for the categories page based on the data
-// from the server
-function buildAndShowCategoriesHTML (categories) {
-  // Load title snippet of categories page
-  $ajaxUtils.sendGetRequest(
-    categoriesTitleHtml,
-    function (categoriesTitleHtml) {
-      // Retrieve single category snippet
-      $ajaxUtils.sendGetRequest(
-        categoryHtml,
-        function (categoryHtml) {
-          // Switch CSS class active to menu button
-          switchMenuToActive();
-
-          var categoriesViewHtml =
-            buildCategoriesViewHtml(categories,
-                                    categoriesTitleHtml,
-                                    categoryHtml);
-          insertHtml("#main-content", categoriesViewHtml);
-        },
-        false);
-    },
-    false);
-}
 
 global.$dc = dc;
 
