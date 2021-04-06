@@ -196,6 +196,7 @@ $.getJSON( radarURL, function(data){
   // console.log(point.length)
   // console.log(point[0].tech)
 
+  /******************************************************************/
   // Automatically place technologies on the arcs //
   function getRequestObject() {
     if (global.XMLHttpRequest) {
@@ -233,11 +234,16 @@ $.getJSON( radarURL, function(data){
   function buildHTML (data, iterations) {
     var techID = "t" + iterations.toString();
     var techText = point[i].tech;
+    var x_coord = point[i].x;
+    var y_coord = point[i].y;
     var htmlToInsert = insertProperty(data, "tech_id", techID);
     htmlToInsert = insertProperty(htmlToInsert, "tech_text", techText);
+    htmlToInsert = insertProperty(htmlToInsert, "coord_x", x_coord);
+    htmlToInsert = insertProperty(htmlToInsert, "coord_y", y_coord);
 
     return htmlToInsert;
   } // END of buildHTML
+/******************************************************************/
 
 }) // END of getJSON
 
