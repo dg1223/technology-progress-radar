@@ -102,6 +102,8 @@ $.getJSON( radarURL, function(data){
     total: num_technologies
   })
 
+  console.log(counts)
+
   // get document coordinates of the element
   function getCoords(elem) {
     var box = elem.getBoundingClientRect();
@@ -119,11 +121,7 @@ $.getJSON( radarURL, function(data){
     };
   }
 
-  var phaseQuery = "#Readiness";
   var phase = "Readiness";
-  var elem = document.querySelector(phaseQuery);
-  var rect = getCoords(elem);
-  // console.log(rect);
 
 
   // Find coordinates within the boundary of an arc
@@ -149,6 +147,7 @@ $.getJSON( radarURL, function(data){
           indices.push(i)
         }
       }
+
       // console.log(indices)
 
 
@@ -186,6 +185,12 @@ $.getJSON( radarURL, function(data){
       // Return the points we've generated
       return points;
   }
+
+  var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", "Readiness"];
+  var phaseQuery = "#Readiness";  
+  var elem = document.querySelector(phaseQuery);
+  var rect = getCoords(elem);
+  // console.log(rect);
 
   var x = rect.centre_x;
   var y = rect.centre_y;
@@ -231,6 +236,7 @@ $.getJSON( radarURL, function(data){
   request.send(null);
 
   // This function makes all the changes to your HTML
+  // USE this function to add the icons for each activity type
   function buildHTML (data, iterations) {
     var techID = "t" + iterations.toString();
     var techText = point[i].tech;
@@ -242,6 +248,7 @@ $.getJSON( radarURL, function(data){
     htmlToInsert = insertProperty(htmlToInsert, "coord_y", y_coord);
 
     return htmlToInsert;
+
   } // END of buildHTML
 /******************************************************************/
 

@@ -225,16 +225,6 @@ body {
   transform: rotate(-45deg);
 }
 
-/*#t0 {
-  left: 867.2970828644115px;
-  top: 888.3040408722242px;
-}
-
-#t1 {
-  left: 1010.4862060546875px;
-  top: 930.2431640625px;  
-}*/
-
 .line {
   border-bottom: 1px solid black;
   position: absolute;
