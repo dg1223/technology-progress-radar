@@ -94,14 +94,14 @@ $.getJSON( radarURL, function(data){
     } else {}
   }
   counts.push({
-    Identify: id,
-    Study: st,
-    Relate: rel,
-    Plan: pl,
-    Adopt: ad,
-    Adopt_readiness: adr,
-    Readiness: red,
-    total: num_technologies
+    "Identify": id,
+    "Study": st,
+    "Relate": rel,
+    "Plan": pl,
+    "Adopt": ad,
+    "Adopt/Readiness": adr,
+    "Readiness": red,
+    "total": num_technologies
   })
 
   console.log(counts[0])
@@ -138,14 +138,30 @@ $.getJSON( radarURL, function(data){
   // Find coordinates within the boundary of an arc
   function findCoordinates(left, top, radius, numpoints, phase) {
 
-      // Hardcode placement for Adopt-Readiness phase
-      // if (phase === "Adopt_readiness") {
+    var indices = findIndices(phase);
+    console.log(indices)
 
-      // }
+    // Track the points we generate to return at the end
+    var points = [];
 
-      // How many points do we want?
-      var numberOfPoints = numpoints;
+    // How many points do we want?
+    var numberOfPoints = numpoints;
 
+    // Hardcode placement for Adopt-Readiness phase
+    // This is based on business justification (BEC/ACO)
+    if (phase === "Adopt/Readiness") {
+      var adr_x = [810, 960, 845];
+      var adr_y = [965, 785, 875];      
+      for(var i=0; i < numberOfPoints; i++) {
+        var tech_index = indices[i];
+        var technology = data["Emerging Technology"][tech_index];
+        points.push({
+          x: adr_x[i],
+          y: adr_y[i],
+          tech: technology
+        })
+      }
+    } else {
       // We're only gonna take 70 out 90 degrees to avoid 
       // sine-cosine boundary conditions
       var degreesPerPoint = 70 / numberOfPoints;
@@ -156,14 +172,6 @@ $.getJSON( radarURL, function(data){
       // The points on the radius will be left+x2, top+y2
       var x2;
       var y2;
-
-      // Track the points we generate to return at the end
-      var points = [];
-
-      // Get indices for research phase
-      var indices = findIndices(phase);
-      console.log(indices)
-
 
       for(var i=0; i < numberOfPoints; i++) {
         var tech_index = indices[i];
@@ -193,18 +201,19 @@ $.getJSON( radarURL, function(data){
             y: top-(y2/2),
             tech: technology       
           });
-        }
-        
+        }        
 
         // Shift our angle around for the next point
         currentAngle += degreesPerPoint;
     }
-      // Return the points we've generated
-      return points;
   }
 
+    // Return the points we've generated
+    return points;
+}
+
   var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", "Readiness"];
-  var phase = "Readiness";
+  var phase = "Adopt/Readiness";
 
   // phaseQuery should be a variable that will take each phase in a for loop
   var phaseQuery = "#Readiness";  
