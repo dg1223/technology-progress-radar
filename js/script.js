@@ -168,6 +168,15 @@ $.getJSON( radarURL, function(data){
       // Keep track of the angle from centre to radius
       var currentAngle = degreesPerPoint;
 
+      // Store all angles in an array
+      var theta = [currentAngle];
+      for (var i=0; i < numberOfPoints; i++){
+        // Shift the angle around for the next point
+        currentAngle += degreesPerPoint*1.25;
+        theta.push(currentAngle);
+      }
+      console.log(theta);
+
       // The points on the radius will be left+x2, top+y2
       var x2;
       var y2;
@@ -175,44 +184,65 @@ $.getJSON( radarURL, function(data){
       for(var i=0; i < numberOfPoints; i++) {
         var tech_index = indices[i];
         var technology = data["Emerging Technology"][tech_index];
+        var arc = data["KPI Research Activity Arc (Topic)"][tech_index];
+
         // Convert degree to radian
-        var radian = currentAngle * Math.PI / 180;
+        var radian = theta[i] * Math.PI / 180;
         // X2 will be cosine of angle * radius (range)
         x2 = Math.cos(radian) * radius;
         // Y2 will be sin * range
         y2 = Math.sin(radian) * radius;
 
         // save to our results array
-        if (i%2 === 0) {
-        /* We need to offset x-y values to avoid overlaying text 
-        on the arc boundary and have enough gap around them to 
-        place the icons. No need to do it for the Readiness phase 
-        because there's not enough items in it to cause issues */       
-          if (i === 0 && phase != "Readiness" ) {            
-            var offset_x = 0.01;        
+        if (phase === "Identify" || phase === "Plan") {
+        //   if (arc === "Engage") {
+        // }
+          /* We need to offset x-y values to avoid overlaying text 
+          on the arc boundary and have enough gap around them to 
+          place the icons. No need to do it for the Readiness phase 
+          because there's not enough items in it to cause issues */       
+          if (i === 0) {            
+            var offset_x = 0.1;        
             var offset_y = 0.4;
           } else {
             var offset_x = 0;
             /* A trick to smoothly place all texts along the arc 
             boundary by dynamically changing the offset value */
             var offset_y = 0.003*i;
-          }          
+          }       
           points.push({
             x: left-(x2/(1.03 + offset_x)),
             y: top-(y2/(1.03 - offset_y)),
             tech: technology
           });
         } else {
-          points.push({
-            x: left-(x2/1.4),
-            y: top-(y2/1.4),
-            tech: technology       
-          });
-        }        
+          // Create two rows aligning with the arc boundary
+          if (i%2 === 0) {       
+            if (i === 0 && phase != "Readiness" ) {            
+              var offset_x = 0.01;        
+              var offset_y = 0.4;
+            } else {
+              var offset_x = 0;
+              var offset_y = 0.003*i;
+            }          
+            points.push({
+              x: left-(x2/(1.03 + offset_x)),
+              y: top-(y2/(1.03 - offset_y)),
+              tech: technology
+            });
+          } else {
+            points.push({
+              x: left-(x2/1.4),
+              y: top-(y2/1.4),
+              tech: technology       
+            });
+          }
+        }
+            
 
         // Shift our angle around for the next point
-        currentAngle += degreesPerPoint*1.25;
-    }
+        // currentAngle += degreesPerPoint*1.25;
+    } // END of for loop
   }
 
     // Return the points we've generated
@@ -223,8 +253,8 @@ $.getJSON( radarURL, function(data){
   //               "Adopt/Readiness", "Readiness"];
   // var radii = [900, 815, 666, 516, 427.5, 202.5, 202.5];
 
-  var phases = ["Adopt", "Adopt/Readiness", "Readiness"];
-  var radii = [427.5, 202.5, 202.5];
+  var phases = ["Identify" ,"Plan", "Adopt", "Adopt/Readiness", "Readiness"];
+  var radii = [900, 516, 427.5, 202.5, 202.5];
 
   // phaseQuery should be a variable that will take each phase in a for loop
   for (var Phase in phases) {
