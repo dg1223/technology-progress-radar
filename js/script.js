@@ -94,17 +94,17 @@ $.getJSON( radarURL, function(data){
     } else {}
   }
   counts.push({
-    identify: id,
-    study: st,
-    relate: rel,
-    plan: pl,
-    adopt: ad,
-    adopt_readiness: adr,
-    readiness: red,
+    Identify: id,
+    Study: st,
+    Relate: rel,
+    Plan: pl,
+    Adopt: ad,
+    Adopt_readiness: adr,
+    Readiness: red,
     total: num_technologies
   })
 
-  console.log(counts)
+  console.log(counts[0])
 
   // get document coordinates of the element
   function getCoords(elem) {
@@ -123,13 +123,31 @@ $.getJSON( radarURL, function(data){
     };
   }
 
-  var phase = "Readiness";
+  // Find the index of each technology in a given phase
+  function findIndices(phase) {
+    var Indices = [];
+    for (var i = 0; i<num_technologies; i++){
+      if (data["KPI Research Phase (Topic)"][i] === phase){
+        Indices.push(i)
+      }
+    }
 
+    return Indices;
+  }
 
   // Find coordinates within the boundary of an arc
-  function findCoordinates(left, top, radius, numpoints) {
+  function findCoordinates(left, top, radius, numpoints, phase) {
+
+      // Hardcode placement for Adopt-Readiness phase
+      // if (phase === "Adopt_readiness") {
+
+      // }
+
       // How many points do we want?
       var numberOfPoints = numpoints;
+
+      // We're only gonna take 70 out 90 degrees to avoid 
+      // sine-cosine boundary conditions
       var degreesPerPoint = 70 / numberOfPoints;
 
       // Keep track of the angle from centre to radius
@@ -143,14 +161,8 @@ $.getJSON( radarURL, function(data){
       var points = [];
 
       // Get indices for research phase
-      var indices = [];
-      for (var i = 0; i<num_technologies; i++){
-        if (data["KPI Research Phase (Topic)"][i] === phase){
-          indices.push(i)
-        }
-      }
-
-      // console.log(indices)
+      var indices = findIndices(phase);
+      console.log(indices)
 
 
       for(var i=0; i < numberOfPoints; i++) {
@@ -192,7 +204,8 @@ $.getJSON( radarURL, function(data){
   }
 
   var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", "Readiness"];
-  
+  var phase = "Readiness";
+
   // phaseQuery should be a variable that will take each phase in a for loop
   var phaseQuery = "#Readiness";  
   var elem = document.querySelector(phaseQuery);
@@ -201,13 +214,13 @@ $.getJSON( radarURL, function(data){
 
   var x = rect.centre_x;
   var y = rect.centre_y;
-  var numPoints = counts[0].readiness;
-  var point = findCoordinates(x, y, 202.5, numPoints); // radius is hardcoded
+  var numPoints = counts[0][phase];
+  var point = findCoordinates(x, y, 202.5, numPoints, phase); // radius is hardcoded
   console.log(point)
   // console.log(point.length)
   // console.log(point[0].tech)
 
-  /******************************************************************/
+  /*********************** Ajax calls ********************************/
   // Automatically place technologies on the arcs //
   function getRequestObject() {
     if (global.XMLHttpRequest) {
