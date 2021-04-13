@@ -184,21 +184,34 @@ $.getJSON( radarURL, function(data){
 
         // save to our results array
         if (i%2 === 0) {
+        /* We need to offset x-y values to avoid overlaying text 
+        on the arc boundary and have enough gap around them to 
+        place the icons. No need to do it for the Readiness phase 
+        because there's not enough items in it to cause issues */       
+          if (i === 0 && phase != "Readiness" ) {            
+            var offset_x = 0.01;        
+            var offset_y = 0.4;
+          } else {
+            var offset_x = 0;
+            /* A trick to smoothly place all texts along the arc 
+            boundary by dynamically changing the offset value */
+            var offset_y = 0.003*i;
+          }          
           points.push({
-            x: left-(x2/1.05),
-            y: top-(y2/1.05),
+            x: left-(x2/(1.03 + offset_x)),
+            y: top-(y2/(1.03 - offset_y)),
             tech: technology
           });
         } else {
           points.push({
-            x: left-(x2/2),
-            y: top-(y2/2),
+            x: left-(x2/1.4),
+            y: top-(y2/1.4),
             tech: technology       
           });
         }        
 
         // Shift our angle around for the next point
-        currentAngle += degreesPerPoint;
+        currentAngle += degreesPerPoint*1.25;
     }
   }
 
@@ -208,13 +221,15 @@ $.getJSON( radarURL, function(data){
 
   // var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", 
   //               "Adopt/Readiness", "Readiness"];
+  // var radii = [900, 815, 666, 516, 427.5, 202.5, 202.5];
 
-  var phases = ["Adopt/Readiness", "Readiness"];
-  // var phase = "Adopt/Readiness";
+  var phases = ["Adopt", "Adopt/Readiness", "Readiness"];
+  var radii = [427.5, 202.5, 202.5];
 
   // phaseQuery should be a variable that will take each phase in a for loop
   for (var Phase in phases) {
     var cur_phase = phases[Phase];
+    var radius = radii[Phase];
     if (cur_phase != "Adopt/Readiness") {
       console.log(cur_phase)
       var phaseQuery = "#" + cur_phase;  
@@ -224,22 +239,17 @@ $.getJSON( radarURL, function(data){
       var x = rect.centre_x;
       var y = rect.centre_y;
       var numPoints = counts[0][cur_phase];
-      var point = findCoordinates(x, y, 202.5, numPoints, cur_phase); // radius is constant
+      // radius is constant
+      var point = findCoordinates(x, y, radius, numPoints, cur_phase);
     } else {
       console.log(cur_phase)
-      // var phaseQuery = "#" + phases[Phase];  
-      // var elem = document.querySelector(phaseQuery);
-      // var rect = getCoords(elem);
-      // var x = rect.centre_x;
-      // var y = rect.centre_y;
       var numPoints = counts[0][cur_phase];
-      var point = findCoordinates(0, 0, 202.5, numPoints, cur_phase); // radius is hardcoded      
+      // x, y, radius arguments don't matter because adopt-readiness phase 
+      // placements are constant (hardcoded)
+      var point = findCoordinates(0, 0, radius, numPoints, cur_phase);    
     } // END of if-else
   } // END of for loop
   console.log(point)
-
-  // console.log(point.length)
-  // console.log(point[0].tech)
 
   /*********************** Ajax calls ********************************/
   // Automatically place technologies on the arcs //
