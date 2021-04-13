@@ -135,14 +135,13 @@ $.getJSON( radarURL, function(data){
     return Indices;
   }
 
+  // Track the points we generate to return at the end
+  var points = [];
+
   // Find coordinates within the boundary of an arc
   function findCoordinates(left, top, radius, numpoints, phase) {
 
     var indices = findIndices(phase);
-    console.log(indices)
-
-    // Track the points we generate to return at the end
-    var points = [];
 
     // How many points do we want?
     var numberOfPoints = numpoints;
@@ -150,8 +149,8 @@ $.getJSON( radarURL, function(data){
     // Hardcode placement for Adopt-Readiness phase
     // This is based on business justification (BEC/ACO)
     if (phase === "Adopt/Readiness") {
-      var adr_x = [810, 960, 845];
-      var adr_y = [965, 785, 875];      
+      var adr_x = [810, 960, 865];
+      var adr_y = [965, 785, 855];      
       for(var i=0; i < numberOfPoints; i++) {
         var tech_index = indices[i];
         var technology = data["Emerging Technology"][tech_index];
@@ -186,17 +185,12 @@ $.getJSON( radarURL, function(data){
         // save to our results array
         if (i%2 === 0) {
           points.push({
-            x: left-x2,
-            y: top-y2,
+            x: left-(x2/1.05),
+            y: top-(y2/1.05),
             tech: technology
           });
         } else {
-          // var new_curAngle = currentAngle - 20; 
-          // var new_radian = new_curAngle * Math.PI / 180;
-          // var new_x2 = Math.cos(new_radian) * radius;
           points.push({
-            // theta: new_curAngle,
-            // x: left - (new_x2/2),
             x: left-(x2/2),
             y: top-(y2/2),
             tech: technology       
@@ -212,20 +206,38 @@ $.getJSON( radarURL, function(data){
     return points;
 }
 
-  var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", "Readiness"];
-  var phase = "Adopt/Readiness";
+  // var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", 
+  //               "Adopt/Readiness", "Readiness"];
+
+  var phases = ["Adopt/Readiness", "Readiness"];
+  // var phase = "Adopt/Readiness";
 
   // phaseQuery should be a variable that will take each phase in a for loop
-  var phaseQuery = "#Readiness";  
-  var elem = document.querySelector(phaseQuery);
-  var rect = getCoords(elem);
-  // console.log(rect);
+  for (var Phase in phases) {
+    var cur_phase = phases[Phase];
+    if (cur_phase != "Adopt/Readiness") {
+      console.log(cur_phase)
+      var phaseQuery = "#" + cur_phase;  
+      var elem = document.querySelector(phaseQuery);
+      var rect = getCoords(elem);
 
-  var x = rect.centre_x;
-  var y = rect.centre_y;
-  var numPoints = counts[0][phase];
-  var point = findCoordinates(x, y, 202.5, numPoints, phase); // radius is hardcoded
+      var x = rect.centre_x;
+      var y = rect.centre_y;
+      var numPoints = counts[0][cur_phase];
+      var point = findCoordinates(x, y, 202.5, numPoints, cur_phase); // radius is constant
+    } else {
+      console.log(cur_phase)
+      // var phaseQuery = "#" + phases[Phase];  
+      // var elem = document.querySelector(phaseQuery);
+      // var rect = getCoords(elem);
+      // var x = rect.centre_x;
+      // var y = rect.centre_y;
+      var numPoints = counts[0][cur_phase];
+      var point = findCoordinates(0, 0, 202.5, numPoints, cur_phase); // radius is hardcoded      
+    } // END of if-else
+  } // END of for loop
   console.log(point)
+
   // console.log(point.length)
   // console.log(point[0].tech)
 
