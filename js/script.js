@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // Automatically generate required number of coordinates //
 
-// Count number of technologies in each research phase
+//*** Count number of technologies in each research phase ***//
+
+// Host JSON file on the web and fetch it using the URL
 radarURL = "https://raw.githubusercontent.com/dg1223/storage/master/ETR_clean.json"
 
 $.getJSON( radarURL, function(data){
@@ -128,7 +130,7 @@ $.getJSON( radarURL, function(data){
   function findCoordinates(left, top, radius, numpoints) {
       // How many points do we want?
       var numberOfPoints = numpoints;
-      var degreesPerPoint = 90 / numberOfPoints;
+      var degreesPerPoint = 70 / numberOfPoints;
 
       // Keep track of the angle from centre to radius
       var currentAngle = degreesPerPoint;
@@ -156,22 +158,25 @@ $.getJSON( radarURL, function(data){
         var technology = data["Emerging Technology"][tech_index];
         // Convert degree to radian
         var radian = currentAngle * Math.PI / 180;
-        // X2 point will be cosine of angle * radius (range)
+        // X2 will be cosine of angle * radius (range)
         x2 = Math.cos(radian) * radius;
-        // Y2 point will be sin * range
+        // Y2 will be sin * range
         y2 = Math.sin(radian) * radius;
 
         // save to our results array
         if (i%2 === 0) {
           points.push({
-            // theta: currentAngle,
             x: left-x2,
             y: top-y2,
             tech: technology
           });
         } else {
+          // var new_curAngle = currentAngle - 20; 
+          // var new_radian = new_curAngle * Math.PI / 180;
+          // var new_x2 = Math.cos(new_radian) * radius;
           points.push({
-            // theta: currentAngle,
+            // theta: new_curAngle,
+            // x: left - (new_x2/2),
             x: left-(x2/2),
             y: top-(y2/2),
             tech: technology       
@@ -187,6 +192,8 @@ $.getJSON( radarURL, function(data){
   }
 
   var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", "Readiness"];
+  
+  // phaseQuery should be a variable that will take each phase in a for loop
   var phaseQuery = "#Readiness";  
   var elem = document.querySelector(phaseQuery);
   var rect = getCoords(elem);
@@ -194,9 +201,8 @@ $.getJSON( radarURL, function(data){
 
   var x = rect.centre_x;
   var y = rect.centre_y;
-  // var r = rect.radius;
   var numPoints = counts[0].readiness;
-  var point = findCoordinates(x, y, 202.5, numPoints); // Hardcoded in styles.css
+  var point = findCoordinates(x, y, 202.5, numPoints); // radius is hardcoded
   console.log(point)
   // console.log(point.length)
   // console.log(point[0].tech)

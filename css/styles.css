@@ -208,7 +208,7 @@ body {
     }
 
 #Readiness {
-      width: 405px;
+      width: 405px;   /* radius = 202.5px */
       height: 405px;
       border-radius: 50%;
       /*background-color: lightgray;*/
