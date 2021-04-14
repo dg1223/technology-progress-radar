@@ -137,37 +137,46 @@ $.getJSON( radarURL, function(data){
 
   /* Returns an array of degrees based on number of 
   technogies in each arch */
-  function storeTheta(numEngage, numWatch, numPark) {
+  function storeTheta(numEngage, numWatch, numPark, phase) {
 
     // console.log(numEngage, numWatch, numPark)    
-    var arcs = ["Engage", "Watch", "Park"];
+    var arcs = ["Engage", "Watch+Learn", "Park"];
 
     // Store all angles in an array
-    var theta = {Engage: [], 
-                 Watch: [], 
-                 Park: []
+    var theta = {"Engage": [], 
+                 "Watch+Learn": [], 
+                 "Park": []
                 };
 
     for (var Arc in arcs) {
       var arcName = arcs[Arc];
       // console.log(arcName)
       if (arcName === "Engage"){
-        var degreesPerPoint = 45 / numEngage;
-
-        // Keep track of the angle from centre to radius
-        var currentAngle = 0;        
-
-        for (var i=0; i < numEngage; i++) {
-          // Shift the angle around for the next point
-          currentAngle += degreesPerPoint*0.8;
-          theta["Engage"].push(currentAngle);
-        }
-      } else if (arcName === "Watch" && numWatch != 0) {
+        if (phase === "Study" || phase === "Relate") {
+          var degreesPerPoint = 45 / numEngage;
+          // Keep track of the angle from centre to radius
+          var currentAngle = 3;        
+          for (var i=0; i < numEngage; i++) {
+            // Shift the angle around for the next point
+            currentAngle += degreesPerPoint*0.8;
+            theta["Engage"].push(currentAngle);
+          }
+        } else {
+          var degreesPerPoint = 45 / numEngage;
+          // Keep track of the angle from centre to radius
+          var currentAngle = 0;        
+          for (var i=0; i < numEngage; i++) {
+            // Shift the angle around for the next point
+            currentAngle += degreesPerPoint*0.8;
+            theta["Engage"].push(currentAngle);
+          }
+        }        
+      } else if (arcName === "Watch+Learn" && numWatch != 0) {
         var degreesPerPoint = 15 / numWatch;
         var currentAngle = 45;
         for (var i=0; i < numWatch; i++) {
           currentAngle += degreesPerPoint*0.8;
-          theta["Watch"].push(currentAngle);
+          theta["Watch+Learn"].push(currentAngle);
         }
       } else if (arcName === "Park" && numPark != 0) {
         var degreesPerPoint = 30 / numPark;
@@ -226,7 +235,7 @@ $.getJSON( radarURL, function(data){
 
           // console.log(numpoints, num_engage, num_watch, num_park)
           // Generate an arc-wise theta (angle) array for this phase
-          var thetas = storeTheta(num_engage, num_watch, num_park);
+          var thetas = storeTheta(num_engage, num_watch, num_park, phase);
           // console.log(thetas);
 
           // Initialize x-y coordinates and arc counters
@@ -247,12 +256,12 @@ $.getJSON( radarURL, function(data){
               var angle = thetas[arc][eng];
               var radian = angle * Math.PI / 180;
               eng += 1;
-            } else if (arc === "Watch") {
+            } else if (arc === "Watch+Learn") {
+              // console.log(thetas)
               var angle = thetas[arc][wat];
               var radian = angle * Math.PI / 180;
               wat += 1;
-            } else {
-              console.log(thetas)
+            } else {              
               var angle = thetas[arc][prk];
               var radian = angle * Math.PI / 180;
               prk += 1;
@@ -267,15 +276,35 @@ $.getJSON( radarURL, function(data){
             /* We need to offset x-y values to avoid overlaying text 
             on the arc boundary and have enough gap around them to 
             place the icons. No need to do it for the Readiness phase 
-            because there's not enough items in it to cause issues */       
-            var offset_x = 0;        
-            var offset_y = 0.003*i;      
-            points.push({
-              x: left-(x2/(1.03 + offset_x)),
-              y: top-(y2/(1.03 - offset_y)),
-              // "theta": theta[i],
-              tech: technology
-            });
+            because there's not enough items in it to cause issues */  
+
+            // Create two rows aligning with the arc boundary
+            if (phase === "Study" || phase === "Relate") {
+              if (i%2 === 0) {
+                var offset_x = 0.01;
+                var offset_y = 0.005*i;
+                points.push({
+                  x: left-(x2/(1.025 + offset_x)),
+                  y: top-(y2/(1.05 - offset_y)),
+                  tech: technology
+                });
+              } else {
+                points.push({
+                  x: left-(x2/1.15),
+                  y: top-(y2/1.15),
+                  tech: technology       
+                });
+              }
+            } else {
+              var offset_x = 0;
+              var offset_y = 0.003*i;
+              points.push({
+                x: left-(x2/(1.03 + offset_x)),
+                y: top-(y2/(1.03 - offset_y)),
+                // "theta": theta[i],
+                tech: technology
+              });
+            }            
           } // END of for loop
     } else {  // Adopt, Adopt_Readiness and Readiness phases
       var degreesPerPoint = 70 / numpoints;
@@ -335,8 +364,8 @@ $.getJSON( radarURL, function(data){
   //               "Adopt/Readiness", "Readiness"];
   // var radii = [900, 815, 666, 516, 427.5, 202.5, 202.5];
 
-  var phases = ["Study", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
-  var radii = [815, 516, 427.5, 202.5, 202.5];
+  var phases = ["Identify", "Relate", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
+  var radii = [900, 666, 516, 427.5, 202.5, 202.5];
 
   // phaseQuery should be a variable that will take each phase in a for loop
   for (var Phase in phases) {
