@@ -252,6 +252,7 @@ $.getJSON( radarURL, function(data){
               var radian = angle * Math.PI / 180;
               wat += 1;
             } else {
+              console.log(thetas)
               var angle = thetas[arc][prk];
               var radian = angle * Math.PI / 180;
               prk += 1;
@@ -322,7 +323,7 @@ $.getJSON( radarURL, function(data){
 
         // Shift our angle around for the next point
         currentAngle += degreesPerPoint*1.25;
-        
+
       } // END of for loop
     } // END of outer-most if-else
 
@@ -334,8 +335,8 @@ $.getJSON( radarURL, function(data){
   //               "Adopt/Readiness", "Readiness"];
   // var radii = [900, 815, 666, 516, 427.5, 202.5, 202.5];
 
-  var phases = ["Plan", "Adopt", "Adopt/Readiness", "Readiness"];
-  var radii = [516, 427.5, 202.5, 202.5];
+  var phases = ["Study", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
+  var radii = [815, 516, 427.5, 202.5, 202.5];
 
   // phaseQuery should be a variable that will take each phase in a for loop
   for (var Phase in phases) {
