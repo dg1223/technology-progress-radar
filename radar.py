@@ -62,6 +62,7 @@ class preprocess:
 
         # Use short form 'AI'
         etr.replace("Artificial\ Intelligence\ \(AI\)", "AI", regex=True, inplace=True)
+        etr.replace("Real\-Time\ Analytics\/Continuous\ Intelligence", "RTA/CI", regex=True, inplace=True)
         print(etr.head(10))
 
         # Reset index after dropping NaN
