@@ -172,10 +172,10 @@ $.getJSON( radarURL, function(data){
           }
         }        
       } else if (arcName === "Watch+Learn" && numWatch != 0) {
-        var degreesPerPoint = 15 / numWatch;
-        var currentAngle = 45;
+        // var degreesPerPoint = 15 / numWatch;
+        var currentAngle = 50;
         for (var i=0; i < numWatch; i++) {
-          currentAngle += degreesPerPoint*0.8;
+          // currentAngle += degreesPerPoint*0.8;
           theta["Watch+Learn"].push(currentAngle);
         }
       } else if (arcName === "Park" && numPark != 0) {
@@ -271,7 +271,7 @@ $.getJSON( radarURL, function(data){
             // x2 will be cosine of angle * radius (range)
             x2 = Math.cos(radian) * radius;
             // y2 will be sin * range
-            y2 = Math.sin(radian) * radius;
+            y2 = Math.sin(radian) * radius; 
 
             /* We need to offset x-y values to avoid overlaying text 
             on the arc boundary and have enough gap around them to 
@@ -279,7 +279,8 @@ $.getJSON( radarURL, function(data){
             because there's not enough items in it to cause issues */  
 
             // Create two rows aligning with the arc boundary
-            if (phase === "Study" || phase === "Relate") {
+            if ( (phase === "Study" || phase === "Relate") 
+                 && arc === "Engage" ) {
               if (i <= numpoints/2) {
                 var offset_x = 0.01;
                 var offset_y = 0.025*i;
@@ -291,7 +292,7 @@ $.getJSON( radarURL, function(data){
               } else {
                 points.push({
                   x: left-(x2/1.2),
-                  y: top-(y2/1.2),
+                  y: top-(y2/1.01),
                   tech: technology       
                 });
               }
