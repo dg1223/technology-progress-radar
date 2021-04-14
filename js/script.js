@@ -135,6 +135,49 @@ $.getJSON( radarURL, function(data){
     return Indices;
   }
 
+  /* Returns an array of degrees based on number of 
+  technogies in each arch */
+  function storeTheta(numEngage, numWatch, numPark) {
+    
+    var arcs = ["Engage", "Watch", "Park"];
+    for (var Arc in arcs) {
+      var arcName = arcs[Arc];
+      if (arcName === "Engage"){
+        var degreesPerPoint = 45 / numEngage;
+
+        // Keep track of the angle from centre to radius
+        var currentAngle = degreesPerPoint;
+
+        // Store all angles in an array
+        var theta = {Engage: [currentAngle], 
+                     Watch: [], 
+                     Park: []
+                    };
+
+        for (var i=0; i < numEngage; i++) {
+          // Shift the angle around for the next point
+          currentAngle += degreesPerPoint*1.25;
+          theta["Engage"].push(currentAngle);
+        }
+      } else if (arcName === "Watch" && numWatch != 0) {
+        var degreesPerPoint = 15 / numWatch;
+        var currentAngle = 45;
+        for (var i=0; i < numWatch; i++) {
+          currentAngle += degreesPerPoint*1.25;
+          theta["Watch"].push(currentAngle);
+        }
+      } else if (arcName === "Park" && numPark != 0) {
+        var degreesPerPoint = 30 / numPark;
+        var currentAngle = 60;
+        for (var i=0; i < numPark; i++) {
+          currentAngle += degreesPerPoint*1.25;
+          theta["Park"].push(currentAngle);
+      }
+    } // END of if-else-if
+
+    return theta;
+  }
+
   // Track the points we generate to return at the end
   var points = [];
 
@@ -176,37 +219,26 @@ $.getJSON( radarURL, function(data){
             num_park += 1;
           }
         } // END of for loop
+
+        // Generate an arc-wise theta (angle) array for this phase
+        var thetas = storeTheta(num_engage, num_watch, num_park);
+
       } // END of if statement
-      
-      // We're only gonna take 70 out 90 degrees to avoid 
-      // sine-cosine boundary conditions
-      var degreesPerPoint = 70 / numpoints;
 
-      // Keep track of the angle from centre to radius
-      var currentAngle = degreesPerPoint;
-
-      // Store all angles in an array
-      var theta = [currentAngle];
-      for (var i=0; i < numpoints; i++){
-        // Shift the angle around for the next point
-        currentAngle += degreesPerPoint*1.25;
-        theta.push(currentAngle);
-      }
-      console.log(theta);
-
-      // The points on the radius will be left+x2, top+y2
+      // Initialize x-y coordinates
       var x2;
       var y2;
 
       for(var i=0; i < numpoints; i++) {
         var tech_index = indices[i];
-        var technology = data["Emerging Technology"][tech_index];        
+        var technology = data["Emerging Technology"][tech_index];      
+        var arc = data["KPI Research Activity Arc (Topic)"][tech_index];
 
         // Convert degree to radian
         var radian = theta[i] * Math.PI / 180;
-        // X2 will be cosine of angle * radius (range)
+        // x2 will be cosine of angle * radius (range)
         x2 = Math.cos(radian) * radius;
-        // Y2 will be sin * range
+        // y2 will be sin * range
         y2 = Math.sin(radian) * radius;
 
         // 
