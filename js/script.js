@@ -280,18 +280,18 @@ $.getJSON( radarURL, function(data){
 
             // Create two rows aligning with the arc boundary
             if (phase === "Study" || phase === "Relate") {
-              if (i%2 === 0) {
+              if (i <= numpoints/2) {
                 var offset_x = 0.01;
-                var offset_y = 0.005*i;
+                var offset_y = 0.025*i;
                 points.push({
-                  x: left-(x2/(1.025 + offset_x)),
-                  y: top-(y2/(1.05 - offset_y)),
+                  x: left-(x2/(1.05 + offset_x)),
+                  y: top-(y2/(1.01 - offset_y)),
                   tech: technology
                 });
               } else {
                 points.push({
-                  x: left-(x2/1.15),
-                  y: top-(y2/1.15),
+                  x: left-(x2/1.2),
+                  y: top-(y2/1.2),
                   tech: technology       
                 });
               }
