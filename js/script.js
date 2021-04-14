@@ -138,45 +138,49 @@ $.getJSON( radarURL, function(data){
   /* Returns an array of degrees based on number of 
   technogies in each arch */
   function storeTheta(numEngage, numWatch, numPark) {
-    
+
+    // console.log(numEngage, numWatch, numPark)    
     var arcs = ["Engage", "Watch", "Park"];
+
+    // Store all angles in an array
+    var theta = {Engage: [], 
+                 Watch: [], 
+                 Park: []
+                };
+
     for (var Arc in arcs) {
       var arcName = arcs[Arc];
+      // console.log(arcName)
       if (arcName === "Engage"){
         var degreesPerPoint = 45 / numEngage;
 
         // Keep track of the angle from centre to radius
-        var currentAngle = degreesPerPoint;
-
-        // Store all angles in an array
-        var theta = {Engage: [currentAngle], 
-                     Watch: [], 
-                     Park: []
-                    };
+        var currentAngle = 0;        
 
         for (var i=0; i < numEngage; i++) {
           // Shift the angle around for the next point
-          currentAngle += degreesPerPoint*1.25;
+          currentAngle += degreesPerPoint*0.8;
           theta["Engage"].push(currentAngle);
         }
       } else if (arcName === "Watch" && numWatch != 0) {
         var degreesPerPoint = 15 / numWatch;
         var currentAngle = 45;
         for (var i=0; i < numWatch; i++) {
-          currentAngle += degreesPerPoint*1.25;
+          currentAngle += degreesPerPoint*0.8;
           theta["Watch"].push(currentAngle);
         }
       } else if (arcName === "Park" && numPark != 0) {
         var degreesPerPoint = 30 / numPark;
         var currentAngle = 60;
         for (var i=0; i < numPark; i++) {
-          currentAngle += degreesPerPoint*1.25;
+          currentAngle += degreesPerPoint*0.8;
           theta["Park"].push(currentAngle);
       }
-    } // END of if-else-if
+    } // END of if-else-if    
+  } // END of for loop
 
-    return theta;
-  }
+  return theta;
+}
 
   // Track the points we generate to return at the end
   var points = [];
@@ -203,107 +207,135 @@ $.getJSON( radarURL, function(data){
           tech: technology
         })
       } //  END of for loop
-    } else {
-      if (phase === "Identify" || phase === "Study" 
-          || phase === "Relate" || phase === "Plan" ) {        
-        var num_engage = 0;
-        var num_watch = 0;
-        var num_park = 0;
-        for (var i=0; i < numpoints; i++) {
-          var arc = data["KPI Research Activity Arc (Topic)"][i];
-          if (arc === "Engage") {
-            num_engage += 1;
-          } else if (arc === "Watch+Learn") {
-            num_watch += 1;
-          } else {
-            num_park += 1;
-          }
-        } // END of for loop
-
-        // Generate an arc-wise theta (angle) array for this phase
-        var thetas = storeTheta(num_engage, num_watch, num_park);
-
-      } // END of if statement
-
-      // Initialize x-y coordinates
-      var x2;
-      var y2;
-
-      for(var i=0; i < numpoints; i++) {
-        var tech_index = indices[i];
-        var technology = data["Emerging Technology"][tech_index];      
-        var arc = data["KPI Research Activity Arc (Topic)"][tech_index];
-
-        // Convert degree to radian
-        var radian = theta[i] * Math.PI / 180;
-        // x2 will be cosine of angle * radius (range)
-        x2 = Math.cos(radian) * radius;
-        // y2 will be sin * range
-        y2 = Math.sin(radian) * radius;
-
-        // 
-        if (phase === "Identify" || phase === "Plan") {
-          /* We need to offset x-y values to avoid overlaying text 
-          on the arc boundary and have enough gap around them to 
-          place the icons. No need to do it for the Readiness phase 
-          because there's not enough items in it to cause issues */       
-          if (i === 0) {            
-            var offset_x = 0.1;        
-            var offset_y = 0.4;
-          } else {
-            var offset_x = 0;
-            /* A trick to smoothly place all texts along the arc 
-            boundary by dynamically changing the offset value */
-            var offset_y = 0.003*i;
-          }       
-          points.push({
-            x: left-(x2/(1.03 + offset_x)),
-            y: top-(y2/(1.03 - offset_y)),
-            "theta": theta[i],
-            tech: technology
-          });
-        } else {
-          // Create two rows aligning with the arc boundary
-          if (i%2 === 0) {       
-            if (i === 0 && phase != "Readiness" ) {            
-              var offset_x = 0.01;        
-              var offset_y = 0.4;
+    } else if (phase === "Identify" || phase === "Study" 
+          || phase === "Relate" || phase === "Plan" ){
+          var num_engage = 0;
+          var num_watch = 0;
+          var num_park = 0;
+          for (var i=0; i < numpoints; i++) {
+            var tech_index = indices[i];
+            var arc = data["KPI Research Activity Arc (Topic)"][tech_index];
+            if (arc === "Engage") {
+              num_engage += 1;
+            } else if (arc === "Watch+Learn") {
+              num_watch += 1;
             } else {
-              var offset_x = 0;
-              var offset_y = 0.003*i;
-            }          
+              num_park += 1;
+            }
+          } // END of for loop
+
+          // console.log(numpoints, num_engage, num_watch, num_park)
+          // Generate an arc-wise theta (angle) array for this phase
+          var thetas = storeTheta(num_engage, num_watch, num_park);
+          // console.log(thetas);
+
+          // Initialize x-y coordinates and arc counters
+          var x2 = 0;
+          var y2 = 0;
+          var eng = 0;
+          var wat = 0;
+          var prk = 0;
+
+          for(var i=0; i < numpoints; i++) {
+            var tech_index = indices[i];
+            var technology = data["Emerging Technology"][tech_index];
+            // console.log(technology)
+            var arc = data["KPI Research Activity Arc (Topic)"][tech_index];
+
+            if (arc === "Engage") {
+              // Convert degree to radian
+              var angle = thetas[arc][eng];
+              var radian = angle * Math.PI / 180;
+              eng += 1;
+            } else if (arc === "Watch") {
+              var angle = thetas[arc][wat];
+              var radian = angle * Math.PI / 180;
+              wat += 1;
+            } else {
+              var angle = thetas[arc][prk];
+              var radian = angle * Math.PI / 180;
+              prk += 1;
+            }
+
+            
+            // x2 will be cosine of angle * radius (range)
+            x2 = Math.cos(radian) * radius;
+            // y2 will be sin * range
+            y2 = Math.sin(radian) * radius;
+
+            /* We need to offset x-y values to avoid overlaying text 
+            on the arc boundary and have enough gap around them to 
+            place the icons. No need to do it for the Readiness phase 
+            because there's not enough items in it to cause issues */       
+            var offset_x = 0;        
+            var offset_y = 0.003*i;      
             points.push({
               x: left-(x2/(1.03 + offset_x)),
               y: top-(y2/(1.03 - offset_y)),
-              "theta": theta[i],
+              // "theta": theta[i],
               tech: technology
             });
+          } // END of for loop
+    } else {  // Adopt, Adopt_Readiness and Readiness phases
+      var degreesPerPoint = 70 / numpoints;
+
+      // Keep track of the angle from centre to radius
+      var currentAngle = degreesPerPoint;
+
+      // The points on the radius will be left+x2, top+y2
+      var x2 = 0;
+      var y2 = 0;
+
+      for(var i=0; i < numpoints; i++) {
+        var tech_index = indices[i];
+        var technology = data["Emerging Technology"][tech_index];
+        // Convert degree to radian
+        var radian = currentAngle * Math.PI / 180;
+        // X2 will be cosine of angle * radius (range)
+        x2 = Math.cos(radian) * radius;
+        // Y2 will be sin * range
+        y2 = Math.sin(radian) * radius;
+
+        // Create two rows aligning with the arc boundary
+        if (i%2 === 0) {
+          if (i === 0 && phase != "Readiness" ) {
+            var offset_x = 0.01;        
+            var offset_y = 0.4;
           } else {
-            points.push({
-              x: left-(x2/1.4),
-              y: top-(y2/1.4),
-              "theta": theta[i],
-              tech: technology       
-            });
-          }
-        }
-            
+            var offset_x = 0;
+            var offset_y = 0.003*i;
+          } // END of inner if-else          
+          points.push({
+            x: left-(x2/(1.03 + offset_x)),
+            y: top-(y2/(1.03 - offset_y)),
+            // "theta": theta[i],
+            tech: technology
+          });
+        } else {
+          points.push({
+            x: left-(x2/1.4),
+            y: top-(y2/1.4),
+            // "theta": theta[i],
+            tech: technology       
+          });
+        } // END of outer if-else
 
         // Shift our angle around for the next point
-        // currentAngle += degreesPerPoint*1.25;
-    } // END of for loop
-  }
+        currentAngle += degreesPerPoint*1.25;
+        
+      } // END of for loop
+    } // END of outer-most if-else
 
     // Return the points we've generated
     return points;
-}
+  } // END of findCoordinates()
 
   // var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", 
   //               "Adopt/Readiness", "Readiness"];
   // var radii = [900, 815, 666, 516, 427.5, 202.5, 202.5];
 
-  var phases = ["Identify" ,"Plan", "Adopt", "Adopt/Readiness", "Readiness"];
-  var radii = [900, 516, 427.5, 202.5, 202.5];
+  var phases = ["Plan", "Adopt", "Adopt/Readiness", "Readiness"];
+  var radii = [516, 427.5, 202.5, 202.5];
 
   // phaseQuery should be a variable that will take each phase in a for loop
   for (var Phase in phases) {
