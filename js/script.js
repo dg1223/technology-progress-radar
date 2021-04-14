@@ -143,15 +143,15 @@ $.getJSON( radarURL, function(data){
 
     var indices = findIndices(phase);
 
-    // How many points do we want?
-    var numberOfPoints = numpoints;
+    // How many points do we want? This is the # of technologies
+    // var numberOfPoints = numpoints;
 
     // Hardcode placement for Adopt-Readiness phase
     // This is based on business justification (BEC/ACO)
     if (phase === "Adopt/Readiness") {
       var adr_x = [810, 960, 865];
       var adr_y = [965, 785, 855];      
-      for(var i=0; i < numberOfPoints; i++) {
+      for(var i=0; i < numpoints; i++) {
         var tech_index = indices[i];
         var technology = data["Emerging Technology"][tech_index];
         points.push({
@@ -159,18 +159,35 @@ $.getJSON( radarURL, function(data){
           y: adr_y[i],
           tech: technology
         })
-      }
+      } //  END of for loop
     } else {
+      if (phase === "Identify" || phase === "Study" 
+          || phase === "Relate" || phase === "Plan" ) {        
+        var num_engage = 0;
+        var num_watch = 0;
+        var num_park = 0;
+        for (var i=0; i < numpoints; i++) {
+          var arc = data["KPI Research Activity Arc (Topic)"][i];
+          if (arc === "Engage") {
+            num_engage += 1;
+          } else if (arc === "Watch+Learn") {
+            num_watch += 1;
+          } else {
+            num_park += 1;
+          }
+        } // END of for loop
+      } // END of if statement
+      
       // We're only gonna take 70 out 90 degrees to avoid 
       // sine-cosine boundary conditions
-      var degreesPerPoint = 70 / numberOfPoints;
+      var degreesPerPoint = 70 / numpoints;
 
       // Keep track of the angle from centre to radius
       var currentAngle = degreesPerPoint;
 
       // Store all angles in an array
       var theta = [currentAngle];
-      for (var i=0; i < numberOfPoints; i++){
+      for (var i=0; i < numpoints; i++){
         // Shift the angle around for the next point
         currentAngle += degreesPerPoint*1.25;
         theta.push(currentAngle);
@@ -181,10 +198,9 @@ $.getJSON( radarURL, function(data){
       var x2;
       var y2;
 
-      for(var i=0; i < numberOfPoints; i++) {
+      for(var i=0; i < numpoints; i++) {
         var tech_index = indices[i];
-        var technology = data["Emerging Technology"][tech_index];
-        var arc = data["KPI Research Activity Arc (Topic)"][tech_index];
+        var technology = data["Emerging Technology"][tech_index];        
 
         // Convert degree to radian
         var radian = theta[i] * Math.PI / 180;
@@ -193,10 +209,8 @@ $.getJSON( radarURL, function(data){
         // Y2 will be sin * range
         y2 = Math.sin(radian) * radius;
 
-        // save to our results array
+        // 
         if (phase === "Identify" || phase === "Plan") {
-        //   if (arc === "Engage") {
-        // }
           /* We need to offset x-y values to avoid overlaying text 
           on the arc boundary and have enough gap around them to 
           place the icons. No need to do it for the Readiness phase 
@@ -213,6 +227,7 @@ $.getJSON( radarURL, function(data){
           points.push({
             x: left-(x2/(1.03 + offset_x)),
             y: top-(y2/(1.03 - offset_y)),
+            "theta": theta[i],
             tech: technology
           });
         } else {
@@ -228,12 +243,14 @@ $.getJSON( radarURL, function(data){
             points.push({
               x: left-(x2/(1.03 + offset_x)),
               y: top-(y2/(1.03 - offset_y)),
+              "theta": theta[i],
               tech: technology
             });
           } else {
             points.push({
               x: left-(x2/1.4),
               y: top-(y2/1.4),
+              "theta": theta[i],
               tech: technology       
             });
           }
