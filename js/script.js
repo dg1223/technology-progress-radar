@@ -182,15 +182,68 @@ $.getJSON( radarURL, function(data){
               };
 
   // Calculates the degree values to place each technology name
-  function calculateAngle (maxAngle, startAngle, count, multiplier, arc) {
-    var degreesPerPoint = maxAngle / count;
+  function calculateAngle (maxAngle, startAngle, count, 
+                           multiplier, arc, numrows) {
+
     // Keep track of the angle from centre to radius
-    var currentAngle = startAngle;        
-    for (var i=0; i < count; i++) {
-      // Shift the angle around for the next point
-      currentAngle += degreesPerPoint*multiplier;
-      theta[arc].push(currentAngle);
-    }
+    var currentAngle = startAngle;
+    var passIndicator = 0; // as in 1st pass, 2nd pass
+
+    if (numrows === 2) {
+      var degreesPerPoint = maxAngle / (count/2);
+
+      /* Restart calculation after halfway to line up
+      the texts in two rows */
+      for (var i=0; i < count; i++) {
+        if (i < (count/2)) {
+          currentAngle += degreesPerPoint*multiplier;
+          theta[arc].push(currentAngle);
+        } else {
+          if (passIndicator === 0) {
+            currentAngle = startAngle;
+          }
+          currentAngle += degreesPerPoint*multiplier;
+          theta[arc].push(currentAngle);
+          passIndicator = 1;
+        } // END of inner if-else
+        
+      } // END of for loop
+
+    } else if (numrows == 3) {
+      var degreesPerPoint = maxAngle / (count/3);
+
+      /* Restart calculation after each third of the count 
+      to line up the texts in three rows */
+      for (var i=0; i < count; i++) {
+        if (i <= (count/3)) {
+          currentAngle += degreesPerPoint*multiplier;
+          theta[arc].push(currentAngle);
+        } else if (i > (count/3) && i <= (2*count/3)) {
+          if (passIndicator === 0) {
+            currentAngle = startAngle;
+          }
+          currentAngle += degreesPerPoint*multiplier;
+          theta[arc].push(currentAngle);
+          passIndicator = 1;
+        } else {
+          if (passIndicator === 1) {
+            currentAngle = startAngle;
+          }
+          currentAngle += degreesPerPoint*multiplier;
+          theta[arc].push(currentAngle);
+          passIndicator = 2;
+        } // END of inner if-else
+        
+      } // END of for loop
+
+    } else {
+      var degreesPerPoint = maxAngle / count;
+      for (var i=0; i < count; i++) {
+        // Shift the angle around for the next point
+        currentAngle += degreesPerPoint*multiplier;
+        theta[arc].push(currentAngle);
+      }
+    } // END of outer if-else
 
     // return theta;
   }
@@ -202,51 +255,25 @@ $.getJSON( radarURL, function(data){
     // console.log(numEngage, numWatch, numPark)    
     var arcs = ["Engage", "Watch+Learn", "Park"];
 
-    // Store all angles in an array
-    // var theta = {"Engage": [], 
-    //              "Watch+Learn": [], 
-    //              "Park": []
-    //             };
-
     for (var Arc in arcs) {
       var arcName = arcs[Arc];
       // console.log(arcName)
       if (arcName === "Engage"){
         if (phase === "Study" || phase === "Relate") {
-          calculateAngle(45, 3, numEngage, 0.8, arcName);
-          // var degreesPerPoint = 45 / numEngage;
-          // // Keep track of the angle from centre to radius
-          // var currentAngle = 3;        
-          // for (var i=0; i < numEngage; i++) {
-          //   // Shift the angle around for the next point
-          //   currentAngle += degreesPerPoint*0.8;
-          //   theta["Engage"].push(currentAngle);
-          // }
+          calculateAngle(45, 3, numEngage, 0.8, arcName, 2);
+
         } else {
-          var degreesPerPoint = 45 / numEngage;
-          // Keep track of the angle from centre to radius
-          var currentAngle = 0;        
-          for (var i=0; i < numEngage; i++) {
-            // Shift the angle around for the next point
-            currentAngle += degreesPerPoint*0.8;
-            theta["Engage"].push(currentAngle);
-          }
-        }        
-      } else if (arcName === "Watch+Learn" && numWatch != 0) {
-        // var degreesPerPoint = 15 / numWatch;
-        var currentAngle = 50;
-        for (var i=0; i < numWatch; i++) {
-          // currentAngle += degreesPerPoint*0.8;
-          theta["Watch+Learn"].push(currentAngle);
+          calculateAngle(45, 0, numEngage, 0.8, arcName, 1);
         }
+
+      } else if (arcName === "Watch+Learn" && numWatch != 0) {
+        calculateAngle(60, 46, numWatch, 0.1, arcName, 2);
+
       } else if (arcName === "Park" && numPark != 0) {
-        var degreesPerPoint = 30 / numPark;
-        var currentAngle = 60;
-        for (var i=0; i < numPark; i++) {
-          currentAngle += degreesPerPoint*0.8;
-          theta["Park"].push(currentAngle);
-      }
+        calculateAngle(30, 60, numPark, 0.8, arcName, 1);
+
     } // END of if-else-if    
+
   } // END of for loop
 
   // return theta;
