@@ -122,13 +122,13 @@ body {
 }
 
 .container {
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 80px;
   margin: 0;
 }
 
 .container .jumbotron {
-  height: 1000px;
+  height: 1030px;
   box-shadow: 0 0 50px #3F0C1F;
   border: 2px solid #3F0C1F;
   padding-left: 10px;
@@ -137,6 +137,7 @@ body {
   padding-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: -15px;
 }
 
 /******************************************************/
@@ -148,23 +149,23 @@ body {
 
 #Identify {
       float: left;
-      width: 1800px;
-      height: 1800px;      
+      width: 1856px;
+      height: 1856px;      
       border-radius: 50%;
       border: 85px solid;
       border-color: transparent transparent transparent #E4DCC5;      
-      top:133px;
-      left: 112px;
+      top:106px;
+      left: 83px;
     }
 
 #Study {
-      width: 1630px;
-      height: 1630px;      
+      width: 1690px;
+      height: 1690px;      
       border-radius: 50%;
-      border: 150px solid;
+      border: 180px solid;
       border-color: transparent transparent transparent #DBCFB0;
-      top: 218px;
-      left: 197px;
+      top: 188px;
+      left: 167px;
     }
 
 #Relate {
@@ -231,18 +232,18 @@ body {
 }
 
 #line1 {
-  width: 472px;
-  height: 48px;
-  top: 493px;
-  left: 352px;
+  width: 502px;
+  height: 65px;
+  top: 465px;
+  left: 335px;
   transform: rotate(42deg);
 }
 
 #line2 {
-  width: 471px;
-  height: 47px;
-  top: 444px;
-  left: 420px;
+  width: 499px;
+  height: 62px;
+  top: 413px;
+  left: 415px;
   transform: rotate(50deg);
 }
 
@@ -295,15 +296,15 @@ body {
 }    
 
 #engage {
-  top: 590px;
-  left: 180px;
+  top: 575px;
+  left: 165px;
   transform: rotate(-60deg);
 }
 
 #watch {
-  top: 355px;
-  left: 370px;
-  transform: rotate(-42deg);
+  top: 330px;
+  left: 360px;
+  transform: rotate(-41deg);
 }
 
 #watch p {
@@ -311,7 +312,7 @@ body {
 }
 
 #park {
-  top: 190px;
+  top: 160px;
   left: 620px;
   transform: rotate(-27deg);
 }

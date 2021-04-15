@@ -144,7 +144,7 @@ $.getJSON( radarURL, function(data){
     relate[i].sort();
   }
 
-  console.log(relate)
+  console.log(study)
 
   // get document coordinates of the element
   function getCoords(elem) {
@@ -215,10 +215,10 @@ $.getJSON( radarURL, function(data){
       /* Restart calculation after each third of the count 
       to line up the texts in three rows */
       for (var i=0; i < count; i++) {
-        if (i <= (count/3)) {
+        if (i < (count/3)) {
           currentAngle += degreesPerPoint*multiplier;
           theta[arc].push(currentAngle);
-        } else if (i > (count/3) && i <= (2*count/3)) {
+        } else if (i >= (count/3) && i <= (2*count/3)) {
           if (passIndicator === 0) {
             currentAngle = startAngle;
           }
@@ -259,8 +259,11 @@ $.getJSON( radarURL, function(data){
       var arcName = arcs[Arc];
       // console.log(arcName)
       if (arcName === "Engage"){
-        if (phase === "Study" || phase === "Relate") {
-          calculateAngle(45, 3, numEngage, 0.8, arcName, 2);
+        if (phase === "Study") {
+          calculateAngle(45, 3, numEngage, 0.8, arcName, 3);
+
+        } else if (phase === "Relate") {
+          calculateAngle(45, 0, numEngage, 0.8, arcName, 2);
 
         } else {
           calculateAngle(45, 0, numEngage, 0.8, arcName, 1);
@@ -373,7 +376,44 @@ $.getJSON( radarURL, function(data){
             because there's not enough items in it to cause issues */  
 
             // Create two rows aligning with the arc boundary
-            if ( (phase === "Study" || phase === "Relate") ) {
+            if (phase === "Study") {
+              if (i < numpoints/3) {
+                // console.log("numpoints/3 = "+ numpoints/3)
+                if (i === 0) {
+                  var offset_x = 0.02;
+                  var offset_y = 0.02;
+                  points.push({
+                    x: left-(x2/(1.01 + offset_x)),
+                    y: top-(y2/(1.01 - offset_y)),
+                    tech: technology
+                  });
+                } else {
+                  var offset_x = 0.02;
+                  var offset_y = 0.02;
+                  points.push({
+                    x: left-(x2/(1 + offset_x)),
+                    y: top-(y2/(1 - offset_y)),
+                    tech: technology
+                  });
+                }
+              } else if ( i>=(numpoints/3) && i<=(2*numpoints/3) ) {
+                // var offset_x = 0.015*i;
+                // var offset_y = 0.001*i;
+                points.push({
+                  x: left-(x2/(1.1 + offset_x)),
+                  y: top-(y2/(1.05 + offset_y)),
+                  tech: technology       
+                });
+              } else {
+                var offset_x = 0.015*i;
+                var offset_y = 0.001*i;
+                points.push({
+                  x: left-(x2/(1.2 + offset_x)),
+                  y: top-(y2/(1.2 + offset_y)),
+                  tech: technology       
+                });
+              }
+            } else if (phase === "Relate") {
               if (i < numpoints/2) {
                 if (i === 0) {
                   var offset_x = 0.02;
@@ -391,7 +431,7 @@ $.getJSON( radarURL, function(data){
                     y: top-(y2/(1.01 - offset_y)),
                     tech: technology
                   });
-                }                
+                }
               } else {
                 var offset_x = 0.015*i;
                 var offset_y = 0.001*i;
@@ -400,7 +440,7 @@ $.getJSON( radarURL, function(data){
                   y: top-(y2/(1.05 + offset_y)),
                   tech: technology       
                 });
-              } // END of inner if-else
+              }
             } else {
               var offset_x = 0;
               var offset_y = 0.003*i;
@@ -410,7 +450,7 @@ $.getJSON( radarURL, function(data){
                 // "theta": theta[i],
                 tech: technology
               });
-            }
+            } // END of inner if-else
           } // END of for loop
     } else {  // Adopt, Adopt_Readiness and Readiness phases
       var degreesPerPoint = 70 / numpoints;
@@ -470,8 +510,11 @@ $.getJSON( radarURL, function(data){
   //               "Adopt/Readiness", "Readiness"];
   // var radii = [900, 815, 666, 516, 427.5, 202.5, 202.5];
 
-  var phases = ["Identify", "Relate", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
-  var radii = [900, 666, 516, 427.5, 202.5, 202.5];
+  // var phases = ["Identify", "Relate", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
+  // var radii = [900, 666, 516, 427.5, 202.5, 202.5];
+
+  var phases = ["Study", "Adopt", "Adopt/Readiness", "Readiness"];
+  var radii = [815, 427.5, 202.5, 202.5];
 
   // phaseQuery should be a variable that will take each phase in a for loop
   for (var Phase in phases) {
