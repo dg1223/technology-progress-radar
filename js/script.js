@@ -287,7 +287,7 @@ $.getJSON( radarURL, function(data){
 
       } else if (arcName === "Park" && numPark != 0) {
         if (phase === "Study") {
-          calculateAngle(40, 53.5, numPark, 0.8, arcName, 2);
+          calculateAngle(38, 52, numPark, 0.75, arcName, 3);
 
         } else {
           calculateAngle(30, 60, numPark, 0.8, arcName, 1);
@@ -369,7 +369,7 @@ $.getJSON( radarURL, function(data){
             for (var i=0; i < study.length; i++) {
               var arc = arcs[i];
               var Length = study[i].length;
-              // console.log(arc+",", Length)
+              console.log(arc+",", Length)
 
               // Create multiple rows within the arc-phase space
               // var Quarter1 = (Length/3) + Math.ceil(Length*0.1);
@@ -413,14 +413,34 @@ $.getJSON( radarURL, function(data){
                     }
                   } else if (j >= Quarter1 && j <= Quarter2) {
                     if (firstPass === "Y") {
-                      var k = 0.3;
+                      var k = 0.4;
                     }
-                    finalCoordinate(0.013*k, 0.01, 1.1, 1, technology);
-                    k += 0.5;
-                    firstPass = "N";
-
+                    // Reset indicator for next row (else statement)
+                    if ( (j+1) > Quarter2 ) {
+                      firstPass = "Y";
+                    }
+                    if (arc === "Park") {
+                      finalCoordinate(0.25*k, -0.05, 1.01, 1.01, technology);
+                      k += 0.4;
+                      firstPass = "N";
+                    } else {
+                      finalCoordinate(0.013*k, 0.01, 1.1, 1, technology);
+                      k += 0.4;
+                      firstPass = "N";
+                    }
                   } else {
-                    finalCoordinate(0.013, 0.02, 1.2, 1.2, technology);
+                    if (firstPass === "Y") {
+                      var k = 0.4;
+                    }
+                    if (arc === "Park") {
+                      finalCoordinate(0.05*k, -0.05, 1.1, 1.1, technology);
+                      k += 0.4;
+                      firstPass = "N";
+                    } else {
+                      finalCoordinate(0.013, 0.02, 1.2, 1.2, technology);
+                      firstPass = "N";
+                    }
+                    
                   }
                 } // END of outer if-else                 
               } // END of inner for loop
