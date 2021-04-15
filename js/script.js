@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 radarURL = "https://raw.githubusercontent.com/dg1223/storage/master/ETR_clean.json"
 
 $.getJSON( radarURL, function(data){
+
+  // Count number of technologies in each phase
   var num_technologies = Object.keys(data["Emerging Technology" ]).length;
   var counts = [];
   var tech_indices = [];
@@ -106,6 +108,44 @@ $.getJSON( radarURL, function(data){
 
   console.log(counts[0])
 
+  // Store Study and Relate phases in an array including arc info
+  var study = [];
+  var relate = [];
+
+  // Create 2d arrays
+  for (i=0; i<3; i++) {
+    study.push([]);
+    relate.push([]);
+  }
+
+  for (i=0; i<num_technologies; i++) {
+    var arc = data["KPI Research Activity Arc (Topic)"][i];
+    var phs = data["KPI Research Phase (Topic)"][i];
+    var technology = data["Emerging Technology"][i];
+
+    if (phs === "Study" && arc === "Engage") {
+      study[0].push(technology)
+    } else if (phs === "Study" && arc === "Watch+Learn") {
+      study[1].push(technology)
+    } else if (phs === "Study" && arc === "Park") {
+      study[2].push(technology)
+    } else if (phs === "Relate" && arc === "Engage") {
+      relate[0].push(technology)
+    } else if (phs === "Relate" && arc === "Watch+Learn") {
+      relate[1].push(technology)
+    } else if (phs === "Relate" && arc === "Park") {
+      relate[2].push(technology)
+    }
+  }
+
+  // Sort the arrays
+  for (i=0; i<3; i++) {
+    study[i].sort();
+    relate[i].sort();
+  }
+
+  console.log(relate)
+
   // get document coordinates of the element
   function getCoords(elem) {
     var box = elem.getBoundingClientRect();
@@ -135,6 +175,26 @@ $.getJSON( radarURL, function(data){
     return Indices;
   }
 
+  // Store all angles in an array
+  var theta = {"Engage": [], 
+               "Watch+Learn": [], 
+               "Park": []
+              };
+
+  // Calculates the degree values to place each technology name
+  function calculateAngle (maxAngle, startAngle, count, multiplier, arc) {
+    var degreesPerPoint = maxAngle / count;
+    // Keep track of the angle from centre to radius
+    var currentAngle = startAngle;        
+    for (var i=0; i < count; i++) {
+      // Shift the angle around for the next point
+      currentAngle += degreesPerPoint*multiplier;
+      theta[arc].push(currentAngle);
+    }
+
+    // return theta;
+  }
+
   /* Returns an array of degrees based on number of 
   technogies in each arch */
   function storeTheta(numEngage, numWatch, numPark, phase) {
@@ -143,24 +203,25 @@ $.getJSON( radarURL, function(data){
     var arcs = ["Engage", "Watch+Learn", "Park"];
 
     // Store all angles in an array
-    var theta = {"Engage": [], 
-                 "Watch+Learn": [], 
-                 "Park": []
-                };
+    // var theta = {"Engage": [], 
+    //              "Watch+Learn": [], 
+    //              "Park": []
+    //             };
 
     for (var Arc in arcs) {
       var arcName = arcs[Arc];
       // console.log(arcName)
       if (arcName === "Engage"){
         if (phase === "Study" || phase === "Relate") {
-          var degreesPerPoint = 45 / numEngage;
-          // Keep track of the angle from centre to radius
-          var currentAngle = 3;        
-          for (var i=0; i < numEngage; i++) {
-            // Shift the angle around for the next point
-            currentAngle += degreesPerPoint*0.8;
-            theta["Engage"].push(currentAngle);
-          }
+          calculateAngle(45, 3, numEngage, 0.8, arcName);
+          // var degreesPerPoint = 45 / numEngage;
+          // // Keep track of the angle from centre to radius
+          // var currentAngle = 3;        
+          // for (var i=0; i < numEngage; i++) {
+          //   // Shift the angle around for the next point
+          //   currentAngle += degreesPerPoint*0.8;
+          //   theta["Engage"].push(currentAngle);
+          // }
         } else {
           var degreesPerPoint = 45 / numEngage;
           // Keep track of the angle from centre to radius
@@ -188,7 +249,7 @@ $.getJSON( radarURL, function(data){
     } // END of if-else-if    
   } // END of for loop
 
-  return theta;
+  // return theta;
 }
 
   // Track the points we generate to return at the end
@@ -235,7 +296,8 @@ $.getJSON( radarURL, function(data){
 
           // console.log(numpoints, num_engage, num_watch, num_park)
           // Generate an arc-wise theta (angle) array for this phase
-          var thetas = storeTheta(num_engage, num_watch, num_park, phase);
+          storeTheta(num_engage, num_watch, num_park, phase);
+          // var thetas = storeTheta(num_engage, num_watch, num_park, phase);
           // console.log(thetas);
 
           // Initialize x-y coordinates and arc counters
@@ -253,16 +315,19 @@ $.getJSON( radarURL, function(data){
 
             if (arc === "Engage") {
               // Convert degree to radian
-              var angle = thetas[arc][eng];
+              // var angle = thetas[arc][eng];
+              var angle = theta[arc][eng];
               var radian = angle * Math.PI / 180;
               eng += 1;
             } else if (arc === "Watch+Learn") {
               // console.log(thetas)
-              var angle = thetas[arc][wat];
+              // var angle = thetas[arc][wat];
+              var angle = theta[arc][wat];
               var radian = angle * Math.PI / 180;
               wat += 1;
             } else {              
-              var angle = thetas[arc][prk];
+              // var angle = thetas[arc][prk];
+              var angle = theta[arc][prk];
               var radian = angle * Math.PI / 180;
               prk += 1;
             }
