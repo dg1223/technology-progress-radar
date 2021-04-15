@@ -267,7 +267,7 @@ $.getJSON( radarURL, function(data){
         }
 
       } else if (arcName === "Watch+Learn" && numWatch != 0) {
-        calculateAngle(60, 46, numWatch, 0.1, arcName, 2);
+        calculateAngle(60, 43.5, numWatch, 0.1, arcName, 2);
 
       } else if (arcName === "Park" && numPark != 0) {
         calculateAngle(30, 60, numPark, 0.8, arcName, 1);
@@ -324,7 +324,6 @@ $.getJSON( radarURL, function(data){
           // console.log(numpoints, num_engage, num_watch, num_park)
           // Generate an arc-wise theta (angle) array for this phase
           storeTheta(num_engage, num_watch, num_park, phase);
-          // var thetas = storeTheta(num_engage, num_watch, num_park, phase);
           // console.log(thetas);
 
           // Initialize x-y coordinates and arc counters
@@ -336,33 +335,36 @@ $.getJSON( radarURL, function(data){
 
           for(var i=0; i < numpoints; i++) {
             var tech_index = indices[i];
-            var technology = data["Emerging Technology"][tech_index];
-            // console.log(technology)
+            var technology = data["Emerging Technology"][tech_index];            
             var arc = data["KPI Research Activity Arc (Topic)"][tech_index];
 
             if (arc === "Engage") {
               // Convert degree to radian
-              // var angle = thetas[arc][eng];
               var angle = theta[arc][eng];
               var radian = angle * Math.PI / 180;
               eng += 1;
             } else if (arc === "Watch+Learn") {
-              // console.log(thetas)
-              // var angle = thetas[arc][wat];
               var angle = theta[arc][wat];
               var radian = angle * Math.PI / 180;
               wat += 1;
-            } else {              
-              // var angle = thetas[arc][prk];
+            } else {
               var angle = theta[arc][prk];
               var radian = angle * Math.PI / 180;
               prk += 1;
-            }
+            }            
+            // console.log(i+":", technology+",", angle+", index: ", tech_index)
+            // console.log(theta[arc])
 
-            
+            /* Use the equation of a circle to calculate coordinates 
+            along the circumference of each arc 
+            x(t) = r cos(t) + j
+            y(t) = r sin(t) + k
+            r = radius; j, k = centre 
+            */
+
             // x2 will be cosine of angle * radius (range)
             x2 = Math.cos(radian) * radius;
-            // y2 will be sin * range
+            // y2 will be sine  of angle  * range
             y2 = Math.sin(radian) * radius; 
 
             /* We need to offset x-y values to avoid overlaying text 
@@ -371,23 +373,34 @@ $.getJSON( radarURL, function(data){
             because there's not enough items in it to cause issues */  
 
             // Create two rows aligning with the arc boundary
-            if ( (phase === "Study" || phase === "Relate") 
-                 && arc === "Engage" ) {
-              if (i <= numpoints/2) {
-                var offset_x = 0.01;
-                var offset_y = 0.025*i;
-                points.push({
-                  x: left-(x2/(1.05 + offset_x)),
-                  y: top-(y2/(1.01 - offset_y)),
-                  tech: technology
-                });
+            if ( (phase === "Study" || phase === "Relate") ) {
+              if (i < numpoints/2) {
+                if (i === 0) {
+                  var offset_x = 0.02;
+                  var offset_y = 0.02;
+                  points.push({
+                    x: left-(x2/(1.01 + offset_x)),
+                    y: top-(y2/(1.01 - offset_y)),
+                    tech: technology
+                  });
+                } else {
+                  var offset_x = 0.02*i;
+                  var offset_y = 0.025*i;
+                  points.push({
+                    x: left-(x2/(1.01 + offset_x)),
+                    y: top-(y2/(1.01 - offset_y)),
+                    tech: technology
+                  });
+                }                
               } else {
+                var offset_x = 0.015*i;
+                var offset_y = 0.001*i;
                 points.push({
-                  x: left-(x2/1.2),
-                  y: top-(y2/1.01),
+                  x: left-(x2/(1.12 + offset_x)),
+                  y: top-(y2/(1.05 + offset_y)),
                   tech: technology       
                 });
-              }
+              } // END of inner if-else
             } else {
               var offset_x = 0;
               var offset_y = 0.003*i;
@@ -397,7 +410,7 @@ $.getJSON( radarURL, function(data){
                 // "theta": theta[i],
                 tech: technology
               });
-            }            
+            }
           } // END of for loop
     } else {  // Adopt, Adopt_Readiness and Readiness phases
       var degreesPerPoint = 70 / numpoints;
