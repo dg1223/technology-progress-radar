@@ -1,259 +1,240 @@
 Emerging Technology,KPI Research Phase (Topic),KPI Progress Status (Topic),KPI Research Activity Arc (Topic),Radar Position Reason for change,Innovation Type,Activity Type,Title and description of Activity,OPI Directorate,OPI DG,Assignee,Status,,Published on Infozone,Activity Notes,"Date updated
-YYYY-MM-DD ",Updated by,ETAIC Agenda-Date,ETAIC Outcome,S-ARB or ETIB Agenda-Date,S-ARB or ETIB Outcome,Activity-wise point,MAX point (topic),KPI Research Phase (Topic) - Manual
-5G Networks,Study,Not Active,Park,,Tech R&D,Backgrounder,5G Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,X,"Presented to SARB, no further action by ITB",27-06-2020,Shamir Alavi,,,14-05-2019,No outlook required now but 5G should be revisited in one year to then decide if an outlook is required. ,2,2,Study
-Adaptive Security Architecture,Study,,Engage,,Tech R&D,PoC (technology),Investigate and test Garrison Appliance for Isolate Web Facing technology           ,SID,Martin L,Christina Pilon,Planned,,,"Isolation of Web Facing Technology is being considered as an Adaptive Security Architecure component.  The most common way of delivering Browser Isolation is Server-Side Browser Isolation. Server Side Browser Isolation delivers literal isolation of browsing activity, by physically isolating malware and cyber- attacks away from your networks and user machines. 
+YYYY-MM-DD ",Updated by,Date updated (Secretariat),Updated by (Secretariat),Comments (Secretariat),ETAIC Agenda-Date,ETAIC Outcome,S-ARB or ETIB Agenda-Date,S-ARB or ETIB Outcome,Is it an ETIB consent agenda item? (Y),Activity-wise point,MAX point (topic),KPI Research Phase (Topic) - Manual
+5G Networks,Study,Not Active,Park,,Tech R&D,Backgrounder,5G Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,X,"Presented to SARB, no further action by ITB",27-06-2020,Shamir Alavi,,,,,,14-05-2019,No outlook required now but 5G should be revisited in one year to then decide if an outlook is required. ,,2,2,Study
+Adaptive Security Architecture,Study,,Engage,,Tech R&D,PoC (technology),Investigate and test Garrison Appliance for Isolate Web Facing technology           ,SID,Martin L,James Robichaud / Christina Pilon,Planned,,,"Isolation of Web Facing Technology is being considered as an Adaptive Security Architecure component.  The most common way of delivering Browser Isolation is Server-Side Browser Isolation. Server Side Browser Isolation delivers literal isolation of browsing activity, by physically isolating malware and cyber- attacks away from your networks and user machines. 
 Server-Side models deliver a remote browser to their users, which is hosted on a physically isolated server built to handle cyber risks. This means that end users can continue to use the web without disruption, able to view dynamic web pages as they normally would, and use controls such as copy, paste and print.
 
-Jun 19: (SC&D) Is this a part of DSI (Data Securty Initiative)?",23-07-2020,Shamir Alavi,,,,,2,2,Relate
-Advanced Analytics,Relate,,,,Tech R&D,PoC (technology),Data leaks,CMD,Karen W,AAD,In Progress,,,"June 8th (SC&D) - What is technology associated to this? Ask ambassador
-testing live data leaks with datashare and implementation of elastic search, testing python to clear unwanted file, OCR software, etc.","2020-06-30
-2020-07-23","Alain Hamel
-Shamir Alavi",,,,,3,3,
-Affective Computing,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Shamir Alavi,In Progress,,,Presented to ETAIC on May 6,27-06-2020,Shamir Alavi,17-06-2020,After feedback from DBID and DMRAAD decision made to park and keep watch on Chatbot technology,07-07-2019,,2,2,Study
+Jun 19: (added by secretariat) Is this a part of DSI (Data Securty Initiative)?
+Oct 07 The project is underway again and procurement is underway.   Next update between Jan-Mar 2021.",07-10-2020,Aaron Hellard,23-07-2020,Shamir Alavi,Added question in the Activity Notes to discuss with the ambassador/co-ambassador (cell is highlighted for convenience),,,,,,2,2,Relate
+Advanced Analytics,Relate,,,,Tech R&D,PoC (technology),Data leaks,CMD,Karen W,AAD,In Progress,,,"testing live data leaks with datashare and implementation of elastic search, testing python to clear unwanted file, OCR software, etc.
+
+June 8th (added by secretariat) - What is technology associated to this? Ask ambassador",30-06-2020,Alain Hamel,23-07-2020,Shamir Alavi,Added question in the Activity Notes to discuss with the ambassador/co-ambassador (cell is highlighted for convenience),,,,,,3,3,
+Affective Computing,Study,,Park,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Shamir Alavi,Complete,,,Presented to ETAIC on May 6,30-09-2020,Yihong Wang,,,,17-06-2020,After feedback from DBID and DMRAAD decision made to park and keep watch on Chatbot technology,29-09-2020,Approved as a consent item,Y,2,2,Study
 AI Ethics,Study,On Track,Engage,,Tech R&D,Backgrounder,AI Ethics Backgrounder,SAID,Tiffany B,Shamir Alavi,Complete,,X,"AI Ethics Subcommittee formed
 GC Directive on Automated Decision making published
-",10-07-2020,Yihong Wang,,,02-10-2018,Proceed with an Outlook and address the use of AI at the Agency.,2,2,Study
-Angular framework,Adopt,On Track,N/A,,Business of IT,Pilot,Angular BETA,SAID,Tiffany B,Alain Dionne,In Progress,,,Continue to research and validate the use of Angular within CRA for application presentation layer development.,24-07-2020,Alain Dionne,04-12-2019,N/A - Educational piece,,,8,8,Adopt
-Angular framework,,,N/A,Not plotted,Business of IT,Pilot,"In conjuction with the DevCentre team we are converting some online calculators (NRTC, ABOC and PDOC) using struts 2 to use Angular web framework.  Starting with a like for like convresion.  Then enhancing based upon UX input and discussions with the business teams.",DMRAAD,Merlin L,CJEM,In Progress,,,"First calculator NRTC planned to be delivered by end of July/early August 2019, ABOC and PDOC will be planned for future releases.",,Paul Markey,,,,,8,,Adopt
-Angular Framework,,,N/A,Not plotted,Business of IT,Pilot,Set up an Angular library reusable by other developers in angular,CESD,Daniel G,Gary Luk,In Progress,,,"- FPS (Forecasting Planning System) is being developed with Angular on eBCI. 
+",10-07-2020,Yihong Wang,,,,,,02-10-2018,Proceed with an Outlook and address the use of AI at the Agency.,,2,2,Study
+Angular framework,Adopt,On Track,,,Business of IT,Pilot,Angular BETA,SAID,Tiffany B,Alain Dionne,In Progress,,,Continue to research and validate the use of Angular within CRA for application presentation layer development.,15-01-2021,Alain Dionne,,,,04-12-2019,N/A - Educational piece,,,,8,8,Adopt
+Angular framework,Adopt,,,Not plotted,Business of IT,Pilot,"In conjuction with the DevCentre team we are converting some online calculators (NRTC, ABOC and PDOC) using struts 2 to use Angular web framework.  Starting with a like for like convresion.  Then enhancing based upon UX input and discussions with the business teams.",DMRAAD,Merlin L,CJEM,In Progress,,,First calculator NRTC planned to be delivered by end of July/early August 2019 has been converted to Angular in October 2019. It will be upgraded to Angualr 10 in January 2021.  ABOC conversion to Angular 10 is planned to be released in January 2021 and PDOC is planned for release in June 2022 will be planned for future releases.,05-10-2020,Dmitry Kutikov,05-10-2020,Yuriy Poslavskyy,,07-10-2020,N/A - Information only,,,,8,8,Adopt
+Angular Framework,Adopt,,,Not plotted,Business of IT,Pilot,Set up an Angular library reusable by other developers in angular,CESD,Daniel G,Gary Luk,Complete,,,"- The Library has been certified and is available for us to developers.  FPS development is levergaing the library. 
+- FPS (Forecasting Planning System) is being developed with Angular on eBCI. 
 - Library has been certified and is available on eBCI and LSE/LSE2 for use,  The FPS application is currently being developed leveraging this library on eBCI.
  improvements are continually made.  A beta version is available at http://wet-boew-angular-doc
-",15-07-2020,Rob Backstrom,,,,,8,,Adopt
-API gateway,Adopt,On Track,N/A,,Business of IT,Pilot,"CRA API gateway ~ APIs provide an efficient and controlled way to make data accessible to other systems. This promotes reuse and sharing of data within the Government of Canada and with the Canadian public. Making Government of Canada services and data available through APIs, also promotes a digital economy where private industry can better integrate their services with and alongside government.",SAID,Tiffany B,Annie Marcil,In Progress,,,"DEV underway - TRANS and 
-Internal Gateway: DEV and TRANS completed
-PROD schedule for Q2 FY2020-2021
+",05-10-2020,Rob Backstrom,,,,,,,,,8,8,Adopt
+API gateway,Adopt,On Track,,,Business of IT,Pilot,"CRA API gateway ~ APIs provide an efficient and controlled way to make data accessible to other systems. This promotes reuse and sharing of data within the Government of Canada and with the Canadian public. Making Government of Canada services and data available through APIs, also promotes a digital economy where private industry can better integrate their services with and alongside government.",SAID,Tiffany B,Ian Tessier,In Progress,,,"DEV underway - TRANS and 
+Internal Gateway: Dev, Trans and Prod all configured - - SA&A for the ATO of the Internal Gateway in process. Evidences to be sent last week of Jan 2021
+External Gateways: Dev -completed, Trans - Feb 2021, PROD - 15 May 2021
+",22-01-2021,Ian Tessier,,,,04-12-2019,N/A - Educational Piece,,,,8,8,Adopt
+Artificial Intelligence (AI) - Chatbot,Readiness,On Track,,,Tech R&D,Backgrounder,AI backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,13,13,Readiness
+Artificial Intelligence (AI) - Chatbot,Readiness,,,,Tech R&D,Pilot,Chatbot to live agent - Explore chatbot to live agent functionality for selective COVID measures using Azure cloud SaaS offerings ,DBID,David Y,Maretcho Wilson,In Progress,,,"Phase 1 pilot implementation completed.
 
-External Gateways: Dates TBC",24-07-2020,Annie Marcil,04-12-2019,N/A - Educational Piece,,,8,8,Adopt
-Artificial Intelligence (AI) - Chatbot,Readiness,On Track,N/A,,Tech R&D,Backgrounder,AI backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,13,13,Readiness
-Artificial Intelligence (AI) - Chatbot,,,,,Tech R&D,Pilot,Chatbot to live agent - Explore chatbot to live agent functionality for selective COVID measures using Azure cloud SaaS offerings ,DBID,David Y,Maretcho Wilson,In Progress,,,Development on-going. Targeting end of July 2020 to implement pilot.,29-06-2020,Maretcho Wilson,,,,,13,,Readiness
-Artificial Intelligence (AI) - Chatbot,,On Track,N/A,,Bus/Tech,Pilot,Chatbot Pilot - ABSB Call Centre,DBID,David Y,Maretcho Wilson,Complete,,,"CRA chatbot pilot 2.0 launched March 27, 2020",11-06-2020,Shamir Alavi,,,,,13,,Readiness
-Artificial Intelligence (AI) - Chatbot,,On Track,N/A,,Bus/Tech,Pilot,Chatbot Pilot -CVB - Employer and Employee Benefit,DBID,David Y,Maretcho Wilson,Planned,,,Planned launched date postponed - date TBD,27-03-2020,Maretcho Wilson,,,,,13,,Readiness
-Artificial Intelligence (AI) - Chatbot,,On Track,N/A,,Bus/Tech,Pilot,Climate Action Incentive Payments Chatbot pilot (ABSB),DBID,David Y,Maretcho Wilson,Complete,,,"Launched March 15, 2019. Continue to provide biweekly/monthly report on usage to ABSB",11-06-2020,Shamir Alavi,,,,,13,,Readiness
-Artificial Intelligence (AI) - Chatbot,,On Track,N/A,,Tech R&D,Reference Architecture,Conversational Interface - Chatbot Reference Architecture,SAID,Tiffany B,Lisa Lescard,Complete,,,"Approved at ARB on Feb 4, 2020",11-06-2020,Shamir Alavi,,,,,13,,Readiness
-Artificial Intelligence (AI) - Chatbot,,On Track,N/A,,Tech R&D,Outlook,Personalized focus AI Outlook,SAID,Tiffany B,Alan Ritchie,Complete,,X,,09-07-2020,Yihong Wang,,,11-06-2019,The proposed recommendations were approved and associated OPI’s were assigned. ,13,,Readiness
-Artificial Intelligence (AI) - Cyber Security,Adopt/Readiness,On Track,N/A,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Sandy Lloyd,Complete,,X,,27-06-2020,Shamir Alavi,,,30-04-2019,The Agency Security Plan 2019-2022 has identified cyber security as a priority. It will provide future direction and recommendations in the AI cyber security space.   ,10.5,10.5,Adopt/Readiness
-Artificial Intelligence (AI) - Cyber Security,,On Track,N/A,,Tech R&D,PoC (technology),Data security initiatives to enhance cyber security,SID,Martin L,Jozef Lesniak,In Progress,,,"ITSS is working on this emerging technology.  EFMS team is working on extension to CFRM monitoring tool to analyse user behavior and enhance fraud detection models.
+Phase 2 pilot Scheduled for October-November.
+Phase 2 will focus on more engament of live agents.",08-09-2020,Muhammad Zulfiqar,,,,,,,,,13,13,Readiness
+Artificial Intelligence (AI) - Chatbot,Readiness,On Track,,,Bus/Tech,Pilot,Chatbot Pilot - ABSB Call Centre,DBID,David Y,Maretcho Wilson,Complete,,,"CRA chatbot pilot 2.0 launched March 27, 2020",09-05-2020,Muhammad Zulfiqar,11-06-2020,Shamir Alavi,Expanded the acronym AI in the title,,,,,,13,13,Readiness
+Artificial Intelligence (AI) - Chatbot,Readiness,On Track,,,Bus/Tech,Pilot,Climate Action Incentive Payments Chatbot pilot (ABSB),DBID,David Y,Maretcho Wilson,Complete,,,"Launched March 15, 2019. Continue to provide biweekly/monthly report on usage to ABSB",27-03-2020,Muhammad Zulfiqar,11-06-2020,Shamir Alavi,Expanded the acronym AI in the title,,,,,,13,13,Readiness
+Artificial Intelligence (AI) - Chatbot,Readiness,On Track,,,Tech R&D,Reference Architecture,Conversational Interface - Chatbot Reference Architecture,SAID,Tiffany B,Lisa Lescard,Complete,,,"Approved at ARB on Feb 4, 2020",11-06-2020,Shamir Alavi,,,,,,,,,13,13,Readiness
+Artificial Intelligence (AI) - Chatbot,Readiness,On Track,,,Tech R&D,Outlook,Personalized focus AI Outlook,SAID,Tiffany B,Alan Ritchie,Complete,,X,,09-07-2020,Yihong Wang,,,,,,11-06-2019,The proposed recommendations were approved and associated OPI’s were assigned. ,,13,13,Readiness
+Artificial Intelligence (AI) - Cyber Security,Readiness,On Track,,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Sandy Lloyd,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,30-04-2019,The Agency Security Plan 2019-2022 has identified cyber security as a priority. It will provide future direction and recommendations in the AI cyber security space.   ,,10.5,13,Adopt/Readiness
+Artificial Intelligence (AI) - Cyber Security,Readiness,On Track,,,Tech R&D,PoC (technology),Data security initiatives to enhance cyber security,SID,Martin L,Jozef Lesniak,In Progress,,,"ITSS is working on this emerging technology.  EFMS team is working on extension to CFRM monitoring tool to analyse user behavior and enhance fraud detection models.
 
-Jun 19: We need to discuss this with the ambassador.",27-06-2020,Shamir Alavi,May?,,,,10.5,,Adopt/Readiness
-Artificial Intelligence (AI) - Cyber Security,,On Track,N/A,,Tech R&D,PoC (technology),"Data security initiatives to enhance cyber security
-     Offensive, proactive protection
-     Defensive, reactive measures (patches, finding and fixing vulnerabilities)",SID,Martin L,Mustapha El-Belghiti,In Progress,,,ITSC is working on this emerging technology.  This is part of our IT Security Strategy 2019-2022.,,Francois Viens. ,,,,,10.5,,Adopt/Readiness
-Artificial Intelligence (AI) - Virtual Assistants,Adopt,PoC,N/A,,Tech R&D,PoC (technology),Amazon Alexa Virtual Personal Assistant proof of concept (Provides general information about the Canada Child Benefit),DBID,David Y,Maretcho Wilson,Planned,,,PoC activities planned for August when AWS lab environment on cloud is available for AISS to explore.,14-02-2020,Maretcho Wilson,,,,,2,8,Tech R&D
-Artificial Intelligence (AI) - Virtual Assistants,,On Track,N/A,,Tech R&D,Reference Architecture,Conversational Interface - Virtual Personal Assistant  Reference Architecture ,SAID,Tiffany B,Lisa Lescard / Maria Wing,In Progress,,,"high priority - existing project - chatbot and VPA, possibly chatbot in first iteration - links to BI ref. arch.",23-07-2020,Shamir Alavi,,,,,8,,Adopt
-Artificial Intelligence (AI) - Virtual Assistants,,On Track,N/A,,Tech R&D,Pilot,"Exploration and evaluation of Virtual Personal Assistants (e.g. Amazon Alexa and Connect, Google Assistant, Microsoft Cortana) ",DBID,David Y,Maretcho Wilson,In Progress,,,No progress due to other priorities,23-07-2020,Shamir Alavi,,,,,8,,Adopt
-Artificial Intelligence (AI) - Virtual Assistants,,On Track,N/A,,Tech R&D,Backgrounder,Personalized focus AI  - VPA Backgrounder,SAID,Tiffany B,Dina Patel,Complete,,X,,"2020-07-10
+Jun 19: We need to discuss this with the ambassador.",,Jozef Lesniak,27-06-2020,Shamir Alavi,Added question in the Activity Notes to discuss with the ambassador/co-ambassador (cell is highlighted for convenience),May?,,,,,10.5,13,Adopt/Readiness
+Artificial Intelligence (AI) - Virtual Assistants,Adopt,On Track,,,Tech R&D,Reference Architecture,Conversational Interface - Virtual Personal Assistant  Reference Architecture ,SAID,Tiffany B,Lisa Lescard,Complete,,,"Approved at IT-ARB on July 21, 2020",28-07-2020,Megha Malhotra,,,,,,,,,8,8,Adopt
+Artificial Intelligence (AI) - Virtual Assistants,Adopt,On Track,,,Tech R&D,Pilot,"Exploration and evaluation of Virtual Personal Assistants (e.g. Amazon Alexa and Connect, Google Assistant, Microsoft Cortana) ",DBID,David Y,Maretcho Wilson,In Progress,,,No progress due to other priorities,08-09-2020,Muhammad Zulfiqar,23-07-2020,Shamir Alavi,Highlighted the 'Activity Type' cell to have discussion on it with ambassador/co-ambassador,,,,,,8,8,Adopt
+Artificial Intelligence (AI) - Virtual Assistants,Adopt,On Track,,,Tech R&D,Backgrounder,Personalized focus AI  - VPA Backgrounder,SAID,Tiffany B,Dina Patel,Complete,,X,,,,"2020-07-10
 2020-07-23","Yihong Wang
-Shamir Alavi",,,21-08-2018,N/A,2,,Adopt
-Artificial Intelligence (AI) - Virtual Assistants,,On Track,N/A,,Tech R&D,Outlook,Personalized focus AI Outlook,SAID,Tiffany B,Alan Ritchie,Complete,,X,,"2020-07-09
+Shamir Alavi",,,,21-08-2018,N/A,,2,8,Adopt
+Artificial Intelligence (AI) - Virtual Assistants,Adopt,On Track,,,Tech R&D,Outlook,Personalized focus AI Outlook,SAID,Tiffany B,Alan Ritchie,Complete,,X,,"2020-07-09
 2020-07-23","Yihong Wang
-Shamir Alavi",,,11-06-2019,The proposed recommendations were approved and associated OPI’s were assigned. ,3,,Adopt
-Augmented Analytics,Study,On Track,Park,??,Tech R&D,Backgrounder,Augmented Analytics Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,X,,27-06-2020,Shamir Alavi,,,16-04-2019,CRA is on the road to adopting this capability by upgrading existing products ,2,2,Study
-Augmented Data Catalogues,Study,Not Started,Park,Not plotted,Business,Backgrounder,Augmented Data Catalogues Backgrounder,SAID,Tiffany B,Alan Ritchie,Complete,,,New topic suggested by Alan,27-06-2020,Shamir Alavi,29-01-2020,DBID to engage SIIB; Present to ETIB,18-02-2020,Endorsed that no further research work is required as the next release of Information Governance Catalog (IGC v.  11.7.1) will bring augmented capabilities in metadata discovery and linking. ,2,2,Study
-Auto Machine Learning,Identify,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,1,1,Identify
-Autonomic Computing,Study,On Track,Park,Engage or watch?,Tech R&D,Backgrounder,Autonomic Computing Backgrounder,SAID,Tiffany B,Maria Wing,Complete,,,,27-06-2020,Shamir Alavi,06-11-2019,,26-11-2019,"Park the research, but keep monitoring the trend.  ",2,2,Study
-Big Data,Adopt,On Track,N/A,,Tech R&D,Reference Architecture,BI Reference Architecture Updates?,SAID,Tiffany B,TBD,Planned,,,,10-06-2020,Megha Malhotra,,,,,5,8,Adopt
-Big Data,,On Track,N/A,Pilot changes?,Tech R&D,Adoption Strategy,Big Data Adoption Strategy,SAID,Tiffany B,Alan Ritchie,Complete,,X,,10-07-2020,Yihong Wang,,,01-05-2018,N/A,5,,Adopt
-Big Data,,On Track,N/A,Pilot changes?,Tech R&D,Outlook,Big Data Outlook,SAID,Tiffany B,Alan Ritchie,Complete,,X,,27-06-2020,Shamir Alavi,,,,,3,,Adopt
-Big Data,,On Track,N/A,,Tech R&D,Pilot,Data security initiatives to enhance cyber security,SID,Martin L,Jozef Lesniak,In Progress,,,ITSS is working on this emerging technology.  EFMS team is working on integration of Hadoop/Hbase technology to store session recordings from CFRM monitoring tool to Hadoop DB.,,Jozef Lesniak,17-Jun,N/A - Educational piece,,,8,,Adopt
-Big Data,,On Track,N/A,,Tech R&D,Pilot,"Pilot (EFMm, Security)",SID,Martin L,,Complete,,,Is this complete?,11-03-2020,Megha Malhotra,May?,,,,8,,Adopt
-Biometrics,Adopt,Not Started,N/A,,Tech R&D,Adoption Strategy,Adoption Strategy (Lite),SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,3,8,Adopt
-Biometrics,,Not Started,N/A,,Tech R&D,Outlook,Biometrics Outlook,SAID,Tiffany B,Bruno Tremblay,Complete,,X,,27-06-2020,Shamir Alavi,,,05-02-2019,"As there has been already work in the adoption of biometrics internally to the agency, a light weight adoption strategy has been requested by the members.  The strategy should detail the internal adoption, as well as potential adoption for external use",3,,Adopt
-Biometrics,,On Track,N/A,,Tech R&D,Standards,Standard on Biometrics,SID,Martin L,Francois Viens,Complete,,,"ITSC provided a Standard on Biometrics.
+Shamir Alavi",,,,,,11-06-2019,The proposed recommendations were approved and associated OPI’s were assigned. ,,3,8,Adopt
+Augmented Analytics,Study,On Track,Park,??,Tech R&D,Backgrounder,Augmented Analytics Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,16-04-2019,CRA is on the road to adopting this capability by upgrading existing products ,,2,2,Study
+Augmented Data Catalogues,Study,Not Started,Park,Not plotted,Business,Backgrounder,Augmented Data Catalogues Backgrounder,SAID,Tiffany B,Alan Ritchie,Complete,,,New topic suggested by Alan,27-06-2020,Shamir Alavi,,,,29-01-2020,DBID to engage SIIB; Present to ETIB,18-02-2020,Endorsed that no further research work is required as the next release of Information Governance Catalog (IGC v.  11.7.1) will bring augmented capabilities in metadata discovery and linking. ,,2,2,Study
+Auto Machine Learning,Identify,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,,,,,1,1,Identify
+Autonomic Computing,Study,On Track,Park,Engage or watch?,Tech R&D,Backgrounder,Autonomic Computing Backgrounder,SAID,Tiffany B,Maria Wing,Complete,,,,27-06-2020,Shamir Alavi,,,,06-11-2019,,26-11-2019,"Park the research, but keep monitoring the trend.  ",,2,2,Study
+Big Data,Adopt,On Track,,Pilot changes?,Tech R&D,Adoption Strategy,Big Data Adoption Strategy,SAID,Tiffany B,Alan Ritchie,Complete,,X,,10-07-2020,Yihong Wang,,,,,,01-05-2018,N/A,,5,8,Adopt
+Big Data,Adopt,On Track,,Pilot changes?,Tech R&D,Outlook,Big Data Outlook,SAID,Tiffany B,Alan Ritchie,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,3,8,Adopt
+Big Data,Adopt,On Track,,,Tech R&D,Pilot,Data security initiatives to enhance cyber security,SID,Martin L,Jozef Lesniak,In Progress,,,ITSS is working on this emerging technology.  EFMS team is working on integration of Hadoop/Hbase technology to store session recordings from CFRM monitoring tool to Hadoop DB.,,Jozef Lesniak,,,,17-Jun,N/A - Educational piece,,,,8,8,Adopt
+Big Data,Adopt,On Track,,,Tech R&D,Pilot,"Pilot (EFMm, Security)",SID,Martin L,,Complete,,,Is this complete?,11-03-2020,Megha Malhotra,,,,May?,,,,,8,8,Adopt
+Biometrics,Adopt,Not Started,,,Tech R&D,Adoption Strategy,Adoption Strategy (Lite),SAID,Tiffany B,Lisa Lescard,In Progress,,,Status updated to 'In Progress',14-09-2020,Shamir Alavi,,,,,,,,,5,8,Adopt
+Biometrics,Adopt,Not Started,,,Tech R&D,Outlook,Biometrics Outlook,SAID,Tiffany B,Bruno Tremblay,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,05-02-2019,"As there has been already work in the adoption of biometrics internally to the agency, a light weight adoption strategy has been requested by the members.  The strategy should detail the internal adoption, as well as potential adoption for external use",,3,8,Adopt
+Biometrics,Adopt,On Track,,,Tech R&D,Standards,Standard on Biometrics,SID,Martin L,Francois Viens,Complete,,,"ITSC provided a Standard on Biometrics.
 
-",,Francois Viens. ,,,,,8,,Adopt
-Blue J,Adopt,,N/A,Not plotted,Tech R&D,Pilot,"Multiple Pilots using Blue J tool.
-International and Large Business Directorate (Alexandra MacLean/Suzanne Canning) are the primary users of the tool 
-They saw potential in using having Justice involved earlier in the audit process (success rates of certain cases), through some sharing of the data/results that they are able to find with the use of the tool.",CMD,Karen W,,In Progress,,,,,,,,,,8,8,Relate/Plan
-Cloud computing (Protected B),Adopt,,,,Bus/Tech,PoC (technology),"PoC  For NEDD in the cloud 
-",DBID,David Y,Aline Lafrance,Planned,,,"NEDD PoC Project Charter is now underway (replacing scope document) to include more details regarding the PoC.
-NEDD PoC working group continue to clarify scope and plan for the PoC. Target to execute the PoC is September.
-addtitional 2 client use cases still TBD.
-July 8 -Need to confirm if belongs to Protected B.",29-06-2020,Aline Lafrance,,,,,8,8,
-Cloud Computing (Protected B),,On Track,N/A,,Business of IT,Pilot,AWS Connect - Internal Help Desk -transformation to a SaaS/PaaS,SAID,Tiffany B,,In Progress,Updated as per consultation with COE (s/b both Classified and Unclassified),15-06-2020,"Removed SAID and DG, as we are only hosting. OPI is Maretcho Wilson (under DBID).",24-07-2020,Luc van Baaren,,,,,8,,Adopt
-Cloud Computing (Protected B),,PoC,N/A,SAID,Business of IT,Early Adopter,AWS DevOps OpenSHift On-prem (Enterprise Dev-Ops Stack ),SAID,Tiffany B,John Mueller,In Progress,"Removed SAID and DG, as we are only hosting. OPI is Maretcho Wilson (unde DBID).",28-05-2020,"Removed SAID and DG, as we are only hosting. OPI is TBD.",24-07-2020,Luc van Baaren,,,,,8,,Adopt
-Cloud Computing (Protected B),,On Track,N/A,,Business of IT,Pilot,AWS Lab Environment,SAID,Tiffany B,,In Progress,Project in discovery,28-05-2020,"Added as per consultation with Cloud COE
+",,Francois Viens. ,,,,,,,,,8,8,Adopt
+Captcha Evolution,Study,,,,Tech R&D,Backgrounder,"Have you noticed that CAPTCHA tests have become increasingly hard to solve? That’s because bots are getting better at cracking those frustratingly difficult, warped word puzzles. According to research from Google, computers could solve the hardest distorted text CAPTCHAs with 99% accuracy, while humans could only solve with a 33% accuracy. This has led to increasingly difficult CAPTCHA tests that have significant accessibility issues for individuals who are blind, deaf or have cognitive impairments. In the future, CAPTCHAs will evolve into more sophisticated tests that only humans can pass. These tests need to be easy enough for any human to complete without compromising privacy or personally identifiable information such as a DNA sample or a fingerprint. With more and more sophisticated sensors being incorporated into our digital devices, what if CAPTCHAs evolve to be breathalyzers, body heat sensors or heartbeat monitors on your computer screen?",SAID,Tiffany B,Cheryl Cudmore,Planned,,,,06-08-2020,Megha Malhotra,,,,,,,,,2,2,
+Cloud Computing (Protected B),Adopt,On Track,,,Business of IT,Pilot,AWS Connect - Internal Help Desk -transformation to a SaaS/PaaS,SAID,Tiffany B,,In Progress,Updated as per consultation with COE (s/b both Classified and Unclassified),15-06-2020,"Removed SAID and DG, as we are only hosting. OPI is Maretcho Wilson (under DBID).",24-07-2020,Luc van Baaren,,,,,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,PoC,,SAID,Business of IT,Early Adopter,AWS DevOps OpenSHift On-prem (Enterprise Dev-Ops Stack ),SAID,Tiffany B,John Mueller,In Progress,"Removed SAID and DG, as we are only hosting. OPI is Maretcho Wilson (unde DBID).",28-05-2020,"Removed SAID and DG, as we are only hosting. OPI is TBD.",24-07-2020,Luc van Baaren,,,,,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,On Track,,,Business of IT,Pilot,AWS Lab Environment,SAID,Tiffany B,,In Progress,Project in discovery,28-05-2020,"Added as per consultation with Cloud COE
 
-2020/07/24: Removed SAID and DG, as we are only hosting. OPI is TBD.",24-07-2020,Luc van Baaren,,,,,8,,Adopt
-Cloud Computing (Protected B),,,N/A,,Business of IT,Early Adopter,Development of FPS (Financial Planning System) on the cloud environment/development with CAS PI,CESD,Daniel G,Mario Kalabric,In Progress,,,"- Since there is currently no path to cloud we are continuing with an eBCI implementation and the FPS application will used as a POC of path finder with SETI and be built using Angular and Java to  instead of Stuts2. 
+2020/07/24: Removed SAID and DG, as we are only hosting. OPI is TBD.",24-07-2020,Luc van Baaren,,,,,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,,,,Business of IT,Early Adopter,Development of FPS (Financial Planning System) on the cloud environment/development with CAS PI,CESD,Daniel G,Mario Kalabric,In Progress,,,"- Work on hold until a cloud path is defined. 
+- Since there is currently no path to cloud we are continuing with an eBCI implementation and the FPS application will used as a POC of path finder with SETI and be built using Angular and Java to  instead of Stuts2. 
 - The application will be built platform agonistic to be portable so it has the potential to move to a cloud solution once there is infrastructure in place.
 - Analysis almost complete; coding to begin shortly
-- Coding is occuring and production date schdeuled for fall 2020",15-07-2020,Rob Backstrom,,,,,8,,Adopt
-Cloud Computing (Protected B),,On Track,N/A,,Business of IT,Pilot,Initiatives underway to support Cloud Security,SID,Martin L,James Stinson,In Progress,,,"  ITSC and ITSS are working on this emerging technology from a security point-of-view. ITSS and ITSC are working in close collaboration with the Cloud Centre of Expertise (CCoE).  The activities involved for this topics are: Security controls, Vulnerability Scan tool for the Cloud, Penetration testing tool for the cloud, setting up the Security Operation Centre (SOC), Implementing the Firewall, looking at the Encryption aspects (PKI, EKMS) and looking at the Federated Access activities.  
+- Coding is occuring and production date schdeuled for fall 2020",05-10-2020,Rob Backstrom,,,,,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,On Track,,,Business of IT,Pilot,Initiatives underway to support Cloud Security,SID,Martin L,James Stinson,In Progress,,,"  ITSC and ITSS are working on this emerging technology from a security point-of-view. ITSS and ITSC are working in close collaboration with the Cloud Centre of Expertise (CCoE).  The activities involved for this topics are: Security controls, Vulnerability Scan tool for the Cloud, Penetration testing tool for the cloud, setting up the Security Operation Centre (SOC), Implementing the Firewall, looking at the Encryption aspects (PKI, EKMS) and looking at the Federated Access activities.  
 Teams are working actively towards a PB-LL April 2020 delivery date for an Azure implementation readiness.
 
-Jun 19: This is one of the activities that is part of a pilot. ",27-06-2020,Shamir Alavi,,,,,8,,Adopt
-Cloud Computing (Protected B),,On Track,N/A,,Business of IT,Adoption Strategy,IT assets to move to Cloud are being identified,SAID,Tiffany B,Scott Corbett,In Progress,,,"June 2020
-• the first pass was done with the TBS scorecard in the summer and identified SAP. As part of the Migration Readiness Planning and Discovery project we will review our entire portfolio and patterns to determine what else can move and how.
-
-Jun 19: We (SC&D) decided that it is an early adopter (activity type) because it is identifying early adopter assets to move to cloud.
-WE NEED TO ASK CLOUD (LUC) ABOUT THIS.
-
-July 24: ""Adoption Stategy"" is more appropriate for the current status. 
-
-Removed: duplicate entry of line 66",24-07-2020,Luc van Baaren,,,,,8,,Adopt
-Cloud Computing (Protected B),,Assessment,N/A,,Bus/Tech,PoC (technology),LSE type solution hosted on the Cloud.,CESD,Daniel G,,In Progress,,,"- Following the CAS migration to the cloud we are startign the project o creating a LSE type solution wihin the cloud space.  Currently inveistagting funding and resourcing paths.
-- BTID team is engaged with the CLoud CoE for the migration of an intitial LSE application to AWS and verify the cloud components that we be leveraged to move the entire LSE solutions to the cloud.  The team is identify the limtations of the cloud solution and working on the path forward.",15-07-2020,Rob Backstrom,,,,,8,,Adopt
-Cloud Computing (Protected B),,On Track,N/A,,Business of IT,Adoption Strategy,Protected B Cloud - Migration Readiness Planning project. Assesses the application portfolio. The results will inform the direction for application migration to the cloud. ,SAID,Tiffany B,Scott Corbett,In Progress,,,"Jun 19: It's been tagged as pilot because this procurement is part of establishing the protected B cloud
+Jun 19: This is one of the activities that is part of a pilot. ",06-02-2020,James Stinson,27-06-2020,Shamir Alavi,Added question in the Activity Notes to discuss with the ambassador/co-ambassador (cell is highlighted for convenience),,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,Assessment,,,Bus/Tech,PoC (technology),LSE type solution hosted on the Cloud.,CESD,Daniel G,,In Progress,,,"- Work on goign with CLoud CoE to define the solution on AWS 
+- Following the CAS migration to the cloud we are startign the project o creating a LSE type solution wihin the cloud space.  Currently inveistagting funding and resourcing paths.
+- BTID team is engaged with the CLoud CoE for the migration of an intitial LSE application to AWS and verify the cloud components that we be leveraged to move the entire LSE solutions to the cloud.  The team is identify the limtations of the cloud solution and working on the path forward.",05-10-2020,Rob Backstrom,,,,,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,On Track,,,Business of IT,PoC (technology),Protected B Cloud - Migration Readiness Planning project. Assesses the application portfolio. The results will inform the direction for application migration to the cloud. ,SAID,Tiffany B,Scott Corbett,In Progress,,,"Jun 19: It's been tagged as pilot because this procurement is part of establishing the protected B cloud
 
 July 24:  PB cloud contracts in place by SSC. CRA has Azure and AWS PB environments. Currently connecting Azure through SSC's SCED that will allow safe connectivity from ground to cloud and cloud to ground. Azure due end of May 2020. AWS date to be determined, aiming for July 2020.
-",24-07-2020,Scott Corbett,,,,,8,,Adopt
-Cloud Computing (Protected B),,On Track,N/A,,Tech R&D,Pilot,SAP (CAS) Application Modernization to Cloud ,SAID,Tiffany B,,In Progress,Discovery Phase: investigation of the migration of CAS/SAP CRA services to the cloud.,28-05-2020,"Removed SAID and DG, as we are only hosting. OPI is Christina St-John  (under CESD).",24-07-2020,Luc van Baaren,,,,,8,,Adopt
-Cloud Computing (Protected B),,On Track,N/A,,Business of IT,Adoption Strategy,Cloud Computing Adoption Strategy,SAID,Tiffany B,Shannon Maynard,Complete,,,,27-06-2020,Shamir Alavi,,,,,8,,Adopt
-Cloud Computing (Protected B),,On Track,N/A,,Business of IT,Outlook,Cloud Computing Outlook,SAID,Tiffany B,Shannon Maynard,Complete,,,,27-06-2020,Shamir Alavi,,,,,8,,Adopt/Readiness
-Cloud Computing (Protected B),,On Track,N/A,,Business of IT,Reference Architecture,CRA Innovation Lab Environment (Azure),SAID,Tiffany B,Pavel S,Complete,,,TAD (Technology Architecture Document) has been governed and approved.,05-02-2020,,,,,,8,,Adopt/Readiness
-Cloud Computing (Unclassified),Adopt/Readiness,On Track,N/A,,Bus/Tech,Pilot,Climate Action Payment Initiative Chatbot (ABSB),DBID,David Y,Maretcho Wilson,Complete,,,"launched March 15, 2019",14-02-2020,Maretcho Wilson,,,,,10.5,10.5,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Business of IT,Adoption Strategy,Cloud Computing Adoption Strategy,SAID,Tiffany B,Shannon Maynard,Complete,,,,27-06-2020,Shamir Alavi,,,,,10.5,,Adopt
-Cloud Computing (Unclassified),,On Track,N/A,,Business of IT,Outlook,Cloud Computing Outlook,SAID,Tiffany B,Shannon Maynard,Complete,,,,27-06-2020,Shamir Alavi,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,,,,Business of IT,Early Adopter,Amazon Connect Services,DMRAAD,Merlin L,CCT,In Progress,,,"Assessing the viability of using the Amazon Connect services to operated tier 2 and 3 contact centres in CRA
+26-Jan-2021:
+-Authority to Operate (ATO) approved for Azure PBLL Lab
+-Security Assessment and Authorization (SA&A) process initiated in progress for AWS PBLL Lab
+-SAP (CAS) Pathfinder onboarding onto completed Proof of Concept on Azure in progress; Pathfinder Project completed with successful results;
+-Workload onboarding planning  for Proof of Concepts and remaining Pathfinders (DevOps and Call Centre) in progress",26-01-2021,Scott Corbett,,,,,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,On Track,,,Tech R&D,Pilot,SAP (CAS) Application Modernization to Cloud ,SAID,Tiffany B,,In Progress,Discovery Phase: investigation of the migration of CAS/SAP CRA services to the cloud.,28-05-2020,"Removed SAID and DG, as we are only hosting. OPI is Christina St-John  (under CESD).",24-07-2020,Luc van Baaren,,,,,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,On Track,,,Business of IT,Adoption Strategy,Cloud Computing Adoption Strategy,SAID,Tiffany B,Shannon Maynard,Complete,,,,27-06-2020,Shamir Alavi,,,,,,,,,8,8,Adopt
+Cloud Computing (Protected B),Adopt,On Track,,,Business of IT,Outlook,Cloud Computing Outlook,SAID,Tiffany B,Shannon Maynard,Complete,,,,27-06-2020,Shamir Alavi,,,,,,,,,8,8,Adopt/Readiness
+Cloud Computing (Protected B),Adopt,On Track,,,Business of IT,Reference Architecture,CRA Innovation Lab Environment (Azure),SAID,Tiffany B,Pavel S,Complete,,,TAD (Technology Architecture Document) has been governed and approved.,05-02-2020,,,,,,,,,,8,8,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Business of IT,Adoption Strategy,Cloud Computing Adoption Strategy,SAID,Tiffany B,Shannon Maynard,Complete,,,,27-06-2020,Shamir Alavi,,,,,,,,,10.5,10.5,Adopt
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Business of IT,Outlook,Cloud Computing Outlook,SAID,Tiffany B,Shannon Maynard,Complete,,,,27-06-2020,Shamir Alavi,,,,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,,,,Business of IT,Early Adopter,Amazon Connect Services,DMRAAD,Merlin L,CCT,In Progress,,,"Assessing the viability of using the Amazon Connect services to operated tier 2 and 3 contact centres in CRA
 
-Working towards commitment gate",27-06-2020,Shamir Alavi,,,,,10.5,,
-Cloud Computing (Unclassified),,On Track,N/A,,Business of IT,Pilot,AWS Connect - Internal Help Desk -transformation to a SaaS/PaaS,SAID,Tiffany B,,In Progress,Project in discovery,28-05-2020,"Removed SAID and DG, as we are only hosting. OPI is Louise De Cal  (under DMRAAD).",24-07-2020,Luc van Baaren,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,PoC,N/A,SAID,Tech R&D,PoC (technology),"AWS DevOps OpenSHift On-prem (Enterprise Dev-Ops Stack )
-• Proof of concept for OpenShift/Quarkus, an on-premises platform as a service built around Docker containers orchestrated and managed by Kubernetes on a foundation of Red Hat Enterprise Linux
-• OpenShift is a family of containerization software developed by Red Hat. Its flagship product is the OpenShift Container Platform—an on-premises platform as a service built around Docker containers orchestrated and managed by Kubernetes on a foundation of Red Hat Enterprise Linux.
-Quarkus is a full-stack, Kubernetes-native Java framework made for Java virtual machines (JVMs) and native compilation",SAID,Tiffany B,Alain Dionne,In Progress,,,"OpenShift container management platform has been deployed to the SETI Lab to enable projects that wish to innovate using kubernetes-native practices, with up to Protected B data, on CRA networks.
-AWS DevOps Pathfinder Project (OpenSHift on-prem) was presented on January 10, 2020. Demo planned for February 7, 2020.
-June update:  Cloud COE advised that this activity relates to both Protected B and unclassified.  This entry added to reflect COE input.
+Working towards commitment gate",,,,,,,,,,,10.5,10.5,
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Business of IT,Pilot,AWS Connect - Internal Help Desk -transformation to a SaaS/PaaS,SAID,Tiffany B,,In Progress,Project in discovery,28-05-2020,"Removed SAID and DG, as we are only hosting. OPI is Louise De Cal  (under DMRAAD).",24-07-2020,Luc van Baaren,,,,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Business of IT,Pilot,AWS Lab Environment,SAID,Tiffany B,,In Progress,,,"Added as per consultation with Cloud COE
 
-July 24: Analysis is ongoing. OpenShift is in the SETI LAB currently. R&D continuing on Quarkus.  TSRP for Quarkus was submitted.",24-07-2020,Alain Dionne,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Business of IT,Pilot,AWS Lab Environment,SAID,Tiffany B,,In Progress,,,"Added as per consultation with Cloud COE
-
-July 24: Is this item required, as it is an environment for people to test emerging technologies, as opposed to an emerging technology itself?",24-07-2020,Luc van Baaren,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Business of IT,PoC (technology),CRA Innovation Lab Environment (Azure),SAID,Tiffany B,Pavel S,Complete,,,"TAD (Technology Architecture Document) has been governed and approved.
+July 24: Is this item required, as it is an environment for people to test emerging technologies, as opposed to an emerging technology itself?",24-07-2020,Luc van Baaren,,,,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Business of IT,PoC (technology),CRA Innovation Lab Environment (Azure),SAID,Tiffany B,Pavel S,Complete,,,"TAD (Technology Architecture Document) has been governed and approved.
 
 
-Jun 19: We (SC&D) need to ask IETS what this is.",27-06-2020,Shamir Alavi,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Bus/Tech,Early Adopter,"Explore Distributed Ledger Technology (DLT) or Blockchain.  Blockchain is the more common term, and Distributed Ledger Technology is the more generic term.",SAID,Tiffany B,John Mueller,Complete,,,"Closed 
+Jun 19 (added by secretariat): We need to ask IETS what this is.",05-02-2020,,27-06-2020,Shamir Alavi,Added question in the Activity Notes to discuss with the ambassador/co-ambassador (cell is highlighted for convenience),,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Bus/Tech,Early Adopter,"Explore Distributed Ledger Technology (DLT) or Blockchain.  Blockchain is the more common term, and Distributed Ledger Technology is the more generic term.",SAID,Tiffany B,John Mueller,Complete,,,"Closed 
 2019-01-25
-https://confluence.isvcs.net/pages/viewpage.action?pageId=123279163",24-07-2020,John Mueller,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Tech R&D,PoC (business),Horizontal portal software exploration in progress (Secure Portals Redesign),BESD,Jeff B,Mary MacPhee,Complete,,,"IETS set up the R&D environment, BESD is doing the s/w exploration. s/w exploration complete. SPR decided not to continue to pursue the acquisition of a horizontal portal product.",,"Sebastien Hubert made the update.
-Jeff Bloor reviewed.",,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Business of IT,Pilot,"DevOps is a culture that fosters collaboration through the software lifecycle from development to operations. CRA is the process of setup a DevOps pipeline to introduce automated methods of validating, testing and releasing software",SAID,Tiffany B,John Mueler,In Progress,,,Project in discovery,24-07-2020,John Mueller,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Business of IT,Pilot,"Secure, scalable environment established within  Microsoft Azure for unclassified data",SAID,Tiffany B,Scott Corbett,Complete,,,"Completed
+https://confluence.isvcs.net/pages/viewpage.action?pageId=123279163",24-07-2020,John Mueller,,,,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Tech R&D,PoC (business),Horizontal portal software exploration in progress (Secure Portals Redesign),BESD,Jeff B,Mary MacPhee,Complete,,,"IETS set up the R&D environment, BESD is doing the s/w exploration. s/w exploration complete. SPR decided not to continue to pursue the acquisition of a horizontal portal product.",,"Sebastien Hubert made the update.
+Jeff Bloor reviewed.",16-09-2020,Shamir Alavi,Activity Type confirmed at the Secretariat - BESD touchpoint meeting ,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Business of IT,Pilot,"Secure, scalable environment established within  Microsoft Azure for unclassified data",SAID,Tiffany B,Scott Corbett,Complete,,,"Completed
 
-Jun 19: We (SC&D) are calling this a pilot because it is establishing the cloud environment.",24-07-2020,Shamir Alavi,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Business of IT,Adoption Strategy,IT assets to move to Cloud are being identified,SAID,Tiffany B,Scott Corbett,In Progress,,,"• Migration Readiness Planning project is underway and is assessing the application portfolio. The results will inform the direction for application migration to the cloud. 
-• the first pass was done with the TBS scorecard in the summer and identified SAP. As part of the Migration Readiness Planning and Discovery project we will review our entire portfolio and patterns to determine what else can move and how.
-
-Jun 19: We (SC&D) decided that it is an early adopter (activity type) because it is identifying early adopter assets to move to cloud.
-WE NEED TO ASK CLOUD (LUC) ABOUT THIS.
-
-July 24: ""Adoption Strategy"" is most appropriate status. No status change for this month.",24-07-2020,Scott Corbett,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Bus/Tech,Pilot,Knowledge Sharing Platform (KSP) ,DMRAAD,Merlin L,,In Progress,,,"KSP is now deployed to cloud, MS suite of products are being integrated and SAA work is underway. ",,Virginia Comeau,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,Assessment,N/A,,Bus/Tech,PoC (technology),LSE type solution hosted on the Cloud.,CESD,Daniel G,,In Progress,,,"- Following the CAS migration to the cloud we are startign the project o creating a LSE type solution wihin the cloud space.  Currently inveistagting funding and resourcing paths.
-- BTID team is engaged with the CLoud CoE for the migration of an intitial LSE application to AWS and verify the cloud components that we be leveraged to move the entire LSE solutions to the cloud.  The team is identify the limtations of the cloud solution and working on the path forward.",15-07-2020,Rob Backstrom,,,,,10.5,,Adopt
-Cloud Computing (Unclassified),,,N/A,,Bus/Tech,Early Adopter,New CRA e-procurement System using Ariba cloud to replace current on prem Synergy (Ariba-based solution),CESD,Daniel G,André Elvas,In Progress,,,"-Ongoign discovery via CAR creation and working with SETI and Security
--CAR is being built for project
--In detailed planning with egagement of cloud CoE, Architecture and Security",27-06-2020,Shamir Alavi,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,On Track,N/A,,Tech R&D,Pilot,SAP (CAS) Application Modernization to Cloud ,SAID,Tiffany B,,In Progress,,,"Removed SAID and DG, as we are only hosting. OPI is Christina St-John  (under CESD).
-Duplicate of line item 50.",24-07-2020,Luc van Baaren,,,,,10.5,,Adopt/Readiness
-Cloud Computing (Unclassified),,,N/A,,Bus/Tech,Early Adopter,"Web Optimization Stratgy project, aka Beta.canada.ca to use cloud-based Drupal instance for external CRA web content and other features eg:  Search",CESD,Daniel G,André Elvas,In Progress,,,"- CAR update ongoing while working with SETI and Security and Following closely behing CAS and CDS to reuse common solutions.
+Jun 19 (added by secretariat): We are calling this a pilot because it is establishing the cloud environment.",29-10-2019,Scott Corbett,24-07-2020,Shamir Alavi,Added question in the Activity Notes to discuss with the ambassador/co-ambassador (cell is highlighted for convenience),,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Bus/Tech,Pilot,Knowledge Sharing Platform (KSP) ,DMRAAD,Merlin L,,In Progress,,,"KSP is now deployed to cloud, MS suite of products are being integrated and SAA work is underway. ",,Virginia Comeau,,,,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,,,,Bus/Tech,Early Adopter,New CRA e-procurement System using Ariba cloud to replace current on prem Synergy (Ariba-based solution),CESD,Daniel G,André Elvas,In Progress,,,"- Solution is in design and build stage with intergations to CAS leveragign the API Gateway and SAML Soltuion for SSO
+- Ongoign discovery via CAR creation and working with SETI and Security
+- CAR is being built for project
+- In detailed planning with egagement of cloud CoE, Architecture and Security",05-10-2020,Rob Backstrom,27-06-2020,Shamir Alavi,Changed activity type from Project to Early Adopter to conform to the newly established list of activity types.,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,On Track,,,Tech R&D,Pilot,SAP (CAS) Application Modernization to Cloud ,SAID,Tiffany B,,In Progress,,,"Removed SAID and DG, as we are only hosting. OPI is Christina St-John  (under CESD).
+Duplicate of line item 50.",24-07-2020,Luc van Baaren,,,,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,,,,Bus/Tech,Early Adopter,"Web Optimization Stratgy project, aka Beta.canada.ca to use cloud-based Drupal instance for external CRA web content and other features eg:  Search",CESD,Daniel G,André Elvas,In Progress,,,"- CAR being submitted to SIG this week (Oct 4th 2020) and Alpha environment undergoing Security assessment for ATO for Azure instance to allow PAB developers to start validating solution.
+- CAR update ongoing while working with SETI and Security and Following closely behing CAS and CDS to reuse common solutions.
 - CAR is being produced for the project
 - Investigating StatsCan implementation as a model
-- The Alpha instance of the Drupel solution is being assessed by Security to allow us to have an environment for the PAB developers to start their development and testing new fucntionality of the solution.  The alpha is a now public fasing versionn of the Drupel solution only available via a CRA/GoC IP Address for POC purposes.",15-07-2020,Rob Backstrom,,,,,10.5,,Adopt/Readiness
-Confidential Computing,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Cheryl Cudmore,In Progress,,,Need to schedule ACF / ETAIC,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Convergence,Study,Not Active,Park,,Tech R&D,Backgrounder,Convergence Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,16-10-2018,No further research required,2,2,Study
-Dark Data,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Shamir Alavi,Planned,,,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Data Anonymization,Plan,Not Active,Park,,Business,PoC (business),FCInet ,CMD,Karen W,AAD,In Progress,,X,There is 2 participants in CPB with ITB.  Both parties working on go forward plan with international partners.  No further action by ITB,29-06-2020,Dan Wilton,,,,,5,5,Study
-Data Anonymization,,On Track,Engage,complete on radar?,Tech R&D,Backgrounder,Data Anonymization Backgrounder,SAID,Tiffany B,,Complete,,X,,10-07-2020,Yihong Wang,,,21-08-2018,Proceed with an outlook.,2,,Relate
-Data Anonymization,,On Track,Engage,,Tech R&D,Outlook,Data Anonymization Outlook,SAID,Tiffany B,Vaja Tucker,Complete,,,,27-06-2020,Shamir Alavi,12-02-2020,Present at ETIB + Identify OPI,12-05-2020,"IRBD, DBID and SID to bring forward an updated status of the SIP proposal and the Gartner study to ETIB to finalize next steps. Follow up in three months.",3,,Relate
-Data Centricity ,Study,On Track,Park,s/b complete,Tech R&D,Backgrounder,Data Centricity Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,X,More topics have been identified from the data centricity backgrounder,27-06-2020,Shamir Alavi,,,19-02-2019,Park Data centricity and Backgrounders will be created for mutiple topics identified within the data centricity ,2,2,Study
-Data Collaboration Network,Study,Not Started,N/A,Not plotted,Tech R&D,Research Summary,,SAID,Tiffany B,Shawn Postma,Complete,,,"Requested by CIO
+- The Alpha instance of the Drupel solution is being assessed by Security to allow us to have an environment for the PAB developers to start their development and testing new fucntionality of the solution.  The alpha is a now public fasing versionn of the Drupel solution only available via a CRA/GoC IP Address for POC purposes.",05-10-2020,Rob Backstrom,,,,,,,,,10.5,10.5,Adopt/Readiness
+Cloud Computing (Unclassified),Adopt/Readiness,,,,Business of IT,Early Adopter,Converting PAC application to a servic running on the Cloud,DMRAAD,Merlin L,CJEM,In Progress,,,Pilot project. Converting existing public-facing application (calculaltor) to run on the cloud. We are in the study phase and still leraning what needs to be done to accomplish this. Learning about the technoclogy stack and practicing in the IET LAB on Azure,05-10-2020,Dmitry Kutikov,,,,07-Oct-20,,,,,10.5,10.5,Study
+Confidential Computing,Study,,Engage,,Tech R&D,Research Summary,Changed from Backgrounder to Research Summary as the homomorphic encryption has already been presented at ETAIC and ETIB and direction has been provided,SAID,Tiffany B,Cheryl Cudmore,In Progress,,,Will not go to ACF/ETAIC/ETIB as Homomorphic encryption was presented there,06-08-2020,Megha Malhotra,,,,,,,,,2,2,Study
+Convergence,Study,Not Active,Park,,Tech R&D,Backgrounder,Convergence Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,16-10-2018,No further research required,,2,2,Study
+Dark Data,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Maria Wing,In Progress,,,"Presentated at ETAIC on 2021-01-13
+Feedback/input from other stakeholders will be solicited before making a park/pursue decision",14-01-2021,Shamir Alavi,,,,13-01-2021,Pursue for further stakeholder feedback/input to make a final park/pursure recommendation,,,,2,2,Study
+Data Anonymization,Adopt/Readiness,Not Active,Park,,Business,PoC (business),FCInet ,CMD,Karen W,AAD,In Progress,,X,There is 2 participants in CPB with ITB.  Both parties working on go forward plan with international partners.  No further action by ITB,29-06-2020,Dan Wilton,,,,,,,,,5,10.5,Study
+Data Anonymization,Adopt/Readiness,On Track,Engage,complete on radar?,Tech R&D,Backgrounder,Data Anonymization Backgrounder,SAID,Tiffany B,,Complete,,X,,10-07-2020,Yihong Wang,,,,,,21-08-2018,Proceed with an outlook.,,2,10.5,Relate
+Data Anonymization,Adopt/Readiness,On Track,Engage,,Tech R&D,Outlook,Data Anonymization Outlook,SAID,Tiffany B,Vaja Tucker,Complete,,,,27-06-2020,Shamir Alavi,,,,12-02-2020,Present at ETIB + Identify OPI,12-05-2020,"IRBD, DBID and SID to bring forward an updated status of the SIP proposal and the Gartner study to ETIB to finalize next steps. Follow up in three months.",,3,10.5,Relate
+Data Centricity ,Study,On Track,Park,s/b complete,Tech R&D,Backgrounder,Data Centricity Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,X,More topics have been identified from the data centricity backgrounder,27-06-2020,Shamir Alavi,,,,,,19-02-2019,Park Data centricity and Backgrounders will be created for mutiple topics identified within the data centricity ,,2,2,Study
+Data Collaboration Network,Study,Not Started,,Not plotted,Tech R&D,Research Summary,,SAID,Tiffany B,Shawn Postma,Complete,,,"Requested by CIO
 
-Jun 19: Links to the briefing note Shawn wrote for Cinchy (Data Fabric???).",27-06-2020,Shamir Alavi,,,,,2,2,Identify
-Data Driven Organizations,Study,On Track,Park,Not plotted,Tech R&D,Backgrounder,Data Driven Organizations Backgrounder,SAID,Tiffany B,Yihong Wang,Complete,,,,27-06-2020,Shamir Alavi,12-02-2020,Education piece,,,2,2,Study
-Data Fabric,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Vaja Tucker,In Progress,,,This will be presented at ETAIC again on July 15th,27-06-2020,Shamir Alavi,22-04-2020,Waiting for feedback from DBID prior to park/pursue decision,,,2,2,Study
-Data Lakes,Study,Not Active,Engage,,Tech R&D,Backgrounder,Data Lakes Backgrounder,SAID,Tiffany B,Alan Ritchie,Complete,,X,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Data Marketplaces,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Maria Wing,In Progress,,,ACF - June 8th,09-07-2020,Yihong Wang,15-07-2020,,,,2,2,Study
-Data Mesh,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Yihong Wang,In Progress,,,Need to schedule at ACF / ETAIC after DA discussion,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Data Ops,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Vaja Tucker,In Progress,,,Need to schedule at ETAIC after DA discussion,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Data Orchestration,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Vaja Tucker,In Progress,,,Need to schedule at ACF / ETAIC after DA discussion,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Data Vault Modelling,Identify,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,1,1,Identify
-Deep Learning,Adopt,On Track,N/A,,Tech R&D,Backgrounder,AI Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,2,8,Adopt
-Deep Learning,,On Track,N/A,,Tech R&D,Backgrounder,Deep Learning Backgrounder,SAID,Tiffany B,Ioana Cialaco,Complete,,X,,09-07-2020,Yihong Wang,,,30-10-2018,Leave it open and advise ITAS of updates.  ,2,,Adopt
-Deep Learning,,On Track,N/A,,Tech R&D,Outlook,Deep Learning Outlook,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,2,,Adopt
-Deep Learning,,,N/A,,Business,Pilot,Predictive Analytics in SMED/DCPB,CMD,Karen W,TBD,In Progress,,,"SMED is exploring new and innovative ways to select high risk taxpayers for audit:
+Jun 19: Links to the briefing note Shawn wrote for Cinchy (Data Fabric???).",,,27-06-2020,Shamir Alavi,Added question in the Activity Notes to discuss with the ambassador/co-ambassador (cell is highlighted for convenience),,,,,,2,2,Identify
+Data Driven Organizations,Study,On Track,Park,Not plotted,Tech R&D,Backgrounder,Data Driven Organizations Backgrounder,SAID,Tiffany B,Yihong Wang,Complete,,,,27-06-2020,Shamir Alavi,,,,12-02-2020,Education piece,,,,2,2,Study
+Data Fabric,Study,,Park,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,"Vaja Tucker
+Alan Ritchie",Complete,,,"Provided updates to ETAIC on July 15, 2020",30-09-2020,Shamir Alavi,,,,22-04-2020,ETAIC agrees with the existing recommendation to not pursue data fabric as a distinct project via an outlook or adoption strategy.,29-09-2020,Approved as a consent item,Y,2,2,Study
+Data Lakes,Study,Not Active,Engage,,Tech R&D,Backgrounder,Data Lakes Backgrounder,SAID,Tiffany B,Alan Ritchie,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,2,2,Study
+Data Marketplaces,Study,,Park,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Maria Wing,Complete,,,"ACF - June 8th
+ETAIC July 15",30-09-2020,Yihong Wang,,,,15-07-2020,The recommendation is to park it right now(no further deliverables required) but to to keep an eye on the ongoing environment.,29-09-2020,Approved as a consent item,Y,2,2,Study
+Data Mesh,Study,,Park,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Yihong Wang,Complete,,,"ACF - Auguest 31st 
+ETAIC - September 9th",30-09-2020,Yihong Wang,,,,09-09-2020,The recommendation is to park it right now(no further deliverables required) but to to keep an eye on the ongoing environment. The recommendation will be presented to ETIB as a consent agenda item.,29-09-2020,Approved as a consent item,Y,2,2,Study
+Data Ops,Study,,Park,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,,"Presented at ETAIC on August 26, 2020",30-09-2020,Yihong Wang,,,,26-08-2020,"ETAIC recommendation was to park the topic but continue monitoring. Giovanni suggested sharing information on DataOps within ITB areas such as DBID, SAID and ITAS to look for potential use cases and pilot them. He advised that there is currently no need to take this item to ETIB.",29-09-2020,Approved as a consent item,Y,2,2,Study
+Data Orchestration,Study,,Park,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,,"Presented at ETAIC on August 26, 2020",30-09-2020,Yihong Wang,,,,26-08-2020,"ETAIC recommendation was to park the topic but continue monitoring. Giovanni suggested sharing information on DataOps within ITB areas such as DBID, SAID and ITAS to look for potential use cases and pilot them. He advised that there is currently no need to take this item to ETIB.",29-09-2020,Approved as a consent item,Y,2,2,Study
+Data Vault Modelling,Identify,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,,,,,1,1,Identify
+Data-driven policing,Identify,,,,Tech R&D,Backgrounder,"Countering Data Breaches and Cyber-Attacks
+Ever since the European Union’s General Data Protection Regulation (GDPR) tightened the bolts on privacy and data protection laws, businesses and consumers alike have become more aware of their vulnerability to data breaches and cyber-attacks.
+According to Gartner, by 2020, nearly 70% of organizations will be exposed to personal data archiving. That’s a 60% growth since 2018 when the number was at 10%. 
+In fact, emerging and upcoming technology trends like cryptocurrency will be one of those upcoming technologies that are yet to be compliant with privacy laws. An insertion of personal data into public blockchains can be a major worry for 75% of public blockchains by 2020. As a result, an entire ecosystem, based on data-driven technologies, that is constantly growing in its interconnections is a key tech trend that businesses can benefit from by forging early-on partnerships.",SAID,Tiffany B,TBD,Planned,,,,06-08-2020,Megha Malhotra,,,,,,,,,1,1,
+Deep Learning,Study,On Track,,,Tech R&D,Backgrounder,AI Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,2,2,Adopt
+Deep Learning,Study,On Track,,,Tech R&D,Backgrounder,Deep Learning Backgrounder,SAID,Tiffany B,Ioana Cialaco,Complete,,X,,09-07-2020,Yihong Wang,,,,,,30-10-2018,Leave it open and advise ITAS of updates.  ,,2,2,Adopt
+Deep Learning,Study,,,,Business,Pilot,Predictive Analytics in SMED/DCPB,CMD,Karen W,TBD,In Progress,,,"SMED is exploring new and innovative ways to select high risk taxpayers for audit:
 T1 model testing is underway 
 T2 models are in development
-",,,,,,,8,,Adopt
-Deep Learning,,On Track,N/A,,Tech R&D,Reference Architecture,Reference Architecture,SAID,Tiffany B,TBD,Planned,,,Update to existing BI Architecture (existing project),,,,,,,5,,Adopt
-Dev Ops,Adopt,,N/A,Not plotted,Business of IT,Pilot,Leverageing DevOps within the Local Solutions Environment (LSE),CESD,Daniel G,Martin Courtemanche,In Progress,,,"-Working through constraints of SSC not wanting to install containers on LSE.
+",,,,,,,,,,,8,2,Adopt
+Deep Learning,Study,On Track,,,Tech R&D,Reference Architecture,"Deep Learning (DL) will be covered in the Machine Learning (ML) Reference Architecture. This activity is basically the same as the ML reference architecture. Since we report ML and DL separately on the emerging technology radar, we have this entry under DL as well.",SAID,Tiffany B,Alan Ritchie,Planned,,,Update to existing BI Architecture (existing project),14-09-2020,Shamir Alavi,,,,,,,,,5,2,Adopt
+Democratization,Identify,,,,Tech R&D,Backgrounder,"A Democracy in Technology  The term democratization is derived from the word democracy. Like in a democracy, everyone has equal rights and responsibility, similarly, the democratization of technology refers to the easy access of technical domain to everyone, irrespective of their profession and place.  The best example of democratization can be credited to the developers, who will be able to generate data models without learning the skills of a data scientist.
+However, there is still a concern about the future use of the latest technology trends in information technology as this because it will also enable people to exploit easy-to-use tools, which may pose harm to society.",SAID,Tiffany B,TBD,Planned,,,,06-08-2020,Megha Malhotra,,,,,,,,,1,1,
+DevOps,Study,,,Not plotted,Business of IT,Pilot,Leverageing DevOps within the Local Solutions Environment (LSE),CESD,Daniel G,"John Laughland
+Martin Courtemanche",In Progress,,,"- Solution currently on hold as the LSE team explores the Cloud solution
+- Working through constraints of SSC not wanting to install containers on LSE.
 -We are working with SSC to continue this new configuration (LSE3)
-- We are now looking to leverage the DevOps on AWS to move this process forward and continue our work with SSC to have a container based solution to allow use to help with the migration to the cloud with platform agnostic solutions on the LSE.",15-07-2020,"Rob Backstrom
-",,,,,8,8,Adopt
-Dev Ops,,,N/A,Not plotted,Business of IT,Pilot,"SMART, Service Desk, ITSSP, ITKC … consildation to a single Remedy ITSM solution.",CESD,Daniel G,Andre Elvas,In Progress,,,"- We are working with the Cloud CoE on the next generation ITSM solution for CRA based on the SSC procurement on the BMC ITSM solution.This will consolidate all of our ITSM enterprise and local solutions into one application and allow us to move forward with proper integrations supporting the business across CRA.  Evenutally applications like Winfast can been mirgated to this solution as well as we move to one request/incident management solution.
-- We are currently engaged with the Cloud CoE to set up a pilot instance of Remedy ITSM on Azure to allow our ITSM client to inveastigate the new product and all its offerings as well as allow us to detrmine how the new cloud solutions will be presented in the ITSM solution.",15-07-2020,"Rob Backstrom
-",,,,,8,,Adopt
-"Dev Ops
- SecOps / DevOps",,On Track,N/A,,Business of IT,Pilot,"DevOps is a culture that fosters collaboration through the software lifecycle from development to operations. CRA is the process of setup a DevOps pipeline to introduce automated methods of validating, testing and releasing software
+- We are now looking to leverage the DevOps on AWS to move this process forward and continue our work with SSC to have a container based solution to allow use to help with the migration to the cloud with platform agnostic solutions on the LSE.",05-10-2020,"Rob Backstrom
+",,,,,,,,,8,2,Adopt
+DevOps,Study,,,Not plotted,Business of IT,Pilot,"SMART, Service Desk, ITSSP, ITKC … consildation to a single Remedy ITSM solution.",CESD,Daniel G,Andre Elvas,In Progress,,,"- Working on building the solution on Azure
+- We are working with the Cloud CoE on the next generation ITSM solution for CRA based on the SSC procurement on the BMC ITSM solution.This will consolidate all of our ITSM enterprise and local solutions into one application and allow us to move forward with proper integrations supporting the business across CRA.  Evenutally applications like Winfast can been mirgated to this solution as well as we move to one request/incident management solution.
+- We are currently engaged with the Cloud CoE to set up a pilot instance of Remedy ITSM on Azure to allow our ITSM client to inveastigate the new product and all its offerings as well as allow us to detrmine how the new cloud solutions will be presented in the ITSM solution.",05-10-2020,"Rob Backstrom
+",,,,,,,,,8,2,Adopt
+DevOps,Study,On Track,,,Business of IT,Pilot,"DevOps is a culture that fosters collaboration through the software lifecycle from development to operations. CRA is the process of setup a DevOps pipeline to introduce automated methods of validating, testing and releasing software
 • Investigate using CI/CD on AWS while retaining cloud vendor neutrality
-• Position CRA to deploy OpenShift Cloud Agnostic solution at the enterprise level",SAID,Tiffany B,John Mueler,In Progress,,,"AWS DevOps Pathfinder Phase 1 (Complete) (DG review May 28)
+• Position CRA to deploy OpenShift Cloud Agnostic solution at the enterprise level",SAID,Tiffany B,John Mueller,In Progress,,,"AWS DevOps Pathfinder Phase 1 (Complete) (DG review May 28)
 https://confluence.isvcs.net/display/ITBIET/Phase+1
 - CEDP Pathfinder Phase 2 (In-Progress) (DG review Nov 13)
     https://confluence.isvcs.net/display/ITBIET/DevOps+Project+-+Phase+2
-'BRDs will be requested: each OPI needs to raise a BRD:ex: we want to try different DevOps, one PaaS one with something else that is part of the Discovery work as a pathfinder.",24-07-2020,John Mueller,26-02-2020,Present at ETIB,,,8,,Adopt
-Digital Privacy,Study,Not Active,Watch+Learn,,Tech R&D,Backgrounder,Digital Privacy Backgrounder,SAID,Tiffany B,Maria Wing,Complete,,X,"Presented to SARB, no further action by ITB",27-06-2020,Shamir Alavi,,,16-04-2019,Watch and Learn + More analysis is required to be done from the technology perspective.  ,2,2,Study
-Digital Twin,Study,Not Active,Park,,Tech R&D,Backgrounder,Digital Twin Backgrounder,SAID,Tiffany B,Shannon Maynard.,Complete,,X,,10-07-2020,Yihong Wang,,,24-07-2018,N/A,2,2,Study
-Distributed Web,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Yihong Wang,Planned,,,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-DLT Defensive,Adopt,On Track,N/A,,Tech R&D,Backgrounder,Backgrounder (DLT Myths),SAID,Tiffany B,Lisa Lescard,Complete,,X,,10-07-2020,Yihong Wang,,,10-07-2018,N/A,2,8,Adopt
-DLT Defensive,,On Track,N/A,,Tech R&D,Outlook,Cryptocurrency Outlook,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,3,,Adopt
-DLT Defensive,,On Track,N/A,,Business,Pilot,DCPB Cryptocurrency project ,CMD,Karen W,,In Progress,,,This includes multiple pilots,27-06-2020,Shamir Alavi,,,,,8,,Adopt
-DLT Defensive,,,N/A,,Bus/Tech,PoC (technology),"Explore Distributed Ledger Technology (DLT) or Blockchain. Blockchain is the more common term, and Distributed Ledger Technology is the more generic term.",SAID,Tiffany B,John Mueler,Complete,,,"Closed 
-2019-01-25
-https://confluence.isvcs.net/pages/viewpage.action?pageId=123279163",24-07-2020,"Megha Malhotra
-John Mueller",,,,,3,,Adopt
-DLT Offensive,Plan,On Track,Park,,Tech R&D,Backgrounder,Backgrounder (DLT Myths),SAID,Tiffany B,Lisa Lescard,Complete,,X,,10-07-2020,Yihong Wang,,,10-07-2018,N/A,2,5,Plan
-DLT Offensive,,On Track,Park,,Tech R&D,Pilot,"Collaboration with Lakehead University (DCPB)
-     Research pilot for GST/HST blockchain being considered",DBID,David Y,Maretcho Wilson,Planned,,,,27-03-2020,Maretcho Wilson,,,,,5,,Plan
-DLT Offensive,,On Track,Park,,Tech R&D,PoC (technology),Discussions with Estatably for potential Clearance Certificate use case PoC,SAID,Tiffany B,IETS,Planned,,,,23-07-2020,Shamir Alavi,,,,,2,,Plan
-DLT Offensive,,On Track,Park,,Bus/Tech,PoC (technology),Distributed Ledger proof of concept for transmission of  charitable donation receipts to the CRA,SAID,Tiffany B,IETS,Complete,,,,"2020-07-09
+'BRDs will be requested: each OPI needs to raise a BRD:ex: we want to try different DevOps, one PaaS one with something else that is part of the Discovery work as a pathfinder.",24-07-2020,John Mueller,,,,26-02-2020,Present at ETIB,,,,8,2,Adopt
+Differential Privacy,Study,,,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Betty Ann Bryanton,In Progress,,,,27-07-2020,Megha Malhotra,,,,,,,,,2,2,
+Digital Privacy,Study,Not Active,Watch+Learn,,Tech R&D,Backgrounder,Digital Privacy Backgrounder,SAID,Tiffany B,Maria Wing,Complete,,X,"Presented to SARB, no further action by ITB",27-06-2020,Shamir Alavi,,,,,,16-04-2019,Watch and Learn + More analysis is required to be done from the technology perspective.  ,,2,2,Study
+Digital Twin,Study,Not Active,Park,,Tech R&D,Backgrounder,Digital Twin Backgrounder,SAID,Tiffany B,Shannon Maynard.,Complete,,X,,10-07-2020,Yihong Wang,,,,,,24-07-2018,N/A,,2,2,Study
+Distributed Web,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Yihong Wang,Planned,,,,27-06-2020,Shamir Alavi,,,,,,,,,2,2,Study
+DLT Defensive,Adopt,On Track,,,Tech R&D,Backgrounder,Backgrounder (DLT Myths),SAID,Tiffany B,Lisa Lescard,Complete,,X,,10-07-2020,Yihong Wang,,,,,,10-07-2018,N/A,,2,8,Adopt
+DLT Defensive,Adopt,On Track,,,Tech R&D,Outlook,Cryptocurrency Outlook,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,3,8,Adopt
+DLT Defensive,Adopt,On Track,,,Business,Pilot,DCPB Cryptocurrency project ,CMD,Karen W,,In Progress,,,This includes multiple pilots,27-06-2020,Shamir Alavi,,,,,,,,,8,8,Adopt
+DLT Offensive,Relate,On Track,Park,,Tech R&D,Backgrounder,Backgrounder (DLT Myths),SAID,Tiffany B,Lisa Lescard,Complete,,X,,10-07-2020,Yihong Wang,,,,,,10-07-2018,N/A,,2,3,Plan
+DLT Offensive,Relate,On Track,Park,,Tech R&D,PoC (technology),Discussions with Estatably for potential Clearance Certificate use case PoC,SAID,Tiffany B,IETS,Planned,,,,,,23-07-2020,Shamir Alavi,Changed activity type from PoC to PoC (technology) to conform to the newly established list of activity types.,,,,,,2,3,Plan
+DLT Offensive,Relate,On Track,Park,,Bus/Tech,PoC (technology),Distributed Ledger proof of concept for transmission of  charitable donation receipts to the CRA,SAID,Tiffany B,IETS,Complete,,,,,,"2020-07-09
 2020-07-23","Yihong Wang
-Shamir Alavi",,,14-05-2019,N/A,3,,Plan
-DLT Offensive,,On Track,Park,,Tech R&D,Outlook,DLT Outlook,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,3,,Plan
-DLT Offensive,,On Track,Park,,,PoC (business),"Verified.Me proof of concept (ABSB)
+Shamir Alavi",Changed activity type from PoC to PoC (technology) to conform to the newly established list of activity types.,,,14-05-2019,N/A,,3,3,Plan
+DLT Offensive,Relate,On Track,Park,,Tech R&D,Outlook,DLT Outlook,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,3,3,Plan
+DLT Offensive,Relate,On Track,Park,,,PoC (business),"Verified.Me proof of concept (ABSB)
 Three use cases evaluated, service would be useful if available
-Consultation with TBS to determine fit with the GC Trusted Digital Identity Strategy",BESD,Jeff B,Sheldon D,Complete,,,POC completed successfully. ,30-01-2020,Aaron Menchions,06-11-2019,No Action required,,,5,,Plan
-Edge Computing,Study,Not Active,Park,,Tech R&D,Backgrounder,Edge Computing Backgrounder,SAID,Tiffany B,Shannon Maynard.,Complete,,X,,10-07-2020,Yihong Wang,,,03-04-2018,Low relevance to the Agency,2,2,Study
-Enterprise IT Architecture,Study,On Track,Engage,,Business of IT,Outlook,Architecture Vision,SAID,Tiffany B,James Walsh,Planned,,,Based on discussion with James and Christine; It is being positioned in relate phase as it is direction setting and we will be using the planned outlook icon,19-06-2020,Megha M,,,,,2,2,Relate
-Enterprise taxonomy and ontology management ,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Yihong Wang,Planned,,,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Explainable AI,Relate,On Track,Engage,,Tech R&D,Backgrounder,AI Explainability Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,X,,27-06-2020,Shamir Alavi,,,06-08-2019,Proceed with the development of an Outlook,2,3,Relate
-Explainable AI,,,,,Tech R&D,PoC (technology),XAI demo (Model Interpretability),SAID,Tiffany B,Shamir Alavi,Complete,,,"To explain what Explainable AI (XAI) is
+Consultation with TBS to determine fit with the GC Trusted Digital Identity Strategy",BESD,Jeff B,Sheldon D,Complete,,,POC completed successfully. ,30-01-2020,Aaron Menchions,16-09-2020,Shamir Alavi,Activity Type confirmed at the Secretariat - BESD touchpoint meeting ,06-11-2019,No Action required,,,,5,3,Plan
+Edge Computing,Study,Not Active,Park,,Tech R&D,Backgrounder,Edge Computing Backgrounder,SAID,Tiffany B,Shannon Maynard.,Complete,,X,,10-07-2020,Yihong Wang,,,,,,03-04-2018,Low relevance to the Agency,,2,2,Study
+Enterprise IT Architecture,Study,On Track,Engage,,Business of IT,Outlook,Architecture Vision,SAID,Tiffany B,James Walsh,Planned,,,Based on discussion with James and Christine; It is being positioned in relate phase as it is direction setting and we will be using the planned outlook icon,19-06-2020,Megha M,,,,,,,,,2,2,Relate
+Explainable AI,Relate,On Track,Engage,,Tech R&D,Backgrounder,AI Explainability Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,06-08-2019,Proceed with the development of an Outlook,,2,3,Relate
+Explainable AI,Relate,,,,Tech R&D,PoC (technology),XAI demo (Model Interpretability),SAID,Tiffany B,Shamir Alavi,Complete,,,"To explain what Explainable AI (XAI) is
 To demonstrate how XAI visually looks like
 To discuss limitations and challenges of the current state-of-the-art
-",24-06-2020,Shamir Alavi,,,,,3,,
-Explainable AI,,On Track,Engage,,Tech R&D,Outlook,AI Explainability Outlook,SAID,Tiffany B,Shamir Alavi,In Progress,,,,27-06-2020,Shamir Alavi,,,,,3,,Relate
-Facebook Libra,Study,On Track,Park,Not plotted,Tech R&D,Backgrounder,Facebook Libra Backgrounder,SAID,Tiffany B,Shamir Alavi,Complete,,,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Flowable,Adopt,,N/A,Not plotted,Business of IT,Pilot,"Flowable is an open-source workflow engine written in Java that can execute business processes described in BPMN 2.0
+",24-06-2020,Shamir Alavi,,,,28-01-2021,No decisions because an Outlook is going to be presented on XAI in future,,,,3,3,
+Explainable AI,Relate,On Track,Engage,,Tech R&D,Outlook,AI Explainability Outlook,SAID,Tiffany B,Shamir Alavi,In Progress,,,,27-06-2020,Shamir Alavi,,,,,,,,,3,3,Relate
+Facebook Libra,Study,On Track,Park,Not plotted,Tech R&D,Backgrounder,Facebook Libra Backgrounder,SAID,Tiffany B,Shamir Alavi,Complete,,,,27-06-2020,Shamir Alavi,,,,,,,,,2,2,Study
+Flowable,Adopt,,,Not plotted,Business of IT,Pilot,"Flowable is an open-source workflow engine written in Java that can execute business processes described in BPMN 2.0
 
 Pilots in Progress
 1/ AIAA
 2/ CIO Office Related
 3/ E502 redesign
-4/ ESMD SSC Tracking Portal potentially",CESD,Daniel G,Gary Luk,In Progress,,,"- Three Pilots are being completed within the Flowable space, 1-AIAA, 2-CIO Related, 3-have to find name.
+4/ ESMD SSC Tracking Portal potentially",CESD,Daniel G,Gary Luk,In Progress,,,"- The AIAA solution went live in production on Sept 23, 2020 and looking to build a new solution leveraging Flowable for part of the DAF projects.
+- Three Pilots are being completed within the Flowable space, 1-AIAA, 2-CIO Related, 3-have to find name.
 - Demos have been occurign showing different areas the flexiblity of the solution and quick development cycles
 - Ceritification is ongoing and demos are being made to different stackholders in CRA.
-- AIAA solution has been presented to the client and changes are being made based on client feedback (via Agile releases)",15-07-2020,Rob Backstrom,22-04-2020,N/A - Educational Piece,,,8,8,Adopt
-Gamification,,,,,,,Character Leadership App,CESD,Martin L,"André Elvas 
-Logan Lim",,,,,27-05-2020,Tia Simper,,,,,,,
-Gamification,Adopt/Readiness,On Track,N/A,,Business,Pilot,"CVB GoSpaces
+- AIAA solution has been presented to the client and changes are being made based on client feedback (via Agile releases)",05-10-2020,Rob Backstrom,,,,22-04-2020,N/A - Educational Piece,,,,8,8,Adopt
+Future of work,Study,,,,Tech R&D,Backgrounder,"https://www.infoq.com/news/2020/06/facebook-future-work-vision/?itm_source=infoq&itm_campaign=footer_links&itm_medium=footer_links_homepage
+https://tech.fb.com/the-future-of-work-and-the-next-computing-platform/",SAID,Tiffany B,Bruno Tremblay,In Progress,,,,13-08-2020,Megha Malhotra,11-09-2020,Shamir Alavi,Shortened the title based on discussion with Kim (SC&D) and Yihong (SC&D),,,,,,2,2,
+Gamification,Adopt/Readiness,,,,,PoC (technology),Character Leadership App,CESD,Martin L,"André Elvas 
+Logan Lim",In Progress,,,"- Working on PoC and looking to release a version on the apple appstore
+- Developing a native mobile experience leveraging gamification concepts to engage users in developing and activating their Character Leadership",05-10-2020,Rob Backstrom,10-09-2020,Shamir Alavi,"Added Activity Type, Status and Activity Notes as per email sent by the assignee",,,,,,10.5,10.5,
+Gamification,Adopt/Readiness,On Track,,,Business,Pilot,"CVB GoSpaces
 - OCI: DMRAAD (Merlin Lapp)
 
 Public Services and Procurement Canada (PSPC) is exploring tools and methods that will help to facilitate a shared organizational culture that favours increased collaboration and flexibility, and particularly a greener, digital workspace. One of these new tools is the GoSpaces mobile app that PSPC introduced on April 19, 2018. Collections and Verification Branch (CVB) will be one of the first groups in the Agency to pilot the use of this app.  
 Goals:
 • Inspire health and wellness, environmentally sustainable practices 
-• Seek out efficiencies to improve work",CESD,Daniel G,André Elvas,In Progress,,,"
-Business Contact: Arnold Obas, Horizontal Management Section/Horizontal Initiatives, Relations and Project Management Division/ Technology and Business Intelligence Directorate/CVB",27-05-2020,Tia Simper,,,,,10.5,10.5,Adopt/Readiness
-Gamification,,On Track,N/A,,Bus/Tech,Pilot,Document classification pilot to orient Agency employees ,CESD,Daniel G,Rob Backstrom,In Progress,,,"- CESD is dicussions with different areas of CRA regarding gamification ideas and where it can be leveraged
+• Seek out efficiencies to improve work",CESD,Daniel G,André Elvas,In Progress,,,"- Investiagating soliution as CESD takes ownership
+- Business Contact: Arnold Obas, Horizontal Management Section/Horizontal Initiatives, Relations and Project Management Division/ Technology and Business Intelligence Directorate/CVB",05-10-2020,Rob Backstrom,,,,,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Bus/Tech,Pilot,Document classification pilot to orient Agency employees ,CESD,Daniel G,Rob Backstrom,In Progress,,,"- CESD taking over ownership of several gamification solution built within CRA and tryign to perform analysis of solutions.
+- CESD is dicussions with different areas of CRA regarding gamification ideas and where it can be leveraged
 - Gamification Adoption strategy was presented at ACF on Oct 7, 19
 - Rob Backstrom has been working with the Architecture disciplines to develop and document the Adoption strategy for Gamification at the CRA.  There are several ongoing Gamification initiatives at CRA from Security awareness, Security hackathon and HRB learning (KnowHow) is looking into potential solutions to add Gamification to their next generation learning platform.  Part of the Adoption strategy is to determine if an enterprise solution/platform, continuing to build custom applications or other options we should explore in implementation Gamification at CRA.""
-",14-02-2020,Rob Backstrom,,,,,10.5,,Adopt/Readiness
-Gamification,,,N/A,,Bus/Tech,Adoption Strategy,"Expand Gamification Adoption Strategy goals
-- OCI: SAID (Martin Landry, Mo Zhou)",CESD,Daniel G,André Elvas,Complete,,,,27-06-2020,Shamir Alavi,12-02-2020,,,,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,Bus/Tech,Adoption Strategy,"Gamification Adoption Strategy
-- OCI: SAID (Martin Landry, Mo Zhou)",CESD,Daniel G,André Elvas,Complete,,,,27-06-2020,Shamir Alavi,"2019-11-22, 2020-02-12",Recommendations provided,26-11-2019,Approved,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,Tech R&D,Backgrounder,Gamification Backgrounder,SAID,Tiffany B,Mo Zhou,Complete,,X,,10-07-2020,Yihong Wang,,,17-04-2018,Consider gamification in scope for Agency Workplace Technologies SIP and proceed with an outlook,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,Tech R&D,Outlook,Gamification Outlook,SAID,Tiffany B,Mo Zhou,Complete,,X,,09-07-2020,Yihong Wang,,,08-01-2019,The ARB needs more detail before decision are made from the deployment perspective.  Endorsed by exception.  SC&D to back with an Adoption Strategy.  ,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,Business,Pilot,"HRB KnowHow TITUS
+",05-10-2020,Rob Backstrom,,,,,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,,,,Bus/Tech,Adoption Strategy,"Expand Gamification Adoption Strategy goals
+- OCI: SAID (Martin Landry, Mo Zhou)",CESD,Daniel G,André Elvas,Complete,,,- Work ongoing with Gamification and analysis of pilots,05-10-2020,Rob Backstrom,27-06-2020,Shamir Alavi,Changed activity type from Research Product to Adoption Strategy to conform to the newly established list of activity types.,12-02-2020,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Bus/Tech,Adoption Strategy,"Gamification Adoption Strategy
+- OCI: SAID (Martin Landry, Mo Zhou)",CESD,Daniel G,André Elvas,Complete,,,- Work ongoing with Gamification and analysis of pilots,05-10-2020,Rob Backstrom,28-06-2020,Shamir Alavi,Changed activity type from Research Product to Adoption Strategy to conform to the newly established list of activity types.,"2019-11-22, 2020-02-12",Recommendations provided,26-11-2019,Approved,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Tech R&D,Backgrounder,Gamification Backgrounder,SAID,Tiffany B,Mo Zhou,Complete,,X,,10-07-2020,Yihong Wang,,,,,,17-04-2018,Consider gamification in scope for Agency Workplace Technologies SIP and proceed with an outlook,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Tech R&D,Outlook,Gamification Outlook,SAID,Tiffany B,Mo Zhou,Complete,,X,,09-07-2020,Yihong Wang,,,,,,08-01-2019,The ARB needs more detail before decision are made from the deployment perspective.  Endorsed by exception.  SC&D to back with an Adoption Strategy.  ,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Business,Pilot,"HRB KnowHow TITUS
 - OCI: HRB (Sonia Cote)
 
 Description: TITUS is a gamified practice tool that is being developed to support the national launch of the TITUS plug in by ITB in 2020 – the practice tool is scheduled for publication in November 2019
@@ -261,45 +242,38 @@ Goals:
 • It will provide users with an engaging way to practice categorizing emails and documents, as all users will need to do this upon launch
 • It will support accurate and quick categorization skills amongst agency employees – other KnowHow job aids will offer additional support",CESD,Daniel G,André Elvas,In Progress,,,"""- CESD is requesting HRB to give a presentation on KnowHow and how they are leveraging Gamification at one of the ETAIC upcoming meetings
 - Business Contact: Heather Cogan, Coaching, Career Management and Performance Support Learning Services/Corporate Learning and External Liaison Division/Leadership and Learning Directorate/HRB""
-",27-05-2020,Tia Simper,06-11-2019,,,,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,Tech R&D,Pilot,"IT Security pilot - secure coding practices training planned Q2 2019/2020
-- OCI: SID (Sylvie Lefebvre, Graham Rodd)",CESD,Daniel G,André Elvas,In Progress,,,,"???
-2020-05-27","Graham Rodd
-Tia Simper",,,,,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,Tech R&D,Pilot,"IT Security pilot - secure hackathon planned Q2 2019/2020
-- OCI: SID (Sylvie Lefebvre, Graham Rodd)",CESD,Daniel G,André Elvas,In Progress,,,,"???
-2020-05-27","Graham Rodd
-Tia Simper",,,,,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,Tech R&D,Pilot,"IT Security pilot - security practices 
-- OCI: SID (Sylvie Lefebvre, Graham Rodd)",CESD,Daniel G,André Elvas,In Progress,,,"Transforming the learning objectives of Secure Coding Practices into an engaging experience using Gamification design techniques.  As a pilot project, two games in class & one remote game were hosted successfully on Jun 19 & Jul 17, 2019, respectively.","???
-2020-05-27","Graham Rodd
-Tia Simper",22-11-2019,,,,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,Tech R&D,Pilot,"ITB iTrivia Pilot
+",27-05-2020,Tia Simper,,,,06-11-2019,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Tech R&D,Pilot,"IT Security pilot - secure coding practices training planned Q2 2019/2020
+- OCI: SID (Sylvie Lefebvre, Graham Rodd)",CESD,Daniel G,André Elvas,In Progress,,,- Work ongoing with Gamification and analysis of pilots,05-10-2020,Rob Backstrom,,,,,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Tech R&D,Pilot,"IT Security pilot - secure hackathon planned Q2 2019/2020
+- OCI: SID (Sylvie Lefebvre, Graham Rodd)",CESD,Daniel G,André Elvas,In Progress,,,- Work ongoing with Gamification and analysis of pilots,05-10-2020,Rob Backstrom,,,,,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Tech R&D,Pilot,"IT Security pilot - security practices 
+- OCI: SID (Sylvie Lefebvre, Graham Rodd)",CESD,Daniel G,André Elvas,In Progress,,,"- Work ongoing with Gamification and analysis of pilots 
+- Transforming the learning objectives of Secure Coding Practices into an engaging experience using Gamification design techniques.  As a pilot project, two games in class & one remote game were hosted successfully on Jun 19 & Jul 17, 2019, respectively.",05-10-2020,Rob Backstrom,,,,22-11-2019,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,Tech R&D,Pilot,"ITB iTrivia Pilot
 - OCI: DBID (David Young)
 
 Description: Create a weekly live interactive quiz in the cloud.
 Goals:
 • Build an application that could Increase CRA’s overall contribution to the CRACC Campaign
 • Build an application that would affirm gamification concepts at ITB
-• Build an application that would showcase cloud native development and DevOps at ITB",CESD,Daniel G,André Elvas,Complete,,,"The DevLabs section of ITB’s Dev Centre delivered iTrivia, an interactive time-based trivia application, in the new CRA cloud environment in support of GCWCC. ",27-05-2020,Tia Simper,18-12-2019,N/A - Educational Piece,,,10.5,,Adopt/Readiness
-Gamification,,On Track,N/A,,,Pilot,"Lakehead partnership opportunity
+• Build an application that would showcase cloud native development and DevOps at ITB",CESD,Daniel G,André Elvas,Complete,,,"The DevLabs section of ITB’s Dev Centre delivered iTrivia, an interactive time-based trivia application, in the new CRA cloud environment in support of GCWCC. ",27-05-2020,Tia Simper,,,,18-12-2019,N/A - Educational Piece,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,On Track,,,,Pilot,"Lakehead partnership opportunity
 - OCI: David Young (DBID)
 
-Teaching Income Tax Act (First time filers, immigrants, simplifying access to benefits",CESD,Daniel G,André Elvas,Planned,,,Negotiations to begin in October,27-05-2020,Tia Simper,,,,,10.5,,Adopt/Readiness
-Gamification,,,N/A,,Bus/Tech,PoC (business),Present Gamification adoption strategy to Business Enablers working group,CESD,Daniel G,André Elvas,In Progress,,,,27-06-2020,Shamir Alavi,,,,,10.5,,Adopt/Readiness
-Gamification,,,N/A,,Bus/Tech,PoC (business),Support HRB PoC's / prototypes,CESD,Daniel G,André Elvas,In Progress,,,,27-05-2020,Tia Simper,,,,,10.5,,Adopt/Readiness
-Gamification ,,,N/A,,Bus/Tech,PoC (technology),"Topic: Understanding taxes 101
-Students who participated from the western hackathon (fall 2019) have been offered summer jobs (May to Aug 2020) to continue their work on the business case.",DBID,David Y,Maretcho Wilson,In Progress,,,Development on-going,29-06-2020,Maretcho Wilson,,,,,3,,Relate/Plan
-Geospatial Analysis,Relate,Not Active,Watch+Learn,,Tech R&D,Outlook,Geospatial Analysis Outlook,SAID,Tiffany B,Mo Zhou,Complete,,X,,10-07-2019,Yihong Wang,,,18-09-2018,Endorse recommendations,3,3,Relate
-Graph Analytics,Relate,,Engage,,Bus/Tech,Outlook,Engage with client relation managers and gather information on business areas conducting PoC’s and leveraging visualization tools and present to ETIB for final direction,SAID,Tiffany B,Alan Ritchie,In Progress,,,"Once this activity is completed, the update will be presented at ETIB",27-06-2020,Shamir Alavi,,,,,3,3,Relate
-Graph Analytics,,On Track,Engage,,Tech R&D,Outlook,Graph Analytics Outlook,SAID,Tiffany B,Alan Ritchie,In Progress,,,,27-06-2020,Shamir Alavi,23-10-2019,Engage clients,29-10-2019,"As per the proposed next steps, Alan will engage with client relation managers to reach out to business areas conducting PoC’s and leveraging visualization tools. Based on the information gathered, ETIB will determine if an adoption strategy will be pursued.",3,,Relate
-Homomorphic encryption,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,BettyAnn Bryanton,In Progress,,,Scheduled for ETAIC July 15,27-06-2020,Shamir Alavi,15-06-2020,,,,2,2,Study
-ICAM,Adopt,On Track,N/A,,Tech R&D,Outlook,ICAM Outlook,SAID,Tiffany B,Shannon Maynard.,Complete,,X,,27-06-2020,Shamir Alavi,,,,,3,8,Adopt
-ICAM,,On Track,N/A,,,PoC (technology),Two-factor authentication proof of concept for privileged users,SID,Martin L,David Macleod,Complete,,,PoC of RSA completed in December. Implementation phase underway to be completed by June 2020.,17-06-2020,Megha Mahotra,23-10-2019,,,,3,,Adopt
-ICAM,,On Track,N/A,,Tech R&D,Pilot,Verified.Me pilot evaluation complete,BESD,Jeff B,Sheldon D,Complete,,,see DLT Offensive for project details,,Sheldon DeCoste,,,,,8,,Adopt
-Infrastructure as a code,Relate,,Engage,,Tech R&D,PoC (technology),"Proof of concept for Terraform, an infrastructure-as-code software that alows you to define your entire infrastructure in configuration files and deploy it using a few commands",SAID,Tiffany B,Alain Dionne,Complete,,,"Research is undergoing
-July 24: This will not move forward.",24-07-2020,Alain Dionne,,,,,3,3,Relate
-Machine Learning,Relate,On Track,N/A,,Bus/Tech,PoC (technology),"Our Innovation Enablement and Proof of Concept (PoC) initiatives offer support to any CRA employees interested in obtaining the right knowledge and tools to experiment with innovation and determine the feasibility of new technologies for use within the CRA from multiple perspectives.
+Teaching Income Tax Act (First time filers, immigrants, simplifying access to benefits",CESD,Daniel G,André Elvas,Planned,,,Negotiations to begin in October,27-05-2020,Tia Simper,,,,,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,,,,Bus/Tech,PoC (business),Present Gamification adoption strategy to Business Enablers working group,CESD,Daniel G,André Elvas,In Progress,,,,27-05-2020,Tia Simper,27-06-2020,Shamir Alavi,Changed activity type from Other to PoC (business) to conform to the newly established list of activity types.,,,,,,10.5,10.5,Adopt/Readiness
+Gamification,Adopt/Readiness,,,,Bus/Tech,PoC (business),Support HRB PoC's / prototypes,CESD,Daniel G,André Elvas,In Progress,,,,27-05-2020,Tia Simper,,,,,,,,,10.5,10.5,Adopt/Readiness
+Gamification ,Adopt/Readiness,,,,Bus/Tech,PoC (technology),"Topic: Understanding taxes 101
+Students who participated from the western hackathon (fall 2019) have been offered summer jobs (May to Aug 2020) to continue their work on the business case.",DBID,David Y,Xuan-An Dinh,Complete,,,Internal/selective participants Pilot completed. Survey/feedback received. PAB would like to develop for public consumption. The project has moved to CESD under Xuan-An Dinh.,11-10-2020,Muhammad Zulfiqar,,,,,,,,,3,10.5,Relate/Plan
+Geospatial Analysis,Relate,Not Active,Watch+Learn,,Tech R&D,Outlook,Geospatial Analysis Outlook,SAID,Tiffany B,Mo Zhou,Complete,,X,Research completion target date was June 2020 - new date TBD (engagement contract discussions on-going). New engagement contract is in progress.,08-09-2020,Maretcho Wilson,,,,,,18-09-2018,Endorse recommendations,,3,3,Relate
+Graph Analytics,Relate,On Track,Engage,,Tech R&D,Outlook,Graph Analytics Outlook,SAID,Tiffany B,Alan Ritchie,In Progress,,,"Need to determine client contact - should be available once AI online governance tool is live (target for the soft launch is September 28th, 2020)",08-09-2020,Maretcho Wilson,,,,23-10-2019,Engage clients,29-10-2019,"As per the proposed next steps, Alan will engage with client relation managers to reach out to business areas conducting PoC’s and leveraging visualization tools. Based on the information gathered, ETIB will determine if an adoption strategy will be pursued.",,3,3,Relate
+Homomorphic encryption,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,BettyAnn Bryanton,Complete,,,"Backgrounder presented at ETAIC on July 15, 2020",20-08-2020,Yihong Wang,,,,15-07-2020,The recommendation is to pursue further research (separate backgrounders on individual topics) but it would be worthwhile to do an Outlook as part of a broader view of the domain.,04-08-2020,"More research on different technologies through backgrounders, rather than proceeding to an Outlook for this topic only.",,2,2,Study
+ICAM,Adopt/Readiness,On Track,,,Tech R&D,Outlook,ICAM Outlook,SAID,Tiffany B,Shannon Maynard.,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,3,10.5,Adopt
+ICAM,Adopt/Readiness,On Track,,,,PoC (technology),Two-factor authentication proof of concept for privileged users,SID,Martin L,David Macleod,Complete,,,PoC of RSA completed in December. Implementation phase underway to be completed by June 2020.,17-06-2020,Megha Mahotra,,,,23-10-2019,,,,,3,10.5,Adopt
+ICAM,Adopt/Readiness,On Track,,,Tech R&D,Pilot,Verified.Me pilot evaluation complete,BESD,Jeff B,Sheldon D,Complete,,,see DLT Offensive for project details,,Sheldon DeCoste,,,,,,,,,8,10.5,Adopt
+Immersive workspace,Identify,,,,Tech R&D,Backgrounder,"The physical work environment will pivot from a fixed location to an ever-changing variety of workspaces, increasingly imbued with IoT and other smart capabilities. Immersive technologies, such as augmented and virtual reality are ready for mainstream businesses for training and immersive conference room services. Employees will ultimately be able to use natural gestures to drive complex processes. ",SAID,Tiffany B,TBD,Planned,,,,06-08-2020,Megha Malhotra,,,,,,,,,1,1,
+Machine Learning,Readiness,On Track,,,Bus/Tech,PoC (technology),"Our Innovation Enablement and Proof of Concept (PoC) initiatives offer support to any CRA employees interested in obtaining the right knowledge and tools to experiment with innovation and determine the feasibility of new technologies for use within the CRA from multiple perspectives.
     All You Can Tweet - Sentiment analysis of CRA using twitter data. Collecting data and analyzing CRA campaigns and how well they were accepted by the taxpayers
 
 ",SAID,Tiffany B,John Mueller,In Progress,,,"All You Can Tweet (In Progress) (DG review May 1)    https://confluence.isvcs.net/display/ITBIET/Artificial+Intelligence
@@ -310,104 +284,123 @@ Two-way communication
 https://confluence.isvcs.net/display/ITBIET/Two-Way+Communication
 'Demo postpone due to the Covid 19 situation 
 Demo of the All You Can Tweet machinge learning demo is planned for March 6, 2020",24-07-2020,"John Mueller
-Shamir Alavi",18-12-2019,N/A - Educational Piece,,,3,3,Readiness
-Internet of Things (IoT),Study,Not Active,Park,,Tech R&D,Backgrounder,IoT Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,10-07-2020,Yihong Wang,,,03-04-2018,Low relevance to the Agency,2,2,Study
-Knowledge graphs,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Maria Wing,In Progress,,,Need to schedule at ACF / ETAIC after DA discussion,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Knowledge presentation approaches to AI,Identify,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,1,1,Identify
-Language Based AI ,Study,On Track,Park,"s/b relate, engage",Tech R&D,Backgrounder,Language Based AI Backgrounder,SAID,Tiffany B,Shamir Alavi,Complete,,,,27-06-2020,Shamir Alavi,09-10-2019,Pursue ,29-10-2019,Currently park the technology. Pursue further research on this topic and create an outlook as the technology matures further.,2,2,Study
-Language Based AI ,,,Engage,,Tech R&D,PoC (technology),Language Based AI  - Translation tool,BESD,Jeff B,Ivan MacLean,Planned,,,Use the translator service on the Azure cloud to access text translation for CRAs verse management systems,10-07-2020,Brad MacKinnon,,,,,2,,
-Legislation as Code,Study,On Track,Watch+Learn,Not plotted,Business,Research Summary,Briefing Note developed for the CIO,SAID,Tiffany B,Maria Wing,Complete,,X,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Low Code,Study,Not Active,Park,,Business of IT,Backgrounder,Low Code Backgrounder,SAID,Tiffany B,Rob A.,Complete,,,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Machine Learning,Readiness,On Track,N/A,,Tech R&D,Backgrounder,AI Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,13,13,Readiness
-Machine Learning,,On Track,N/A,,Bus/Tech,Pilot,"Collaboration with Lakehead University (PAB)
-     Research pilot for web analytics being considered ",DBID,David Y,Maretcho Wilson,In Progress,,,Research completion target date was June 2020 - new date TBD. New engagement contract is in progress,29-06-2020,Maretcho Wilson,29-01-2020,Present at ETIB. Maretcho will bring the mock-up demo to the ETAIC once it’s ready. July??,TBD,,13,,Readiness
-Machine Learning,,,N/A,,Tech R&D,PoC (business),Exploring Supervised Learning using Azure Tool Set,SAID,Tiffany B,John Mueler,Complete,,,Continue - part Innovation Centre spaceWill become VisibleOPI DBID Karen Walton; Client DCPB; Merlin is Client RelationshipsITAS is championing Research Pipeline/doing Outlooks,24-07-2020,"Luc van Baaren
-Shamir Alavi",,,,,13,,Readiness
-Machine Learning,,,N/A,,Tech R&D,PoC (technology),Investigate MLOps Azure tooling,SAID,Tiffany B,John Mueler,Complete,,,Complete,24-07-2020,"John Mueller
-Shamir Alavi",,,,,13,,Readiness
-Machine Learning,,On Track,N/A,,Tech R&D,PoC (technology),"ITB Innovation Lab proof of concept to explore Machine Learning
-",SAID,Tiffany B,,Planned,,,,23-07-2020,Shamir Alavi,,,,,13,,Readiness
-Machine Learning,,On Track,N/A,,Business of IT,PoC (technology),ML Ops - Exploring CI pipeline on-prem for ML Project in Python,SAID,Tiffany B,John Mueler,In Progress,,,Project on hold  ~ March 2020 timeframe,24-07-2020, John Mueller,,,,,13,,Readiness
-Machine Learning,,On Track,N/A,,Bus/Tech,PoC (business),"Predictive model development exploration  (DCPB, ILBIB) 
-Compliance workloads - multiple",CMD,Karen W,,Complete,,,Identity and Relationship Resolution does not use ML.,13-06-2020,Shamir Alavi,,,,,13,,Readiness
-Machine Learning,,On Track,N/A,,Business,PoC (business),"Predictive model development exploration  (HRB with SIIB) 
-    Personnel and training modelling / forecasting - multiple",DBID,David Y,Maretcho Wilson,In Progress,,,"Need to determine client contact - should be available once AI online governance tool is live (target date TBD due to COVID, orig date was April 1, 2020)",14-06-2020,Shamir Alavi,September?,,,,13,,Readiness
-Machine Learning,,On Track,N/A,,Bus/Tech,PoC (business),"Predictive model development exploration (Appeals)
-    Service Standard for Objections - forecasting ",DBID,David Y,Maretcho Wilson,In Progress,,,"Need to determine client contact - should be available once AI online governance tool is live (target date TBD due to COVID, orig date was April 1, 2020)",15-06-2020,Shamir Alavi,September?,,,,13,,Readiness
-Machine Learning,,On Track,N/A,,Bus/Tech,PoC (business),"Predictive model development exploration (CVB)
+",,Shamir Alavi,Changed activity type from PoC to PoC (technology) to conform to the newly established list of activity types.,18-12-2019,N/A - Educational Piece,,,,13,13,Readiness
+Internet of Things (IoT),Study,Not Active,Park,,Tech R&D,Backgrounder,IoT Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,10-07-2020,Yihong Wang,,,,,,03-04-2018,Low relevance to the Agency,,2,2,Study
+Knowledge graphs,Study,,Park,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Maria Wing,Complete,,,"Presented at  ETAIC on July 29, 2020",30-09-2020,Yihong Wang,,,,29-07-2020,"The topic will be parked but future development will be monitored. If anyone has a project or opportunity to use this technology, it should be brought to the ETAIC table for discussion.",29-09-2020,Approved as a consent item,Y,2,2,Study
+Knowledge presentation approaches to AI,Identify,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,,,,,1,1,Identify
+Language Based AI ,Relate,On Track,Park,"s/b relate, engage",Tech R&D,Backgrounder,Language Based AI Backgrounder,SAID,Tiffany B,Shamir Alavi,Complete,,,,27-06-2020,Shamir Alavi,,,,09-10-2019,Pursue ,29-10-2019,Currently park the technology. Pursue further research on this topic and create an outlook as the technology matures further.,,2,3,Study
+Language Based AI ,Relate,,Engage,,Tech R&D,PoC (technology),Language Based AI  - Translation tool,BESD,Jeff B,Ivan MacLean,Complete,,,"Use the translator service on the Azure cloud to access text translation for CRAs verse management systems
+- Presented at ETAIC
+- Presented at ETIB",04-11-2020,Gino Catalli,,,,21-10-2020,Rob Backstrom and Ivan Maclean to come back to ETAIC with updates on potential use cases for the MS Azure based Language translation PoC,27-10-2020,"Ivan to add the AI Translation work to the AI tracking tool. 
+Ivan/Rob to connect with the AI team to examine affinities with other work such as the Simplifier (PAB) project.",,3,3,
+Legislation as Code,Study,On Track,Watch+Learn,Not plotted,Business,Research Summary,Briefing Note developed for the CIO,SAID,Tiffany B,Maria Wing,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,2,2,Study
+Low Code,Study,Not Active,Park,,Business of IT,Backgrounder,Low Code Backgrounder,SAID,Tiffany B,Rob A.,Complete,,,,,,27-06-2020,Shamir Alavi,Changed activity type from Research Product to Backgrounder to conform to the newly established list of activity types.,,,,,,2,2,Study
+Machine Learning,Readiness,On Track,,,Tech R&D,Backgrounder,AI Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,2,13,Readiness
+Machine Learning,Readiness,On Track,,,Bus/Tech,Pilot,"Collaboration with Lakehead University (PAB)
+     Research pilot for web analytics being considered ",DBID,David Y,Maretcho Wilson,In Progress,,,Research completion target date was June 2020 - new date TBD (engagement contract discussions on-going). New engagement contract is in progress.,08-09-2020,Muhammad Zulfiqar,,,,29-01-2020,Present at ETIB. Maretcho will bring the mock-up demo to the ETAIC once it’s ready. July??,TBD,,,8,13,Readiness
+Machine Learning,Readiness,,,,Tech R&D,PoC (business),Exploring Supervised Learning using Azure Tool Set,SAID,Tiffany B,John Mueller,Complete,,,Continue - part Innovation Centre spaceWill become VisibleOPI DBID Karen Walton; Client DCPB; Merlin is Client RelationshipsITAS is championing Research Pipeline/doing Outlooks,24-07-2020,Luc van Baaren,,Shamir Alavi,Changed activity type from PoC to PoC (business) to conform to the newly established list of activity types.,,,,,,5,13,Readiness
+Machine Learning,Readiness,,,,Tech R&D,PoC (technology),Investigate MLOps Azure tooling,SAID,Tiffany B,John Mueller,Complete,,,Complete,24-07-2020,John Mueller,,Shamir Alavi,Changed activity type from PoC to PoC (technology) to conform to the newly established list of activity types.,,,,,,3,13,Readiness
+Machine Learning,Readiness,On Track,,,Tech R&D,PoC (technology),"ITB Innovation Lab proof of concept to explore Machine Learning
+",SAID,Tiffany B,,Planned,,,"2020/07/24: Removed SAID and DG, as we are only hosting. OPI is TBD.",24-07-2020,Luc van Baaren,,,,,,,,,2,13,Readiness
+Machine Learning,Readiness,On Track,,,Bus/Tech,PoC (business),"Predictive model development exploration  (DCPB, ILBIB) 
+Compliance workloads - multiple",CMD,Karen W,,Complete,,,Identity and Relationship Resolution does not use ML.,,,13-06-2020,Shamir Alavi,Changed activity type from PoC to PoC (business) to conform to the newly established list of activity types.,,,,,,5,13,Readiness
+Machine Learning,Readiness,On Track,,,Business,PoC (business),"Predictive model development exploration  (HRB with SIIB) 
+    Personnel and training modelling / forecasting - multiple",DBID,David Y,Maretcho Wilson,In Progress,,,"Need to determine client contact - should be available once AI online governance tool is live (target for the soft launch is September 28th, 2020)",08-09-2020,Muhammad Zulfiqar,13-06-2020,Shamir Alavi,Changed activity type from PoC to PoC (business) to conform to the newly established list of activity types.,September?,,,,,5,13,Readiness
+Machine Learning,Readiness,On Track,,,Bus/Tech,PoC (business),"Predictive model development exploration (Appeals)
+    Service Standard for Objections - forecasting ",DBID,David Y,Maretcho Wilson,In Progress,,,"Need to determine client contact - should be available once AI online governance tool is live (target for the soft launch is September 28th, 2020)",08-09-2020,Muhammad Zulfiqar,13-06-2020,Shamir Alavi,Changed activity type from PoC to PoC (business) to conform to the newly established list of activity types.,September?,,,,,5,13,Readiness
+Machine Learning,Readiness,On Track,,,Bus/Tech,PoC (business),"Predictive model development exploration (CVB)
      Debt management strategies
-    Workload management improvement",DMRAAD,Merlin L,,Complete,,,Identity and Relationship Resolution does not use ML.,16-06-2020,Shamir Alavi,,,,,13,,Readiness
-Machine Learning,,On Track,N/A,,Bus/Tech,PoC (business),"Predictive model development exploration (SIIB)
-    Modelling and forecasting  - multiple",DBID,David Y,Maretcho Wilson,Complete,,,"Need to determine client contact - should be available once AI online governance tool is live (target date TBD due to COVID, orig date was April 1, 2020)",17-06-2020,Shamir Alavi,August?,,,,13,,Readiness
-Machine Learning,,On Track,N/A,,Tech R&D,Reference Architecture,Reference Architecture,SAID,Tiffany B,TBD,Planned,,,Update to existing BI Architecture (existing project),,,,,,,13,,Readiness
+    Workload management improvement",DMRAAD,Merlin L,,Complete,,,Identity and Relationship Resolution does not use ML.,,,13-06-2020,Shamir Alavi,Changed activity type from PoC to PoC (business) to conform to the newly established list of activity types.,,,,,,5,13,Readiness
+Machine Learning,Readiness,On Track,,,Bus/Tech,PoC (business),"Predictive model development exploration (SIIB)
+    Modelling and forecasting  - multiple",DBID,David Y,Maretcho Wilson,Complete,,,"Need to determine client contact - should be available once AI online governance tool is live (target for the soft launch is September 28th, 2020)",08-09-2020,Muhammad Zulfiqar,13-06-2020,Shamir Alavi,Changed activity type from PoC to PoC (business) to conform to the newly established list of activity types.,August?,,,,,5,13,Readiness
+Machine Learning,Readiness,On Track,,,Tech R&D,Reference Architecture,Reference Architecture,SAID,Tiffany B,Alan Ritchie,Planned,,,Update to existing BI Architecture (existing project),03-09-2020,Megha Malhotra,,,,,,,,,5,13,Readiness
 Managed Container Services,Relate,On Track,Engage,,Tech R&D,PoC (technology),"Proof of concept for OpenShift/Quarkus, an on-premises platform as a service built around Docker containers orchestrated and managed by Kubernetes on a foundation of Red Hat Enterprise Linux
 • OpenShift is a family of containerization software developed by Red Hat. Its flagship product is the OpenShift Container Platform—an on-premises platform as a service built around Docker containers orchestrated and managed by Kubernetes on a foundation of Red Hat Enterprise Linux.
-Quarkus is a full-stack, Kubernetes-native Java framework made for Java virtual machines (JVMs) and native compilation",SAID,Tiffany B,Alain Dionne,In Progress,,,Analysis is ongoing. OpenShift is in the SETI LAB currently. R&D continuing on Quarkus.  TSRP for Quarkus was submitted.,24-07-2020,Shamir Alavi,11-03-2020,"No decisions required, provided for informational purposes only.",,,3,3,Plan
-MASA,Study,Not Active,Park,,Business of IT,Backgrounder,MASA Backgrounder,SAID,Tiffany B,Laura Wan,Complete,,X,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Micro services,Adopt,PoC,N/A,SAID,Tech R&D,PoC (technology),Communication Strategy/Registry,SAID,Tiffany B,John Mueller,In Progress,, ,"Presentation on April 3, 2020  of the IETS Communication Mechanism which is to create awareness, present, educate and collaborate about IETS initiatives ( e.g. Distributed Ledger (Blockchain) Technology - Learning Bite session, DevOps, etc.) through different communications channels and/or forums (e.g. Wiki, YPN, etc.).",24-07-2020, John Mueller,,,,,3,8,Adopt
-Micro services,,,N/A,Not plotted,Business of IT,Pilot,POEMS Project:  Set up an HA application with Spring IO technology in micro services,CESD,Daniel G,Martin Courtemanche,In Progress,,,"- Team is working through SAA process
-The team is working on architecture and security documents to continue the implementation.
+Quarkus is a full-stack, Kubernetes-native Java framework made for Java virtual machines (JVMs) and native compilation",SAID,Tiffany B,Alain Dionne,In Progress,,,"Quarkus 1.4.2 TSR-P completed.  Development work started for initial Progress Tracker cloud-native services.
+OpenShift 4.x cluster running in lab with a second cluster currently being configured for Progress Tracker and DevOps early development work.  Collaboration happening with the Cloud CoE to introduce containerized platform for dev in the cloud.  Quarkus 1.4.2 TSR-P completed.  Development work started for initial Progress Tracker cloud-native services.
+
+OpenShift 4.x cluster running in lab with a second cluster currently being configured for Progress Tracker and DevOps early development work.  Collaboration happening with the Cloud CoE to introduce containerized platform for dev in the cloud.  Quarkus 1.4.2 TSR-P completed.  Development work started for initial Progress Tracker cloud-native services.
+",15-01-2021,Alain Dionne,,,,11-03-2020,"No decisions required, provided for informational purposes only.",,,,3,3,Plan
+MASA,Study,Not Active,Park,,Business of IT,Backgrounder,MASA Backgrounder,SAID,Tiffany B,Laura Wan,Complete,,X,,,,27-06-2020,Shamir Alavi,Changed activity type from Research Product to Backgrounder to conform to the newly established list of activity types.,,,,,,2,2,Study
+Microservices,Adopt,,,Not plotted,Business of IT,Pilot,POEMS Project:  Set up an HA application with Spring IO technology in micro services,CESD,Daniel G,Martin Courtemanche,In Progress,,,"- POEMS went live in production and I am trying to setup a demo so that different aspects of the solution can be presented at ETAIC
+- Team is working through SAA process
+- The team is working on architecture and security documents to continue the implementation.
 - analysis is complete; set up ongoing
 
 Jun 19: (SC&D) Need to ask the ambassador about the activity type.
 
 - This solution leverages Restful APIs, micro Services, DevOps and new development practices.  I am working with the manager (Martin Courtemanche) for the team to present at ETAIC eventually.
 
-- POEMS went into production on June 15th ",15-07-2020,Rob Backstrom,,,,,8,,Adopt
+- POEMS went into production on June 15th ",05-10-2020,Rob Backstrom,,,,,,,,,8,8,Adopt
 Mobile & IoT Security,Study,Not Started,Engage,,Tech R&D,Backgrounder,Mobile & IoT Security Backgrounder,SID,Martin L,Francois Viens,In Progress,,,"Mobile & the Internet of Things (IoT) security research would provide CRA focused discussion on policies, processes and technologies for managing mobile security in the enterprise, including device management and emerging threats to and through mobile platforms and endpoints. The research would also explore the new challenges posed by the IoT and the security implications of the interconnectivity of everything. Tomorrow's technology infrastructure & security operations will focus on the most interesting and challenging elements of current and emerging security infrastructure, providing a highly technical view on strategic planning, orchestration, security monitoring and vulnerability perspectives for the security of networks, endpoints, operational technology and systems.
 
-From a resources point-of-view, the currently ITSC tecnical people are engaged in other high priority cyber security initiatives.",27-06-2020,Shamir Alavi,,,,,2,2,Study
-Natural Systems,Relate,Not Active,Watch+Learn,,,Backgrounder,Natural Systems Backgrounder,SAID,Tiffany B,Mo Zhou,Complete,,X,,27-06-2020,Shamir Alavi,,,29-05-2018,No decision made,2,3,Relate
-Natural Systems,,Not Active,Watch+Learn,,,PoC (technology),Proof of concept (Amazon Alexa) completed,DMRAAD,Merlin L,,Complete,,,see Personalized Focus AI for project details,,,,,,,3,,Relate
-New Data Management Technologies,Plan,,Engage,,Tech R&D,Adoption Strategy,Adoption Strategy,SAID,Tiffany B,Alan Ritchie,In Progress,,,Being drafted,27-06-2020,Shamir Alavi,15-01-2020,Postponed due to time limitations,,,5,5,Plan
-NewSQL DBMS,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Vaja Tucker,In Progress,,,Working on Outline,27-06-2020,Shamir Alavi,,,,,2,2,Study
-NoSQL Databases,Study,On Track,Park,,Tech R&D,Backgrounder,NoSQL DBMS Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,,,27-06-2020,Shamir Alavi,23-10-2019,Pursue but determine the research product needed to be determined,29-10-2019,Pursue further research on this emerging technology but the research product needs to be determined,2,2,Study
-NoSQL Databases,,,,,Bus/Tech,Research Summary,Exploration and evaluation of NoSQL databases for their use at CRA,DBID,David Y,Tanya Berube,In Progress,Doing NoSQL presentation and analysis ,17-07-2020,Tanya Berube,,,,,,,,,Bus/Tech
-Observability,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Cheryl Cudmore,In Progress,,,Need to schedule ACF / ETAIC,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Open Everything,Study,On Track,Engage,,Tech R&D,Backgrounder,Open Everything Backgrounder,SAID,Tiffany B,Maria Wing,Complete,,X,"Presented to SARB, no further action by ITB",27-06-2020,Shamir Alavi,,,17-09-2019,CRA is very mature in this space. No further research required,2,2,Study
-Pan Canadian Trust Framework,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,BettyAnn Bryanton,In Progress,,,Presented to ETAIC April 22,27-06-2020,Shamir Alavi,22-04-2020,"Approved,  continue to adoption strategy. Collaborate with BESD who will present status and vision on AMS (Authentication Management System) at future ETAIC",,,2,2,Study
-Phone as a token,Study,,N/A,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Shamir Alavi,In Progress,,,This topic has been removed as it was found to be a mature technology,27-06-2020,Shamir Alavi,,,,,2,2,
-Quantum Computing ,Study,On Track,Engage,,Tech R&D,Research Summary,Briefing Note for Quantum Computing- Security,SID,Martin L,Steve Maganas,Complete,,,,27-06-2020,Shamir Alavi,,,,,2,2,Plan
-Quantum Computing ,,On Track,Engage,,Tech R&D,Backgrounder,Quantum Computing Backgrounder,SAID,Tiffany B,Sandy Lloyd,Complete,,X,,10-07-2020,Yihong Wang,,,10-07-2018,Keep monitoring the development of the technology and seek future guidelines from TBS ,2,,Plan
-Quantum Computing ,,On Track,Engage,,Tech R&D,Procurement,"Quantum-proof procurement 
+From a resources point-of-view, the currently ITSC tecnical people are engaged in other high priority cyber security initiatives.",,Francois Viens,27-06-2020,Shamir Alavi,Changed activity type from Research Product to Backgrounder to conform to the newly established list of activity types.,,,,,,2,2,Study
+Natural Systems,Plan,Not Active,Watch+Learn,,,Backgrounder,Natural Systems Backgrounder,SAID,Tiffany B,Mo Zhou,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,29-05-2018,No decision made,,2,5,Relate
+Natural Systems,Plan,Not Active,Watch+Learn,,,PoC (technology),Proof of concept (Amazon Alexa) completed,DMRAAD,Merlin L,,Complete,,,see Personalized Focus AI for project details,,,,,,,,,,,3,5,Relate
+New Data Management Technologies,Plan,,Engage,,Tech R&D,Adoption Strategy,Adoption Strategy,SAID,Tiffany B,Alan Ritchie,In Progress,,,Being drafted,27-06-2020,Shamir Alavi,,,,15-01-2020,Postponed due to time limitations,,,,5,5,Plan
+NewSQL DBMS,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Vaja Tucker,In Progress,,,Working on Outline,27-06-2020,Shamir Alavi,,,,,,,,,2,2,Study
+NoSQL Databases,Plan,,,,Tech R&D,PoC (technology),"PoC R&D of NoSQL DBs to support development on the cloud. Products include Mongo, Cosmos (some are PaaS databases)",SAID,Tiffany B,Alain Dionne,Complete,,,Being used on DevLabs projects/apps as Poc R&D. Used MongoDB image on AWS.  Seeing exciting possibilities for impreovement deployment (DevOps),26-08-2020,Alain Dionne,02-12-2020,Shamir Alavi,Status changed from In Progress to Complete based on discussion with Alain,,,,,,3,5,
+NoSQL Databases,Plan,On Track,Park,,Tech R&D,Backgrounder,NoSQL DBMS Backgrounder,SAID,Tiffany B,Vaja Tucker,Complete,,,,27-06-2020,Shamir Alavi,,,,23-10-2019,Pursue but determine the research product needed to be determined,29-10-2019,Pursue further research on this emerging technology but the research product needs to be determined,,2,5,Study
+NoSQL Databases,Plan,,Engage,,Bus/Tech,Research Summary,Exploration and evaluation of NoSQL databases for their use at CRA,DBID,David Y,Tanya Berube,In Progress,,,"Looking for potential NoSQL Database projects for a potential proof of concept in the cloud 2020-11-25 Maretcho Wilson           
+",27-11-2020,Tanya Berube,,,,,,,,,2,5,Bus/Tech
+NoSQL Databases,Relate,PoC,Engage,,Tech R&D,PoC (technology),a NoSQL proof of concept using Azure and Gremlin graph db,BESD,Jeff B,JB Samuthiravelu,In Progress,,,a proof of concept using Azure and Gremlin graph db,20-11-2020,Gino Catalli,28-01-2021,Shamir Alavi,Updated the technology name to align with existing activities entered for the same technology (NoSQL),28-01-2021,Explore use cases by collaborating with DBID and SAID and come back to ETAIC with an update,,,,3,3,
+Observability,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Cheryl Cudmore,In Progress,,,"Presented at ACF on August 10 and at ETAIC on August 12.  Before deciding on park/pursue, engage areas to determine if work is being done in this space.",12-08-2020,Cheryl Cudmore, ,,,,,,,,2,2,Study
+Open Everything,Study,On Track,Engage,,Tech R&D,Backgrounder,Open Everything Backgrounder,SAID,Tiffany B,Maria Wing,Complete,,X,"Presented to SARB, no further action by ITB",27-06-2020,Shamir Alavi,,,,,,17-09-2019,CRA is very mature in this space. No further research required,,2,2,Study
+Pan Canadian Trust Framework,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,BettyAnn Bryanton,Complete,,,Presented to ETAIC April 22,27-06-2020,Shamir Alavi,,,,22-04-2020,"Approved,  continue to adoption strategy. Collaborate with BESD who will present status and vision on AMS (Authentication Management System) at future ETAIC",,,,2,2,Study
+Quantum Computing ,Plan,On Track,Engage,,Tech R&D,Research Summary,Briefing Note for Quantum Computing- Security,SID,Martin L,Steve Maganas,Complete,,,"Instead of a BN we partnered with ITAS and presented a Backgrounder document.
+
+https://confluence.isvcs.net/pages/viewpage.action?pageId=143753665
+
+ We are keeping an eye on the industry to see how this tech is progressing and how security orgs are responding.  
+",08-10-2020,Aaron Hellard,27-06-2020,Shamir Alavi,Changed activity type from Other to Researh Summary to conform to the newly established list of activity types.,,,,,,2,8,Plan
+Quantum Computing ,Plan,On Track,Engage,,Tech R&D,Backgrounder,Quantum Computing Backgrounder,SAID,Tiffany B,Sandy Lloyd,Complete,,X,,10-07-2020,Yihong Wang,,,,,,10-07-2018,Keep monitoring the development of the technology and seek future guidelines from TBS ,,2,8,Plan
+Quantum Computing ,Plan,On Track,Engage,,Tech R&D,Procurement,"Quantum-proof procurement 
 ",SID,Martin L,Steve Maganas,Planned,,,"Once developed, quantum computers will perform certain mathematical calculations much faster than current technology. They will be able to compromise the algorithms used in asymmetric cryptography in a very short timeframe compared to today’s computers. It is expected that a quantum computer capable of defeating asymmetric cryptography will come online in as little as 10 to 15 years. This means that all present day classified (and sensitive) GC information and communications, especially that with a medium to long-term intelligence life, could be vulnerable to the quantum threat while it is still relevant and useful from an intelligence perspective.
 ITSC is conducting a quantum threat risk assessment (QTRA) as mandated by the Mandatory GC Quantum Computing Threat Mitigation (ITSB-127). https://cyber.gc.ca/en/guidance/mandatory-gc-quantum-computing-threat-mitigation-itsb-127
 
-Jun 19: We (SC&D) need to follow up with the ambassador on what activity type it is.",27-06-2020,Shamir Alavi,July?,,,,0,,Plan
-Quantum Machine Learning,Identify,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,1,1,Identify
-R & Python,Study,On Track,Engage,,Business of IT,Backgrounder,R & Python Backgrounder,SAID,Tiffany B,Alan Ritchie,Complete,,,,27-06-2020,Shamir Alavi,,,,,2,2,Study
-R & Python,,On Track,N/A,,Bus/Tech,Early Adopter,R is being used in Advanced Analytics,DBID,David Y,Andre Dagenais,In Progress,,,"R- in use for andvanced analytics, Python, more research in progress",14-02-2020,Maretcho Wilson,,,,,11.25,,Study
-Real-Time Analytics/Continuous Intelligence,Plan,On Track,Engage,,Tech R&D,Backgrounder,Continuous Intelligence Backgrounder,SAID,Tiffany B,Mo Zhou,Complete,,X,,27-06-2020,Shamir Alavi,,,30-04-2019,Proceed with an outlook,2,5,Relate
-Real-Time Analytics/Continuous Intelligence,,On Track,Engage,,Tech R&D,Backgrounder,Real-Time Analytics Backgrounder,SAID,Tiffany B,Mo Zhou,Complete,,X,,27-06-2020,Shamir Alavi,,,30-04-2019,Proceed with an outlook,2,,Relate
-Real-Time Analytics/Continuous Intelligence,,On Track,Engage,,Tech R&D,Outlook,Real-Time Analytics/Continuous Intelligence Outlook,SAID,Tiffany B,Mo Zhou,Complete,,,Presented at  ETAIC June 17; Presented and approved at ETIB July 7 ,07-07-2020,Cheryl Cudmore,17-06-2020,"Approve, bring to ETIB ",07-07-2020,Approved,3,,Relate
-Real-Time Analytics/Continuous Intelligence,,On Track,Engage,,Tech R&D,Reference Architecture,Real-Time Analytics/Continuous Intelligence RA,SAID,Tiffany B,Mo Zhou,Planned,,,Plan and timelines to be determined at ITAS meetings,07-07-2020,Cheryl Cudmore,,,,,5,,
+Jun 19: We (added by secretariat) need to follow up with the ambassador on what activity type it is.",,Francois Viens,27-06-2020,Shamir Alavi,Added question in the Activity Notes to discuss with the ambassador/co-ambassador (cell is highlighted for convenience),July?,,,,,0,0,Plan
+Quantum Machine Learning,Identify,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,,,,,1,1,Identify
+R & Python,Study,On Track,Engage,,Business of IT,Backgrounder,R & Python Backgrounder,SAID,Tiffany B,Alan Ritchie,Complete,,,,27-06-2020,Shamir Alavi,,,,,,,,,2,2,Study
+Real-Time Analytics/Continuous Intelligence,Study,On Track,Engage,,Tech R&D,Backgrounder,Continuous Intelligence Backgrounder,SAID,Tiffany B,Mo Zhou,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,30-04-2019,Proceed with an outlook,,2,2,Relate
+Real-Time Analytics/Continuous Intelligence,Study,On Track,Engage,,Tech R&D,Backgrounder,Real-Time Analytics Backgrounder,SAID,Tiffany B,Mo Zhou,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,30-04-2019,Proceed with an outlook,,2,2,Relate
+Real-Time Analytics/Continuous Intelligence,Study,On Track,Engage,,Tech R&D,Outlook,Real-Time Analytics/Continuous Intelligence Outlook,SAID,Tiffany B,Mo Zhou,Complete,,,Presented at  ETAIC June 17; Presented and approved at ETIB July 7 ,07-07-2020,Cheryl Cudmore,,,,17-06-2020,"Approve, bring to ETIB ",07-07-2020,"Approved the Outlook’s recommendation for ITB to work with business clients areas to identify business interests in RTA and CI, and to create a data collection concepts reference architecture to support RTA and CI, and a RTA reference architecture .",,3,2,Relate
+Real-Time Analytics/Continuous Intelligence,Study,On Track,Engage,,Tech R&D,Reference Architecture,Real-Time Analytics/Continuous Intelligence RA,SAID,Tiffany B,Amy Wong,In Progress,,,,19-08-2020,Megha Malhotra,,,,,,,,,8,2,
+Real-Time Analytics/Continuous Intelligence,Study,,,,Tech R&D,Reference Architecture,Data collection concepts reference architecture ,SAID,Tiffany B,Denis L.,In Progress,,,,27-07-2020,Megha Malhotra,,,,,,,,,8,2,
 Record Linking,Relate,,Engage,,Tech R&D,PoC (technology),"Record the linkage information so that linked data is well known 
 Solved by Repository
 - Absolute Linkages 
 - Transitive Linkages 
 Research and develop a PoC using modern, cloud-native engineering practices to develop an initial implementation of generic ",SAID,Tiffany B,John Mueller,Complete,,,"October 1, 2019 (Demonstrated the findings from the Record Linking Proof of Concept to Martin and Tiffany)",24-07-2020,"Luc van Baaren
-Shamir Alavi",,,,,3,3,Relate
-REST webservices,Adopt,On Track,N/A,,Business of IT,Pilot,CRA REST - restablish API CoE including standards and guidelines for REST services,SAID,Tiffany B,Annie Marcil,In Progress,,,Underway - serveral documents in draft status,24-07-2020,Annie Marcil,,,,,8,8,Adopt
-Robotic Process Automation,Adopt,On Track,N/A,,Tech R&D,Reference Architecture,Reference Architecture ,SAID,Tiffany B,Rocky Trisolini,In Progress,,,high priority - existing project,10-06-2020,Megha Malhotra,,,,,8,8,Adopt
-Robotic Process Automation,,On Track,N/A,,Business,Pilot,RL Pilot,BESD,Jeff B,Alex G.,In Progress,In Progress,,"The first process Open Item Management (OIM) is now in PROD and running well.
-The second process, Production Monitoring, is now developed and undergoing UA testing.",23-06-2020,Natalia Tsirkin,,,,,8,,Adopt
-Robotic Process Automation,,On Track,N/A,,Tech R&D,Backgrounder,RPA Backgrounder,SAID,Tiffany B,Alan Ritchie,Complete,,X,,10-07-2020,Yihong Wang,,,"2018-06-12, 2018-08-07",Proceed with an outlook,2,,Adopt
-Robotic Process Automation,,On Track,N/A,,Tech R&D,Outlook,RPA Outlook,SAID,Tiffany B,Alan Ritchie,Complete,,X,,09-07-2020,Yihong Wang,,,19-03-2019,Seek direction from the CRA Assistant Commissioners for CRA’s priorities and focus with RPA. ITB needs to organize itself with all of the key players to manage RPA’s.,3,,Adopt
-Robotic Process Automation,,On Track,N/A,,Tech R&D,PoC (technology),RPA Proof of concept,SAID,Tiffany B,IETS,Complete,,,,23-07-2020,Shamir Alavi,,,,,3,,Adopt
-Robotic Process Automation,,On Track,N/A,,Tech R&D,Pilot,Tools RFP ,BESD,Jeff B,Alex G.,Complete,,,RFP posted; closing on Aug 6.,30-01-2020,Natalia Tsirkin,,,,,8,,Adopt
-Secure Voice Communications,TBD,,N/A,,Business of IT,Research Product,BlackBerry SecuSuite secure VOIP app to enable digital workplace work from anywhere by removing barriers to cellular communication for more sensitive calls.  For example between auditors and taxpayers or executives calling in to a conference where cellular is currently not allowed.  Technology would encrypt the CRA side of the cellular call and bridge cellular calls to landlines.  Pont to Point calls between two agency smartphones using this technology could be rated up to SECRET.,CCSD,Martin S,Doug Porter,,,,"Currently collecting costs so that a business case can be presented
+",,Shamir Alavi,Changed activity type from PoC to PoC (technology) to conform to the newly established list of activity types.,,,,,,3,3,Relate
+REST webservices,Adopt,On Track,,,Business of IT,Pilot,CRA REST - restablish API CoE including standards and guidelines for REST services,SAID,Tiffany B,Ian Tessier,Complete,,,"Underway - several documents in draft status
+Meeting scheduled for Nov 2nd to go over backlog of standards and guidelines",22-01-2021,Ian Tessier,,,,,,,,,8,8,Adopt
+Robotic Process Automation,Study,On Track,,,Tech R&D,Reference Architecture,Reference Architecture ,SAID,Tiffany B,Sylvain B.,In Progress,,,high priority - existing project,03-09-2020,Megha Malhotra,,,,,,,,,8,2,Adopt
+Robotic Process Automation,Study,On Track,,,Business,Pilot,RL Pilot,BESD,Jeff B,Phil DesRoches,Complete,In Progress,,"The first process Open Item Management (OIM) is now in PROD and running well.
+The second process, Production Monitoring, is now developed and UA testing was completed.  It is in Production as of July 2020.",10-09-2020,Gino Catalli,,,,,,,,,8,2,Adopt
+Robotic Process Automation,Study,On Track,,,Tech R&D,Backgrounder,RPA Backgrounder,SAID,Tiffany B,Alan Ritchie,Complete,,X,,10-07-2020,Yihong Wang,,,,,,"2018-06-12, 2018-08-07",Proceed with an outlook,,2,2,Adopt
+Robotic Process Automation,Study,On Track,,,Tech R&D,Outlook,RPA Outlook,SAID,Tiffany B,Alan Ritchie,Complete,,X,,09-07-2020,Yihong Wang,,,,,,19-03-2019,Seek direction from the CRA Assistant Commissioners for CRA’s priorities and focus with RPA. ITB needs to organize itself with all of the key players to manage RPA’s.,,3,2,Adopt
+Robotic Process Automation,Study,On Track,,,Tech R&D,PoC (technology),RPA Proof of concept,SAID,Tiffany B,IETS,Complete,,,,23-07-2020,Shamir Alavi,,,,,,,,,3,2,Adopt
+Robotic Process Automation,Study,On Track,,,Tech R&D,Pilot,Tools RFP ,BESD,Jeff B,Alex G.,Complete,,,RFP posted; closing on Aug 6.,30-01-2020,Natalia Tsirkin,,,,,,,,,8,2,Adopt
+Secure Hardware Systems,Study,,,,Tech R&D,Backgrounder,"Not all use cases for advanced data protection can be handled using software-based approaches. To address this gap, several emerging techniques protect privacy by securing the hardware environment instead. In such an environment, data processing is protected by virtue of the hardware being resistant to intrusion and tampering. E.g., portions of the processor memory may be “walled off” in such a way that not even privileged processes can access them or their data. This approach supports scenarios where data must be processed in untrusted environments, but not those that require actual data sharing.",SAID,Tiffany B,Cheryl Cudmore,Planned,,,,06-08-2020,Megha Malhotra,11-09-2020,Shamir Alavi,Shortened the title based on discussion with Kim (SC&D) and Yihong (SC&D),,,,,,2,2,
+Secure Multiparty Computation,Study,,,,Tech R&D,Backgrounder,"Computations can be performed on data contributed by multiple parties, without any individual party being able to see more than the portion of the data they contributed and without the need for a trusted third party. Participants who collaborate on the computation know only the results of that computation, and not the specific data others contributed. Encrypted portions of the data needed to perform the calculation are divided among multiple participants. Thus, if data from only one or a minority of the participating nodes becomes compromised, this still does not yield any useful information to attackers. This approach supports data processing in untrusted environments, as well as specific multiparty data sharing scenarios. ",SAID,Tiffany B,,Planned,,,,06-08-2020,Megha Malhotra,,,,,,,,,2,2,
+Taxonomy and Ontology,Study,,Park,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Yihong Wang,Complete,,,Presented at ETAIC,30-09-2020,Yihong Wang,,,,29-07-2020,This topic will not be pursued beyond the backgrounder. It has been presented because it is one of the foundations for Knowledge Graphs. Knowledge Graphs will build on this topic to show how it can leverage taxonomy and ontology.,29-09-2020,Approved as a consent item,Y,2,2,Study
+Text Analytics,Adopt,On Track,Engage,Not plotted,Tech R&D,Backgrounder,Text Analytics Backgrounder,SAID,Tiffany B,Yihong Wang,Complete,,,"Provided updates to ETAIC on July 15, 2020",20-08-2020,Yihong Wang,,,,12-02-2020,"SC&D team will meet with CMD to discuss their existing implementation and ensure alignment with architecture, IETS as well as with the next steps identified in the backgrounder.
+(July 15, 2020 update): ETAIC agrees with the existing recommendation to pursue Text Analytics through different venues while identifying related works and deliverables in the ETR and ET radar. ETAIC secretariat will work with the CMD ambassadors to record their work in text analytics in the ETR and update the activity phase for text analytics accordingly.",04-08-2020,"Pursue through different venues, artefact being produced by architecture needs to be identified and recorded in ETR,  as well as the radar positioning needs to be updated. ",,2,8,Study
+Text Analytics,Adopt,,,,Tech R&D,Reference Architecture,Text Analytics Reference Architecture,SAID,Tiffany B,Mo Zhou,In Progress,,,Mo has started the research required and will work closely with AA/DA/TA,19-08-2020,Megha Malhotra,,,,,,,,,8,8,
+Text Analytics,Adopt,,,,Tech R&D,Reference Architecture,Update BI Reference Architecture,SAID,Tiffany B,Mo Zhou,In Progress,,,Mo has started the research required and will work closely with AA/DA/TA,19-08-2020,Megha Malhotra,,,,,,,,,8,8,
+Text Analytics,Adopt,,,,Tech R&D,Reference Architecture,Update IT SRM,SAID,Tiffany B,Mo Zhou,In Progress,,,Mo has started the research required and will work closely with AA/DA/TA,19-08-2020,Megha Malhotra,,,,,,,,,8,8,
+Touchless computing/interfaces ,Study,Backgrounder,,,Tech R&D,Backgrounder,,SAID,Tiffany B,,Planned,,06-08-2020,,06-08-2020,Megha Malhotra,,,,,,,,,2,2,
+Two-factor Authentication,Relate,,,,Bus/Tech,PoC (technology),"Use of Multi Factor Authenticiton (MFA) / Two factor authenticaiton (2FA) with GOL Portal applications. 
+ A PoC was carried out by the SID-ITSS-SAMS and CMS/AMS IT areas with a 
+company called Cyphercore - https://www.logintc.com/",SID,Martin L,Anthony Gallagher,Complete,,,"A PoC was completed in lower states to use 2FA with AMS/CMS portal access.
+A small pilot project will be rolled out on October7th for GC Employees.
+Migrate AMS & SAMS changes to PR Oct. 6th or 7th
+Perform PR Sign-on activities Oct. 6th or 7th
+Pilot Phase 1 – CRA volunteers only Oct. 6th or 7th - Nov. 1st
+Pilot Phase 2 – <100K external users Nov. 1st – Nov. 30th",05-10-2020,Anthony Gallagher,,,,21-10-2020,Present at ETIB,27-10-2020,Presented at ETIB,,3,3,
+Vision-Based  Artificial Intelligence (AI),Adopt,On Track,,,Tech R&D,Backgrounder,AI Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,,,,,2,8,Adopt
+Vision-Based  Artificial Intelligence (AI),Adopt,,,,Tech R&D,Standards,Standard on Biometrics,SID,Martin L,Francois Viens,Complete,"ITSC provided a Standard on Biometrics.
 
-Jun 19: (SC&D) Need to ask CCSD about it",27-06-2020,Shamir Alavi,,,,,0,0,Relate/Plan
-Taxonomy and Ontology,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Yihong Wang,In Progress,,,Need to schedule at ACF / ETAIC after DA discussion,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Temporal logic of actions ,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,,Planned,,,Being removed as we do not think it is applicable to CRA,27-06-2020,Shamir Alavi,,,,,2,2,Study
-Text Analytics,Study,On Track,Engage,Not plotted,Tech R&D,Backgrounder,Text Analytics Backgrounder,SAID,Tiffany B,Yihong Wang,In Progress,,,Will go back to ETAIC on July 15th,27-06-2020,Shamir Alavi,12-02-2020,"SC&D team will meet with CMD to discuss their existing implementation and ensure alignment with architecture, IETS as well as with the next steps identified in the backgrounder.",,,2,2,Study
-Two-way communication,Relate,,N/A,,Bus/Tech,PoC (technology),"A secure two way communication system for taxpayers, using instant messaging platforms such as WhatsApp, to communicate with tax service representatives (similar to call centre agents) about tax related information and services",SAID,Tiffany B,John Mueller,In Progress,,,"More research needs to be done, including more research needs to be done, including mitigating an exhaustive list of risks.",24-07-2020,Shamir Alavi,11-03-2020,Add to ETIB agenda,,,3,3,Relate/Plan
-Vision-Based  Artificial Intelligence (AI),Adopt,On Track,N/A,,Tech R&D,Backgrounder,AI Backgrounder,SAID,Tiffany B,Lisa Lescard,Complete,,X,,27-06-2020,Shamir Alavi,,,,,2,8,Adopt
-Vision-Based  Artificial Intelligence (AI),,On Track,N/A,,Tech R&D,Reference Architecture,Reference Architecture(s),SAID,Tiffany B,,Planned,,,"High priority (new for existing project-biometrics)
-Not sure if OCR would fall under ECM ref. arch (content recognition)",10-06-2020,Megha Malhotra,,,,,5,,Adopt
-Vision-Based  Artificial Intelligence (AI),,,N/A,,Tech R&D,Standards,Standard on Biometrics,SID,Martin L,Francois Viens,Complete,"ITSC provided a Standard on Biometrics.
-
-",,,,,,,,,8,,Adopt
-Vision-Based  Artificial Intelligence (AI),,On Track,N/A,,,PoC (technology),Two-factor authentication proof of concept as a secondary authentication method for privileged users,SID,Martin L,Chris Melbourne,Complete,,,ITSC provided a Standard on Biometrics to assist CCTM on using facial recognition as a secondary authentication.,,Francois Viens. ,,,,,3,,Adopt
-Vision-Based  Artificial Intelligence (AI),,On Track,N/A,,Tech R&D,Outlook,Vision-based AI Outlook,SAID,Tiffany B,TBD,Planned,,,,27-06-2020,Shamir Alavi,,,,,2,,Adopt
-Wardley Mapping,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Maria Wing,In Progress,,,June 23 - Updated the name from worldly mapping to Wardley Mapping,27-06-2020,Shamir Alavi,,,,,2,2,Study
+",,,,,,,,,,,,,8,8,Adopt
+Wardley Mapping,Study,,Engage,,Tech R&D,Backgrounder,Backgrounder,SAID,Tiffany B,Maria Wing,In Progress,,,"Presentated at ETAIC on 2021-01-13
+Feedback/input from other stakeholders will be solicited before making a park/pursue decision",14-01-2021,Shamir Alavi,,,,13-01-2021,Pursue for further stakeholder feedback/input to make a final park/pursure recommendation,,,,2,2,Study
