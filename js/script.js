@@ -300,7 +300,7 @@ $.getJSON( radarURL, function(data){
           calculateAngle(38, 58, numPark, 0.85, arcName, 3);
 
         } else if (phase === "Relate" && numPark != 0) {
-          calculateAngle(38, 55, numEngage, 0.8, arcName, 2);
+          calculateAngle(38, 60, numEngage, 0.8, arcName, 2);
 
         } else {
           calculateAngle(30, 65, numPark, 0.8, arcName, 1);
@@ -475,7 +475,7 @@ $.getJSON( radarURL, function(data){
                 y2 = Math.sin(radian) * radius;
 
                 // Decouple smaller arcs such as watch+learn from others               
-                if (Length <= 6) {
+                if (arc === "Watch+Learn") {
                   // console.log("length less than 6, j = ", j)
                   if (j%2 === 0) {
                     finalCoordinate(0.07, 0.04, 1, 1, technology);
@@ -487,7 +487,11 @@ $.getJSON( radarURL, function(data){
                 } else {
                   if (j < Length/2 ) {
                     if (j === 0) {
-                      finalCoordinate(0.02, 0.02, 1.01, 1.01, technology);
+                      if (arc === "Park") {
+                        finalCoordinate(0.15, 0.02, 1.01, 1.01, technology);
+                      } else {
+                        finalCoordinate(0.02, 0.02, 1.01, 1.01, technology);
+                      }                      
                     } else {
                       finalCoordinate(0.02*j, 0.025*j, 1.01, 1.01, technology);
                     }
