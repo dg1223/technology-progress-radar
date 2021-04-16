@@ -323,8 +323,8 @@ $.getJSON( radarURL, function(data){
     // Hardcode placement for Adopt-Readiness phase
     // This is based on business justification (BEC/ACO)
     if (phase === "Adopt/Readiness") {
-      var adr_x = [810, 960, 865];
-      var adr_y = [965, 785, 855];      
+      var adr_x = [810, 960, 815, 885];
+      var adr_y = [965, 785, 915, 825];      
       for(var i=0; i < numpoints; i++) {
         var tech_index = indices[i];
         var technology = data["Emerging Technology"][tech_index];
