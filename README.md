@@ -1,6 +1,6 @@
 # Emerging Technologies Radar
 
-This is a Gartner influenced [emerging technologies radar](https://blogs.gartner.com/tuong-nguyen/2020/12/07/gartner-launches-emerging-technologies-radar-2021/) that tracks the progress of emerging technology research in an organization. It is a sample* of the radar that we use at the IT branch at Canada Revenue Agency (CRA).
+This is a Gartner influenced [emerging technologies radar](https://blogs.gartner.com/tuong-nguyen/2020/12/07/gartner-launches-emerging-technologies-radar-2021/) that tracks the progress of emerging technology research in an organization. It is a sample* of the radar that we use at the IT branch at Canada Revenue Agency (CRA). The original radar design and update process is entirely manual at this moment, using Microsoft Visio. This is an attempt to automate the entire process to create an end-to-end solution aka a 1-shot radar generation.
 
 The canvas below and all of its contents have been automatically generated from a single spreadsheet. The technology names are automatically placed on the canvas without** hard coding any of their coordinates.
 
