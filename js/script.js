@@ -230,15 +230,22 @@ $.getJSON( radarURL, function(data){
 
       /* Restart calculation after each third of the count 
       to line up the texts in three rows */
-      var Quarter1 = (count/numrows) + (count*0.05);
-      var Quarter2 = (2*count/numrows) + (count*0.1);
+      if (arc === "Park") {
+        var Quarter1 = (count/numrows);
+        var Quarter2 = (2*count/numrows);
+      } else {
+        var Quarter1 = (count/numrows) + (count*0.05);
+        var Quarter2 = (2*count/numrows) + (count*0.1);
+      }
+      
+      console.log("calculateAngle: Q1 = ", Quarter1+", Q2 = ", Quarter2+", arc = ", arc)
 
       for (var i=0; i < count; i++) {
-        if ( i < Quarter1 ) {          
+        if ( i < Quarter1 ) {
           theta[arc].push(currentAngle);
           currentAngle += degreesPerPoint*multiplier;
 
-        } else if (i >= Quarter1 && i <= Quarter2) {
+        } else if (i >= Quarter1 && i < Quarter2) {
           if (passIndicator === 0) {
             currentAngle = startAngle;
           }          
@@ -290,7 +297,7 @@ $.getJSON( radarURL, function(data){
 
       } else if (arcName === "Park" && numPark != 0) {
         if (phase === "Study") {
-          calculateAngle(38, 58, numPark, 0.75, arcName, 3);
+          calculateAngle(38, 58, numPark, 0.85, arcName, 3);
 
         } else if (phase === "Relate" && numPark != 0) {
           calculateAngle(38, 55, numEngage, 0.8, arcName, 2);
@@ -374,8 +381,16 @@ $.getJSON( radarURL, function(data){
               // console.log(arc+",", Length)
 
               // Create multiple rows within the arc-phase space
-              var Quarter1 = (Length/3) + (Length*0.05);
-              var Quarter2 = (2*Length/3) + (Length*0.1);
+              if (arc === "Park") {
+                var Quarter1 = (Length/3);
+                var Quarter2 = (2*Length/3);
+              } else {
+                var Quarter1 = (Length/3) + (Length*0.05);
+                var Quarter2 = (2*Length/3) + (Length*0.1);
+              }
+              
+              console.log("Phase = ", phase+", arc = ", arc+", length = ", Length)
+              console.log("Q1 = ", Quarter1+", Q2 = ", Quarter2)
               var firstPass = "Y";
 
               for(var j=0; j < Length; j++) {
@@ -409,7 +424,7 @@ $.getJSON( radarURL, function(data){
                     } else {
                       finalCoordinate(0.02, 0.01, 1, 1, technology);
                     }
-                  } else if (j >= Quarter1 && j <= Quarter2) {
+                  } else if (j >= Quarter1 && j < Quarter2) {
                     if (firstPass === "Y") {
                       var k = 0.4;
                     }
@@ -435,7 +450,7 @@ $.getJSON( radarURL, function(data){
                       k += 0.4;
                       firstPass = "N";
                     } else {
-                      finalCoordinate(0.013, 0.02, 1.2, 1.2, technology);
+                      finalCoordinate(0.013, 0.12, 1.2, 1.2, technology);
                       firstPass = "N";
                     }                    
                   }
@@ -528,7 +543,7 @@ $.getJSON( radarURL, function(data){
                 if (j === 0) {
                     finalCoordinate(0, 0.003, 1.03, 1.03, technology)
                   } else {
-                    finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
+                    finalCoordinate(-0.01, 0.005*j, 1.03, 1.03, technology)
                   }
                 } // END of inner for loop
               } // END of outer for loop
