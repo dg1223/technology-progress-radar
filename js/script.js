@@ -323,8 +323,8 @@ $.getJSON( radarURL, function(data){
     // Hardcode placement for Adopt-Readiness phase
     // This is based on business justification (BEC/ACO)
     if (phase === "Adopt/Readiness") {
-      var adr_x = [810, 960, 815, 885];
-      var adr_y = [965, 785, 915, 825];      
+      var adr_x = [810, 960, 815, 845];
+      var adr_y = [965, 785, 915, 865];      
       for(var i=0; i < numpoints; i++) {
         var tech_index = indices[i];
         var technology = data["Emerging Technology"][tech_index];
@@ -520,9 +520,9 @@ $.getJSON( radarURL, function(data){
                 y2 = Math.sin(radian) * radius;
 
                 if (j === 0) {
-                    finalCoordinate(0.02, 0.003, 1.03, 1.03, technology)
+                    finalCoordinate(0.02, 0.003, 1.03, 1, technology)
                   } else {
-                    finalCoordinate(0.02, 0.003*j, 1.03, 1.03, technology)
+                    finalCoordinate(0.02, 0.003*j, 1.03, 1, technology)
                   }
                 } // END of inner for loop
               } // END of outer for loop
@@ -554,7 +554,7 @@ $.getJSON( radarURL, function(data){
             } // END of Identify
         // END of Identify, Study, Relate, Plan
 
-        /* Phases are Adopt, Adopt-Readiness, Readiness */
+        /* Phases are Adopt and Readiness */
         } else {
             var degreesPerPoint = 70 / numpoints;
 
@@ -582,7 +582,7 @@ $.getJSON( radarURL, function(data){
                   var offset_y = 0.4;
                 } else {
                   var offset_x = 0;
-                  var offset_y = 0.003*i;
+                  var offset_y = 0.002*i;
                 } // END of inner if-else          
                 points.push({
                   x: left-(x2/(1.03 + offset_x)),
@@ -592,7 +592,7 @@ $.getJSON( radarURL, function(data){
               } else {
                 points.push({
                   x: left-(x2/1.4),
-                  y: top-(y2/1.4),
+                  y: top-(y2/1.3),
                   tech: technology       
                 });
               } // END of if-else

@@ -76,7 +76,7 @@ class preprocess:
         etr.replace("R\ &\ Python", "R / Python", regex=True, inplace=True)
         etr.replace("ICAM", "Identity, Credential & Access Management", regex=True, inplace=True)
         etr.replace("DLT Offensive", "Distributed Ledger Technology - offensive", regex=True, inplace=True)
-        etr.replace("DLT Defensive", "Distributed Ledger Technology - defensive (cryptocurrency)", regex=True, inplace=True)
+        etr.replace("DLT Defensive", "DLT - defensive (cryptocurrency)", regex=True, inplace=True)
         etr.replace("Touchless\ computing\/interfaces", "Touchless computing", regex=True, inplace=True)        
 
         print(etr.head(10))

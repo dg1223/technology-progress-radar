@@ -173,6 +173,7 @@ body {
   color: black;
   position: absolute;
   font-size: 10px;
+  font-weight: bold;
   transform: rotate(-45deg);
 }
 
