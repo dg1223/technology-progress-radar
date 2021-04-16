@@ -62,7 +62,9 @@ class preprocess:
 
         # Use short form 'AI'
         etr.replace("Artificial\ Intelligence\ \(AI\)", "AI", regex=True, inplace=True)
-        etr.replace("Real\-Time\ Analytics\/Continuous\ Intelligence", "RTA/CI", regex=True, inplace=True)
+        etr.replace("Real\-Time\ Analytics\/Continuous\ Intelligence", "RTA / CI", regex=True, inplace=True)
+        etr.replace("Pan\ Canadian\ Trust\ Framework", "PCTF", regex=True, inplace=True)
+        etr.replace("Enterprise\ taxonomy\ and\ ontology\ management", "Enterprise Taxonomy & Ontology", regex=True, inplace=True)
         print(etr.head(10))
 
         # Reset index after dropping NaN
@@ -76,85 +78,4 @@ class preprocess:
         outJSON = outputPath + outputJSON
         etr.to_json(outJSON, orient="columns", indent=4)
 
-        # etr_trimmed = []
-        # for i in range(len(etr)):
-        #     if pd.notna(etr['KPI Research Phase (Topic)'].values[i]):
-        #         etr_trimmed.append(etr.values[i])
-
-        # etr_to_use = np.array(etr_trimmed)
-
         return None
-
-
-class canvas():
-
-    def __init__(self):
-        return None
-
-    def arc(self, cent_x: float, cent_y: float, radius: float,
-            theta1: float, theta2: float, width: float, colour: str, axes):
-
-        '''
-        Draws an arc on the radar
-
-        Parameters
-        ----------
-        cent_x : float
-            x coordinate of centre for the arc
-        cent_y : float
-            y coordinate of centre for the arc
-        radius : float
-            radius of the arc
-        theta1 : float
-            angle from which the arc starts
-        theta2 : float
-            angle up to which the arc is drawn
-        width : float
-            If width is given, then a partial wedge is drawn from inner radius
-            (r - width) to outer radius r
-        colour : str
-            colour of the arc as HTML colour code
-        axes:
-            
-
-        Returns
-        -------
-        None.
-
-        '''
-        Arc = patches.Wedge((cent_x, cent_y), radius, theta1, theta2, width=width, color=colour)
-
-        #return Arc
-        return axes.add_artist(Arc)
-
-    def line(self, x1: float, x2: float, y1: float, y2: float):
-        '''
-        
-
-        Parameters
-        ----------
-        x1 : float
-            DESCRIPTION.
-        x2 : float
-            DESCRIPTION.
-        y1 : float
-            DESCRIPTION.
-        y2 : float
-            DESCRIPTION.
-
-        Returns
-        -------
-        x : TYPE
-            DESCRIPTION.
-        y : TYPE
-            DESCRIPTION.
-
-        '''
-
-        #slope = (y2- y1) / (x2 - x1)
-        x = [x1, x2]
-        y = [y1, y2]
-
-        return x, y
-
-

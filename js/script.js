@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //*** Count number of technologies in each research phase ***//
 
 // Host JSON file on the web and fetch it using the URL
-radarURL = "https://raw.githubusercontent.com/dg1223/storage/master/ETR_clean.json"
+radarURL = "https://raw.githubusercontent.com/dg1223/tech-radar/master/ETR_clean.json"
 
 $.getJSON( radarURL, function(data){
 
@@ -503,7 +503,7 @@ $.getJSON( radarURL, function(data){
                 if (j === 0) {
                     finalCoordinate(0.02, 0.003, 1.03, 1.03, technology)
                   } else {
-                    finalCoordinate(0, 0.003*j, 1, 1.03, technology)
+                    finalCoordinate(0.02, 0.003*j, 1.03, 1.03, technology)
                   }
                 } // END of inner for loop
               } // END of outer for loop
