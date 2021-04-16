@@ -214,14 +214,16 @@ $.getJSON( radarURL, function(data){
       the texts in two rows */
       for (var i=0; i < count; i++) {
         if (i < (count/numrows)) {
-          currentAngle += degreesPerPoint*multiplier;
+          // console.log("i = ", i+", count/numrows = ", count/numrows)          
           theta[arc].push(currentAngle);
+          currentAngle += degreesPerPoint*multiplier;
         } else {
+          // console.log("i = ", i+"count/numrows = ", count/numrows)
           if (passIndicator === 0) {
             currentAngle = startAngle;
-          }
-          currentAngle += degreesPerPoint*multiplier;
+          }          
           theta[arc].push(currentAngle);
+          currentAngle += degreesPerPoint*multiplier;
           passIndicator = 1;
         } // END of inner if-else
         
@@ -236,24 +238,24 @@ $.getJSON( radarURL, function(data){
       var Quarter2 = (2*count/numrows) + (count*0.1);
 
       for (var i=0; i < count; i++) {
-        if ( i < Quarter1 ) {
-          currentAngle += degreesPerPoint*multiplier;
+        if ( i < Quarter1 ) {          
           theta[arc].push(currentAngle);
+          currentAngle += degreesPerPoint*multiplier;
 
         } else if (i >= Quarter1 && i <= Quarter2) {
           if (passIndicator === 0) {
             currentAngle = startAngle;
-          }
-          currentAngle += degreesPerPoint*multiplier;
+          }          
           theta[arc].push(currentAngle);
+          currentAngle += degreesPerPoint*multiplier;
           passIndicator = 1;
 
         } else {
           if (passIndicator === 1) {
             currentAngle = startAngle;
-          }
-          currentAngle += degreesPerPoint*multiplier;
+          }          
           theta[arc].push(currentAngle);
+          currentAngle += degreesPerPoint*multiplier;
           passIndicator = 2;
         } // END of inner if-else
         
@@ -263,12 +265,12 @@ $.getJSON( radarURL, function(data){
     } else {
       var degreesPerPoint = maxAngle / count;
       for (var i=0; i < count; i++) {
-        // Shift the angle around for the next point
-        currentAngle += degreesPerPoint*multiplier;
+        // Shift the angle around for the next point        
         theta[arc].push(currentAngle);
+        currentAngle += degreesPerPoint*multiplier;
       }
-      console.log("numrows = ", numrows+", arc = ",arc)
-      console.log(currentAngle)
+      // console.log("numrows = ", numrows+", arc = ",arc)
+      // console.log(currentAngle)
     } // END of outer if-else
 
     // return theta;
@@ -285,27 +287,27 @@ $.getJSON( radarURL, function(data){
       var arcName = arcs[Arc];
       if (arcName === "Engage"){
         if (phase === "Study") {
-          calculateAngle(45, 1, numEngage, 0.8, arcName, 3);
+          calculateAngle(45, 5, numEngage, 0.8, arcName, 3);
 
         } else if (phase === "Relate") {
-          calculateAngle(45, 0, numEngage, 0.8, arcName, 2);
+          calculateAngle(45, 7, numEngage, 0.7, arcName, 2);
 
         } else {  // Identify, Plan, Adopt, Readiness
-          calculateAngle(45, 0, numEngage, 0.8, arcName, 1);
+          calculateAngle(45, 10, numEngage, 0.8, arcName, 1);
         }
 
       } else if (arcName === "Watch+Learn" && numWatch != 0) {
-        calculateAngle(60, 43.5, numWatch, 0.1, arcName, 2);
+        calculateAngle(60, 50, numWatch, 0.1, arcName, 2);
 
       } else if (arcName === "Park" && numPark != 0) {
         if (phase === "Study") {
-          calculateAngle(38, 52, numPark, 0.75, arcName, 3);
+          calculateAngle(38, 58, numPark, 0.75, arcName, 3);
 
         } else if (phase === "Relate" && numPark != 0) {
-          calculateAngle(38, 52, numEngage, 0.8, arcName, 2);
+          calculateAngle(38, 55, numEngage, 0.8, arcName, 2);
 
         } else {
-          calculateAngle(30, 60, numPark, 0.8, arcName, 1);
+          calculateAngle(30, 65, numPark, 0.8, arcName, 1);
         }        
 
     } // END of if-else-if    
@@ -400,14 +402,14 @@ $.getJSON( radarURL, function(data){
                 var angle = theta[arc][j];
                 var radian = angle * Math.PI / 180;
 
-                // console.log(j+":", technology+",", angle+", index: ")
+                console.log(j+":", technology+",", angle)
 
                 // x2 will be cosine of angle * radius (range)
                 x2 = Math.cos(radian) * radius;
                 // y2 will be sine  of angle  * range
                 y2 = Math.sin(radian) * radius;
 
-                /* finalCoordinate(off_X, off_Y, div_X, div_Y, Tech) */                
+                // Decouple smaller arcs like watch+learn from others               
                 if (Length <= 6) {
                   // console.log("length less than 6, j = ", j)
                   if (j%2 === 0) {
@@ -477,15 +479,27 @@ $.getJSON( radarURL, function(data){
                 // y2 will be sine  of angle  * range
                 y2 = Math.sin(radian) * radius;
 
-                if (j <= Length/2 ) {
-                  if (j === 0) {
-                    finalCoordinate(0.02, 0.02, 1.01, 1.01, technology);
+                // Decouple smaller arcs such as watch+learn from others               
+                if (Length <= 6) {
+                  // console.log("length less than 6, j = ", j)
+                  if (j%2 === 0) {
+                    finalCoordinate(0.07, 0.04, 1, 1, technology);
+                  } else if (j%2 === 1 ) {
+                    finalCoordinate(0.1, 0.01, 1.1, 1.05, technology);
                   } else {
-                    finalCoordinate(0.02*j, 0.025*j, 1.01, 1.01, technology);
-                  }
+                    finalCoordinate(0.013, 0.02, 1.2, 1.2, technology);
+                  }                  
                 } else {
-                  finalCoordinate(0.015*j, 0.001*j, 1.12, 1.05, technology);
-                }
+                  if (j < Length/2 ) {
+                    if (j === 0) {
+                      finalCoordinate(0.02, 0.02, 1.01, 1.01, technology);
+                    } else {
+                      finalCoordinate(0.02*j, 0.025*j, 1.01, 1.01, technology);
+                    }
+                  } else {
+                    finalCoordinate(0.012*j, 0.001*j, 1.12, 1.05, technology);
+                  }
+                }                
               } // END of inner for loop
             } // END of outer for loop
 
@@ -508,9 +522,9 @@ $.getJSON( radarURL, function(data){
                 y2 = Math.sin(radian) * radius;
 
                 if (j === 0) {
-                    finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
+                    finalCoordinate(0.02, 0.003, 1.03, 1.03, technology)
                   } else {
-                    finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
+                    finalCoordinate(0, 0.003*j, 1, 1.03, technology)
                   }
                 } // END of inner for loop
               } // END of outer for loop
@@ -533,7 +547,7 @@ $.getJSON( radarURL, function(data){
                 y2 = Math.sin(radian) * radius;
 
                 if (j === 0) {
-                    finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
+                    finalCoordinate(0, 0.003, 1.03, 1.03, technology)
                   } else {
                     finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
                   }
@@ -632,7 +646,7 @@ $.getJSON( radarURL, function(data){
       var point = findCoordinates(0, 0, radius, numPoints, cur_phase);
 
       theta = {"Engage": [],"Watch+Learn": [],"Park": []};
-      
+
     } // END of if-else
   } // END of for loop
   console.log(point)
