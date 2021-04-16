@@ -259,6 +259,7 @@ $.getJSON( radarURL, function(data){
         
       } // END of for loop
 
+    // calculateAngle(45, 0, count=2, 0.8, arc=Engage, numrows=1);
     } else {
       var degreesPerPoint = maxAngle / count;
       for (var i=0; i < count; i++) {
@@ -266,6 +267,8 @@ $.getJSON( radarURL, function(data){
         currentAngle += degreesPerPoint*multiplier;
         theta[arc].push(currentAngle);
       }
+      console.log("numrows = ", numrows+", arc = ",arc)
+      console.log(currentAngle)
     } // END of outer if-else
 
     // return theta;
@@ -287,7 +290,7 @@ $.getJSON( radarURL, function(data){
         } else if (phase === "Relate") {
           calculateAngle(45, 0, numEngage, 0.8, arcName, 2);
 
-        } else {
+        } else {  // Identify, Plan, Adopt, Readiness
           calculateAngle(45, 0, numEngage, 0.8, arcName, 1);
         }
 
@@ -297,6 +300,9 @@ $.getJSON( radarURL, function(data){
       } else if (arcName === "Park" && numPark != 0) {
         if (phase === "Study") {
           calculateAngle(38, 52, numPark, 0.75, arcName, 3);
+
+        } else if (phase === "Relate" && numPark != 0) {
+          calculateAngle(38, 52, numEngage, 0.8, arcName, 2);
 
         } else {
           calculateAngle(30, 60, numPark, 0.8, arcName, 1);
@@ -378,14 +384,14 @@ $.getJSON( radarURL, function(data){
             for (var i=0; i < study.length; i++) {
               var arc = arcs[i];
               var Length = study[i].length;
-              console.log(arc+",", Length)
+              // console.log(arc+",", Length)
 
               // Create multiple rows within the arc-phase space
               // var Quarter1 = (Length/3) + Math.ceil(Length*0.1);
               // var Quarter2 = (2*Length/3) + Math.ceil(Length*0.05);
               var Quarter1 = (Length/3) + (Length*0.05);
               var Quarter2 = (2*Length/3) + (Length*0.1);
-              console.log("Quarter1 = ", Quarter1+", Quarter2 = ",Quarter2)
+              // console.log("Quarter1 = ", Quarter1+", Quarter2 = ",Quarter2)
 
               /* theta = {"Engage": [],"Watch+Learn": [],"Park": []}; */
               var firstPass = "Y";
@@ -394,7 +400,7 @@ $.getJSON( radarURL, function(data){
                 var angle = theta[arc][j];
                 var radian = angle * Math.PI / 180;
 
-                console.log(j+":", technology+",", angle+", index: ")
+                // console.log(j+":", technology+",", angle+", index: ")
 
                 // x2 will be cosine of angle * radius (range)
                 x2 = Math.cos(radian) * radius;
@@ -596,8 +602,8 @@ $.getJSON( radarURL, function(data){
   // var phases = ["Identify", "Relate", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
   // var radii = [928, 666, 516, 427.5, 202.5, 202.5];
 
-  var phases = ["Study", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
-  var radii = [845, 516, 427.5, 202.5, 202.5];
+  var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
+  var radii = [928, 845, 666, 516, 427.5, 202.5, 202.5];
 
   // phaseQuery should be a variable that will take each phase in a for loop
   for (var Phase in phases) {
@@ -614,12 +620,19 @@ $.getJSON( radarURL, function(data){
       var numPoints = counts[0][cur_phase];
       // radius is constant
       var point = findCoordinates(x, y, radius, numPoints, cur_phase);
+
+      // Clear array  before pushing new values
+      theta = {"Engage": [],"Watch+Learn": [],"Park": []};
+
     } else {
       console.log(cur_phase)
       var numPoints = counts[0][cur_phase];
       // x, y, radius arguments don't matter because adopt-readiness phase 
       // placements are constant (hardcoded)
-      var point = findCoordinates(0, 0, radius, numPoints, cur_phase);    
+      var point = findCoordinates(0, 0, radius, numPoints, cur_phase);
+
+      theta = {"Engage": [],"Watch+Learn": [],"Park": []};
+      
     } // END of if-else
   } // END of for loop
   console.log(point)
