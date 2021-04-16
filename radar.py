@@ -63,7 +63,7 @@ class preprocess:
         # Remove duplicate names
         etr.drop_duplicates(subset=['Emerging Technology'], inplace=True)
 
-        # Use short form 'AI'
+        # Clean some names
         etr.replace("Artificial\ Intelligence\ \(AI\)", "AI", regex=True, inplace=True)
         # etr.replace("Real\-Time\ Analytics\/Continuous\ Intelligence", "RTA/CI", regex=True, inplace=True)
         # etr.replace("Pan\ Canadian\ Trust\ Framework", "PCTF", regex=True, inplace=True)
@@ -72,7 +72,7 @@ class preprocess:
         etr.replace("Angular\ framework", "Angular", regex=True, inplace=True)
         etr.replace("REST\ webservices", "REST", regex=True, inplace=True)
         etr.replace("Pan\ Canadian\ Trust\ Framework", "Pan-Canadian Trust Framework", regex=True, inplace=True)
-        etr.replace("R\ &\ Python", "R \/ Python", regex=True, inplace=True)
+        etr.replace("R\ &\ Python", "R / Python", regex=True, inplace=True)
         etr.replace("ICAM", "Identity, Credential & Access Management", regex=True, inplace=True)
         etr.replace("DLT Offensive", "Distributed Ledger Technology - offensive", regex=True, inplace=True)
         etr.replace("DLT Defensive", "Distributed Ledger Technology - defensite (cryptocurrency)", regex=True, inplace=True)
