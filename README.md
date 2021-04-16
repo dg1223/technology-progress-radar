@@ -20,6 +20,6 @@ The site is hosted at https://dg1223.github.io/tech-radar/
 
 ![Emerging Technology Radar](https://raw.githubusercontent.com/dg1223/tech-radar/master/ET-radar.png)
 
-&ast; The date on the top left corner below the header does not reflect the current state of CRA's emerging technology research.
+&ast; The date on the top left corner below the header does not correspond to the current state of CRA's emerging technology research.
 
 &ast;&ast; Some parameters need manual tuning so that the texts and icons align properly with each other. See step 9 of the next steps for a possible solution to automate this.
