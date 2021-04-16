@@ -60,6 +60,9 @@ class preprocess:
             if pd.isna(etr.iloc[x, ind]):
                 etr.iloc[x, ind] = 'Engage'
 
+        # Remove leading and trailing spaces
+        etr = etr.applymap(lambda x: x.strip())
+        
         # Remove duplicate names
         etr.drop_duplicates(subset=['Emerging Technology'], inplace=True)
 
@@ -76,7 +79,8 @@ class preprocess:
         etr.replace("ICAM", "Identity, Credential & Access Management", regex=True, inplace=True)
         etr.replace("DLT Offensive", "Distributed Ledger Technology - offensive", regex=True, inplace=True)
         etr.replace("DLT Defensive", "Distributed Ledger Technology - defensite (cryptocurrency)", regex=True, inplace=True)
-        etr.replace("Touchless\ computing\/interfaces ", "Touchless computing ", regex=True, inplace=True)
+        etr.replace("Touchless\ computing\/interfaces ", "Touchless computing ", regex=True, inplace=True)        
+
         print(etr.head(10))
 
         # Reset index after dropping NaN
