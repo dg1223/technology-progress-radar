@@ -109,12 +109,14 @@ $.getJSON( radarURL, function(data){
   console.log(counts[0])
 
   // Store Study, Relate and Plan phases in an array including arc info
+  var identify = [];
   var study = [];
   var relate = [];
   var plan = [];
 
   // Create 2d arrays
   for (i=0; i<3; i++) {
+    identify.push([]);
     study.push([]);
     relate.push([]);
     plan.push([]);
@@ -125,7 +127,13 @@ $.getJSON( radarURL, function(data){
     var phs = data["KPI Research Phase (Topic)"][i];
     var technology = data["Emerging Technology"][i];
 
-    if (phs === "Study" && arc === "Engage") {
+    if (phs === "Identify" && arc === "Engage") {
+      identify[0].push(technology)
+    } else if (phs === "Identify" && arc === "Watch+Learn") {
+      identify[1].push(technology)
+    } else if (phs === "Identify" && arc === "Park") {
+      identify[2].push(technology)
+    } else if (phs === "Study" && arc === "Engage") {
       study[0].push(technology)
     } else if (phs === "Study" && arc === "Watch+Learn") {
       study[1].push(technology)
@@ -148,12 +156,13 @@ $.getJSON( radarURL, function(data){
 
   // Sort the arrays
   for (i=0; i<3; i++) {
+    identify[i].sort();
     study[i].sort();
     relate[i].sort();
     plan[i].sort();
   }
 
-  // console.log(study.length)
+  // console.log(plan)
 
   // get document coordinates of the element
   function getCoords(elem) {
@@ -475,7 +484,7 @@ $.getJSON( radarURL, function(data){
             } // END of outer for loop
 
           /* Phase is either Identify or Plan */
-          } else { 
+          } else if (phase === "Plan") {
             // Loop over each arc first
             for (var i=0; i < plan.length; i++) {
               var arc = arcs[i];
@@ -492,10 +501,39 @@ $.getJSON( radarURL, function(data){
                 // y2 will be sine  of angle  * range
                 y2 = Math.sin(radian) * radius;
 
-                finalCoordinate(0, 0.003*i, 1.03, 1.03, technology)
-              } // END of inner for loop
-            } // END of outer for loop
-          } // END of Identify or Plan
+                if (j === 0) {
+                    finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
+                  } else {
+                    finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
+                  }
+                } // END of inner for loop
+              } // END of outer for loop
+            // END of Plan
+            } else {                          // Identify phase
+            // Loop over each arc first
+            for (var i=0; i < identify.length; i++) {
+              var arc = arcs[i];
+              var Length = identify[i].length;
+
+              /* theta = {"Engage": [],"Watch+Learn": [],"Park": []}; */
+              for(var j=0; j < Length; j++) {
+                var technology = identify[i][j];
+                var angle = theta[arc][j];
+                var radian = angle * Math.PI / 180;
+
+                // x2 will be cosine of angle * radius (range)
+                x2 = Math.cos(radian) * radius;
+                // y2 will be sine  of angle  * range
+                y2 = Math.sin(radian) * radius;
+
+                if (j === 0) {
+                    finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
+                  } else {
+                    finalCoordinate(0, 0.003*j, 1.03, 1.03, technology)
+                  }
+                } // END of inner for loop
+              } // END of outer for loop
+            } // END of Identify
         // END of Identify, Study, Relate, Plan
         } else {
             var degreesPerPoint = 70 / numpoints;
@@ -558,8 +596,8 @@ $.getJSON( radarURL, function(data){
   // var phases = ["Identify", "Relate", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
   // var radii = [928, 666, 516, 427.5, 202.5, 202.5];
 
-  var phases = ["Study", "Adopt", "Adopt/Readiness", "Readiness"];
-  var radii = [845, 427.5, 202.5, 202.5];
+  var phases = ["Study", "Plan", "Adopt", "Adopt/Readiness", "Readiness"];
+  var radii = [845, 516, 427.5, 202.5, 202.5];
 
   // phaseQuery should be a variable that will take each phase in a for loop
   for (var Phase in phases) {
