@@ -68,8 +68,6 @@ class preprocess:
 
         # Clean some names
         etr.replace("Artificial\ Intelligence\ \(AI\)", "AI", regex=True, inplace=True)
-        # etr.replace("Real\-Time\ Analytics\/Continuous\ Intelligence", "RTA/CI", regex=True, inplace=True)
-        # etr.replace("Pan\ Canadian\ Trust\ Framework", "PCTF", regex=True, inplace=True)
         etr.replace("Enterprise\ taxonomy\ and\ ontology\ management", "Enterprise Taxonomy & Ontology", regex=True, inplace=True)
         etr.replace("Infrastructure\ as\ a\ code\ using\ Terraform", "Infrastructure as code", regex=True, inplace=True)
         etr.replace("Angular\ framework", "Angular", regex=True, inplace=True)
@@ -78,7 +76,7 @@ class preprocess:
         etr.replace("R\ &\ Python", "R / Python", regex=True, inplace=True)
         etr.replace("ICAM", "Identity, Credential & Access Management", regex=True, inplace=True)
         etr.replace("DLT Offensive", "Distributed Ledger Technology - offensive", regex=True, inplace=True)
-        etr.replace("DLT Defensive", "Distributed Ledger Technology - defensite (cryptocurrency)", regex=True, inplace=True)
+        etr.replace("DLT Defensive", "Distributed Ledger Technology - defensive (cryptocurrency)", regex=True, inplace=True)
         etr.replace("Touchless\ computing\/interfaces", "Touchless computing", regex=True, inplace=True)        
 
         print(etr.head(10))
