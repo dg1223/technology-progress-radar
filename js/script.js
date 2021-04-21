@@ -238,7 +238,7 @@ $.getJSON( radarURL, function(data){
         var Quarter2 = (2*count/numrows) + (count*0.1);
       }
       
-      console.log("calculateAngle: Q1 = ", Quarter1+", Q2 = ", Quarter2+", arc = ", arc)
+      // console.log("calculateAngle: Q1 = ", Quarter1+", Q2 = ", Quarter2+", arc = ", arc)
 
       for (var i=0; i < count; i++) {
         if ( i < Quarter1 ) {
@@ -369,6 +369,7 @@ $.getJSON( radarURL, function(data){
               y: top-(y2/(div_Y - offset_y)),
               tech: Tech
             });
+            console.log("x: ", x+", y: ", y)            
           }
 
           var arcs = ["Engage", "Watch+Learn", "Park"];
@@ -389,8 +390,8 @@ $.getJSON( radarURL, function(data){
                 var Quarter2 = (2*Length/3) + (Length*0.1);
               }
               
-              console.log("Phase = ", phase+", arc = ", arc+", length = ", Length)
-              console.log("Q1 = ", Quarter1+", Q2 = ", Quarter2)
+              console.log("\nPhase = ", phase+", arc = ", arc) //+", length = ", Length)
+              // console.log("Q1 = ", Quarter1+", Q2 = ", Quarter2)
               var firstPass = "Y";
 
               for(var j=0; j < Length; j++) {
@@ -398,7 +399,7 @@ $.getJSON( radarURL, function(data){
                 var angle = theta[arc][j];
                 var radian = angle * Math.PI / 180;
 
-                // console.log(j+":", technology+",", angle)
+                console.log(j+":", technology+", angle: ", angle)
 
                 // x2 will be cosine of angle * radius (range)
                 x2 = Math.cos(radian) * radius;
@@ -464,10 +465,14 @@ $.getJSON( radarURL, function(data){
               var arc = arcs[i];
               var Length = relate[i].length;
 
+              console.log("\nPhase = ", phase+", arc = ", arc)
+
               for(var j=0; j < Length; j++) {
                 var technology = relate[i][j];
                 var angle = theta[arc][j];
                 var radian = angle * Math.PI / 180;
+
+                console.log(j+":", technology+", angle: ", angle)
 
                 // x2 will be cosine of angle * radius (range)
                 x2 = Math.cos(radian) * radius;
@@ -509,10 +514,14 @@ $.getJSON( radarURL, function(data){
               var arc = arcs[i];
               var Length = plan[i].length;
 
+              console.log("\nPhase = ", phase+", arc = ", arc)
+
               for(var j=0; j < Length; j++) {
                 var technology = plan[i][j];
                 var angle = theta[arc][j];
                 var radian = angle * Math.PI / 180;
+
+                console.log(j+":", technology+", angle: ", angle)
 
                 // x2 will be cosine of angle * radius (range)
                 x2 = Math.cos(radian) * radius;
@@ -534,10 +543,14 @@ $.getJSON( radarURL, function(data){
               var arc = arcs[i];
               var Length = identify[i].length;
 
+              console.log("\nPhase = ", phase+", arc = ", arc)
+
               for(var j=0; j < Length; j++) {
                 var technology = identify[i][j];
                 var angle = theta[arc][j];
                 var radian = angle * Math.PI / 180;
+
+                console.log(j+":", technology+", angle: ", angle)
 
                 // x2 will be cosine of angle * radius (range)
                 x2 = Math.cos(radian) * radius;
@@ -556,52 +569,56 @@ $.getJSON( radarURL, function(data){
 
         /* Phases are Adopt and Readiness */
         } else {
-            var degreesPerPoint = 70 / numpoints;
+          console.log("\nPhase = ", phase+", arc = ", arc)
+          var degreesPerPoint = 70 / numpoints;
 
-            // Keep track of the angle from centre to radius
-            var currentAngle = degreesPerPoint;
+          // Keep track of the angle from centre to radius
+          var currentAngle = degreesPerPoint;
 
-            // The points on the radius will be left+x2, top+y2
-            var x2 = 0;
-            var y2 = 0;
+          // The points on the radius will be left+x2, top+y2
+          var x2 = 0;
+          var y2 = 0;
 
-            for(var i=0; i < numpoints; i++) {
-              var tech_index = indices[i];
-              var technology = data["Emerging Technology"][tech_index];
-              // Convert degree to radian
-              var radian = currentAngle * Math.PI / 180;
-              // X2 will be cosine of angle * radius (range)
-              x2 = Math.cos(radian) * radius;
-              // Y2 will be sin * range
-              y2 = Math.sin(radian) * radius;
+          for(var i=0; i < numpoints; i++) {
+            var tech_index = indices[i];
+            var technology = data["Emerging Technology"][tech_index];
 
-              // Create two rows aligning with the arc boundary
-              if (i%2 === 0) {
-                if (i === 0 && phase != "Readiness" ) {
-                  var offset_x = 0.01;        
-                  var offset_y = 0.4;
-                } else {
-                  var offset_x = 0;
-                  var offset_y = 0.002*i;
-                } // END of inner if-else          
-                points.push({
-                  x: left-(x2/(1.03 + offset_x)),
-                  y: top-(y2/(1.03 - offset_y)),
-                  tech: technology
-                });
+            console.log(j+":", technology+", angle: ", currentAngle)
+            
+            // Convert degree to radian
+            var radian = currentAngle * Math.PI / 180;
+            // X2 will be cosine of angle * radius (range)
+            x2 = Math.cos(radian) * radius;
+            // Y2 will be sin * range
+            y2 = Math.sin(radian) * radius;
+
+            // Create two rows aligning with the arc boundary
+            if (i%2 === 0) {
+              if (i === 0 && phase != "Readiness" ) {
+                var offset_x = 0.01;        
+                var offset_y = 0.4;
               } else {
-                points.push({
-                  x: left-(x2/1.4),
-                  y: top-(y2/1.3),
-                  tech: technology       
-                });
-              } // END of if-else
+                var offset_x = 0;
+                var offset_y = 0.002*i;
+              } // END of inner if-else          
+              points.push({
+                x: left-(x2/(1.03 + offset_x)),
+                y: top-(y2/(1.03 - offset_y)),
+                tech: technology
+              });
+            } else {
+              points.push({
+                x: left-(x2/1.4),
+                y: top-(y2/1.3),
+                tech: technology       
+              });
+            } // END of if-else
 
-              // Shift the angle around for the next point
-              currentAngle += degreesPerPoint*1.25;
+            // Shift the angle around for the next point
+            currentAngle += degreesPerPoint*1.25;
 
-            } // END of for loop
-          } // END of outermost if-else
+          } // END of for loop
+        } // END of outermost if-else
 
     // Return the points we've generated
     return points;
