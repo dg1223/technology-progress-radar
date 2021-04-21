@@ -368,8 +368,7 @@ $.getJSON( radarURL, function(data){
               x: left-(x2/(div_X + offset_x)),
               y: top-(y2/(div_Y - offset_y)),
               tech: Tech
-            });
-            console.log("x: ", x+", y: ", y)            
+            });          
           }
 
           var arcs = ["Engage", "Watch+Learn", "Park"];
@@ -583,8 +582,8 @@ $.getJSON( radarURL, function(data){
             var tech_index = indices[i];
             var technology = data["Emerging Technology"][tech_index];
 
-            console.log(j+":", technology+", angle: ", currentAngle)
-            
+            console.log(i+":", technology+", angle: ", currentAngle)
+
             // Convert degree to radian
             var radian = currentAngle * Math.PI / 180;
             // X2 will be cosine of angle * radius (range)
@@ -623,6 +622,8 @@ $.getJSON( radarURL, function(data){
     // Return the points we've generated
     return points;
   } // END of findCoordinates()
+
+  console.log(points)
 
   var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", 
                 "Adopt/Readiness", "Readiness"];
