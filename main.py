@@ -17,13 +17,7 @@ CSVpath = '/home/shamir/Documents/GitHub/tech-radar/'
 CSVname = 'ETR.csv'
 outputCSV = 'ETR_clean.csv'
 outputJSON = 'ETR_clean.json'
-outputCSVcomp = 'ETR_clean_compressed.csv'
-outputJSONcomp = 'ETR_clean_compressed.json'
 
 ETR = radar.preprocess()                # create a radar object
 
-ETR.cleanupCSV(CSVpath, CSVname, CSVpath, outputCSV, outputJSON, outputCSVcomp, outputJSONcomp)  # call method
-
-
-
-
+ETR.cleanupCSV(CSVpath, CSVname, CSVpath, outputCSV, outputJSON)  # call method

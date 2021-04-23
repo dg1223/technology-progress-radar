@@ -68,30 +68,59 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //*** Count number of technologies in each research phase ***//
 
 // Host JSON file on the web and fetch it using the URL
-radarURL = "https://raw.githubusercontent.com/dg1223/tech-radar/master/ETR_clean.json"
+// radarURL = "https://raw.githubusercontent.com/dg1223/tech-radar/master/ETR_clean.json"
+radarURL = "https://raw.githubusercontent.com/dg1223/tech-radar/gh-pages/ETR_clean.json"
+// radarURL = "https://raw.githubusercontent.com/dg1223/tech-radar/gh-pages/ETR_clean_compressed.json"
 
 $.getJSON( radarURL, function(data){
 
+  // Remove duplicate technology names and store in an array
+  var techs = Object.values(data["Emerging Technology"]);
+  var temp = [];
+  var ind = [];
+  var len_tech = techs.length;
+  for (var i=0; i<len_tech; i++) {
+    if (temp.includes(techs[i])) {
+      continue;
+    } else {
+      temp.push(techs[i]);
+      ind.push(i);
+    }    
+  }
+
+  var newArray = [];
+  var arrLen = Object.values(data).length;
+  
+  for (var i=0; i<arrLen; i++) {
+    var column = Object.keys(data)[i];
+    newArray.push({ [column]: [] });
+    for (var index in ind) {
+      original_ind = ind[index];
+      newArray[i][column].push(Object.values(data)[i][original_ind])
+    }
+  }
+  // console.log(newArray[1]["KPI Research Phase (Topic)"][0])
+  // console.log(newArray)
+
   // Count number of technologies in each phase
-  var num_technologies = Object.keys(data["Emerging Technology" ]).length;
+  var num_technologies = Object.keys(data["Emerging Technology"]).length;
   var counts = [];
-  var tech_indices = [];
   var id, st, rel, pl, ad, adr, red;
   id=st=rel=pl=ad=adr=red=0;
-  for (var i=0; i<num_technologies; i++) {
-    if (data["KPI Research Phase (Topic)"][i] === "Identify") {
+  for (var i=0; i<temp.length; i++) {
+    if (newArray[1]["KPI Research Phase (Topic)"][i] === "Identify") {
       id += 1;
-    } else if (data["KPI Research Phase (Topic)"][i] === "Study") {
+    } else if (newArray[1]["KPI Research Phase (Topic)"][i] === "Study") {
       st += 1;
-    } else if (data["KPI Research Phase (Topic)"][i] === "Relate") {
+    } else if (newArray[1]["KPI Research Phase (Topic)"][i] === "Relate") {
       rel += 1;
-    } else if (data["KPI Research Phase (Topic)"][i] === "Plan") {
+    } else if (newArray[1]["KPI Research Phase (Topic)"][i] === "Plan") {
       pl += 1;
-    } else if (data["KPI Research Phase (Topic)"][i] === "Adopt") {
+    } else if (newArray[1]["KPI Research Phase (Topic)"][i] === "Adopt") {
       ad += 1;
-    } else if (data["KPI Research Phase (Topic)"][i] === "Adopt/Readiness") {
+    } else if (newArray[1]["KPI Research Phase (Topic)"][i] === "Adopt/Readiness") {
       adr += 1;
-    } else if (data["KPI Research Phase (Topic)"][i] === "Readiness"){
+    } else if (newArray[1]["KPI Research Phase (Topic)"][i] === "Readiness"){
       red += 1;
     } else {}
   }
@@ -103,7 +132,7 @@ $.getJSON( radarURL, function(data){
     "Adopt": ad,
     "Adopt/Readiness": adr,
     "Readiness": red,
-    "total": num_technologies
+    "total": temp.length
   })
 
   // console.log(counts[0])
@@ -122,10 +151,10 @@ $.getJSON( radarURL, function(data){
     plan.push([]);
   }
 
-  for (i=0; i<num_technologies; i++) {
-    var arc = data["KPI Research Activity Arc (Topic)"][i];
-    var phs = data["KPI Research Phase (Topic)"][i];
-    var technology = data["Emerging Technology"][i];
+  for (i=0; i<temp.length; i++) {
+    var arc = newArray[2]["KPI Research Activity Arc (Topic)"][i];
+    var phs = newArray[1]["KPI Research Phase (Topic)"][i];
+    var technology = newArray[0]["Emerging Technology"][i];
 
     if (phs === "Identify" && arc === "Engage") {
       identify[0].push(technology)
@@ -182,8 +211,8 @@ $.getJSON( radarURL, function(data){
   // Find the index of each technology in a given phase
   function findIndices(phase) {
     var Indices = [];
-    for (var i = 0; i<num_technologies; i++){
-      if (data["KPI Research Phase (Topic)"][i] === phase){
+    for (var i = 0; i<temp.length; i++){
+      if (newArray[1]["KPI Research Phase (Topic)"][i] === phase){
         Indices.push(i)
       }
     }
@@ -327,7 +356,7 @@ $.getJSON( radarURL, function(data){
       var adr_y = [965, 785, 915, 865];      
       for(var i=0; i < numpoints; i++) {
         var tech_index = indices[i];
-        var technology = data["Emerging Technology"][tech_index];
+        var technology = newArray[0]["Emerging Technology"][tech_index];
         points.push({
           x: adr_x[i],
           y: adr_y[i],
@@ -341,7 +370,7 @@ $.getJSON( radarURL, function(data){
           var num_park = 0;
           for (var i=0; i < numpoints; i++) {
             var tech_index = indices[i];
-            var arc = data["KPI Research Activity Arc (Topic)"][tech_index];
+            var arc = newArray[2]["KPI Research Activity Arc (Topic)"][tech_index];
             if (arc === "Engage") {
               num_engage += 1;
             } else if (arc === "Watch+Learn") {
@@ -374,8 +403,10 @@ $.getJSON( radarURL, function(data){
           var arcs = ["Engage", "Watch+Learn", "Park"];
 
           if (phase === "Study"){
+
             // Loop over each arc first
-            for (var i=0; i < study.length; i++) {
+            var len_s = study.length;
+            for (var i=0; i < len_s; i++) {
               var arc = arcs[i];
               var Length = study[i].length;
               // console.log(arc+",", Length)
@@ -460,7 +491,8 @@ $.getJSON( radarURL, function(data){
 
           } else if (phase === "Relate") {
             // Loop over each arc first
-            for (var i=0; i < relate.length; i++) {
+            var len_r = relate.length;
+            for (var i=0; i < len_r; i++) {
               var arc = arcs[i];
               var Length = relate[i].length;
 
@@ -509,7 +541,8 @@ $.getJSON( radarURL, function(data){
           /* Phase is either Identify or Plan */
           } else if (phase === "Plan") {
             // Loop over each arc first
-            for (var i=0; i < plan.length; i++) {
+            var len_p = plan.length;
+            for (var i=0; i < len_p; i++) {
               var arc = arcs[i];
               var Length = plan[i].length;
 
@@ -538,7 +571,8 @@ $.getJSON( radarURL, function(data){
 
             } else {                          // Identify phase
             // Loop over each arc first
-            for (var i=0; i < identify.length; i++) {
+            var len_i = identify.length;
+            for (var i=0; i < len_i; i++) {
               var arc = arcs[i];
               var Length = identify[i].length;
 
@@ -580,7 +614,7 @@ $.getJSON( radarURL, function(data){
 
           for(var i=0; i < numpoints; i++) {
             var tech_index = indices[i];
-            var technology = data["Emerging Technology"][tech_index];
+            var technology = newArray[0]["Emerging Technology"][tech_index];
 
             console.log(i+":", technology+", angle: ", currentAngle)
 
@@ -684,7 +718,8 @@ $.getJSON( radarURL, function(data){
   request.onreadystatechange = function() {
     if ((request.readyState == 4) && (request.status == 200)) {
       var myHTML = document.querySelector(".jumbotron").innerHTML;
-      for (i = 0; i < point.length; i++){
+      var len = point.length;
+      for (i = 0; i < len; i++){
         var newHTML = buildHTML(request.responseText, i);
         myHTML += newHTML;
         insertHtml(".jumbotron", myHTML)
@@ -714,7 +749,7 @@ $.getJSON( radarURL, function(data){
 
 }) // END of getJSON
 
-});
+}); // END of addEventListener
 
 global.$dc = dc;
 
