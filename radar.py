@@ -22,7 +22,7 @@ class preprocess:
     def __init__(self):
         return None
 
-    def cleanupCSV(self, filepath, filename, outputPath, outputCSV, outputJSON):
+    def cleanupCSV(self, filepath, filename, outputPath, outputCSV, outputJSON, outputCSVcomp, outputJSONcomp):
         
         '''
         Keeps only the necessary info from the original ETR spreadsheet
@@ -35,12 +35,18 @@ class preprocess:
             Name of the spreadsheet, e.g. 'ETR.csv'.
         outputPath: string
             Directory where the new csv file will be stored.
-        outputFile:  string
-            Output file name
+        outputCSV:  string
+            Output csv file name
+        outputJSON:  string
+            Output json file name
+        outputCSVcomp:  string
+            Output csv file name (no duplicate technology names)
+        outputJSONcomp:  string
+            Output json file name (no duplicate technology names)
 
         Returns
         -------
-        None; saves the new dataframe as a csv file and a json file
+        None; saves the new dataframe as csv and json files (4 files)
 
         '''
 
@@ -64,6 +70,9 @@ class preprocess:
         etr = etr.applymap(lambda x: x.strip())
 
         # Remove duplicate names
+        etr_clean = etr.drop_duplicates(subset=['Emerging Technology'])
+        etr_clean = etr_clean[['Emerging Technology', 'KPI Research Phase (Topic)',
+                              'KPI Research Activity Arc (Topic)']]
         etr.drop_duplicates(subset=['Emerging Technology', 'Activity Type', 'Status'], inplace=True)
         etr.sort_values(by=['Emerging Technology', 'Activity Type', 'Status'], inplace=True)
         etr.drop_duplicates(subset=['Emerging Technology', 'Activity Type'], inplace=True)
@@ -88,10 +97,14 @@ class preprocess:
 
         # Save as CSV
         outCSV = outputPath + outputCSV
+        outCSVcomp = outputPath + outputCSVcomp
         etr.to_csv(outCSV, index=False)
+        etr_clean.to_csv(outCSVcomp, index=False)
 
         # Save as JSON
         outJSON = outputPath + outputJSON
+        outJSONcomp = outputPath + outputJSONcomp
         etr.to_json(outJSON, orient="columns", indent=4)
+        etr_clean.to_json(outJSONcomp, orient="columns", indent=4)
 
         return None
