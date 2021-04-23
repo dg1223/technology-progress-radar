@@ -69,14 +69,6 @@ class preprocess:
         # Remove leading and trailing spaces
         etr = etr.applymap(lambda x: x.strip())
 
-        # Remove duplicate names
-        etr_clean = etr.drop_duplicates(subset=['Emerging Technology'])
-        etr_clean = etr_clean[['Emerging Technology', 'KPI Research Phase (Topic)',
-                              'KPI Research Activity Arc (Topic)']]
-        etr.drop_duplicates(subset=['Emerging Technology', 'Activity Type', 'Status'], inplace=True)
-        etr.sort_values(by=['Emerging Technology', 'Activity Type', 'Status'], inplace=True)
-        etr.drop_duplicates(subset=['Emerging Technology', 'Activity Type'], inplace=True)
-
         # Clean some names
         etr.replace("Artificial\ Intelligence\ \(AI\)", "AI", regex=True, inplace=True)
         etr.replace("Enterprise\ taxonomy\ and\ ontology\ management", "Enterprise Taxonomy & Ontology", regex=True, inplace=True)
@@ -88,12 +80,21 @@ class preprocess:
         etr.replace("ICAM", "Identity, Credential & Access Management", regex=True, inplace=True)
         etr.replace("DLT Offensive", "Distributed Ledger Technology - offensive", regex=True, inplace=True)
         etr.replace("DLT Defensive", "DLT - defensive (cryptocurrency)", regex=True, inplace=True)
-        etr.replace("Touchless\ computing\/interfaces", "Touchless computing", regex=True, inplace=True)        
+        etr.replace("Touchless\ computing\/interfaces", "Touchless computing", regex=True, inplace=True)
+
+        # Remove duplicate names
+        etr_clean = etr.drop_duplicates(subset=['Emerging Technology'])
+        etr_clean = etr_clean[['Emerging Technology', 'KPI Research Phase (Topic)',
+                              'KPI Research Activity Arc (Topic)']]
+        etr.drop_duplicates(subset=['Emerging Technology', 'Activity Type', 'Status'], inplace=True)
+        etr.sort_values(by=['Emerging Technology', 'Activity Type', 'Status'], inplace=True)
+        etr.drop_duplicates(subset=['Emerging Technology', 'Activity Type'], inplace=True)  
 
         print(etr.head(10))
 
         # Reset index after dropping NaN
         etr.reset_index(drop=True, inplace=True)
+        etr_clean.reset_index(drop=True, inplace=True)
 
         # Save as CSV
         outCSV = outputPath + outputCSV

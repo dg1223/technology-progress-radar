@@ -4,11 +4,11 @@ Adaptive Security Architecture,Study,Engage
 Advanced Analytics,Relate,Engage
 Affective Computing,Study,Park
 AI Ethics,Study,Engage
-Angular framework,Adopt,Engage
+Angular,Adopt,Engage
 API gateway,Adopt,Engage
-Artificial Intelligence (AI) - Chatbot,Readiness,Engage
-Artificial Intelligence (AI) - Cyber Security,Adopt/Readiness,Engage
-Artificial Intelligence (AI) - Virtual Assistants,Adopt,Engage
+AI - Chatbot,Readiness,Engage
+AI - Cyber Security,Adopt/Readiness,Engage
+AI - Virtual Assistants,Adopt,Engage
 Augmented Analytics,Study,Park
 Augmented Data Catalogues,Study,Park
 Auto Machine Learning,Identify,Engage
@@ -40,8 +40,8 @@ Differential Privacy,Study,Engage
 Digital Privacy,Study,Watch+Learn
 Digital Twin,Study,Park
 Distributed Web,Study,Engage
-DLT Defensive,Adopt,Engage
-DLT Offensive,Plan,Park
+DLT - defensive (cryptocurrency),Adopt,Engage
+Distributed Ledger Technology - offensive,Plan,Park
 Edge Computing,Study,Park
 Enterprise IT Architecture,Relate,Engage
 Explainable AI,Relate,Engage
@@ -52,7 +52,7 @@ Gamification,Adopt/Readiness,Engage
 Geospatial Analysis,Relate,Watch+Learn
 Graph Analytics,Relate,Engage
 Homomorphic encryption,Study,Engage
-ICAM,Adopt,Engage
+"Identity, Credential & Access Management",Adopt,Engage
 Immersive workspace,Identify,Engage
 Internet of Things (IoT),Study,Park
 Knowledge graphs,Study,Park
@@ -71,19 +71,19 @@ NewSQL DBMS,Study,Engage
 NoSQL Databases,Relate,Engage
 Observability,Study,Engage
 Open Everything,Study,Engage
-Pan Canadian Trust Framework,Study,Engage
+Pan-Canadian Trust Framework,Study,Engage
 Quantum Computing,Plan,Engage
 Quantum Machine Learning,Identify,Engage
-R & Python,Study,Engage
+R / Python,Study,Engage
 Real-Time Analytics/Continuous Intelligence,Adopt,Engage
 Record Linking,Relate,Engage
-REST webservices,Adopt,Engage
+REST,Adopt,Engage
 Robotic Process Automation,Adopt,Engage
 Secure Hardware Systems,Study,Engage
 Secure Multiparty Computation,Study,Engage
 Taxonomy and Ontology,Study,Park
 Text Analytics,Adopt,Engage
-Touchless computing/interfaces,Study,Engage
+Touchless computing,Study,Engage
 Two-factor Authentication,Relate,Engage
-Vision-Based  Artificial Intelligence (AI),Adopt,Engage
+Vision-Based  AI,Adopt,Engage
 Wardley Mapping,Study,Engage

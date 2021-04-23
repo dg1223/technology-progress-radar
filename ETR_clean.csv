@@ -1,11 +1,5 @@
 Emerging Technology,KPI Research Phase (Topic),KPI Research Activity Arc (Topic),Activity Type,Status
 5G Networks,Study,Park,Backgrounder,Complete
-AI Ethics,Study,Engage,Backgrounder,Complete
-API gateway,Adopt,Engage,Pilot,In Progress
-Adaptive Security Architecture,Study,Engage,PoC (technology),Planned
-Advanced Analytics,Relate,Engage,PoC (technology),In Progress
-Affective Computing,Study,Park,Backgrounder,Complete
-Angular,Adopt,Engage,Pilot,Complete
 AI - Chatbot,Readiness,Engage,Backgrounder,Complete
 AI - Chatbot,Readiness,Engage,Outlook,Complete
 AI - Chatbot,Readiness,Engage,Pilot,Complete
@@ -16,6 +10,12 @@ AI - Virtual Assistants,Adopt,Engage,Backgrounder,Complete
 AI - Virtual Assistants,Adopt,Engage,Outlook,Complete
 AI - Virtual Assistants,Adopt,Engage,Pilot,In Progress
 AI - Virtual Assistants,Adopt,Engage,Reference Architecture,Complete
+AI Ethics,Study,Engage,Backgrounder,Complete
+API gateway,Adopt,Engage,Pilot,In Progress
+Adaptive Security Architecture,Study,Engage,PoC (technology),Planned
+Advanced Analytics,Relate,Engage,PoC (technology),In Progress
+Affective Computing,Study,Park,Backgrounder,Complete
+Angular,Adopt,Engage,Pilot,Complete
 Augmented Analytics,Study,Park,Backgrounder,Complete
 Augmented Data Catalogues,Study,Park,Backgrounder,Complete
 Auto Machine Learning,Identify,Engage,Backgrounder,Planned
@@ -44,10 +44,6 @@ Convergence,Study,Park,Backgrounder,Complete
 DLT - defensive (cryptocurrency),Adopt,Engage,Backgrounder,Complete
 DLT - defensive (cryptocurrency),Adopt,Engage,Outlook,Complete
 DLT - defensive (cryptocurrency),Adopt,Engage,Pilot,In Progress
-Distributed Ledger Technology - offensive,Plan,Park,Backgrounder,Complete
-Distributed Ledger Technology - offensive,Plan,Park,Outlook,Complete
-Distributed Ledger Technology - offensive,Plan,Park,PoC (business),Complete
-Distributed Ledger Technology - offensive,Plan,Park,PoC (technology),Complete
 Dark Data,Study,Engage,Backgrounder,In Progress
 Data Anonymization,Plan,Engage,Backgrounder,Complete
 Data Anonymization,Plan,Engage,Outlook,Complete
@@ -71,6 +67,10 @@ DevOps,Adopt,Engage,Pilot,In Progress
 Differential Privacy,Study,Engage,Backgrounder,In Progress
 Digital Privacy,Study,Watch+Learn,Backgrounder,Complete
 Digital Twin,Study,Park,Backgrounder,Complete
+Distributed Ledger Technology - offensive,Plan,Park,Backgrounder,Complete
+Distributed Ledger Technology - offensive,Plan,Park,Outlook,Complete
+Distributed Ledger Technology - offensive,Plan,Park,PoC (business),Complete
+Distributed Ledger Technology - offensive,Plan,Park,PoC (technology),Complete
 Distributed Web,Study,Engage,Backgrounder,Planned
 Edge Computing,Study,Park,Backgrounder,Complete
 Enterprise IT Architecture,Relate,Engage,Outlook,Planned
