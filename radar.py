@@ -22,6 +22,22 @@ class preprocess:
     def __init__(self):
         return None
 
+    def shortenTitles(df):
+        # Clean some names
+        df.replace("Artificial\ Intelligence\ \(AI\)", "AI", regex=True, inplace=True)
+        df.replace("Enterprise\ taxonomy\ and\ ontology\ management", "Enterprise Taxonomy & Ontology", regex=True, inplace=True)
+        df.replace("Infrastructure\ as\ a\ code\ using\ Terraform", "Infrastructure as code", regex=True, inplace=True)
+        df.replace("Angular\ framework", "Angular", regex=True, inplace=True)
+        df.replace("REST\ webservices", "REST", regex=True, inplace=True)
+        df.replace("Pan\ Canadian\ Trust\ Framework", "Pan-Canadian Trust Framework", regex=True, inplace=True)
+        df.replace("R\ &\ Python", "R / Python", regex=True, inplace=True)
+        df.replace("ICAM", "Identity, Credential & Access Management", regex=True, inplace=True)
+        df.replace("DLT Offensive", "Distributed Ledger Technology - offensive", regex=True, inplace=True)
+        df.replace("DLT Defensive", "DLT - defensive (cryptocurrency)", regex=True, inplace=True)
+        df.replace("Touchless\ computing\/interfaces", "Touchless computing", regex=True, inplace=True)
+
+        return df
+
     def cleanupCSV(self, filepath, filename, outputPath, outputCSV, outputJSON, outputCSVcomp, outputJSONcomp):
         
         '''
@@ -69,18 +85,9 @@ class preprocess:
         # Remove leading and trailing spaces
         etr = etr.applymap(lambda x: x.strip())
 
-        # Clean some names
-        etr.replace("Artificial\ Intelligence\ \(AI\)", "AI", regex=True, inplace=True)
-        etr.replace("Enterprise\ taxonomy\ and\ ontology\ management", "Enterprise Taxonomy & Ontology", regex=True, inplace=True)
-        etr.replace("Infrastructure\ as\ a\ code\ using\ Terraform", "Infrastructure as code", regex=True, inplace=True)
-        etr.replace("Angular\ framework", "Angular", regex=True, inplace=True)
-        etr.replace("REST\ webservices", "REST", regex=True, inplace=True)
-        etr.replace("Pan\ Canadian\ Trust\ Framework", "Pan-Canadian Trust Framework", regex=True, inplace=True)
-        etr.replace("R\ &\ Python", "R / Python", regex=True, inplace=True)
-        etr.replace("ICAM", "Identity, Credential & Access Management", regex=True, inplace=True)
-        etr.replace("DLT Offensive", "Distributed Ledger Technology - offensive", regex=True, inplace=True)
-        etr.replace("DLT Defensive", "DLT - defensive (cryptocurrency)", regex=True, inplace=True)
-        etr.replace("Touchless\ computing\/interfaces", "Touchless computing", regex=True, inplace=True)
+        # Make PoC a single category
+        etr.replace("PoC\ \(technology\)", "PoC", regex=True, inplace=True)
+        etr.replace("PoC\ \(business\)", "PoC", regex=True, inplace=True)
 
         # Remove duplicate names
         etr_clean = etr.drop_duplicates(subset=['Emerging Technology'])
@@ -91,6 +98,10 @@ class preprocess:
         etr.drop_duplicates(subset=['Emerging Technology', 'Activity Type'], inplace=True)  
 
         print(etr.head(10))
+
+        # Clean some names
+        etr = preprocess.shortenTitles(etr)
+        etr_clean = preprocess.shortenTitles(etr_clean)        
 
         # Reset index after dropping NaN
         etr.reset_index(drop=True, inplace=True)
