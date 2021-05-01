@@ -714,10 +714,14 @@ $.getJSON( radarURL, function(data){
         myHTML += newHTML;
         insertHtml(".jumbotron", myHTML)        
       }
+
       // Get height and width of each text box
-      let box = document.querySelector("div#t3.tech p");
-      let width = box.clientWidth;
-      let height = box.clientHeight;
+      // let box = document.querySelector("div#t3.tech p");
+      let box = $("div#t0.tech p")[0].getBoundingClientRect();
+      // let width = box.clientWidth;
+      // let height = box.clientHeight;
+      let width = box.width;
+      let height = box.height;
       console.log("width = ",width+", height = ",height)
       // console.log(box)
     }
