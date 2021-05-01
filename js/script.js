@@ -722,8 +722,7 @@ $.getJSON( radarURL, function(data){
         let width = box.width;
         let height = box.height;
         console.log("width = ",width+", height = ",height)
-      }
-      
+      }      
     }
   } // END of onreadystatechange
 
