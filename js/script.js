@@ -68,9 +68,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //*** Count number of technologies in each research phase ***//
 
 // Host JSON file on the web and fetch it using the URL
-// radarURL = "https://raw.githubusercontent.com/dg1223/tech-radar/master/ETR_clean.json"
 radarURL = "https://raw.githubusercontent.com/dg1223/tech-radar/gh-pages/ETR_clean.json"
-// radarURL = "https://raw.githubusercontent.com/dg1223/tech-radar/gh-pages/ETR_clean_compressed.json"
 
 $.getJSON( radarURL, function(data){
 
@@ -98,9 +96,7 @@ $.getJSON( radarURL, function(data){
       original_ind = ind[index];
       newArray[i][column].push(Object.values(data)[i][original_ind])
     }
-  }
-  // console.log(newArray[1]["KPI Research Phase (Topic)"][0])
-  // console.log(newArray)
+  } // END of remove duplicate
 
   // Count number of technologies in each phase
   var num_technologies = Object.keys(data["Emerging Technology"]).length;
@@ -345,9 +341,6 @@ $.getJSON( radarURL, function(data){
   function findCoordinates(left, top, radius, numpoints, phase) {
 
     var indices = findIndices(phase);
-
-    // How many points do we want? This is the # of technologies
-    // var numberOfPoints = numpoints;
 
     // Hardcode placement for Adopt-Readiness phase
     // This is based on business justification (BEC/ACO)
@@ -678,7 +671,7 @@ $.getJSON( radarURL, function(data){
       var numPoints = counts[0][cur_phase];
       var point = findCoordinates(x, y, radius, numPoints, cur_phase);
 
-      // Clear array  before pushing new values
+      // Clear array before pushing new values
       theta = {"Engage": [],"Watch+Learn": [],"Park": []};
 
     } else {
@@ -692,9 +685,6 @@ $.getJSON( radarURL, function(data){
 
     } // END of if-else
   } // END of for loop
-
-  // console.log(point)
-
 
   /*********************** Ajax calls ********************************/
   
@@ -722,8 +712,14 @@ $.getJSON( radarURL, function(data){
       for (i = 0; i < len; i++){
         var newHTML = buildHTML(request.responseText, i);
         myHTML += newHTML;
-        insertHtml(".jumbotron", myHTML)
+        insertHtml(".jumbotron", myHTML)        
       }
+      // Get height and width of each text box
+      let box = document.querySelector("div#t3.tech p");
+      let width = box.clientWidth;
+      let height = box.clientHeight;
+      console.log("width = ",width+", height = ",height)
+      // console.log(box)
     }
   } // END of onreadystatechange
 
