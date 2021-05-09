@@ -87,6 +87,9 @@ class preprocess:
         # Remove leading and trailing spaces
         etr = etr.applymap(lambda x: x.strip())
 
+        # Clean some names
+        etr = preprocess.shortenTitles(etr)
+        
         # Remove duplicate names
         etr.drop_duplicates(subset=['Emerging Technology', 'Activity Type', 'Status'], inplace=True)
         etr.sort_values(by=['Emerging Technology', 'Activity Type', 'Status'], inplace=True)
@@ -95,7 +98,7 @@ class preprocess:
         print(etr.head(10))
 
         # Clean some names
-        etr = preprocess.shortenTitles(etr)     
+        etr = preprocess.shortenTitles(etr)
 
         # Reset index after dropping NaN
         etr.reset_index(drop=True, inplace=True)
