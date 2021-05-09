@@ -99,6 +99,8 @@ $.getJSON( radarURL, function(data){
     }
   } // END of remove duplicate
 
+  // console.log(Object.values(data["Activity Type"]))
+
   // Count number of technologies in each phase
   var num_technologies = Object.keys(data["Emerging Technology"]).length;
   var counts = [];
@@ -335,6 +337,7 @@ $.getJSON( radarURL, function(data){
     } // END of for loop
   }
 
+  // Count number of activities for each technology
   var allTechActivities = Object.values(data["Emerging Technology"]);
 
   function numberOfActivities(tech) {
@@ -675,7 +678,7 @@ $.getJSON( radarURL, function(data){
     return points;
   } // END of findCoordinates()
 
-  console.log(points)
+  // console.log(points)
 
   /**/
   /** PLACE TECHNOLOGIES ON THE CANVAS **/
@@ -719,23 +722,34 @@ $.getJSON( radarURL, function(data){
   /** PLACE ICONS ON THE CANVAS **/
   /**/
 
-  /* COUNT NUMBER OF ACTIVITIES FOR EACH TECHNOLOGY */
-  // var allTechActivities = Object.values(data["Emerging Technology"]);
-  // var uniqTechNames = newArray[0]["Emerging Technology"];
-  // var len = uniqTechNames.length;
-  // var numActivities = [];
-  // var count = 0;
-
-  // for (var i=0; i<len; i++) {
-  //   var currentTech = point[i].tech; //uniqTechNames[i];
-  //   allTechActivities.forEach((v) => (v === uniqTechNames[i] && count++));
-  //   numActivities.push({
-  //     currentTech,
-  //     count
+  // var activities = [];
+  // var len = point.length;
+  // var temparray = [];
+  // // var activityLength = num_technologies;
+  // // allTechActivities
+  // for (var i = 0; i < len; i++) {
+  //   let techName = point[i].tech;
+  //   activities.push({
+  //     [techName]: []
   //   })
-  //   count = 0;
+  //   for (var j = 0; j < num_technologies; j++) {
+  //     let currentTech = Object.values(data["Emerging Technology"])[j];
+  //     let currentActivityType = 
+  //                       Object.values(data["Activity Type"])[j];
+  //     let currentStatus = Object.values(data["Status"])[j];
+  //     if (techName === currentTech) {
+  //       temparray = [currentActivityType, currentStatus];
+  //     }
+  //   }
   // }
-  // console.log(numActivities)
+
+  // for (var i = 0; i < num_technologies; i++) {
+  //   for (var j = 0; )
+  // }
+  // console.log(Object.values(data["Emerging Technology"])[0])
+  // activities[0] = ['bla bla', 'black sheep'];
+  // console.log(activities[0])
+
 
   /*********************** Ajax calls ********************************/
   
@@ -775,17 +789,30 @@ $.getJSON( radarURL, function(data){
         let techName = point[i].tech;
         let phs = point[i].phase;
         let arcc = point[i].arc;
-        // let act = numActivities[i].count;
-        console.log(techName+", width = ",width+", height = ",
-                    height+", phase = ",phs+", arc = ", arcc)
+        let act = point[i].activity;
+
+        if (phs === "Study" || phs === "Relate" || phs === "Plan") {
+          if (arcc === "Engage" || arcc === "Watch+Learn") {
+            if (act === 3) {
+              console.log(techName);
+              for (var j=0; j<num_technologies; j++) {
+                let currentTech = 
+                          Object.values(data["Emerging Technology"])[j];
+                let currentActivityType = 
+                          Object.values(data["Activity Type"])[j];
+                let currentStatus = Object.values(data["Status"])[j];
+
+                if (techName === currentTech) {
+                  console.log('Activity Type: ', currentActivityType+', Status: ', currentStatus)
+                }
+              }
+            } // END of act
+          } // END of arcc
+        } // END of phs
         // console.log(techName+", width = ",width+", height = ",
         //             height+", phase = ",phs+", arc = ",
         //             arcc+", activity = ",act)
       }
-
-      // Object.keys(data["Emerging Technology"]).length
-      // newArray[1]["KPI Research Phase (Topic)"][i]
-      // console.log(newArray[1]["KPI Research Phase (Topic)"][1])
     }
   } // END of onreadystatechange
 
