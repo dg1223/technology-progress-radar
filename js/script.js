@@ -385,13 +385,15 @@ $.getJSON( radarURL, function(data){
           var wat = 0;
           var prk = 0;
 
-          function finalCoordinate(off_X, off_Y, div_X, div_Y, Tech) {
+          function finalCoordinate(off_X, off_Y, div_X, div_Y, Tech, Phase, Arc) {
             var offset_x = off_X;
             var offset_y = off_Y;
             points.push({
               x: left-(x2/(div_X + offset_x)),
               y: top-(y2/(div_Y - offset_y)),
-              tech: Tech
+              tech: Tech,
+              phase: Phase,
+              arc: Arc
             });          
           }
 
@@ -435,20 +437,20 @@ $.getJSON( radarURL, function(data){
                 if (Length <= 6) {
                   // console.log("length less than 6, j = ", j)
                   if (j%2 === 0) {
-                    finalCoordinate(0.02, 0.01, 1, 1, technology);
+                    finalCoordinate(0.02, 0.01, 1, 1, technology, phase, arc);
                   } else if (j%2 === 1 ) {
-                    finalCoordinate(0.013, 0.02, 1.1, 1.05, technology);
+                    finalCoordinate(0.013, 0.02, 1.1, 1.05, technology, phase, arc);
                   } else {
-                    finalCoordinate(0.013, 0.02, 1.2, 1.2, technology);
+                    finalCoordinate(0.013, 0.02, 1.2, 1.2, technology, phase, arc);
                   }                  
                 } else {
                   if (j < Quarter1 ) {
                     // console.log("numpoints/3 = "+ numpoints/3)
                     if (j === 0) {
-                      finalCoordinate(0.02, 0.02, 1.01, 1.01, technology);
+                      finalCoordinate(0.02, 0.02, 1.01, 1.01, technology, phase, arc);
 
                     } else {
-                      finalCoordinate(0.02, 0.01, 1, 1, technology);
+                      finalCoordinate(0.02, 0.01, 1, 1, technology, phase, arc);
                     }
                   } else if (j >= Quarter1 && j < Quarter2) {
                     if (firstPass === "Y") {
@@ -459,11 +461,11 @@ $.getJSON( radarURL, function(data){
                       firstPass = "Y";
                     }
                     if (arc === "Park") {
-                      finalCoordinate(0.25*k, -0.05, 1.01, 1.01, technology);
+                      finalCoordinate(0.25*k, -0.05, 1.01, 1.01, technology, phase, arc);
                       k += 0.4;
                       firstPass = "N";
                     } else {
-                      finalCoordinate(0.013*k, 0.01, 1.1, 1, technology);
+                      finalCoordinate(0.013*k, 0.01, 1.1, 1, technology, phase, arc);
                       k += 0.4;
                       firstPass = "N";
                     }
@@ -472,11 +474,11 @@ $.getJSON( radarURL, function(data){
                       var k = 0.4;
                     }
                     if (arc === "Park") {
-                      finalCoordinate(0.05*k, -0.05, 1.1, 1.1, technology);
+                      finalCoordinate(0.05*k, -0.05, 1.1, 1.1, technology, phase, arc);
                       k += 0.4;
                       firstPass = "N";
                     } else {
-                      finalCoordinate(0.013, 0.12, 1.2, 1.2, technology);
+                      finalCoordinate(0.013, 0.12, 1.2, 1.2, technology, phase, arc);
                       firstPass = "N";
                     }                    
                   }
@@ -509,25 +511,25 @@ $.getJSON( radarURL, function(data){
                 if (arc === "Watch+Learn") {
                   // console.log("length less than 6, j = ", j)
                   if (j%2 === 0) {
-                    finalCoordinate(0.07, 0.04, 1, 1, technology);
+                    finalCoordinate(0.07, 0.04, 1, 1, technology, phase, arc);
                   } else if (j%2 === 1 ) {
-                    finalCoordinate(0.1, 0.01, 1.1, 1.05, technology);
+                    finalCoordinate(0.1, 0.01, 1.1, 1.05, technology, phase, arc);
                   } else {
-                    finalCoordinate(0.013, 0.02, 1.2, 1.2, technology);
+                    finalCoordinate(0.013, 0.02, 1.2, 1.2, technology, phase, arc);
                   }                  
                 } else {
                   if (j < Length/2 ) {
                     if (j === 0) {
                       if (arc === "Park") {
-                        finalCoordinate(0.15, 0.02, 1.01, 1.01, technology);
+                        finalCoordinate(0.15, 0.02, 1.01, 1.01, technology, phase, arc);
                       } else {
-                        finalCoordinate(0.02, 0.02, 1.01, 1.01, technology);
+                        finalCoordinate(0.02, 0.02, 1.01, 1.01, technology, phase, arc);
                       }                      
                     } else {
-                      finalCoordinate(0.02*j, 0.025*j, 1.01, 1.01, technology);
+                      finalCoordinate(0.02*j, 0.025*j, 1.01, 1.01, technology, phase, arc);
                     }
                   } else {
-                    finalCoordinate(0.012*j, 0.001*j, 1.12, 1.05, technology);
+                    finalCoordinate(0.012*j, 0.001*j, 1.12, 1.05, technology, phase, arc);
                   }
                 }                
               } // END of inner for loop
@@ -556,9 +558,9 @@ $.getJSON( radarURL, function(data){
                 y2 = Math.sin(radian) * radius;
 
                 if (j === 0) {
-                    finalCoordinate(0.02, 0.003, 1.03, 1, technology)
+                    finalCoordinate(0.02, 0.003, 1.03, 1, technology, phase, arc)
                   } else {
-                    finalCoordinate(0.02, 0.003*j, 1.03, 1, technology)
+                    finalCoordinate(0.02, 0.003*j, 1.03, 1, technology, phase, arc)
                   }
                 } // END of inner for loop
               } // END of outer for loop
@@ -586,9 +588,9 @@ $.getJSON( radarURL, function(data){
                 y2 = Math.sin(radian) * radius;
 
                 if (j === 0) {
-                    finalCoordinate(0, 0.003, 1.03, 1.03, technology)
+                    finalCoordinate(0, 0.003, 1.03, 1.03, technology, phase, arc)
                   } else {
-                    finalCoordinate(-0.01, 0.005*j, 1.03, 1.03, technology)
+                    finalCoordinate(-0.01, 0.005*j, 1.03, 1.03, technology, phase, arc)
                   }
                 } // END of inner for loop
               } // END of outer for loop
