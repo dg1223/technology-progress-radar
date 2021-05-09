@@ -355,7 +355,9 @@ $.getJSON( radarURL, function(data){
         points.push({
           x: adr_x[i],
           y: adr_y[i],
-          tech: technology
+          tech: technology,
+          phase,
+          arc
         })
       } //  END of for loop
     } else if (phase === "Identify" || phase === "Study" 
@@ -634,13 +636,17 @@ $.getJSON( radarURL, function(data){
               points.push({
                 x: left-(x2/(1.03 + offset_x)),
                 y: top-(y2/(1.03 - offset_y)),
-                tech: technology
+                tech: technology,
+                phase,
+                arc
               });
             } else {
               points.push({
                 x: left-(x2/1.4),
                 y: top-(y2/1.3),
-                tech: technology       
+                tech: technology,
+                phase,
+                arc
               });
             } // END of if-else
 
@@ -751,8 +757,10 @@ $.getJSON( radarURL, function(data){
         let box = $(element)[0].getBoundingClientRect();
         let width = box.width;
         let height = box.height;
-        // let techName = point[i].tech;
-        // console.log(techName+", width = ",width+", height = ",height)
+        let techName = point[i].tech;
+        let phs = point[i].phase;
+        let arcc = point[i].arc;
+        console.log(techName+", width = ",width+", height = ",height+", phase = ",phs+", arc = ",arcc)
       }
 
       // Object.keys(data["Emerging Technology"]).length
