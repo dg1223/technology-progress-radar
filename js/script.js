@@ -86,6 +86,7 @@ $.getJSON( radarURL, function(data){
     }    
   }
 
+  // newArray will hold a consolidated version of the registry
   var newArray = [];
   var arrLen = Object.values(data).length;
   
@@ -342,9 +343,10 @@ $.getJSON( radarURL, function(data){
 
     var indices = findIndices(phase);
 
-    // Hardcode placement for Adopt-Readiness phase
+    // Hardcode placements for Adopt-Readiness phase
     // This is based on business justification (BEC/ACO)
     if (phase === "Adopt/Readiness") {
+      // adr means adopt-readiness
       var adr_x = [810, 960, 815, 845];
       var adr_y = [965, 785, 915, 865];      
       for(var i=0; i < numpoints; i++) {
@@ -652,6 +654,7 @@ $.getJSON( radarURL, function(data){
 
   console.log(points)
 
+  /* PLACE TECHNOLOGIES ON THE CANVAS */
   var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", 
                 "Adopt/Readiness", "Readiness"];
   var radii = [928, 845, 666, 516, 427.5, 202.5, 202.5];
@@ -685,6 +688,23 @@ $.getJSON( radarURL, function(data){
 
     } // END of if-else
   } // END of for loop
+
+  /* COUNT NUMBER OF ACTIVITIES FOR EACH TECHNOLOGY */
+  var allTechActivities = Object.values(data["Emerging Technology"]);
+  var uniqTechNames = newArray[0]["Emerging Technology"];
+  var len = uniqTechNames.length;
+  var numActivities = [];
+  var count = 0;
+
+  for (var i=0; i<len; i++) {
+    var currentTech = uniqTechNames[i];
+    allTechActivities.forEach((v) => (v === uniqTechNames[i] && count++));
+    numActivities.push({
+      [currentTech]: count
+    })
+    count = 0;
+  }
+  console.log(numActivities)
 
   /*********************** Ajax calls ********************************/
   
@@ -721,8 +741,13 @@ $.getJSON( radarURL, function(data){
         let box = $(element)[0].getBoundingClientRect();
         let width = box.width;
         let height = box.height;
-        console.log("width = ",width+", height = ",height)
-      }      
+        // let techName = point[i].tech;
+        // console.log(techName+", width = ",width+", height = ",height)
+      }
+
+      // Object.keys(data["Emerging Technology"]).length
+      // newArray[1]["KPI Research Phase (Topic)"][i]
+      // console.log(newArray[1]["KPI Research Phase (Topic)"][1])
     }
   } // END of onreadystatechange
 
