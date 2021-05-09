@@ -331,9 +331,17 @@ $.getJSON( radarURL, function(data){
         } else {
           calculateAngle(30, 65, numPark, 0.8, arcName, 1);
         }
-    } // END of if-else-if
-  } // END of for loop
-}
+      } // END of if-else-if
+    } // END of for loop
+  }
+
+  var allTechActivities = Object.values(data["Emerging Technology"]);
+
+  function numberOfActivities(tech) {
+    var count = 0;    
+    allTechActivities.forEach((v) => (v === tech && count++));
+    return count;
+  }
 
   // Track the points we generate to return at the end
   var points = [];
@@ -352,12 +360,14 @@ $.getJSON( radarURL, function(data){
       for(var i=0; i < numpoints; i++) {
         var tech_index = indices[i];
         var technology = newArray[0]["Emerging Technology"][tech_index];
+        var activities = numberOfActivities(technology);
         points.push({
           x: adr_x[i],
           y: adr_y[i],
           tech: technology,
           phase,
-          arc
+          arc,
+          activity: activities
         })
       } //  END of for loop
     } else if (phase === "Identify" || phase === "Study" 
@@ -390,12 +400,14 @@ $.getJSON( radarURL, function(data){
           function finalCoordinate(off_X, off_Y, div_X, div_Y, Tech, Phase, Arc) {
             var offset_x = off_X;
             var offset_y = off_Y;
+            var activities = numberOfActivities(Tech);
             points.push({
               x: left-(x2/(div_X + offset_x)),
               y: top-(y2/(div_Y - offset_y)),
               tech: Tech,
               phase: Phase,
-              arc: Arc
+              arc: Arc,
+              activity: activities
             });          
           }
 
@@ -614,6 +626,7 @@ $.getJSON( radarURL, function(data){
           for(var i=0; i < numpoints; i++) {
             var tech_index = indices[i];
             var technology = newArray[0]["Emerging Technology"][tech_index];
+            activities = numberOfActivities(technology);
 
             console.log(i+":", technology+", angle: ", currentAngle)
 
@@ -638,7 +651,8 @@ $.getJSON( radarURL, function(data){
                 y: top-(y2/(1.03 - offset_y)),
                 tech: technology,
                 phase,
-                arc
+                arc,
+                activity: activities
               });
             } else {
               points.push({
@@ -646,7 +660,8 @@ $.getJSON( radarURL, function(data){
                 y: top-(y2/1.3),
                 tech: technology,
                 phase,
-                arc
+                arc,
+                activity: activities
               });
             } // END of if-else
 
@@ -705,22 +720,22 @@ $.getJSON( radarURL, function(data){
   /**/
 
   /* COUNT NUMBER OF ACTIVITIES FOR EACH TECHNOLOGY */
-  var allTechActivities = Object.values(data["Emerging Technology"]);
-  var uniqTechNames = newArray[0]["Emerging Technology"];
-  var len = uniqTechNames.length;
-  var numActivities = [];
-  var count = 0;
+  // var allTechActivities = Object.values(data["Emerging Technology"]);
+  // var uniqTechNames = newArray[0]["Emerging Technology"];
+  // var len = uniqTechNames.length;
+  // var numActivities = [];
+  // var count = 0;
 
-  for (var i=0; i<len; i++) {
-    var currentTech = uniqTechNames[i];
-    allTechActivities.forEach((v) => (v === uniqTechNames[i] && count++));
-    numActivities.push({
-      currentTech,
-      count
-    })
-    count = 0;
-  }
-  console.log(numActivities)
+  // for (var i=0; i<len; i++) {
+  //   var currentTech = point[i].tech; //uniqTechNames[i];
+  //   allTechActivities.forEach((v) => (v === uniqTechNames[i] && count++));
+  //   numActivities.push({
+  //     currentTech,
+  //     count
+  //   })
+  //   count = 0;
+  // }
+  // console.log(numActivities)
 
   /*********************** Ajax calls ********************************/
   
@@ -760,7 +775,12 @@ $.getJSON( radarURL, function(data){
         let techName = point[i].tech;
         let phs = point[i].phase;
         let arcc = point[i].arc;
-        console.log(techName+", width = ",width+", height = ",height+", phase = ",phs+", arc = ",arcc)
+        // let act = numActivities[i].count;
+        console.log(techName+", width = ",width+", height = ",
+                    height+", phase = ",phs+", arc = ", arcc)
+        // console.log(techName+", width = ",width+", height = ",
+        //             height+", phase = ",phs+", arc = ",
+        //             arcc+", activity = ",act)
       }
 
       // Object.keys(data["Emerging Technology"]).length
