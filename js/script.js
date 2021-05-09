@@ -654,7 +654,9 @@ $.getJSON( radarURL, function(data){
 
   console.log(points)
 
-  /* PLACE TECHNOLOGIES ON THE CANVAS */
+  /**/
+  /** PLACE TECHNOLOGIES ON THE CANVAS **/
+  /**/
   var phases = ["Identify", "Study", "Relate", "Plan", "Adopt", 
                 "Adopt/Readiness", "Readiness"];
   var radii = [928, 845, 666, 516, 427.5, 202.5, 202.5];
@@ -689,6 +691,11 @@ $.getJSON( radarURL, function(data){
     } // END of if-else
   } // END of for loop
 
+
+  /**/
+  /** PLACE ICONS ON THE CANVAS **/
+  /**/
+
   /* COUNT NUMBER OF ACTIVITIES FOR EACH TECHNOLOGY */
   var allTechActivities = Object.values(data["Emerging Technology"]);
   var uniqTechNames = newArray[0]["Emerging Technology"];
@@ -700,7 +707,8 @@ $.getJSON( radarURL, function(data){
     var currentTech = uniqTechNames[i];
     allTechActivities.forEach((v) => (v === uniqTechNames[i] && count++));
     numActivities.push({
-      [currentTech]: count
+      currentTech,
+      count
     })
     count = 0;
   }
