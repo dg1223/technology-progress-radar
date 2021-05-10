@@ -800,6 +800,14 @@ $.getJSON( radarURL, function(data){
     return HTML;
   }
 
+  function insertProperty2(HTML, type, colour, bwidth, bstyle) {
+    var HTML = insertProperty(HTML, "activity", type);
+    HTML = insertProperty(HTML, "colour", colour);
+    HTML = insertProperty(HTML, "bwidth", bwidth);
+    HTML = insertProperty(HTML, "bstyle", bstyle);
+    return HTML;
+  }
+
   var request = getRequestObject();
   // Modify HTML on the fly; 'onreadystatechange' executes a 
   // function that updates the desired HTML document
@@ -839,10 +847,8 @@ $.getJSON( radarURL, function(data){
                 let currentStatus = Object.values(data["Status"])[j];
 
                 if (techName === currentTech) {
-                  var myHTML = insertProperty(myHTML, "activity", currentActivityType);
-                  myHTML = insertProperty(myHTML, "colour", "#51B152");
-                  myHTML = insertProperty(myHTML, "bwidth", "auto");
-                  myHTML = insertProperty(myHTML, "bstyle", "auto");
+                  myHTML = insertProperty2(myHTML, currentActivityType, 
+                                              "#51B152", "auto", "auto");
                   insertHtml(".jumbotron", myHTML);
                   // console.log(myHTML)
                   if (currentStatus === "Planned") {
@@ -863,12 +869,20 @@ $.getJSON( radarURL, function(data){
                 } // END if statement to match tech names
               } // END of for loop
             } else { // if arc is Park
-              // var myHTML = insertProperty(myHTML, "activity", currentActivityType);
-              myHTML = insertProperty(myHTML, "colour", "blue");
-              myHTML = insertProperty(myHTML, "bwidth", "auto");
-              myHTML = insertProperty(myHTML, "bstyle", "auto");
-              myHTML = insertProperty(myHTML, "wh", 9);
-              myHTML = calculateMargin(height, width, myHTML);
+              for (var j=0; j<num_technologies; j++) {
+                let currentTech = 
+                          Object.values(data["Emerging Technology"])[j];
+                let currentActivityType = 
+                          Object.values(data["Activity Type"])[j];
+                let currentStatus = Object.values(data["Status"])[j];
+
+                if (techName === currentTech) {
+                  myHTML = insertProperty(myHTML, "wh", 9);
+                  myHTML = insertProperty2(myHTML, currentActivityType, 
+                                              "blue", "auto", "auto");                  
+                  myHTML = calculateMargin(height, width, myHTML);
+                }
+              }
             } // END of arcc
           } else { // if phase is Identify
             myHTML = insertProperty(myHTML, "m_top", 0);
