@@ -765,6 +765,10 @@ $.getJSON( radarURL, function(data){
     }
   } // END of getRequestObject
 
+  function calculateMargin() {
+
+  }
+
   var request = getRequestObject();
   // Modify HTML on the fly; 'onreadystatechange' executes a 
   // function that updates the desired HTML document
@@ -792,9 +796,9 @@ $.getJSON( radarURL, function(data){
         let arcc = point[i].arc;
         let act = point[i].activity;
 
-        if (phs === "Study" || phs === "Relate" || phs === "Plan") {
-          if (arcc === "Engage" || arcc === "Watch+Learn") {
-            if (act === 1) {
+        if (act === 1) {
+          if (phs != "Identify") {
+            if (arcc != "Park") {
               // console.log(techName);
               for (var j=0; j<num_technologies; j++) {
                 let currentTech = 
@@ -804,30 +808,81 @@ $.getJSON( radarURL, function(data){
                 let currentStatus = Object.values(data["Status"])[j];
 
                 if (techName === currentTech) {
-                  if (phs === "Study" && currentStatus === "Complete") {
-                    var myHTML = insertProperty(myHTML, "activity", currentActivityType);                    
-                    insertHtml(".jumbotron", myHTML);
-                    console.log(myHTML)
-                    // console.log(techName+', Activity Type: ', currentActivityType+', Status: ', currentStatus)
-                  }                  
-                }
-              }
-            } // END of act
-          } // END of arcc
-        } // END of phs
-        // console.log(techName+", width = ",width+", height = ",
-        //             height+", phase = ",phs+", arc = ",
-        //             arcc+", activity = ",act)
-      }
-    }
+                  var myHTML = insertProperty(myHTML, "activity", currentActivityType);
+                  insertHtml(".jumbotron", myHTML);
+                  // console.log(myHTML)
+                  if (currentStatus === "Planned") {
+                    myHTML = insertProperty(myHTML, "m_top", 0);
+                    myHTML = insertProperty(myHTML, "m_left", 0);
+                    myHTML = insertProperty(myHTML, "wh", 0);
+
+                  } else if (currentStatus === "In Progress") {
+                    myHTML = insertProperty(myHTML, "m_top", 0);
+                    myHTML = insertProperty(myHTML, "m_left", 0);
+                    myHTML = insertProperty(myHTML, "wh", 0);
+
+                  } else { // currentStatus is Complete
+                    myHTML = insertProperty(myHTML, "wh", 9);
+
+                    if (height < 14) {
+                      myHTML = insertProperty(myHTML, "m_top", height*0.375);
+                      myHTML = insertProperty(myHTML, "m_left", width*0.588);
+
+                    } else if (height >= 14 && height < 27) {
+                      myHTML = insertProperty(myHTML, "m_top", height*0.638);
+                      myHTML = insertProperty(myHTML, "m_left", width*0.679);
+
+                    } else if (height >= 39 && height < 41) {
+                      myHTML = insertProperty(myHTML, "m_top", height*0.625);
+
+                      if (width < 40) {
+                        myHTML = insertProperty(myHTML, "m_left", width*0.679);
+
+                      } else if (width >= 40 && width < 80) {
+                        myHTML = insertProperty(myHTML, "m_left", width*0.718);
+
+                      } else {
+                        myHTML = insertProperty(myHTML, "m_left", width*0.641);
+                      }
+
+                    } else { // height >= 41
+                      myHTML = insertProperty(myHTML, "m_top", height*0.694);
+
+                      if (width < 40) {
+                        myHTML = insertProperty(myHTML, "m_left", width*0.969);
+
+                      } else {
+                        myHTML = insertProperty(myHTML, "m_left", width*0.852);
+                      }
+                    }
+                    
+                  } // END of if statement to match Status
+                } // END if statement to match tech names
+              } // END of for loop
+            } else { // if arc is Park
+              myHTML = insertProperty(myHTML, "m_top", 0);
+              myHTML = insertProperty(myHTML, "m_left", 0);
+              myHTML = insertProperty(myHTML, "wh", 0);
+            } // END of arcc
+          } else { // if phase is Identify
+            myHTML = insertProperty(myHTML, "m_top", 0);
+            myHTML = insertProperty(myHTML, "m_left", 0);
+            myHTML = insertProperty(myHTML, "wh", 0);
+          } // END of phs          
+        } else { // activities > 1; EXPAND THIS
+          myHTML = insertProperty(myHTML, "m_top", 0);
+          myHTML = insertProperty(myHTML, "m_left", 0);
+          myHTML = insertProperty(myHTML, "wh", 0);
+        } // END of act
+      } // END of main for loop
+    } // END of if statement to check request status
   } // END of onreadystatechange
 
   var techHtml = "snippets/tech-snippet.html";
   request.open("GET", techHtml, true);
   request.send(null);
 
-  // This function makes all the changes to your HTML
-  // USE this function to add the icons for each activity type
+  // Place technologies according to the generated coordinates
   function buildHTML (data, iterations) {
     var techID = "t" + iterations.toString();
     var techText = point[i].tech;
