@@ -800,12 +800,17 @@ $.getJSON( radarURL, function(data){
     return HTML;
   }
 
-  function insertProperty2(HTML, type, brdcol, colour, bwidth, bstyle) {
+  function insertProperty2(HTML, type, 
+                           brdcol, colour, 
+                           bwidth, bstyle,
+                           radius, degree) {
     var HTML = insertProperty(HTML, "activity", type);
     HTML = insertProperty(HTML, "brdcol", brdcol);
     HTML = insertProperty(HTML, "colour", colour);
     HTML = insertProperty(HTML, "bwidth", bwidth);
     HTML = insertProperty(HTML, "bstyle", bstyle);
+    HTML = insertProperty(HTML, "radius", radius);
+    HTML = insertProperty(HTML, "degree", degree);
     return HTML;
   }
 
@@ -847,28 +852,51 @@ $.getJSON( radarURL, function(data){
                           Object.values(data["Activity Type"])[j];
                 let currentStatus = Object.values(data["Status"])[j];
 
-                if (techName === currentTech) {                  
-                  // insertHtml(".jumbotron", myHTML);                  
-                  // insertProperty2(HTML, type, brdcol, colour, bwidth, bstyle)
-                  if (currentStatus === "Planned") {
-                    myHTML = insertProperty(myHTML, "wh", 9);
-                    myHTML = insertProperty2(myHTML, currentActivityType, 
-                                            "black","none", "1px", "solid");
-                    myHTML = calculateMargin(height, width, myHTML);
+                if (techName === currentTech) {
 
-                  } else if (currentStatus === "In Progress") {
-                    myHTML = insertProperty(myHTML, "wh", 9);
-                    myHTML = insertProperty2(myHTML, currentActivityType, 
-                                            "#51B152","none", "1px", "solid");
-                    myHTML = calculateMargin(height, width, myHTML);                  
+                  if (currentActivityType === "Backgrounder" || 
+                      currentActivityType === "Research Summary") {
+                    // insertHtml(".jumbotron", myHTML);                  
+                  // insertProperty2(HTML, type, brdcol, colour, bwidth, bstyle, radius, degree)
+                    if (currentStatus === "Planned") {
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty2(myHTML, currentActivityType, 
+                                              "black","none","1px","solid","50","45");
+                      myHTML = calculateMargin(height, width, myHTML);
 
-                  } else { // currentStatus is Complete
-                    myHTML = insertProperty(myHTML, "wh", 9);
-                    myHTML = insertProperty2(myHTML, currentActivityType, 
-                                            "auto","#51B152", "auto", "auto");
-                    myHTML = calculateMargin(height, width, myHTML);
-                    
-                  } // END of if statement to match Status
+                    } else if (currentStatus === "In Progress") {
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty2(myHTML, currentActivityType, 
+                                              "#51B152","none","1px","solid","50","45");
+                      myHTML = calculateMargin(height, width, myHTML);                  
+
+                    } else { // currentStatus is Complete
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty2(myHTML, currentActivityType, 
+                                              "auto","#51B152","auto","auto","50","45");
+                      myHTML = calculateMargin(height, width, myHTML);                      
+                    } // END of if statement to match Status
+
+                  } else if (currentActivityType === "Outlook") {
+                    if (currentStatus === "Planned") {
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty2(myHTML, currentActivityType, 
+                                              "black","none","1px","solid","0","0");
+                      myHTML = calculateMargin(height, width, myHTML);
+
+                    } else if (currentStatus === "In Progress") {
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty2(myHTML, currentActivityType, 
+                                              "#51B152","none","1px","solid","0","0");
+                      myHTML = calculateMargin(height, width, myHTML);                  
+
+                    } else { // currentStatus is Complete
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty2(myHTML, currentActivityType, 
+                                              "auto","#51B152","auto","auto","0","0");
+                      myHTML = calculateMargin(height, width, myHTML);                      
+                    } // END of if statement to match Status
+                  } // END of if statement to match Activity type
                 } // END if statement to match tech names
               } // END of for loop
             } else { // if arc is Park
@@ -882,7 +910,7 @@ $.getJSON( radarURL, function(data){
                 if (techName === currentTech) {
                   myHTML = insertProperty(myHTML, "wh", 9);
                   myHTML = insertProperty2(myHTML, currentActivityType, 
-                                          "auto","blue", "auto", "auto");                  
+                                          "auto","blue","auto","auto","50","45");                  
                   myHTML = calculateMargin(height, width, myHTML);
                 }
               }
