@@ -36,8 +36,6 @@ document.getElementById("date").innerHTML =
 
 var dc = {};
 
-var techHtml = "snippets/tech-snippet.html";
-
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
   var targetElem = document.querySelector(selector);
@@ -773,15 +771,18 @@ $.getJSON( radarURL, function(data){
   request.onreadystatechange = function() {
     if ((request.readyState == 4) && (request.status == 200)) {
       var myHTML = document.querySelector(".jumbotron").innerHTML;
+      // console.log(myHTML)
       var len = point.length;
-      for (i = 0; i < len; i++){
+      for (i = 7; i < 9; i++){
         var newHTML = buildHTML(request.responseText, i);
+        // console.log(myHTML)
         myHTML += newHTML;
+        // console.log(myHTML)
         insertHtml(".jumbotron", myHTML)        
-      }
+      // }
 
       // Get height and width of each text box
-      for (i = 0; i < len; i++) {
+      // for (i = 0; i < len; i++) {
         var element = "div#t" + i.toString() + ".tech p";
         let box = $(element)[0].getBoundingClientRect();
         let width = box.width;
@@ -793,8 +794,8 @@ $.getJSON( radarURL, function(data){
 
         if (phs === "Study" || phs === "Relate" || phs === "Plan") {
           if (arcc === "Engage" || arcc === "Watch+Learn") {
-            if (act === 3) {
-              console.log(techName);
+            if (act === 1) {
+              // console.log(techName);
               for (var j=0; j<num_technologies; j++) {
                 let currentTech = 
                           Object.values(data["Emerging Technology"])[j];
@@ -803,7 +804,12 @@ $.getJSON( radarURL, function(data){
                 let currentStatus = Object.values(data["Status"])[j];
 
                 if (techName === currentTech) {
-                  console.log('Activity Type: ', currentActivityType+', Status: ', currentStatus)
+                  if (phs === "Study" && currentStatus === "Complete") {
+                    var myHTML = insertProperty(myHTML, "activity", currentActivityType);                    
+                    insertHtml(".jumbotron", myHTML);
+                    console.log(myHTML)
+                    // console.log(techName+', Activity Type: ', currentActivityType+', Status: ', currentStatus)
+                  }                  
                 }
               }
             } // END of act
@@ -816,6 +822,7 @@ $.getJSON( radarURL, function(data){
     }
   } // END of onreadystatechange
 
+  var techHtml = "snippets/tech-snippet.html";
   request.open("GET", techHtml, true);
   request.send(null);
 
