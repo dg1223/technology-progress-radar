@@ -765,8 +765,39 @@ $.getJSON( radarURL, function(data){
     }
   } // END of getRequestObject
 
-  function calculateMargin() {
+  function calculateMargin(Height, Width, HTML) {
+    if (Height < 14) {
+      HTML = insertProperty(HTML, "m_top", Height*0.9);
+      HTML = insertProperty(HTML, "m_left", Width*0.56);
 
+    } else if (Height >= 14 && Height < 27) {
+      HTML = insertProperty(HTML, "m_top", Height*0.787);
+      HTML = insertProperty(HTML, "m_left", Width*0.749);
+
+    } else if (Height >= 39 && Height < 41) {
+      HTML = insertProperty(HTML, "m_top", Height*0.825);
+
+      if (Width < 40) {
+        HTML = insertProperty(HTML, "m_left", Width*0.679);
+
+      } else if (Width >= 40 && Width < 80) {
+        HTML = insertProperty(HTML, "m_left", Width*0.677);
+
+      } else {
+        HTML = insertProperty(HTML, "m_left", Width*0.641);
+      }
+
+    } else { // Height >= 41
+      HTML = insertProperty(HTML, "m_top", Height*0.825);
+
+      if (Width < 40) {
+        HTML = insertProperty(HTML, "m_left", Width*0.969);
+
+      } else {
+        HTML = insertProperty(HTML, "m_left", Width*0.8);
+      }
+    }
+    return HTML;
   }
 
   var request = getRequestObject();
@@ -777,7 +808,7 @@ $.getJSON( radarURL, function(data){
       var myHTML = document.querySelector(".jumbotron").innerHTML;
       // console.log(myHTML)
       var len = point.length;
-      for (i = 7; i < 9; i++){
+      for (i = 0; i < len; i++){
         var newHTML = buildHTML(request.responseText, i);
         // console.log(myHTML)
         myHTML += newHTML;
@@ -809,6 +840,9 @@ $.getJSON( radarURL, function(data){
 
                 if (techName === currentTech) {
                   var myHTML = insertProperty(myHTML, "activity", currentActivityType);
+                  myHTML = insertProperty(myHTML, "colour", "#51B152");
+                  myHTML = insertProperty(myHTML, "bwidth", "auto");
+                  myHTML = insertProperty(myHTML, "bstyle", "auto");
                   insertHtml(".jumbotron", myHTML);
                   // console.log(myHTML)
                   if (currentStatus === "Planned") {
@@ -823,46 +857,18 @@ $.getJSON( radarURL, function(data){
 
                   } else { // currentStatus is Complete
                     myHTML = insertProperty(myHTML, "wh", 9);
-
-                    if (height < 14) {
-                      myHTML = insertProperty(myHTML, "m_top", height*0.375);
-                      myHTML = insertProperty(myHTML, "m_left", width*0.588);
-
-                    } else if (height >= 14 && height < 27) {
-                      myHTML = insertProperty(myHTML, "m_top", height*0.638);
-                      myHTML = insertProperty(myHTML, "m_left", width*0.679);
-
-                    } else if (height >= 39 && height < 41) {
-                      myHTML = insertProperty(myHTML, "m_top", height*0.625);
-
-                      if (width < 40) {
-                        myHTML = insertProperty(myHTML, "m_left", width*0.679);
-
-                      } else if (width >= 40 && width < 80) {
-                        myHTML = insertProperty(myHTML, "m_left", width*0.718);
-
-                      } else {
-                        myHTML = insertProperty(myHTML, "m_left", width*0.641);
-                      }
-
-                    } else { // height >= 41
-                      myHTML = insertProperty(myHTML, "m_top", height*0.694);
-
-                      if (width < 40) {
-                        myHTML = insertProperty(myHTML, "m_left", width*0.969);
-
-                      } else {
-                        myHTML = insertProperty(myHTML, "m_left", width*0.852);
-                      }
-                    }
+                    myHTML = calculateMargin(height, width, myHTML);
                     
                   } // END of if statement to match Status
                 } // END if statement to match tech names
               } // END of for loop
             } else { // if arc is Park
-              myHTML = insertProperty(myHTML, "m_top", 0);
-              myHTML = insertProperty(myHTML, "m_left", 0);
-              myHTML = insertProperty(myHTML, "wh", 0);
+              // var myHTML = insertProperty(myHTML, "activity", currentActivityType);
+              myHTML = insertProperty(myHTML, "colour", "blue");
+              myHTML = insertProperty(myHTML, "bwidth", "auto");
+              myHTML = insertProperty(myHTML, "bstyle", "auto");
+              myHTML = insertProperty(myHTML, "wh", 9);
+              myHTML = calculateMargin(height, width, myHTML);
             } // END of arcc
           } else { // if phase is Identify
             myHTML = insertProperty(myHTML, "m_top", 0);
