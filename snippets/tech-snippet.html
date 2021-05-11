@@ -1,22 +1,29 @@
 <div class="tech" 
-	 id="{{tech_id}}" 
-	 style="left: {{coord_x}}px; 
-	 		top: {{coord_y}}px; 
-	 		text-align: center;
-	 		" >
-	 <p style="margin-bottom: 0px;" >{{tech_text}}</p>
-	 <div id="{{activity}}" 
+	id="{{tech_id}}" 
+	style="left: {{coord_x}}px; 
+	 	   top: {{coord_y}}px; 
+	 	   text-align: center;
+	 	   " >
+	<p style="margin-bottom: 0px;" >{{tech_text}}</p>
+	<div id="{{activity}}" 
 	 	  style="margin-top: {{m_top}}px; 
 	 	  		 margin-left: {{m_left}}px;
 	 	  		 width: {{wh}}px;
 	 	  		 height: {{wh}}px;
 	 	  		 border-radius: {{radius}}%;
-	 	  		 border: {{bwidth}} {{bstyle}} {{brdcol}};
+	 	  		 border-top: {{btwidth}} {{btstyle}} {{btcol}};
+	 	  		 border-right: {{brwidth}} {{brstyle}} {{brcol}};
+	 	  		 border-bottom: {{bbwidth}} {{bbstyle}} {{bbcol}};
+	 	  		 border-left: {{blwidth}} {{blstyle}} {{blcol}};
 	 	  		 transform: rotate({{degree}}deg);
 	 	  		 -ms-transform: rotate({{degree}}deg);
-	 	  		 background: {{colour}};">
-	 	  		 	
-	 </div>
+	 	  		 background: {{colour}};">	 	  		 	
+	 <p style="/*-webkit-text-stroke: 1px #51B152;*/
+	 		   /*color: transparent;*/
+	 		   /*font-size: 15px;*/
+	 		   transform: rotate(0deg);"
+	 >{{char}}</p>
+	</div>
 <!-- 	 <div id="outlook" >o</div>
 	 <div id="strategy" >s</div>
 	 <div id="poc" >po</div>
