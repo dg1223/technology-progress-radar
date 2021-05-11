@@ -945,7 +945,7 @@ $.getJSON( radarURL, function(data){
                     } // END of if statement to match Status
 
                   } else if (currentActivityType === "PoC") {
-                    console.log(techName, currentActivityType)
+                    // console.log(techName, currentActivityType)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#8420",
@@ -976,6 +976,40 @@ $.getJSON( radarURL, function(data){
                                               "","0","-45","");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
+
+                  } else if (currentActivityType === "Adoption Strategy" || 
+                             currentActivityType === "Strategy") {
+                    console.log(techName, currentActivityType)
+                    if (currentStatus === "Planned") {
+                      myHTML = insertProperty(myHTML, "wh", 0);
+                      myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "1px","solid","black",
+                                              "1px","solid","black",
+                                              "1px","solid","black",
+                                              "1px","solid","black",
+                                              "none","0","45","");
+                      myHTML = calculateMargin(height, width, myHTML);
+
+                    } else if (currentStatus === "In Progress") {
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "1px","solid","#51B152",
+                                              "1px","solid","#51B152",
+                                              "1px","solid","#51B152",
+                                              "1px","solid","#51B152",
+                                              "none","0","45","");
+                      myHTML = calculateMargin(height, width, myHTML);                  
+
+                    } else { // currentStatus is Complete
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "#51B152","0","45","");
+                      myHTML = calculateMargin(height, width, myHTML);                      
+                    } // END of if statement to match Status
                   } // END of if statement to match Activity type
                 } // END if statement to match tech names
               } // END of for loop
@@ -999,6 +1033,7 @@ $.getJSON( radarURL, function(data){
                                             "0px","none","",
                                             "blue","50","45");                 
                     myHTML = calculateMargin(height, width, myHTML);
+
                   } else if (currentActivityType === "Outlook" || 
                              currentActivityType === "Direction") {
                     myHTML = insertProperty(myHTML, "wh", 9);
@@ -1009,10 +1044,26 @@ $.getJSON( radarURL, function(data){
                                             "0px","none","",
                                             "blue","0","0");                 
                     myHTML = calculateMargin(height, width, myHTML);
+
                   } else if (currentActivityType === "PoC") {
                     myHTML = insertProperty(myHTML, "wh", 9);
-                    myHTML = insertProperty2(myHTML, currentActivityType, 
-                                            "auto","blue","auto","auto","50","45");                  
+                    myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "0px","none","transparent",
+                                              "5px","solid","transparent",
+                                              "8.63px","solid","blue",
+                                              "5px","solid","transparent",
+                                              "","0","-45","");                 
+                    myHTML = calculateMargin(height, width, myHTML);
+                    
+                  } else if (currentActivityType === "Adoption Strategy" || 
+                             currentActivityType === "Strategy") {
+                    myHTML = insertProperty(myHTML, "wh", 9);
+                    myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "blue","0","45","");                
                     myHTML = calculateMargin(height, width, myHTML);
                   }
                 }
