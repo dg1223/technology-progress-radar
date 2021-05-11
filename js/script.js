@@ -871,6 +871,7 @@ $.getJSON( radarURL, function(data){
                   if (currentActivityType === "Backgrounder" || 
                       currentActivityType === "Research Summary" || 
                       currentActivityType === "Education") {
+                    // console.log(techName, currentActivityType)
                     // insertHtml(".jumbotron", myHTML);                  
                   /* insertProperty2(HTML, type, char                            
                            btwidth, btstyle, btcol,
@@ -911,6 +912,7 @@ $.getJSON( radarURL, function(data){
 
                   } else if (currentActivityType === "Outlook" || 
                              currentActivityType === "Direction") {
+                    // console.log(techName, currentActivityType)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
@@ -943,6 +945,7 @@ $.getJSON( radarURL, function(data){
                     } // END of if statement to match Status
 
                   } else if (currentActivityType === "PoC") {
+                    console.log(techName, currentActivityType)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#8420",
@@ -955,7 +958,7 @@ $.getJSON( radarURL, function(data){
 
                     } else if (currentStatus === "In Progress") {
                       myHTML = insertProperty(myHTML, "wh", 9);
-                      myHTML = insertProperty2(myHTML,currentActivityType,"",
+                      myHTML = insertProperty2(myHTML,currentActivityType,"&#8420",
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
@@ -967,10 +970,10 @@ $.getJSON( radarURL, function(data){
                       myHTML = insertProperty(myHTML, "wh", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "0px","none","transparent",
-                                              "5px","none","transparent",
-                                              "8.63px","none","#51B152",
-                                              "5px","none","transparent",
-                                              "#51B152","0","0","");
+                                              "5px","solid","transparent",
+                                              "8.63px","solid","#51B152",
+                                              "5px","solid","transparent",
+                                              "","0","-45","");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
                   } // END of if statement to match Activity type
