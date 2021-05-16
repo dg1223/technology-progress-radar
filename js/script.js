@@ -641,8 +641,8 @@ $.getJSON( radarURL, function(data){
             // Create two rows aligning with the arc boundary
             if (i%2 === 0) {
               if (i === 0 && phase != "Readiness" ) {
-                var offset_x = 0.01;        
-                var offset_y = 0.4;
+                var offset_x = 0.03;        
+                var offset_y = 0.55;
               } else {
                 var offset_x = 0;
                 var offset_y = 0.002*i;
@@ -714,39 +714,7 @@ $.getJSON( radarURL, function(data){
 
     } // END of if-else
   } // END of for loop
-
-
-  /**/
-  /** PLACE ICONS ON THE CANVAS **/
-  /**/
-
-  // var activities = [];
-  // var len = point.length;
-  // var temparray = [];
-  // // var activityLength = num_technologies;
-  // // allTechActivities
-  // for (var i = 0; i < len; i++) {
-  //   let techName = point[i].tech;
-  //   activities.push({
-  //     [techName]: []
-  //   })
-  //   for (var j = 0; j < num_technologies; j++) {
-  //     let currentTech = Object.values(data["Emerging Technology"])[j];
-  //     let currentActivityType = 
-  //                       Object.values(data["Activity Type"])[j];
-  //     let currentStatus = Object.values(data["Status"])[j];
-  //     if (techName === currentTech) {
-  //       temparray = [currentActivityType, currentStatus];
-  //     }
-  //   }
-  // }
-
-  // for (var i = 0; i < num_technologies; i++) {
-  //   for (var j = 0; )
-  // }
-  // console.log(Object.values(data["Emerging Technology"])[0])
-  // activities[0] = ['bla bla', 'black sheep'];
-  // console.log(activities[0])
+  console.log(point)
 
 
   /*********************** Ajax calls ********************************/
@@ -842,8 +810,11 @@ $.getJSON( radarURL, function(data){
         // console.log(myHTML)
         myHTML += newHTML;
         // console.log(myHTML)
-        insertHtml(".jumbotron", myHTML)        
-      // }
+        insertHtml(".jumbotron", myHTML)
+
+      /**/
+      /** PLACE ICONS ON THE CANVAS **/
+      /**/
 
       // Get height and width of each text box
       // for (i = 0; i < len; i++) {
@@ -858,8 +829,7 @@ $.getJSON( radarURL, function(data){
 
         if (act === 1) {
           if (phs != "Identify") {
-            if (arcc != "Park") {
-              // console.log(techName);
+            if (arcc != "Park" ) {
               for (var j=0; j<num_technologies; j++) {
                 let currentTech = 
                           Object.values(data["Emerging Technology"])[j];
@@ -980,7 +950,7 @@ $.getJSON( radarURL, function(data){
 
                   } else if (currentActivityType === "Adoption Strategy" || 
                              currentActivityType === "Strategy") {
-                    console.log(techName, currentActivityType)
+                    // console.log(techName, currentActivityType)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
@@ -1013,7 +983,7 @@ $.getJSON( radarURL, function(data){
                     } // END of if statement to match Status
 
                   } else if (currentActivityType === "Pilot") {
-                    console.log(techName, currentActivityType)
+                    // console.log(techName+', ', currentActivityType+', ', act)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#9734",
@@ -1021,33 +991,33 @@ $.getJSON( radarURL, function(data){
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
-                                              "none","0","-45","black","10");
+                                              "none","0","-45","black","12");
                       myHTML = calculateMargin(height, width, myHTML);
 
                     } else if (currentStatus === "In Progress") {
-                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "wh", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#9734",
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
-                                              "none","0","-45","#51B152","10");
+                                              "none","0","-45","#51B152","12");
                       myHTML = calculateMargin(height, width, myHTML);                  
 
                     } else { // currentStatus is Complete
-                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "wh", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#9733",
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
-                                              "none","0","-45","none","10");
+                                              "none","0","-45","#51B152","12");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
-                  } // END of if statement to match Activity type
+                  } // END of if statement to match Activity type Pilot
                 } // END if statement to match tech names
               } // END of for loop
-            } else { // if arc is Park
+            } else { // if Arc is Park
               for (var j=0; j<num_technologies; j++) {
                 let currentTech = 
                           Object.values(data["Emerging Technology"])[j];
@@ -1065,7 +1035,7 @@ $.getJSON( radarURL, function(data){
                                             "0px","none","",
                                             "0px","none","",
                                             "0px","none","",
-                                            "blue","50","45");                 
+                                            "blue","50","45","","");                 
                     myHTML = calculateMargin(height, width, myHTML);
 
                   } else if (currentActivityType === "Outlook" || 
@@ -1076,7 +1046,7 @@ $.getJSON( radarURL, function(data){
                                             "0px","none","",
                                             "0px","none","",
                                             "0px","none","",
-                                            "blue","0","0");                 
+                                            "blue","0","0","","");
                     myHTML = calculateMargin(height, width, myHTML);
 
                   } else if (currentActivityType === "PoC") {
@@ -1086,7 +1056,7 @@ $.getJSON( radarURL, function(data){
                                               "5px","solid","transparent",
                                               "8.63px","solid","blue",
                                               "5px","solid","transparent",
-                                              "","0","-45","");                 
+                                              "","0","-45","","","");                 
                     myHTML = calculateMargin(height, width, myHTML);
 
                   } else if (currentActivityType === "Adoption Strategy" || 
@@ -1097,21 +1067,48 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "0px","none","",
                                               "0px","none","",
-                                              "blue","0","45","");                
+                                              "blue","0","45","","");                
+                    myHTML = calculateMargin(height, width, myHTML);
+                  } else if (currentActivityType === "Pilot") {
+                    myHTML = insertProperty(myHTML, "wh", 9);
+                    myHTML = insertProperty2(myHTML,currentActivityType,"&#9733",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "none","0","-45","blue","12");                
                     myHTML = calculateMargin(height, width, myHTML);
                   }
                 }
               }
             } // END of arcc
           } else { // if phase is Identify
-            myHTML = insertProperty(myHTML, "m_top", 0);
-            myHTML = insertProperty(myHTML, "m_left", 0);
             myHTML = insertProperty(myHTML, "wh", 0);
+            myHTML = calculateMargin(height, width, myHTML);
           } // END of phs          
         } else { // activities > 1; EXPAND THIS
-          myHTML = insertProperty(myHTML, "m_top", 0);
-          myHTML = insertProperty(myHTML, "m_left", 0);
-          myHTML = insertProperty(myHTML, "wh", 0);
+          if (phs != "Identify" || phs != "Study" ) {
+            if (arcc != "Park" ) {
+              for (var j=0; j<num_technologies; j++) {
+                let currentTech = 
+                          Object.values(data["Emerging Technology"])[j];
+                let currentActivityType = 
+                          Object.values(data["Activity Type"])[j];
+                let currentStatus = Object.values(data["Status"])[j];
+
+                if (techName === currentTech) {
+                  myHTML = insertProperty(myHTML, "wh", 0);
+                  myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                                      "0px","none","",
+                                                      "0px","none","",
+                                                      "0px","none","",
+                                                      "0px","none","",
+                                                      "none","0","-45","","");
+                  myHTML = calculateMargin(height, width, myHTML);
+                }
+              } //END of inner for loop
+            } // END of arcc
+          } // END of phs
         } // END of act
       } // END of main for loop
     } // END of if statement to check request status
