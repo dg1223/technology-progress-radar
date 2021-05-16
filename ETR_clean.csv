@@ -86,9 +86,9 @@ Gamification,Adopt/Readiness,Engage,PoC,Complete
 Geospatial Analysis,Relate,Watch+Learn,Outlook,Complete
 Graph Analytics,Relate,Engage,Outlook,In Progress
 Homomorphic encryption,Study,Engage,Backgrounder,Complete
-ICAM,Adopt,Engage,Outlook,Complete
-ICAM,Adopt,Engage,Pilot,Complete
-ICAM,Adopt,Engage,PoC,Complete
+"Identity, Credential & Access Management",Adopt,Engage,Outlook,Complete
+"Identity, Credential & Access Management",Adopt,Engage,Pilot,Complete
+"Identity, Credential & Access Management",Adopt,Engage,PoC,Complete
 Immersive workspace,Identify,Engage,Backgrounder,Planned
 Internet of Things (IoT),Study,Park,Backgrounder,Complete
 Knowledge graphs,Study,Park,Backgrounder,Complete
@@ -121,9 +121,9 @@ Quantum Computing,Plan,Engage,Research Summary,Complete
 Quantum Machine Learning,Identify,Engage,Backgrounder,Planned
 R / Python,Study,Engage,Backgrounder,Complete
 REST,Adopt,Engage,Pilot,Complete
-RTA/CI,Adopt,Engage,Backgrounder,Complete
-RTA/CI,Adopt,Engage,Outlook,Complete
-RTA/CI,Adopt,Engage,Reference Architecture,In Progress
+Real-Time Analytics/Continuous Intelligence,Adopt,Engage,Backgrounder,Complete
+Real-Time Analytics/Continuous Intelligence,Adopt,Engage,Outlook,Complete
+Real-Time Analytics/Continuous Intelligence,Adopt,Engage,Reference Architecture,In Progress
 Record Linking,Relate,Engage,PoC,Complete
 Robotic Process Automation,Adopt,Engage,Backgrounder,Complete
 Robotic Process Automation,Adopt,Engage,Outlook,Complete
