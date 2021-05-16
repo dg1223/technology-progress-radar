@@ -27,12 +27,12 @@ Biometrics,Adopt,Engage,Adoption Strategy,In Progress
 Biometrics,Adopt,Engage,Outlook,Complete
 Biometrics,Adopt,Engage,Standards,Complete
 Captcha Evolution,Study,Engage,Backgrounder,Planned
-Cloud Computing (Protected B),Adopt,Engage,Adoption Strategy,Complete
-Cloud Computing (Protected B),Adopt,Engage,Early Adopter,In Progress
-Cloud Computing (Protected B),Adopt,Engage,Outlook,Complete
-Cloud Computing (Protected B),Adopt,Engage,Pilot,In Progress
-Cloud Computing (Protected B),Adopt,Engage,PoC,In Progress
-Cloud Computing (Protected B),Adopt,Engage,Reference Architecture,Complete
+Cloud Computing (PB),Adopt,Engage,Adoption Strategy,Complete
+Cloud Computing (PB),Adopt,Engage,Early Adopter,In Progress
+Cloud Computing (PB),Adopt,Engage,Outlook,Complete
+Cloud Computing (PB),Adopt,Engage,Pilot,In Progress
+Cloud Computing (PB),Adopt,Engage,PoC,In Progress
+Cloud Computing (PB),Adopt,Engage,Reference Architecture,Complete
 Cloud Computing (Unclassified),Adopt/Readiness,Engage,Adoption Strategy,Complete
 Cloud Computing (Unclassified),Adopt/Readiness,Engage,Early Adopter,Complete
 Cloud Computing (Unclassified),Adopt/Readiness,Engage,Outlook,Complete
@@ -121,9 +121,9 @@ Quantum Computing,Plan,Engage,Research Summary,Complete
 Quantum Machine Learning,Identify,Engage,Backgrounder,Planned
 R / Python,Study,Engage,Backgrounder,Complete
 REST,Adopt,Engage,Pilot,Complete
-Real-Time Analytics/Continuous Intelligence,Adopt,Engage,Backgrounder,Complete
-Real-Time Analytics/Continuous Intelligence,Adopt,Engage,Outlook,Complete
-Real-Time Analytics/Continuous Intelligence,Adopt,Engage,Reference Architecture,In Progress
+Real-Time Analytics / CI,Adopt,Engage,Backgrounder,Complete
+Real-Time Analytics / CI,Adopt,Engage,Outlook,Complete
+Real-Time Analytics / CI,Adopt,Engage,Reference Architecture,In Progress
 Record Linking,Relate,Engage,PoC,Complete
 Robotic Process Automation,Adopt,Engage,Backgrounder,Complete
 Robotic Process Automation,Adopt,Engage,Outlook,Complete

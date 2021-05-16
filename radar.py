@@ -35,6 +35,8 @@ class preprocess:
         df.replace("DLT Offensive", "Distributed Ledger Technology - offensive", regex=True, inplace=True)
         df.replace("DLT Defensive", "DLT - defensive (cryptocurrency)", regex=True, inplace=True)
         df.replace("Touchless\ computing\/interfaces", "Touchless computing", regex=True, inplace=True)
+        df.replace("Real-Time\ Analytics\/Continuous\ Intelligence", "Real-Time Analytics / CI", regex=True, inplace=True)
+        df.replace("Protected\ B", "PB", regex=True, inplace=True)
         df.replace("PoC\ \(technology\)", "PoC", regex=True, inplace=True)
         df.replace("PoC\ \(business\)", "PoC", regex=True, inplace=True)
 
@@ -57,10 +59,6 @@ class preprocess:
             Output csv file name
         outputJSON:  string
             Output json file name
-        outputCSVcomp:  string
-            Output csv file name (no duplicate technology names)
-        outputJSONcomp:  string
-            Output json file name (no duplicate technology names)
 
         Returns
         -------
