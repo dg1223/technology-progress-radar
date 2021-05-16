@@ -768,7 +768,7 @@ $.getJSON( radarURL, function(data){
     return HTML;
   }
 
-  function insertProperty2(HTML, activity, char,                            
+  function insertProperty2(HTML, activity, char,
                            btwidth, btstyle, btcol,
                            brwidth, brstyle, brcol,
                            bbwidth, bbstyle, bbcol,
@@ -841,9 +841,7 @@ $.getJSON( radarURL, function(data){
 
                   if (currentActivityType === "Backgrounder" || 
                       currentActivityType === "Research Summary" || 
-                      currentActivityType === "Education") {
-                    // console.log(techName, currentActivityType)
-                    // insertHtml(".jumbotron", myHTML);                  
+                      currentActivityType === "Education") {               
                   /* insertProperty2(HTML, type, char                            
                            btwidth, btstyle, btcol,
                            brwidth, brstyle, brcol,
@@ -852,6 +850,7 @@ $.getJSON( radarURL, function(data){
                            colour, radius, degree, pcolour) */
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "1px","solid","black",
                                               "1px","solid","black",
@@ -862,6 +861,7 @@ $.getJSON( radarURL, function(data){
 
                     } else if (currentStatus === "In Progress") {
                       myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
@@ -870,14 +870,22 @@ $.getJSON( radarURL, function(data){
                                               "none","50","45","","");
                       myHTML = calculateMargin(height, width, myHTML);                  
 
+                      // insertProperty2(HTML, activity, char,
+                      //      btwidth, btstyle, btcol,
+                      //      brwidth, brstyle, brcol,
+                      //      bbwidth, bbstyle, bbcol,
+                      //      blwidth, blstyle, blcol,
+                      //      colour, radius, degree,
+                      //      pcolour, Font)
                     } else { // currentStatus is Complete
-                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "wh", 14);
+                      myHTML = insertProperty(myHTML, "ht", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "0px","none","",
-                                              "0px","none","",
-                                              "0px","none","",
-                                              "0px","none","",
-                                              "#51B152","50","45","","");
+                                              "4px","solid","transparent",
+                                              "5.25px","solid","#51B152",
+                                              "4px","solid","transparent",
+                                              "none","0","-90","","");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
 
@@ -886,6 +894,7 @@ $.getJSON( radarURL, function(data){
                     // console.log(techName, currentActivityType)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 8);
+                      myHTML = insertProperty(myHTML, "ht", 8);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "1px","solid","black",
                                               "1px","solid","black",
@@ -896,6 +905,7 @@ $.getJSON( radarURL, function(data){
 
                     } else if (currentStatus === "In Progress") {
                       myHTML = insertProperty(myHTML, "wh", 8);
+                      myHTML = insertProperty(myHTML, "ht", 8);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
@@ -906,6 +916,7 @@ $.getJSON( radarURL, function(data){
 
                     } else { // currentStatus is Complete
                       myHTML = insertProperty(myHTML, "wh", 8);
+                      myHTML = insertProperty(myHTML, "ht", 8);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "0px","none","",
                                               "0px","none","",
@@ -919,6 +930,7 @@ $.getJSON( radarURL, function(data){
                     // console.log(techName, currentActivityType)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 0);
+                      myHTML = insertProperty(myHTML, "ht", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#8420",
                                               "0px","","",
                                               "0px","","",
@@ -929,6 +941,7 @@ $.getJSON( radarURL, function(data){
 
                     } else if (currentStatus === "In Progress") {
                       myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#8420",
                                               "0px","","",
                                               "0px","","",
@@ -939,6 +952,7 @@ $.getJSON( radarURL, function(data){
 
                     } else { // currentStatus is Complete
                       myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "0px","none","transparent",
                                               "5px","solid","transparent",
@@ -953,6 +967,7 @@ $.getJSON( radarURL, function(data){
                     // console.log(techName, currentActivityType)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 0);
+                      myHTML = insertProperty(myHTML, "ht", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "1px","solid","black",
                                               "1px","solid","black",
@@ -963,6 +978,7 @@ $.getJSON( radarURL, function(data){
 
                     } else if (currentStatus === "In Progress") {
                       myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
@@ -973,6 +989,7 @@ $.getJSON( radarURL, function(data){
 
                     } else { // currentStatus is Complete
                       myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "0px","none","",
                                               "0px","none","",
@@ -986,6 +1003,7 @@ $.getJSON( radarURL, function(data){
                     // console.log(techName+', ', currentActivityType+', ', act)
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 0);
+                      myHTML = insertProperty(myHTML, "ht", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#9734",
                                               "0px","","",
                                               "0px","","",
@@ -996,6 +1014,7 @@ $.getJSON( radarURL, function(data){
 
                     } else if (currentStatus === "In Progress") {
                       myHTML = insertProperty(myHTML, "wh", 0);
+                      myHTML = insertProperty(myHTML, "ht", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#9734",
                                               "0px","","",
                                               "0px","","",
@@ -1006,6 +1025,7 @@ $.getJSON( radarURL, function(data){
 
                     } else { // currentStatus is Complete
                       myHTML = insertProperty(myHTML, "wh", 0);
+                      myHTML = insertProperty(myHTML, "ht", 0);
                       myHTML = insertProperty2(myHTML,currentActivityType,"&#9733",
                                               "0px","","",
                                               "0px","","",
@@ -1030,6 +1050,7 @@ $.getJSON( radarURL, function(data){
                       currentActivityType === "Research Summary" || 
                       currentActivityType === "Education") {
                     myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                     myHTML = insertProperty2(myHTML,currentActivityType,"",
                                             "0px","none","",
                                             "0px","none","",
@@ -1041,6 +1062,7 @@ $.getJSON( radarURL, function(data){
                   } else if (currentActivityType === "Outlook" || 
                              currentActivityType === "Direction") {
                     myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                     myHTML = insertProperty2(myHTML,currentActivityType,"",
                                             "0px","none","",
                                             "0px","none","",
@@ -1051,6 +1073,7 @@ $.getJSON( radarURL, function(data){
 
                   } else if (currentActivityType === "PoC") {
                     myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                     myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "0px","none","transparent",
                                               "5px","solid","transparent",
@@ -1062,6 +1085,7 @@ $.getJSON( radarURL, function(data){
                   } else if (currentActivityType === "Adoption Strategy" || 
                              currentActivityType === "Strategy") {
                     myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                     myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "0px","none","",
                                               "0px","none","",
@@ -1071,6 +1095,7 @@ $.getJSON( radarURL, function(data){
                     myHTML = calculateMargin(height, width, myHTML);
                   } else if (currentActivityType === "Pilot") {
                     myHTML = insertProperty(myHTML, "wh", 9);
+                    myHTML = insertProperty(myHTML, "ht", 9);
                     myHTML = insertProperty2(myHTML,currentActivityType,"&#9733",
                                               "0px","none","",
                                               "0px","none","",
@@ -1083,9 +1108,28 @@ $.getJSON( radarURL, function(data){
               }
             } // END of arcc
           } else { // if phase is Identify
-            myHTML = insertProperty(myHTML, "wh", 0);
-            myHTML = calculateMargin(height, width, myHTML);
-          } // END of phs          
+            if (arcc != "" ) {
+              for (var j=0; j<num_technologies; j++) {
+                let currentTech = 
+                          Object.values(data["Emerging Technology"])[j];
+                let currentActivityType = 
+                          Object.values(data["Activity Type"])[j];
+                let currentStatus = Object.values(data["Status"])[j];
+
+                if (techName === currentTech) {
+                  myHTML = insertProperty(myHTML, "wh", 0);
+                  myHTML = insertProperty(myHTML, "ht", 0);
+                  myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "none","0","-45","","");  
+                  myHTML = calculateMargin(height, width, myHTML);
+                }
+              } // END of inner for loop
+            } // END of arcc
+          } // END of phs
         } else { // activities > 1; EXPAND THIS
           if ( phs != "Identify" || phs != "Study" ) {            
             if ( arcc != "Park" ) {
@@ -1099,6 +1143,7 @@ $.getJSON( radarURL, function(data){
                 if (techName === currentTech) {
                   // console.log(techName+', ', phs+', ', arcc+', ', currentActivityType)
                   myHTML = insertProperty(myHTML, "wh", 0);
+                  myHTML = insertProperty(myHTML, "ht", 0);
                   myHTML = insertProperty2(myHTML,currentActivityType,"",
                                                       "0px","none","",
                                                       "0px","none","",
@@ -1107,10 +1152,8 @@ $.getJSON( radarURL, function(data){
                                                       "none","0","-45","","");
                   myHTML = calculateMargin(height, width, myHTML);
                   if (techName === "AI - Chatbot") {
-                    console.log(myHTML)
                   }
                 }                
-                // console.log(num_technologies+' = ', j)
               } //END of inner for loop              
             } // END of arcc
           } // END of phs
