@@ -841,13 +841,8 @@ $.getJSON( radarURL, function(data){
 
                   if (currentActivityType === "Backgrounder" || 
                       currentActivityType === "Research Summary" || 
-                      currentActivityType === "Education") {               
-                  /* insertProperty2(HTML, type, char                            
-                           btwidth, btstyle, btcol,
-                           brwidth, brstyle, brcol,
-                           bbwidth, bbstyle, bbcol,
-                           blwidth, blstyle, blcol,
-                           colour, radius, degree, pcolour) */
+                      currentActivityType === "Education") {
+
                     if (currentStatus === "Planned") {
                       myHTML = insertProperty(myHTML, "wh", 9);
                       myHTML = insertProperty(myHTML, "ht", 9);
@@ -1027,7 +1022,45 @@ $.getJSON( radarURL, function(data){
                                               "none","0","-45","#51B152","12");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
-                  } // END of if statement to match Activity type Pilot
+
+                  } else if (currentActivityType === "Standards" || 
+                             currentActivityType === "Reference Architecture") {
+                    // console.log(techName, currentActivityType)
+                    if (currentStatus === "Planned") {
+                      myHTML = insertProperty(myHTML, "wh", 14);
+                      myHTML = insertProperty(myHTML, "ht", 0);
+                      myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "0px","none","",
+                                              "4.5px","solid","transparent",
+                                              "5px","solid","white",
+                                              "4.5px","solid","transparent",
+                                              "none","0","-90","","");
+                      myHTML = calculateMargin(height, width, myHTML);
+
+                    } else if (currentStatus === "In Progress") {
+                      myHTML = insertProperty(myHTML, "wh", 14);
+                      myHTML = insertProperty(myHTML, "ht", 0);
+                      myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "0px","none","",
+                                              "4.5px","solid","transparent",
+                                              "5px","solid","lightblue",
+                                              "4.5px","solid","transparent",
+                                              "none","0","-90","","");
+                      myHTML = calculateMargin(height, width, myHTML);                  
+
+                    } else { // currentStatus is Complete
+                      myHTML = insertProperty(myHTML, "wh", 14);
+                      myHTML = insertProperty(myHTML, "ht", 0);
+                      myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                              "0px","none","",
+                                              "4.5px","solid","transparent",
+                                              "5px","solid","#51B152",
+                                              "4.5px","solid","transparent",
+                                              "none","0","-90","","");
+                      myHTML = calculateMargin(height, width, myHTML);                      
+                    } // END of if statement to match Status
+
+                  } // END of if statement to match Activity type
                 } // END if statement to match tech names
               } // END of for loop
             } else { // if Arc is Park
@@ -1086,6 +1119,7 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "blue","0","45","","");                
                     myHTML = calculateMargin(height, width, myHTML);
+
                   } else if (currentActivityType === "Pilot") {
                     myHTML = insertProperty(myHTML, "wh", 9);
                     myHTML = insertProperty(myHTML, "ht", 9);
@@ -1095,6 +1129,18 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "0px","none","",
                                               "none","0","-45","blue","12");                
+                    myHTML = calculateMargin(height, width, myHTML);
+
+                  } else if (currentActivityType === "Standards" || 
+                             currentActivityType === "Reference Architecture") {
+                    myHTML = insertProperty(myHTML, "wh", 14);
+                    myHTML = insertProperty(myHTML, "ht", 0);
+                    myHTML = insertProperty2(myHTML,currentActivityType,"",
+                                            "0px","none","",
+                                            "4.5px","solid","transparent",
+                                            "5px","solid","blue",
+                                            "4.5px","solid","transparent",
+                                            "none","0","-90","","");             
                     myHTML = calculateMargin(height, width, myHTML);
                   }
                 }
