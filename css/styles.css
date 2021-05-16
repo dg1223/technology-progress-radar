@@ -89,6 +89,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: -15px;
+  background-color: inherit;
 }
 
 /******************************************************/
@@ -300,6 +301,12 @@ body {
 
 .panel p .text {
   font-weight: 400;
+}
+
+img {
+  width: 430px;
+  transform: translate(-10px, 40px);
+
 }
 
 /******************************************************/
