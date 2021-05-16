@@ -868,15 +868,8 @@ $.getJSON( radarURL, function(data){
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
                                               "none","50","45","","");
-                      myHTML = calculateMargin(height, width, myHTML);                  
+                      myHTML = calculateMargin(height, width, myHTML);   
 
-                      // insertProperty2(HTML, activity, char,
-                      //      btwidth, btstyle, btcol,
-                      //      brwidth, brstyle, brcol,
-                      //      bbwidth, bbstyle, bbcol,
-                      //      blwidth, blstyle, blcol,
-                      //      colour, radius, degree,
-                      //      pcolour, Font)
                     } else { // currentStatus is Complete
                       myHTML = insertProperty(myHTML, "wh", 9);
                       myHTML = insertProperty(myHTML, "ht", 9);
