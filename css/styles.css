@@ -205,7 +205,8 @@ body {
 .phases p {
   color: #70AAE4;
   position: absolute;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: bold;
   transform: rotate(-45deg);
 }
 
@@ -244,7 +245,8 @@ body {
 .actions p {
   color: #70AAE4;
   position: absolute;
-  font-size: 20px;  
+  font-size: 17px;
+  font-weight: bold;
 }    
 
 #engage {
@@ -254,9 +256,9 @@ body {
 }
 
 #watch {
-  top: 330px;
-  left: 360px;
-  transform: rotate(-41deg);
+  top: 325px;
+  left: 370px;
+  transform: rotate(-40deg);
 }
 
 #watch p {
@@ -269,6 +271,36 @@ body {
   transform: rotate(-27deg);
 }
 
+
+/** Side panel **/
+
+/*Definitions*/
+.panel p {
+  color: black;
+  position: fixed;
+  font-size: 15px;
+  border: 2px solid black;
+  transform: rotate(-45deg) translate(1215px, 10px);
+  width: 420px;
+  height: 500px;
+  line-height: 25.5px;
+  padding: 5px;
+}
+
+.panel p .title {
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.panel p .subtitle {
+  font-weight: bold;
+}
+
+.panel p .text {
+  font-weight: 400;
+}
 
 /******************************************************/
 
