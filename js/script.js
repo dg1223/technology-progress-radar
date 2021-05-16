@@ -714,7 +714,7 @@ $.getJSON( radarURL, function(data){
 
     } // END of if-else
   } // END of for loop
-  console.log(point)
+  // console.log(point)
 
 
   /*********************** Ajax calls ********************************/
@@ -768,14 +768,14 @@ $.getJSON( radarURL, function(data){
     return HTML;
   }
 
-  function insertProperty2(HTML, type, char,                            
+  function insertProperty2(HTML, activity, char,                            
                            btwidth, btstyle, btcol,
                            brwidth, brstyle, brcol,
                            bbwidth, bbstyle, bbcol,
                            blwidth, blstyle, blcol,
                            colour, radius, degree,
                            pcolour, Font) {
-    var HTML = insertProperty(HTML, "activity", type);
+    var HTML = insertProperty(HTML, "activity", activity);
     HTML = insertProperty(HTML, "char", char);
     HTML = insertProperty(HTML, "btwidth", btwidth);
     HTML = insertProperty(HTML, "btstyle", btstyle);
@@ -803,21 +803,21 @@ $.getJSON( radarURL, function(data){
   request.onreadystatechange = function() {
     if ((request.readyState == 4) && (request.status == 200)) {
       var myHTML = document.querySelector(".jumbotron").innerHTML;
-      // console.log(myHTML)
       var len = point.length;
-      for (i = 0; i < len; i++){
+      // An extra iteration is required to insert the final HTML
+      for (i = 0; i <= len; i++){
+        if (i === len) {
+          insertHtml(".jumbotron", myHTML)
+          break;
+        }
         var newHTML = buildHTML(request.responseText, i);
-        // console.log(myHTML)
         myHTML += newHTML;
-        // console.log(myHTML)
         insertHtml(".jumbotron", myHTML)
 
-      /**/
-      /** PLACE ICONS ON THE CANVAS **/
-      /**/
+        /********************************************************/
+        //            PLACE ICONS ON THE CANVAS                 //
+        /********************************************************/
 
-      // Get height and width of each text box
-      // for (i = 0; i < len; i++) {
         var element = "div#t" + i.toString() + ".tech p";
         let box = $(element)[0].getBoundingClientRect();
         let width = box.width;
@@ -1087,8 +1087,8 @@ $.getJSON( radarURL, function(data){
             myHTML = calculateMargin(height, width, myHTML);
           } // END of phs          
         } else { // activities > 1; EXPAND THIS
-          if (phs != "Identify" || phs != "Study" ) {
-            if (arcc != "Park" ) {
+          if ( phs != "Identify" || phs != "Study" ) {            
+            if ( arcc != "Park" ) {
               for (var j=0; j<num_technologies; j++) {
                 let currentTech = 
                           Object.values(data["Emerging Technology"])[j];
@@ -1097,6 +1097,7 @@ $.getJSON( radarURL, function(data){
                 let currentStatus = Object.values(data["Status"])[j];
 
                 if (techName === currentTech) {
+                  // console.log(techName+', ', phs+', ', arcc+', ', currentActivityType)
                   myHTML = insertProperty(myHTML, "wh", 0);
                   myHTML = insertProperty2(myHTML,currentActivityType,"",
                                                       "0px","none","",
@@ -1105,13 +1106,17 @@ $.getJSON( radarURL, function(data){
                                                       "0px","none","",
                                                       "none","0","-45","","");
                   myHTML = calculateMargin(height, width, myHTML);
-                }
-              } //END of inner for loop
+                  if (techName === "AI - Chatbot") {
+                    console.log(myHTML)
+                  }
+                }                
+                // console.log(num_technologies+' = ', j)
+              } //END of inner for loop              
             } // END of arcc
           } // END of phs
-        } // END of act
+        } // END of act      
       } // END of main for loop
-    } // END of if statement to check request status
+    } // END of if statement to check request status    
   } // END of onreadystatechange
 
   var techHtml = "snippets/tech-snippet.html";
