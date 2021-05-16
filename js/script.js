@@ -774,7 +774,7 @@ $.getJSON( radarURL, function(data){
                            bbwidth, bbstyle, bbcol,
                            blwidth, blstyle, blcol,
                            colour, radius, degree,
-                           pcolour, Font) {
+                           pcolour, Font, tx, ty) {
     var HTML = insertProperty(HTML, "activity", activity);
     HTML = insertProperty(HTML, "char", char);
     HTML = insertProperty(HTML, "btwidth", btwidth);
@@ -794,6 +794,8 @@ $.getJSON( radarURL, function(data){
     HTML = insertProperty(HTML, "degree", degree);
     HTML = insertProperty(HTML, "pcolour", pcolour);
     HTML = insertProperty(HTML, "Font", Font);
+    HTML = insertProperty(HTML, "tx", tx);
+    HTML = insertProperty(HTML, "ty", ty);
     return HTML;
   }
 
@@ -851,7 +853,8 @@ $.getJSON( radarURL, function(data){
                                               "1px","solid","black",
                                               "1px","solid","black",
                                               "1px","solid","black",
-                                              "none","50","45","","");
+                                              "none","50","45","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);
 
                     } else if (currentStatus === "In Progress") {
@@ -862,7 +865,8 @@ $.getJSON( radarURL, function(data){
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
-                                              "none","50","45","","");
+                                              "none","50","45","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);   
 
                     } else { // currentStatus is Complete
@@ -873,7 +877,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "0px","none","",
                                               "0px","none","",
-                                              "#51B152","50","45","","");
+                                              "#51B152","50","45","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
 
@@ -888,7 +893,8 @@ $.getJSON( radarURL, function(data){
                                               "1px","solid","black",
                                               "1px","solid","black",
                                               "1px","solid","black",
-                                              "none","0","0","","");
+                                              "none","0","0","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);
 
                     } else if (currentStatus === "In Progress") {
@@ -899,7 +905,8 @@ $.getJSON( radarURL, function(data){
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
-                                              "none","0","0","","");
+                                              "none","0","0","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                  
 
                     } else { // currentStatus is Complete
@@ -910,7 +917,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "0px","none","",
                                               "0px","none","",
-                                              "#51B152","0","0","","");
+                                              "#51B152","0","0","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
 
@@ -924,7 +932,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
-                                              "none","0","-45","black","8");
+                                              "none","0","-45","black","8",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);
 
                     } else if (currentStatus === "In Progress") {
@@ -935,7 +944,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
-                                              "none","0","-45","#51B152","8");
+                                              "none","0","-45","#51B152","8",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                  
 
                     } else { // currentStatus is Complete
@@ -946,7 +956,8 @@ $.getJSON( radarURL, function(data){
                                               "5px","solid","transparent",
                                               "8.63px","solid","#51B152",
                                               "5px","solid","transparent",
-                                              "","0","-45","","");
+                                              "","0","-45","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
 
@@ -961,7 +972,8 @@ $.getJSON( radarURL, function(data){
                                               "1px","solid","black",
                                               "1px","solid","black",
                                               "1px","solid","black",
-                                              "none","0","45","","");
+                                              "none","0","45","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);
 
                     } else if (currentStatus === "In Progress") {
@@ -972,7 +984,8 @@ $.getJSON( radarURL, function(data){
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
                                               "1px","solid","#51B152",
-                                              "none","0","45","","");
+                                              "none","0","45","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                  
 
                     } else { // currentStatus is Complete
@@ -983,7 +996,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "0px","none","",
                                               "0px","none","",
-                                              "#51B152","0","45","","");
+                                              "#51B152","0","45","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
 
@@ -997,7 +1011,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
-                                              "none","0","-45","black","12");
+                                              "none","0","-45","black","12",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);
 
                     } else if (currentStatus === "In Progress") {
@@ -1008,7 +1023,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
-                                              "none","0","-45","#51B152","12");
+                                              "none","0","-45","#51B152","12",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                  
 
                     } else { // currentStatus is Complete
@@ -1019,7 +1035,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","","",
                                               "0px","","",
                                               "0px","","",
-                                              "none","0","-45","#51B152","12");
+                                              "none","0","-45","#51B152","12",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
 
@@ -1034,7 +1051,8 @@ $.getJSON( radarURL, function(data){
                                               "4.5px","solid","transparent",
                                               "5px","solid","white",
                                               "4.5px","solid","transparent",
-                                              "none","0","-90","","");
+                                              "none","0","-90","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);
 
                     } else if (currentStatus === "In Progress") {
@@ -1045,7 +1063,8 @@ $.getJSON( radarURL, function(data){
                                               "4.5px","solid","transparent",
                                               "5px","solid","lightblue",
                                               "4.5px","solid","transparent",
-                                              "none","0","-90","","");
+                                              "none","0","-90","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                  
 
                     } else { // currentStatus is Complete
@@ -1056,7 +1075,8 @@ $.getJSON( radarURL, function(data){
                                               "4.5px","solid","transparent",
                                               "5px","solid","#51B152",
                                               "4.5px","solid","transparent",
-                                              "none","0","-90","","");
+                                              "none","0","-90","","",
+                                              "0","0");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
 
@@ -1082,7 +1102,8 @@ $.getJSON( radarURL, function(data){
                                             "0px","none","",
                                             "0px","none","",
                                             "0px","none","",
-                                            "blue","50","45","","");                 
+                                            "blue","50","45","","",
+                                            "0","0");                 
                     myHTML = calculateMargin(height, width, myHTML);
 
                   } else if (currentActivityType === "Outlook" || 
@@ -1094,7 +1115,8 @@ $.getJSON( radarURL, function(data){
                                             "0px","none","",
                                             "0px","none","",
                                             "0px","none","",
-                                            "blue","0","0","","");
+                                            "blue","0","0","","",
+                                            "0","0");
                     myHTML = calculateMargin(height, width, myHTML);
 
                   } else if (currentActivityType === "PoC") {
@@ -1105,7 +1127,8 @@ $.getJSON( radarURL, function(data){
                                               "5px","solid","transparent",
                                               "8.63px","solid","blue",
                                               "5px","solid","transparent",
-                                              "","0","-45","","","");                 
+                                              "","0","-45","","","",
+                                              "0","0");                 
                     myHTML = calculateMargin(height, width, myHTML);
 
                   } else if (currentActivityType === "Adoption Strategy" || 
@@ -1117,7 +1140,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "0px","none","",
                                               "0px","none","",
-                                              "blue","0","45","","");                
+                                              "blue","0","45","","",
+                                              "0","0");                
                     myHTML = calculateMargin(height, width, myHTML);
 
                   } else if (currentActivityType === "Pilot") {
@@ -1128,7 +1152,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "0px","none","",
                                               "0px","none","",
-                                              "none","0","-45","blue","12");                
+                                              "none","0","-45","blue","12",
+                                              "0","0");                
                     myHTML = calculateMargin(height, width, myHTML);
 
                   } else if (currentActivityType === "Standards" || 
@@ -1140,7 +1165,8 @@ $.getJSON( radarURL, function(data){
                                             "4.5px","solid","transparent",
                                             "5px","solid","blue",
                                             "4.5px","solid","transparent",
-                                            "none","0","-90","","");             
+                                            "none","0","-90","","",
+                                            "0","0");             
                     myHTML = calculateMargin(height, width, myHTML);
                   }
                 }
@@ -1163,7 +1189,8 @@ $.getJSON( radarURL, function(data){
                                               "0px","none","",
                                               "0px","none","",
                                               "0px","none","",
-                                              "none","0","-45","","");  
+                                              "none","0","-45","","",
+                                              "0","0");  
                   myHTML = calculateMargin(height, width, myHTML);
                 }
               } // END of inner for loop
@@ -1188,7 +1215,8 @@ $.getJSON( radarURL, function(data){
                                                       "0px","none","",
                                                       "0px","none","",
                                                       "0px","none","",
-                                                      "none","0","-45","","");
+                                                      "none","0","-45","","",
+                                                      "0","0");
                   myHTML = calculateMargin(height, width, myHTML);
                   if (techName === "AI - Chatbot") {
                   }
