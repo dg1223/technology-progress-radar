@@ -878,14 +878,14 @@ $.getJSON( radarURL, function(data){
                       //      colour, radius, degree,
                       //      pcolour, Font)
                     } else { // currentStatus is Complete
-                      myHTML = insertProperty(myHTML, "wh", 14);
-                      myHTML = insertProperty(myHTML, "ht", 0);
+                      myHTML = insertProperty(myHTML, "wh", 9);
+                      myHTML = insertProperty(myHTML, "ht", 9);
                       myHTML = insertProperty2(myHTML,currentActivityType,"",
                                               "0px","none","",
-                                              "4px","solid","transparent",
-                                              "5.25px","solid","#51B152",
-                                              "4px","solid","transparent",
-                                              "none","0","-90","","");
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "0px","none","",
+                                              "#51B152","50","45","","");
                       myHTML = calculateMargin(height, width, myHTML);                      
                     } // END of if statement to match Status
 
