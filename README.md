@@ -18,7 +18,7 @@ This is a work in progress. Below are the next steps:
 9. Use machine learning to tune all the parameters as new data comes in
    - There are 11 parameters that sometimes I need to tune manually (not all at the same time) to align items properly
 
-The site is hosted at https://dg1223.github.io/tech-radar/
+## **[Deployed Website](https://dg1223.github.io/tech-radar/)**
 
 ![Emerging Technology Radar](radar.png)
 
