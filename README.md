@@ -17,7 +17,7 @@ The canvas below and all of its contents have been automatically generated from 
    - There are 11 parameters that sometimes I need to tune manually (not all at the same time) to align items properly
 10. Use a JavaScript framework to streamline development that adheres to current industry standards.
 
-## **[Deployed Website](https://dg1223.github.io/tech-radar/)**
+## **[Deployed Website](https://dg1223.github.io/technology-progress-radar)**
 
 ![Emerging Technology Radar](radar.png)
 
